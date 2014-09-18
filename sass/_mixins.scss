@@ -1,0 +1,419 @@
+
+// Mixins
+// --------------------------------------------------
+
+// Utilities
+@import "mixins/vender-prefixes";
+
+// Skins
+@import "mixins/border-radius";
+
+// Layout
+@import "mixins/clearfix";
+
+
+
+// Button Mixins
+// --------------------------------------------------
+
+@mixin button-style($bg-color, $border-color, $active-bg-color, $active-border-color, $color) {
+  color: $color;
+  background-color: $bg-color;
+  border-color: $border-color;
+
+  // Give desktop users something to play with
+  &:hover {
+    color: $color;
+    text-decoration: none;
+  }
+  &.active {
+    background-color: $active-bg-color;
+    box-shadow: inset 0px 1px 3px rgba(0,0,0,0.15);
+    border-color: $active-border-color;
+  }
+}
+
+@mixin button-clear($color, $font-size:"") {
+  &.button-clear {
+    color: $color;
+    background: none;
+    border-color: transparent;
+    box-shadow: none;
+
+    @if $font-size != "" {
+      font-size: $font-size;
+    }
+  }
+  &.button-icon {
+    background: none;
+    border-color: transparent;
+  }
+}
+
+@mixin button-outline($color, $text-color:"") {
+  &.button-outline {
+    background: transparent;
+    border-color: $color;
+    @if $text-color == "" {
+      $text-color: $color;
+    }
+    color: $text-color;
+    &.active {
+      background-color: $color;
+      color: #fff;
+      box-shadow: none;
+    }
+  }
+}
+
+
+// Bar Mixins
+// --------------------------------------------------
+
+@mixin bar-style($bg-color, $border-color, $color) {
+  background-color: $bg-color;
+  border-color: $border-color;
+  background-image: linear-gradient(0deg, $border-color, $border-color 50%, transparent 50%);
+
+  color: $color;
+
+  .title {
+    color: $color;
+  }
+}
+
+
+// Tab Mixins
+// --------------------------------------------------
+
+@mixin tab-style($bg-color, $border-color, $color) {
+  background-color: $bg-color;
+  background-image: linear-gradient(0deg, $border-color, $border-color 50%, transparent 50%);
+  border-color: $border-color;
+  color: $color;
+}
+
+@mixin tab-badge-style($bg-color, $color) {
+  .tab-item .badge {
+    background-color: $bg-color;
+    color: $color;
+  }
+}
+
+
+// Item Mixins
+// --------------------------------------------------
+
+@mixin item-style($bg-color, $border-color, $color) {
+  color: $color;
+  background-color: $bg-color;
+  border-color: $border-color;
+}
+
+@mixin item-active-style($active-bg-color, $active-border-color) {
+  background-color: $active-bg-color;
+  border-color: $active-border-color;
+}
+
+
+// Badge Mixins
+// --------------------------------------------------
+
+@mixin badge-style($bg-color, $color) {
+  background-color: $bg-color;
+  color: $color;
+}
+
+
+// Range Mixins
+// --------------------------------------------------
+
+@mixin range-style($track-bg-color) {
+  &::-webkit-slider-thumb:before {
+    background: $track-bg-color;
+  }
+}
+
+
+// Checkbox Mixins
+// --------------------------------------------------
+
+@mixin checkbox-style($off-border-color, $on-bg-color) {
+  & input:before {
+    border: $checkbox-border-width solid $off-border-color;
+  }
+
+  // what the background looks like when its checked
+  & input:checked:before {
+    background: $on-bg-color;
+  }
+}
+
+
+// Toggle Mixins
+// --------------------------------------------------
+
+@mixin toggle-style($on-border-color, $on-bg-color) {
+  // the track when the toggle is "on"
+  & input:checked + .track {
+    border-color: $on-border-color;
+    background-color: $on-bg-color;
+  }
+}
+
+
+// Text Mixins
+// --------------------------------------------------
+
+@mixin text-size-adjust($value: none) {
+  -webkit-text-size-adjust: $value;
+     -moz-text-size-adjust: $value;
+          text-size-adjust: $value;
+}
+@mixin tap-highlight-transparent() {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; // For some Androids
+}
+@mixin touch-callout($value: none) {
+  -webkit-touch-callout: $value;
+}
+
+
+// Font Mixins
+// --------------------------------------------------
+
+@mixin font-family-serif() {
+  font-family: $serif-font-family;
+}
+@mixin font-family-sans-serif() {
+  font-family: $sans-font-family;
+}
+@mixin font-family-monospace() {
+  font-family: $mono-font-family;
+}
+@mixin font-shorthand($size: $base-font-size, $weight: normal, $line-height: $base-line-height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+@mixin font-serif($size: $base-font-size, $weight: normal, $line-height: $base-line-height) {
+  @include font-family-serif();
+  @include font-shorthand($size, $weight, $line-height);
+}
+@mixin font-sans-serif($size: $base-font-size, $weight: normal, $line-height: $base-line-height) {
+  @include font-family-sans-serif();
+  @include font-shorthand($size, $weight, $line-height);
+}
+@mixin font-monospace($size: $base-font-size, $weight: normal, $line-height: $base-line-height) {
+  @include font-family-monospace();
+  @include font-shorthand($size, $weight, $line-height);
+}
+@mixin font-smoothing($font-smoothing) {
+  -webkit-font-smoothing: $font-smoothing;
+          font-smoothing: $font-smoothing;
+}
+
+
+// Appearance
+// --------------------------------------------------
+
+@mixin appearance($val) {
+  -webkit-appearance: $val;
+  -moz-appearance: $val;
+  appearance: $val;
+}
+
+
+// Background clipping
+// --------------------------------------------------
+
+@mixin background-clip($clip) {
+  -webkit-background-clip: $clip;
+     -moz-background-clip: $clip;
+          background-clip: $clip;
+}
+
+
+// Background sizing
+// --------------------------------------------------
+
+@mixin background-size($size) {
+  -webkit-background-size: $size;
+     -moz-background-size: $size;
+          background-size: $size;
+}
+
+// User select
+// --------------------------------------------------
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+     -moz-user-select: $select;
+      -ms-user-select: $select;
+          user-select: $select;
+}
+
+
+// Content Columns
+// --------------------------------------------------
+
+@mixin content-columns($columnCount, $columnGap: $grid-gutter-width) {
+  -webkit-column-count: $columnCount;
+     -moz-column-count: $columnCount;
+          column-count: $columnCount;
+  -webkit-column-gap: $columnGap;
+     -moz-column-gap: $columnGap;
+          column-gap: $columnGap;
+}
+
+
+// Flexbox Mixins
+// --------------------------------------------------
+// http://philipwalton.github.io/solved-by-flexbox/
+// https://github.com/philipwalton/solved-by-flexbox
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin dislay-inline-flex {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit Box fallback.
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  @if $value == nowrap {
+      -ms-flex-wrap: none;
+  } @else {
+      -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+}
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+  -webkit-box-flex: $fg;
+  -webkit-flex: $fg $fs $fb;
+  -moz-box-flex: $fg;
+  -moz-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+
+@mixin flex-flow($values: (row nowrap)) {
+  // No Webkit Box fallback.
+  -webkit-flex-flow: $values;
+  -moz-flex-flow: $values;
+  -ms-flex-flow: $values;
+  flex-flow: $values;
+}
+
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  align-items: $value;
+}
+
+@mixin align-self($value: auto) {
+  -webkit-align-self: $value;
+  -moz-align-self: $value;
+  @if $value == flex-start {
+    -ms-flex-item-align: start;
+  } @else if $value == flex-end {
+    -ms-flex-item-align: end;
+  } @else {
+    -ms-flex-item-align: $value;
+  }
+  align-self: $value;
+}
+
+@mixin align-content($value: stretch) {
+  -webkit-align-content: $value;
+  -moz-align-content: $value;
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+  align-content: $value;
+}
+
+@mixin justify-content($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin responsive-grid-break($selector, $max-width) {
+  @media (max-width: $max-width) {
+    #{$selector} {
+      -webkit-box-direction: normal;
+      -moz-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+      .col {
+        width: 100%;
+        margin-bottom: ($grid-padding-width * 3) / 2;
+      }
+    }
+  }
+}

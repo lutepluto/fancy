@@ -1,0 +1,739 @@
+/**
+ * Resets
+ * --------------------------------------------------
+ * Adapted from normalize.css and some reset.css. We don't care even one
+ * bit about old IE, so we don't need any hacks for that in here.
+ * 
+ * There are probably other things we could remove here, as well.
+ *
+ * normalize.css v2.1.2 | MIT License | git.io/normalize
+ 
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+/* line 16, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, u, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, fieldset,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font: inherit;
+  font-size: 100%;
+}
+
+/* line 37, ../sass/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 40, ../sass/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 43, ../sass/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 54, ../sass/_reset.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+/* line 63, ../sass/_reset.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* line 68, ../sass/_reset.scss */
+script {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *  user zoom.
+ */
+/* line 82, ../sass/_reset.scss */
+html {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 94, ../sass/_reset.scss */
+body {
+  margin: 0;
+  line-height: 1;
+}
+
+/**
+ * Remove default outlines.
+ */
+/* line 103, ../sass/_reset.scss */
+a,
+button,
+:focus,
+a:focus,
+button:focus,
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* *
+ * Remove tap highlight color
+ */
+/* line 117, ../sass/_reset.scss */
+a {
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+/* line 122, ../sass/_reset.scss */
+a[href]:hover {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 136, ../sass/_reset.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 145, ../sass/_reset.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 153, ../sass/_reset.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+/* line 164, ../sass/_reset.scss */
+code,
+kbd,
+pre,
+samp {
+  font-size: 1em;
+  font-family: monospace, serif;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+/* line 176, ../sass/_reset.scss */
+pre {
+  white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+/* line 184, ../sass/_reset.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 192, ../sass/_reset.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 200, ../sass/_reset.scss */
+sub,
+sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+}
+
+/* line 208, ../sass/_reset.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 212, ../sass/_reset.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 220, ../sass/_reset.scss */
+fieldset {
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+  border: 1px solid #c0c0c0;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 231, ../sass/_reset.scss */
+legend {
+  padding: 0;
+  /* 2 */
+  border: 0;
+  /* 1 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ * 4. Remove any default :focus styles
+ * 5. Make sure webkit font smoothing is being inherited
+ */
+/* line 244, ../sass/_reset.scss */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  /* 3 */
+  font-size: 100%;
+  /* 2 */
+  font-family: inherit;
+  /* 1 */
+  outline-offset: 0;
+  /* 4 */
+  outline-style: none;
+  /* 4 */
+  outline-width: 0;
+  /* 4 */
+  -webkit-font-smoothing: inherit;
+  /* 5 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `importnt` in
+ * the UA stylesheet.
+ */
+/* line 262, ../sass/_reset.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+/* line 274, ../sass/_reset.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *  and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *  `input` and others.
+ */
+/* line 287, ../sass/_reset.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 3 */
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 299, ../sass/_reset.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *  (include `-moz` to future-proof).
+ */
+/* line 310, ../sass/_reset.scss */
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+  /* 1 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 322, ../sass/_reset.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 331, ../sass/_reset.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+/* line 342, ../sass/_reset.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* line 348, ../sass/_reset.scss */
+img {
+  -webkit-user-drag: none;
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 360, ../sass/_reset.scss */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+/**
+ * Scaffolding
+ * --------------------------------------------------
+ */
+/* line 7, ../sass/_scaffolding.scss */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 13, ../sass/_scaffolding.scss */
+body, .ionic-body {
+  -webkit-touch-callout: none;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  word-wrap: break-word;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 20px;
+  text-rendering: optimizeLegibility;
+  -webkit-backface-visibility: hidden;
+  -webkit-user-drag: none;
+}
+
+/* line 40, ../sass/_scaffolding.scss */
+body.grade-b,
+body.grade-c {
+  text-rendering: auto;
+}
+
+/* line 46, ../sass/_scaffolding.scss */
+.content {
+  position: relative;
+}
+
+/* line 51, ../sass/_scaffolding.scss */
+.scroll-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  margin-top: -1px;
+  width: auto;
+  height: auto;
+}
+
+/* line 66, ../sass/_scaffolding.scss */
+.scroll-view {
+  position: relative;
+  overflow: hidden;
+  margin-top: -1px;
+  height: 100%;
+}
+
+/**
+ * Scroll is the scroll view component available for complex and custom
+ * scroll view functionality.
+ */
+/* line 79, ../sass/_scaffolding.scss */
+.scroll {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-transform-origin: left top;
+  -moz-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-backface-visibility: hidden;
+}
+
+/* line 88, ../sass/_scaffolding.scss */
+.scroll-bar {
+  position: absolute;
+  z-index: 9999;
+}
+
+/* line 93, ../sass/_scaffolding.scss */
+.ng-animate .scroll-bar {
+  visibility: hidden;
+}
+
+/* line 96, ../sass/_scaffolding.scss */
+.scroll-bar-h {
+  right: 2px;
+  bottom: 3px;
+  left: 2px;
+  height: 3px;
+}
+/* line 102, ../sass/_scaffolding.scss */
+.scroll-bar-h .scroll-bar-indicator {
+  height: 100%;
+}
+
+/* line 107, ../sass/_scaffolding.scss */
+.scroll-bar-v {
+  top: 2px;
+  right: 3px;
+  bottom: 2px;
+  width: 3px;
+}
+/* line 113, ../sass/_scaffolding.scss */
+.scroll-bar-v .scroll-bar-indicator {
+  width: 100%;
+}
+
+/* line 117, ../sass/_scaffolding.scss */
+.scroll-bar-indicator {
+  position: absolute;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+/* line 124, ../sass/_scaffolding.scss */
+.scroll-bar-indicator.scroll-bar-fade-out {
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+  opacity: 0;
+}
+
+/* line 129, ../sass/_scaffolding.scss */
+.grade-b .scroll-bar-indicator,
+.grade-c .scroll-bar-indicator {
+  border-radius: 0;
+  background: #aaa;
+}
+/* line 135, ../sass/_scaffolding.scss */
+.grade-b .scroll-bar-indicator.scroll-bar-fade-out,
+.grade-c .scroll-bar-indicator.scroll-bar-fade-out {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+/* line 142, ../sass/_scaffolding.scss */
+.scroll-refresher {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  margin: auto;
+  height: 60px;
+}
+/* line 151, ../sass/_scaffolding.scss */
+.scroll-refresher .icon-refreshing {
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  display: none;
+}
+
+/* line 157, ../sass/_scaffolding.scss */
+.scroll-refresher-content {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  color: #666666;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* line 168, ../sass/_scaffolding.scss */
+.ionic-refresher-content {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  color: #666666;
+  text-align: center;
+  font-size: 30px;
+}
+/* line 178, ../sass/_scaffolding.scss */
+.ionic-refresher-content .icon-pulling {
+  -webkit-animation-duration: 200ms;
+  -moz-animation-duration: 200ms;
+  animation-duration: 200ms;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes refresh-spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+@-webkit-keyframes refresh-spin {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-180deg);
+  }
+}
+/* line 197, ../sass/_scaffolding.scss */
+.scroll-refresher.active .icon-pulling {
+  display: block;
+}
+/* line 200, ../sass/_scaffolding.scss */
+.scroll-refresher.active .icon-refreshing {
+  display: none;
+}
+/* line 205, ../sass/_scaffolding.scss */
+.scroll-refresher.active.refreshing .icon-pulling {
+  display: none;
+}
+/* line 208, ../sass/_scaffolding.scss */
+.scroll-refresher.active.refreshing .icon-refreshing {
+  display: block;
+}
+/* line 214, ../sass/_scaffolding.scss */
+.scroll-refresher.active .ionic-refresher-content i.icon.icon-pulling {
+  -webkit-animation-name: refresh-spin;
+  -moz-animation-name: refresh-spin;
+  animation-name: refresh-spin;
+}
+
+/* line 221, ../sass/_scaffolding.scss */
+ion-infinite-scroll .scroll-infinite {
+  position: relative;
+  overflow: hidden;
+  margin-top: -70px;
+  height: 60px;
+}
+
+/* line 228, ../sass/_scaffolding.scss */
+.scroll-infinite-content {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  color: #666666;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* line 237, ../sass/_scaffolding.scss */
+ion-infinite-scroll.active .scroll-infinite {
+  margin-top: -30px;
+}
+
+/* line 241, ../sass/_scaffolding.scss */
+.overflow-scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+/* line 246, ../sass/_scaffolding.scss */
+.overflow-scroll .scroll {
+  position: static;
+  height: 100%;
+}
+
+/* line 253, ../sass/_scaffolding.scss */
+.overflow-scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+/* line 258, ../sass/_scaffolding.scss */
+.overflow-scroll .scroll {
+  position: static;
+  height: 100%;
+}
+
+/* line 266, ../sass/_scaffolding.scss */
+.has-header {
+  top: 44px;
+}
+
+/* line 270, ../sass/_scaffolding.scss */
+.has-subheader {
+  top: 88px;
+}
+
+/* line 274, ../sass/_scaffolding.scss */
+.has-footer {
+  bottom: 44px;
+}
+
+/* line 278, ../sass/_scaffolding.scss */
+.has-tabs,
+.bar-footer.has-tabs {
+  bottom: 49px;
+}
+
+/* line 283, ../sass/_scaffolding.scss */
+.has-footer.has-tabs {
+  bottom: 93px;
+}
+
+/* line 288, ../sass/_scaffolding.scss */
+.pane {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 1;
+}
+
+/* line 292, ../sass/_scaffolding.scss */
+.view {
+  z-index: 1;
+}
+
+/* line 295, ../sass/_scaffolding.scss */
+.pane, .view {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
