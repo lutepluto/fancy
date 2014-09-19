@@ -739,6 +739,230 @@ ion-infinite-scroll.active .scroll-infinite {
 }
 
 /**
+ * Typography
+ * --------------------------------------------------
+ */
+/* line 11, ../sass/_type.scss */
+p {
+  margin: 0 0 10px;
+}
+
+/* line 19, ../sass/_type.scss */
+small {
+  font-size: 75%;
+}
+
+/* line 20, ../sass/_type.scss */
+cite {
+  font-style: normal;
+}
+
+/* line 26, ../sass/_type.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 27, ../sass/_type.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 28, ../sass/_type.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 29, ../sass/_type.scss */
+.text-justify {
+  text-align: justify;
+}
+
+/* line 30, ../sass/_type.scss */
+.text-nowrap {
+  text-space: nowrap;
+}
+
+/* line 36, ../sass/_type.scss */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #000;
+  font-weight: 500;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1.2;
+}
+/* line 43, ../sass/_type.scss */
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
+.h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
+  font-weight: normal;
+  line-height: 1;
+}
+
+/* line 49, ../sass/_type.scss */
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+/* line 55, ../sass/_type.scss */
+h1:first-child, .h1:first-child,
+h2:first-child, .h2:first-child,
+h3:first-child, .h3:first-child {
+  margin-top: 0;
+}
+/* line 59, ../sass/_type.scss */
+h1 + h1, h1 + .h1,
+h1 + h2, h1 + .h2,
+h1 + h3, h1 + .h3, .h1 + h1, .h1 + .h1,
+.h1 + h2, .h1 + .h2,
+.h1 + h3, .h1 + .h3,
+h2 + h1,
+h2 + .h1,
+h2 + h2,
+h2 + .h2,
+h2 + h3,
+h2 + .h3, .h2 + h1, .h2 + .h1,
+.h2 + h2, .h2 + .h2,
+.h2 + h3, .h2 + .h3,
+h3 + h1,
+h3 + .h1,
+h3 + h2,
+h3 + .h2,
+h3 + h3,
+h3 + .h3, .h3 + h1, .h3 + .h1,
+.h3 + h2, .h3 + .h2,
+.h3 + h3, .h3 + .h3 {
+  margin-top: 10px;
+}
+
+/* line 66, ../sass/_type.scss */
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 73, ../sass/_type.scss */
+h1, .h1 {
+  font-size: 36px;
+}
+
+/* line 74, ../sass/_type.scss */
+h2, .h2 {
+  font-size: 30px;
+}
+
+/* line 75, ../sass/_type.scss */
+h3, .h3 {
+  font-size: 24px;
+}
+
+/* line 76, ../sass/_type.scss */
+h4, .h4 {
+  font-size: 18px;
+}
+
+/* line 77, ../sass/_type.scss */
+h5, .h5 {
+  font-size: 14px;
+}
+
+/* line 78, ../sass/_type.scss */
+h6, .h6 {
+  font-size: 12px;
+}
+
+/* line 80, ../sass/_type.scss */
+h1 small, .h1 small {
+  font-size: 24px;
+}
+
+/* line 81, ../sass/_type.scss */
+h2 small, .h2 small {
+  font-size: 18px;
+}
+
+/* line 82, ../sass/_type.scss */
+h3 small, .h3 small,
+h4 small, .h4 small {
+  font-size: 14px;
+}
+
+/* line 89, ../sass/_type.scss */
+dl {
+  margin-bottom: 20px;
+}
+
+/* line 92, ../sass/_type.scss */
+dt,
+dd {
+  line-height: 1.42857;
+}
+
+/* line 96, ../sass/_type.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 104, ../sass/_type.scss */
+blockquote {
+  margin: 0 0 20px;
+  padding: 10px 20px;
+  border-left: 5px solid gray;
+}
+/* line 109, ../sass/_type.scss */
+blockquote p {
+  font-weight: 300;
+  font-size: 17.5px;
+  line-height: 1.25;
+}
+/* line 115, ../sass/_type.scss */
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+/* line 119, ../sass/_type.scss */
+blockquote small {
+  display: block;
+  line-height: 1.42857;
+}
+/* line 122, ../sass/_type.scss */
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+
+/* line 132, ../sass/_type.scss */
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+/* line 143, ../sass/_type.scss */
+address {
+  display: block;
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 1.42857;
+}
+
+/* line 154, ../sass/_type.scss */
+a.subdued {
+  padding-right: 10px;
+  color: #888;
+  text-decoration: none;
+}
+/* line 159, ../sass/_type.scss */
+a.subdued:hover {
+  text-decoration: none;
+}
+/* line 162, ../sass/_type.scss */
+a.subdued:last-child {
+  padding-right: 0;
+}
+
+/**
  * Buttons
  * --------------------------------------------------
  */
