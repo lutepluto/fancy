@@ -6,6 +6,7 @@
 @import "mixins/vender-prefixes";
 
 // Components
+@import "mixins/bar";
 @import "mixins/button";
 
 // Skins
@@ -13,22 +14,6 @@
 
 // Layout
 @import "mixins/clearfix";
-
-
-// Bar Mixins
-// --------------------------------------------------
-
-@mixin bar-style($bg-color, $border-color, $color) {
-  background-color: $bg-color;
-  border-color: $border-color;
-  background-image: linear-gradient(0deg, $border-color, $border-color 50%, transparent 50%);
-
-  color: $color;
-
-  .title {
-    color: $color;
-  }
-}
 
 
 // Tab Mixins
@@ -190,17 +175,6 @@
      -moz-background-size: $size;
           background-size: $size;
 }
-
-// User select
-// --------------------------------------------------
-
-@mixin user-select($select) {
-  -webkit-user-select: $select;
-     -moz-user-select: $select;
-      -ms-user-select: $select;
-          user-select: $select;
-}
-
 
 // Content Columns
 // --------------------------------------------------
