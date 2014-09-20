@@ -204,55 +204,55 @@
 // Default styles for buttons inside of styled bars
 .bar-light {
   .button {
-    @include button-style($bar-light-bg, $bar-light-border, $bar-light-active-bg, $bar-light-active-border, $bar-light-text);
+    @include button-style($bar-light-bg, $bar-light-active-bg, $bar-light-text);
     @include button-clear($bar-light-text, $bar-title-font-size);
   }
 }
 .bar-stable {
   .button {
-    @include button-style($bar-stable-bg, $bar-stable-border, $bar-stable-active-bg, $bar-stable-active-border, $bar-stable-text);
+    @include button-style($bar-stable-bg, $bar-stable-active-bg, $bar-stable-text);
     @include button-clear($bar-stable-text, $bar-title-font-size);
   }
 }
 .bar-positive {
   .button {
-    @include button-style($bar-positive-bg, $bar-positive-border, $bar-positive-active-bg, $bar-positive-active-border, $bar-positive-text);
+    @include button-style($bar-positive-bg, $bar-positive-active-bg, $bar-positive-text);
     @include button-clear(#fff, $bar-title-font-size);
   }
 }
 .bar-calm {
   .button {
-    @include button-style($bar-calm-bg, $bar-calm-border, $bar-calm-active-bg, $bar-calm-active-border, $bar-calm-text);
+    @include button-style($bar-calm-bg, $bar-calm-active-bg, $bar-calm-text);
     @include button-clear(#fff, $bar-title-font-size);
   }
 }
 .bar-assertive {
   .button {
-    @include button-style($bar-assertive-bg, $bar-assertive-border, $bar-assertive-active-bg, $bar-assertive-active-border, $bar-assertive-text);
+    @include button-style($bar-assertive-bg, $bar-assertive-active-bg, $bar-assertive-text);
     @include button-clear(#fff, $bar-title-font-size);
   }
 }
 .bar-balanced {
   .button {
-    @include button-style($bar-balanced-bg, $bar-balanced-border, $bar-balanced-active-bg, $bar-balanced-active-border, $bar-balanced-text);
+    @include button-style($bar-balanced-bg, $bar-balanced-active-bg, $bar-balanced-text);
     @include button-clear(#fff, $bar-title-font-size);
   }
 }
 .bar-energized {
   .button {
-    @include button-style($bar-energized-bg, $bar-energized-border, $bar-energized-active-bg, $bar-energized-active-border, $bar-energized-text);
+    @include button-style($bar-energized-bg, $bar-energized-active-bg, $bar-energized-text);
     @include button-clear(#fff, $bar-title-font-size);
   }
 }
 .bar-royal {
   .button {
-    @include button-style($bar-royal-bg, $bar-royal-border, $bar-royal-active-bg, $bar-royal-active-border, $bar-royal-text);
+    @include button-style($bar-royal-bg, $bar-royal-active-bg, $bar-royal-text);
     @include button-clear(#fff, $bar-title-font-size);
   }
 }
 .bar-dark {
   .button {
-    @include button-style($bar-dark-bg, $bar-dark-border, $bar-dark-active-bg, $bar-dark-active-border, $bar-dark-text);
+    @include button-style($bar-dark-bg, $bar-dark-active-bg, $bar-dark-text);
     @include button-clear(#fff, $bar-title-font-size);
   }
 }
