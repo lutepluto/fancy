@@ -1,9 +1,10 @@
 // Button Mixins
 // --------------------------------------------------
 
-@mixin button-style($bg-color, $active-bg-color, $color) {
+@mixin button-style($bg-color, $border-color, $active-bg-color, $active-border-color, $color) {
   color: $color;
   background-color: $bg-color;
+  border-color: $border-color;
 
   // Give desktop users something to play with
   &:hover {
@@ -12,6 +13,7 @@
   }
   &.active {
     background-color: $active-bg-color;
+    border-color: $active-border-color;
     box-shadow: inset 0px 1px 3px rgba(0,0,0,0.15);
   }
 }

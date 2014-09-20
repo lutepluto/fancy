@@ -167,7 +167,7 @@
 
 .bar-theme {
   .button {
-    @include button-style($bar-theme-bg, $bar-theme-active-bg, $bar-theme-text);
+    @include button-style($bar-theme-bg, $bar-theme-border, $bar-theme-active-bg, $bar-theme-active-border, $bar-theme-text);
   }
 }
 

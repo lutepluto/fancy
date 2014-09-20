@@ -6,12 +6,12 @@
 
 .button {
   // set the color defaults
-  @include button-style($button-default-bg, $button-default-active-bg, $button-default-text);
+  @include button-style($button-default-bg, $button-default-border, $button-default-active-bg, $button-default-active-border, $button-default-text);
 
   position: relative;
   display: inline-block;
   margin: $button-margin 0;
-  padding: 1px $button-padding 0 $button-padding;
+  padding: 0 $button-padding 0 $button-padding;
 
   min-width: ($button-padding * 3) + $button-font-size;
   min-height: $button-height + 5px;
@@ -70,7 +70,7 @@
     margin-bottom: $button-block-margin;
   }
   &.button-theme {
-    @include button-style($button-theme-bg, $button-theme-active-bg, $button-theme-text);
+    @include button-style($button-theme-bg, $button-theme-border, $button-theme-active-bg, $button-theme-active-border, $button-theme-text);
     @include button-outline($button-theme-bg);
   }
 }

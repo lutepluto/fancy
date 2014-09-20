@@ -78,7 +78,7 @@ $button-border-width:             1px !default;
 
 $button-font-size:                16px !default;
 $button-height:                   42px !default;
-$button-padding:                  12px !default;
+$button-padding:                  8px !default;
 $button-margin:                   5px !default;
 $button-icon-size:                24px !default;
 
@@ -98,12 +98,16 @@ $button-bar-button-padding:       8px !default;
 $button-bar-button-icon-size:     20px !default;
 
 $button-theme-bg:                 $theme-color;
+$button-theme-border:             $theme-color;
 $button-theme-text:               #fff;
-$button-theme-active-bg:          darken($theme-color, 5%);
+$button-theme-active-bg:          lighten($theme-color, 5%);
+$button-theme-active-border:      lighten($theme-color, 5%);
 
 $button-default-bg:               #ccc !default;
+$button-default-border:           #ccc !default;
 $button-default-text:             #fff !default;
 $button-default-active-bg:        #b2b2b2 !default;
+$button-default-active-border:    #b2b2b2 !default;
 
 
 // Bars
@@ -123,9 +127,9 @@ $bar-default-active-border:       #ccc !default;
 
 $bar-theme-bg:                    rgba($theme-color, $bar-transparency);
 $bar-theme-text:                  #fff;
-$bar-theme-border:                darken($theme-color, 5%);
-$bar-theme-active-bg:             darken($theme-color, 5%);
-$bar-theme-active-border:         darken($theme-color, 8%);
+$bar-theme-border:                $theme-color;
+$bar-theme-active-bg:             lighten($theme-color, 5%);
+$bar-theme-active-border:         lighten($theme-color, 8%);
 
 // Tabs
 // -------------------------------
@@ -152,7 +156,7 @@ $item-font-size:                  16px !default;
 $item-border-width:               1px !default;
 $item-padding:                    15px !default;
 
-$item-button-font-size:           18px !default;
+$item-button-font-size:           14px !default;
 $item-button-line-height:         32px !default;
 $item-icon-font-size:             32px !default;
 $item-icon-fill-font-size:        28px !default;

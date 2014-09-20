@@ -8,6 +8,7 @@
 // Components
 @import "mixins/bar";
 @import "mixins/button";
+@import "mixins/items";
 
 // Skins
 @import "mixins/border-radius";
@@ -32,22 +33,6 @@
     color: $color;
   }
 }
-
-
-// Item Mixins
-// --------------------------------------------------
-
-@mixin item-style($bg-color, $border-color, $color) {
-  color: $color;
-  background-color: $bg-color;
-  border-color: $border-color;
-}
-
-@mixin item-active-style($active-bg-color, $active-border-color) {
-  background-color: $active-bg-color;
-  border-color: $active-border-color;
-}
-
 
 // Badge Mixins
 // --------------------------------------------------
