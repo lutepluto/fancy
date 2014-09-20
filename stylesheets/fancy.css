@@ -963,6 +963,208 @@ a.subdued:last-child {
 }
 
 /**
+ * Bar (Headers and Footers)
+ * --------------------------------------------------
+ */
+/* line 7, ../sass/_bar.scss */
+.bar {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 5px;
+  width: 100%;
+  height: 44px;
+  border-width: 0;
+  border-style: solid;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+  /* border-width: 1px will actually create 2 device pixels on retina */
+  /* this nifty trick sets an actual 1px border on hi-res displays */
+  background-size: 0;
+}
+@media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  /* line 7, ../sass/_bar.scss */
+  .bar {
+    border: none;
+    background-image: linear-gradient(0deg, #ddd, #ddd 50%, transparent 50%);
+    background-position: bottom;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+  }
+}
+/* line 42, ../sass/_bar.scss */
+.bar.bar-clear {
+  border: none;
+  background: none;
+  color: #fff;
+}
+/* line 47, ../sass/_bar.scss */
+.bar.bar-clear .button {
+  color: #fff;
+}
+/* line 50, ../sass/_bar.scss */
+.bar.bar-clear .title {
+  color: #fff;
+}
+/* line 56, ../sass/_bar.scss */
+.bar.item-input-inset .item-input-wrapper {
+  margin-top: -1px;
+}
+/* line 59, ../sass/_bar.scss */
+.bar.item-input-inset .item-input-wrapper input {
+  padding-left: 8px;
+  height: 28px;
+}
+/* line 66, ../sass/_bar.scss */
+.bar.bar-theme {
+  background-color: #f48b28;
+  border-color: #f37e10;
+  background-image: linear-gradient(0deg, #f37e10, #f37e10 50%, transparent 50%);
+  color: #fff;
+}
+/* line 11, ../sass/mixins/_bar.scss */
+.bar.bar-theme .title {
+  color: #fff;
+}
+/* line 71, ../sass/_bar.scss */
+.bar .title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+  margin: 0 10px;
+  min-width: 30px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 17px;
+  color: #444;
+  line-height: 44px;
+}
+/* line 95, ../sass/_bar.scss */
+.bar .title.title-left {
+  text-align: left;
+}
+/* line 98, ../sass/_bar.scss */
+.bar .title.title-right {
+  text-align: right;
+}
+/* line 103, ../sass/_bar.scss */
+.bar .title a {
+  color: inherit;
+}
+/* line 107, ../sass/_bar.scss */
+.bar .button {
+  z-index: 1;
+  margin: 0;
+  padding: 0 8px;
+  min-width: initial;
+  min-height: 31px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 32px;
+}
+/* line 117, ../sass/_bar.scss */
+.bar .button.button-icon:before,
+.bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before {
+  padding-right: 2px;
+  padding-left: 2px;
+  font-size: 20px;
+  line-height: 32px;
+}
+/* line 129, ../sass/_bar.scss */
+.bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
+  vertical-align: top;
+  font-size: 32px;
+  line-height: 32px;
+}
+/* line 139, ../sass/_bar.scss */
+.bar .button.back-button.active {
+  opacity: 1;
+}
+/* line 144, ../sass/_bar.scss */
+.bar .button-bar > .button,
+.bar .buttons > .button {
+  min-height: 31px;
+  line-height: 32px;
+}
+/* line 150, ../sass/_bar.scss */
+.bar .button-bar + .button,
+.bar .button + .button-bar {
+  margin-left: 5px;
+}
+/* line 156, ../sass/_bar.scss */
+.bar .title + .button:last-child,
+.bar > .button + .button:last-child,
+.bar > .button.pull-right,
+.bar .title + .buttons {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+}
+
+/* line 169, ../sass/_bar.scss */
+.bar-theme .button {
+  color: #fff;
+  background-color: #f48b28;
+}
+/* line 9, ../sass/mixins/_button.scss */
+.bar-theme .button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/* line 13, ../sass/mixins/_button.scss */
+.bar-theme .button.active {
+  background-color: #f37e10;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* line 175, ../sass/_bar.scss */
+.bar-header {
+  top: 0;
+  border-top-width: 0;
+  border-bottom-width: 1px;
+}
+
+/* line 182, ../sass/_bar.scss */
+.bar-footer {
+  bottom: 0;
+  border-top-width: 1px;
+  border-bottom-width: 0;
+  background-position: top;
+}
+
+/* line 190, ../sass/_bar.scss */
+.bar-tabs {
+  padding: 0;
+}
+
+/* line 194, ../sass/_bar.scss */
+.bar-subheader {
+  top: 44px;
+  display: block;
+}
+
+/* line 198, ../sass/_bar.scss */
+.bar-subfooter {
+  bottom: 44px;
+  display: block;
+}
+
+/**
  * Buttons
  * --------------------------------------------------
  */

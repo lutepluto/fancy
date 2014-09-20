@@ -121,6 +121,12 @@ $bar-default-border:              #ddd !default;
 $bar-default-active-bg:           #fafafa !default;
 $bar-default-active-border:       #ccc !default;
 
+$bar-theme-bg:                    rgba($theme-color, $bar-transparency);
+$bar-theme-text:                  #fff;
+$bar-theme-border:                darken($theme-color, 5%);
+$bar-theme-active-bg:             darken($theme-color, 5%);
+$bar-theme-active-border:         darken($theme-color, 8%);
+
 // Tabs
 // -------------------------------
 
