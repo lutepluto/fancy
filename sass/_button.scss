@@ -71,6 +71,7 @@
   }
   &.button-theme {
     @include button-style($button-theme-bg, $button-theme-border, $button-theme-active-bg, $button-theme-active-border, $button-theme-text);
+    @include button-clear($button-theme-bg);
     @include button-outline($button-theme-bg);
   }
 }
@@ -125,6 +126,20 @@
   .icon:before,
   &.icon:before {
     font-size: $button-large-icon-size;
+  }
+}
+
+.button-clear {
+  @include button-clear($button-default-bg);
+  @include transition(opacity .1s);
+  padding: 0 $button-clear-padding;
+  max-height: $button-height;
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+
+  &.active {
+    opacity: 0.3;
   }
 }
 
