@@ -183,18 +183,9 @@ a.item-content {
 
 .item-icon-left .icon,
 .item-icon-right .icon {
-  @include display-flex();
-  @include align-items(center);
   position: absolute;
-  top: 0;
-  height: 100%;
-  font-size: $item-icon-font-size;
-
-  &:before {
-    display: block;
-    width: $item-icon-font-size;
-    text-align: center;
-  }
+  top: 50%;
+  @include translate(0, -50%);
 }
 
 .item .fill-icon {
@@ -204,10 +195,10 @@ a.item-content {
 }
 
 .item-icon-left {
-  padding-left: ($item-padding * 3);
+  padding-left: ($item-padding * 2) + $icon-size;
 
   .icon {
-    left: $item-padding / 2;
+    left: $item-padding;
   }
 }
 .item-complex.item-icon-left {
@@ -219,10 +210,10 @@ a.item-content {
 }
 
 .item-icon-right {
-  padding-right: ($item-padding * 3);
+  padding-right: ($item-padding * 2) ＋ $icon-size;
 
   .icon {
-    right: $item-padding / 2;
+    right: $item-padding;
   }
 }
 .item-complex.item-icon-right {
