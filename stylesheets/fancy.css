@@ -420,7 +420,7 @@ body, .ionic-body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  color: #000;
+  color: #555555;
   word-wrap: break-word;
   font-size: 14px;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -963,577 +963,13 @@ a.subdued:last-child {
 }
 
 /**
- * Bar (Headers and Footers)
- * --------------------------------------------------
- */
-/* line 7, ../sass/_bar.scss */
-.bar {
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: absolute;
-  right: 0;
-  left: 0;
-  z-index: 10;
-  box-sizing: border-box;
-  padding: 5px;
-  width: 100%;
-  height: 44px;
-  border-width: 0;
-  border-style: solid;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid #ddd;
-  background-color: white;
-  /* border-width: 1px will actually create 2 device pixels on retina */
-  /* this nifty trick sets an actual 1px border on hi-res displays */
-  background-size: 0;
-}
-@media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  /* line 7, ../sass/_bar.scss */
-  .bar {
-    border: none;
-    background-image: linear-gradient(0deg, #ddd, #ddd 50%, transparent 50%);
-    background-position: bottom;
-    background-size: 100% 1px;
-    background-repeat: no-repeat;
-  }
-}
-/* line 42, ../sass/_bar.scss */
-.bar.bar-clear {
-  border: none;
-  background: none;
-  color: #fff;
-}
-/* line 47, ../sass/_bar.scss */
-.bar.bar-clear .button {
-  color: #fff;
-}
-/* line 50, ../sass/_bar.scss */
-.bar.bar-clear .title {
-  color: #fff;
-}
-/* line 56, ../sass/_bar.scss */
-.bar.item-input-inset .item-input-wrapper {
-  margin-top: -1px;
-}
-/* line 59, ../sass/_bar.scss */
-.bar.item-input-inset .item-input-wrapper input {
-  padding-left: 8px;
-  height: 28px;
-}
-/* line 66, ../sass/_bar.scss */
-.bar.bar-light {
-  background-color: white;
-  border-color: #ddd;
-  background-image: linear-gradient(0deg, #ddd, #ddd 50%, transparent 50%);
-  color: #444;
-}
-/* line 11, ../sass/mixins/_bar.scss */
-.bar.bar-light .title {
-  color: #444;
-}
-/* line 69, ../sass/_bar.scss */
-.bar.bar-stable {
-  background-color: #f8f8f8;
-  border-color: #b2b2b2;
-  background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
-  color: #444;
-}
-/* line 11, ../sass/mixins/_bar.scss */
-.bar.bar-stable .title {
-  color: #444;
-}
-/* line 72, ../sass/_bar.scss */
-.bar.bar-positive {
-  background-color: #4a87ee;
-  border-color: #145dd7;
-  background-image: linear-gradient(0deg, #145dd7, #145dd7 50%, transparent 50%);
-  color: #fff;
-}
-/* line 11, ../sass/mixins/_bar.scss */
-.bar.bar-positive .title {
-  color: #fff;
-}
-/* line 75, ../sass/_bar.scss */
-.bar.bar-calm {
-  background-color: #43cee6;
-  border-color: #1aaac3;
-  background-image: linear-gradient(0deg, #1aaac3, #1aaac3 50%, transparent 50%);
-  color: #fff;
-}
-/* line 11, ../sass/mixins/_bar.scss */
-.bar.bar-calm .title {
-  color: #fff;
-}
-/* line 78, ../sass/_bar.scss */
-.bar.bar-assertive {
-  background-color: #ef4e3a;
-  border-color: #cc2511;
-  background-image: linear-gradient(0deg, #cc2511, #cc2511 50%, transparent 50%);
-  color: #fff;
-}
-/* line 11, ../sass/mixins/_bar.scss */
-.bar.bar-assertive .title {
-  color: #fff;
-}
-/* line 81, ../sass/_bar.scss */
-.bar.bar-balanced {
-  background-color: #66cc33;
-  border-color: #478f24;
-  background-image: linear-gradient(0deg, #478f24, #478f24 50%, transparent 50%);
-  color: #fff;
-}
-/* line 11, ../sass/mixins/_bar.scss */
-.bar.bar-balanced .title {
-  color: #fff;
-}
-/* line 84, ../sass/_bar.scss */
-.bar.bar-energized {
-  background-color: #f48b28;
-  border-color: #c5650a;
-  background-image: linear-gradient(0deg, #c5650a, #c5650a 50%, transparent 50%);
-  color: #fff;
-}
-/* line 11, ../sass/mixins/_bar.scss */
-.bar.bar-energized .title {
-  color: #fff;
-}
-/* line 87, ../sass/_bar.scss */
-.bar.bar-royal {
-  background-color: #8a6de9;
-  border-color: #552bdf;
-  background-image: linear-gradient(0deg, #552bdf, #552bdf 50%, transparent 50%);
-  color: #fff;
-}
-/* line 11, ../sass/mixins/_bar.scss */
-.bar.bar-royal .title {
-  color: #fff;
-}
-/* line 90, ../sass/_bar.scss */
-.bar.bar-dark {
-  background-color: #444444;
-  border-color: #111;
-  background-image: linear-gradient(0deg, #111, #111 50%, transparent 50%);
-  color: #fff;
-}
-/* line 11, ../sass/mixins/_bar.scss */
-.bar.bar-dark .title {
-  color: #fff;
-}
-/* line 95, ../sass/_bar.scss */
-.bar .title {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 0;
-  overflow: hidden;
-  margin: 0 10px;
-  min-width: 30px;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 17px;
-  line-height: 44px;
-}
-/* line 118, ../sass/_bar.scss */
-.bar .title.title-left {
-  text-align: left;
-}
-/* line 121, ../sass/_bar.scss */
-.bar .title.title-right {
-  text-align: right;
-}
-/* line 126, ../sass/_bar.scss */
-.bar .title a {
-  color: inherit;
-}
-/* line 130, ../sass/_bar.scss */
-.bar .button {
-  z-index: 1;
-  padding: 0 8px;
-  min-width: initial;
-  min-height: 31px;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 32px;
-}
-/* line 139, ../sass/_bar.scss */
-.bar .button.button-icon:before,
-.bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before {
-  padding-right: 2px;
-  padding-left: 2px;
-  font-size: 20px;
-  line-height: 32px;
-}
-/* line 151, ../sass/_bar.scss */
-.bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
-  vertical-align: top;
-  font-size: 32px;
-  line-height: 32px;
-}
-/* line 160, ../sass/_bar.scss */
-.bar .button.button-clear {
-  font-size: 17px;
-  font-weight: 300;
-  padding-right: 2px;
-  padding-left: 2px;
-}
-/* line 166, ../sass/_bar.scss */
-.bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {
-  font-size: 32px;
-  line-height: 32px;
-}
-/* line 175, ../sass/_bar.scss */
-.bar .button.back-button.active {
-  opacity: 1;
-}
-/* line 180, ../sass/_bar.scss */
-.bar .button-bar > .button,
-.bar .buttons > .button {
-  min-height: 31px;
-  line-height: 32px;
-}
-/* line 186, ../sass/_bar.scss */
-.bar .button-bar + .button,
-.bar .button + .button-bar {
-  margin-left: 5px;
-}
-/* line 192, ../sass/_bar.scss */
-.bar .title + .button:last-child,
-.bar > .button + .button:last-child,
-.bar > .button.pull-right,
-.bar .title + .buttons {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  bottom: 5px;
-}
-
-/* line 206, ../sass/_bar.scss */
-.bar-light .button {
-  color: #444;
-  background-color: white;
-  border-color: #ddd;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.bar-light .button:hover {
-  color: #444;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.bar-light .button.active {
-  background-color: #fafafa;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #ccc;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.bar-light .button.button-clear {
-  color: #444;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-  font-size: 17px;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.bar-light .button.button-icon {
-  background: none;
-  border-color: transparent;
-}
-
-/* line 212, ../sass/_bar.scss */
-.bar-stable .button {
-  color: #444;
-  background-color: #f8f8f8;
-  border-color: #b2b2b2;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.bar-stable .button:hover {
-  color: #444;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.bar-stable .button.active {
-  background-color: #e5e5e5;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #a2a2a2;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.bar-stable .button.button-clear {
-  color: #444;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-  font-size: 17px;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.bar-stable .button.button-icon {
-  background: none;
-  border-color: transparent;
-}
-
-/* line 218, ../sass/_bar.scss */
-.bar-positive .button {
-  color: #fff;
-  background-color: #4a87ee;
-  border-color: #145dd7;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.bar-positive .button:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.bar-positive .button.active {
-  background-color: #145dd7;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #145dd7;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.bar-positive .button.button-clear {
-  color: #fff;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-  font-size: 17px;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.bar-positive .button.button-icon {
-  background: none;
-  border-color: transparent;
-}
-
-/* line 224, ../sass/_bar.scss */
-.bar-calm .button {
-  color: #fff;
-  background-color: #43cee6;
-  border-color: #1aaac3;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.bar-calm .button:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.bar-calm .button.active {
-  background-color: #1aaac3;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #1aaac3;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.bar-calm .button.button-clear {
-  color: #fff;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-  font-size: 17px;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.bar-calm .button.button-icon {
-  background: none;
-  border-color: transparent;
-}
-
-/* line 230, ../sass/_bar.scss */
-.bar-assertive .button {
-  color: #fff;
-  background-color: #ef4e3a;
-  border-color: #cc2511;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.bar-assertive .button:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.bar-assertive .button.active {
-  background-color: #cc2511;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #cc2511;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.bar-assertive .button.button-clear {
-  color: #fff;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-  font-size: 17px;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.bar-assertive .button.button-icon {
-  background: none;
-  border-color: transparent;
-}
-
-/* line 236, ../sass/_bar.scss */
-.bar-balanced .button {
-  color: #fff;
-  background-color: #66cc33;
-  border-color: #478f24;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.bar-balanced .button:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.bar-balanced .button.active {
-  background-color: #478f24;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #478f24;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.bar-balanced .button.button-clear {
-  color: #fff;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-  font-size: 17px;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.bar-balanced .button.button-icon {
-  background: none;
-  border-color: transparent;
-}
-
-/* line 242, ../sass/_bar.scss */
-.bar-energized .button {
-  color: #fff;
-  background-color: #f48b28;
-  border-color: #c5650a;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.bar-energized .button:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.bar-energized .button.active {
-  background-color: #c5650a;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #c5650a;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.bar-energized .button.button-clear {
-  color: #fff;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-  font-size: 17px;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.bar-energized .button.button-icon {
-  background: none;
-  border-color: transparent;
-}
-
-/* line 248, ../sass/_bar.scss */
-.bar-royal .button {
-  color: #fff;
-  background-color: #8a6de9;
-  border-color: #552bdf;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.bar-royal .button:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.bar-royal .button.active {
-  background-color: #552bdf;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #552bdf;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.bar-royal .button.button-clear {
-  color: #fff;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-  font-size: 17px;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.bar-royal .button.button-icon {
-  background: none;
-  border-color: transparent;
-}
-
-/* line 254, ../sass/_bar.scss */
-.bar-dark .button {
-  color: #fff;
-  background-color: #444444;
-  border-color: #111;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.bar-dark .button:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.bar-dark .button.active {
-  background-color: #262626;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #000;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.bar-dark .button.button-clear {
-  color: #fff;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-  font-size: 17px;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.bar-dark .button.button-icon {
-  background: none;
-  border-color: transparent;
-}
-
-/* line 261, ../sass/_bar.scss */
-.bar-header {
-  top: 0;
-  border-top-width: 0;
-  border-bottom-width: 1px;
-}
-
-/* line 268, ../sass/_bar.scss */
-.bar-footer {
-  bottom: 0;
-  border-top-width: 1px;
-  border-bottom-width: 0;
-  background-position: top;
-}
-
-/* line 276, ../sass/_bar.scss */
-.bar-tabs {
-  padding: 0;
-}
-
-/* line 280, ../sass/_bar.scss */
-.bar-subheader {
-  top: 44px;
-  display: block;
-}
-
-/* line 284, ../sass/_bar.scss */
-.bar-subfooter {
-  bottom: 44px;
-  display: block;
-}
-
-/**
  * Buttons
  * --------------------------------------------------
  */
 /* line 7, ../sass/_button.scss */
 .button {
-  color: #444;
-  background-color: #f8f8f8;
-  border-color: #b2b2b2;
+  color: #fff;
+  background-color: #ccc;
   position: relative;
   display: inline-block;
   margin: 5px 0;
@@ -1548,20 +984,20 @@ a.subdued:last-child {
   text-overflow: ellipsis;
   font-size: 16px;
   line-height: 42px;
+  font-weight: 500;
   cursor: pointer;
 }
-/* line 10, ../sass/mixins/_button.scss */
+/* line 9, ../sass/mixins/_button.scss */
 .button:hover {
-  color: #444;
+  color: #fff;
   text-decoration: none;
 }
-/* line 14, ../sass/mixins/_button.scss */
+/* line 13, ../sass/mixins/_button.scss */
 .button.active {
-  background-color: #e5e5e5;
+  background-color: #b2b2b2;
   box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #a2a2a2;
 }
-/* line 32, ../sass/_button.scss */
+/* line 33, ../sass/_button.scss */
 .button:after {
   position: absolute;
   top: -6px;
@@ -1570,11 +1006,11 @@ a.subdued:last-child {
   left: -8px;
   content: ' ';
 }
-/* line 42, ../sass/_button.scss */
+/* line 43, ../sass/_button.scss */
 .button .icon {
   vertical-align: top;
 }
-/* line 46, ../sass/_button.scss */
+/* line 47, ../sass/_button.scss */
 .button .icon:before, .button.icon:before, .button.icon-left:before, .button.icon-right:before {
   display: inline-block;
   padding: 0 0 1px 0;
@@ -1582,394 +1018,52 @@ a.subdued:last-child {
   font-size: 24px;
   line-height: 42px;
 }
-/* line 56, ../sass/_button.scss */
+/* line 57, ../sass/_button.scss */
 .button.icon-left:before {
   float: left;
   padding-right: .2em;
   padding-left: 0;
 }
-/* line 61, ../sass/_button.scss */
+/* line 62, ../sass/_button.scss */
 .button.icon-right:before {
   float: right;
   padding-right: 0;
   padding-left: .2em;
 }
-/* line 67, ../sass/_button.scss */
+/* line 68, ../sass/_button.scss */
 .button.button-block, .button.button-full {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 /* line 72, ../sass/_button.scss */
-.button.button-light {
-  color: #444;
-  background-color: #fff;
-  border-color: #ddd;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.button.button-light:hover {
-  color: #444;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.button.button-light.active {
-  background-color: #fafafa;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #ccc;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.button.button-light.button-clear {
-  color: #ddd;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.button.button-light.button-icon {
-  background: none;
-  border-color: transparent;
-}
-/* line 39, ../sass/mixins/_button.scss */
-.button.button-light.button-outline {
-  background: transparent;
-  border-color: #ddd;
-  color: #ddd;
-}
-/* line 46, ../sass/mixins/_button.scss */
-.button.button-light.button-outline.active {
-  background-color: #ddd;
-  color: #fff;
-  box-shadow: none;
-}
-/* line 78, ../sass/_button.scss */
-.button.button-stable {
-  color: #444;
-  background-color: #f8f8f8;
-  border-color: #b2b2b2;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.button.button-stable:hover {
-  color: #444;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.button.button-stable.active {
-  background-color: #e5e5e5;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #a2a2a2;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.button.button-stable.button-clear {
-  color: #b2b2b2;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.button.button-stable.button-icon {
-  background: none;
-  border-color: transparent;
-}
-/* line 39, ../sass/mixins/_button.scss */
-.button.button-stable.button-outline {
-  background: transparent;
-  border-color: #b2b2b2;
-  color: #b2b2b2;
-}
-/* line 46, ../sass/mixins/_button.scss */
-.button.button-stable.button-outline.active {
-  background-color: #b2b2b2;
-  color: #fff;
-  box-shadow: none;
-}
-/* line 84, ../sass/_button.scss */
-.button.button-positive {
-  color: #fff;
-  background-color: #4a87ee;
-  border-color: #145dd7;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.button.button-positive:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.button.button-positive.active {
-  background-color: #145dd7;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #145dd7;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.button.button-positive.button-clear {
-  color: #4a87ee;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.button.button-positive.button-icon {
-  background: none;
-  border-color: transparent;
-}
-/* line 39, ../sass/mixins/_button.scss */
-.button.button-positive.button-outline {
-  background: transparent;
-  border-color: #4a87ee;
-  color: #4a87ee;
-}
-/* line 46, ../sass/mixins/_button.scss */
-.button.button-positive.button-outline.active {
-  background-color: #4a87ee;
-  color: #fff;
-  box-shadow: none;
-}
-/* line 90, ../sass/_button.scss */
-.button.button-calm {
-  color: #fff;
-  background-color: #43cee6;
-  border-color: #1aaac3;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.button.button-calm:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.button.button-calm.active {
-  background-color: #1aaac3;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #1aaac3;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.button.button-calm.button-clear {
-  color: #43cee6;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.button.button-calm.button-icon {
-  background: none;
-  border-color: transparent;
-}
-/* line 39, ../sass/mixins/_button.scss */
-.button.button-calm.button-outline {
-  background: transparent;
-  border-color: #43cee6;
-  color: #43cee6;
-}
-/* line 46, ../sass/mixins/_button.scss */
-.button.button-calm.button-outline.active {
-  background-color: #43cee6;
-  color: #fff;
-  box-shadow: none;
-}
-/* line 96, ../sass/_button.scss */
-.button.button-assertive {
-  color: #fff;
-  background-color: #ef4e3a;
-  border-color: #cc2511;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.button.button-assertive:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.button.button-assertive.active {
-  background-color: #cc2511;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #cc2511;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.button.button-assertive.button-clear {
-  color: #ef4e3a;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.button.button-assertive.button-icon {
-  background: none;
-  border-color: transparent;
-}
-/* line 39, ../sass/mixins/_button.scss */
-.button.button-assertive.button-outline {
-  background: transparent;
-  border-color: #ef4e3a;
-  color: #ef4e3a;
-}
-/* line 46, ../sass/mixins/_button.scss */
-.button.button-assertive.button-outline.active {
-  background-color: #ef4e3a;
-  color: #fff;
-  box-shadow: none;
-}
-/* line 102, ../sass/_button.scss */
-.button.button-balanced {
-  color: #fff;
-  background-color: #66cc33;
-  border-color: #478f24;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.button.button-balanced:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.button.button-balanced.active {
-  background-color: #478f24;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #478f24;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.button.button-balanced.button-clear {
-  color: #66cc33;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.button.button-balanced.button-icon {
-  background: none;
-  border-color: transparent;
-}
-/* line 39, ../sass/mixins/_button.scss */
-.button.button-balanced.button-outline {
-  background: transparent;
-  border-color: #66cc33;
-  color: #66cc33;
-}
-/* line 46, ../sass/mixins/_button.scss */
-.button.button-balanced.button-outline.active {
-  background-color: #66cc33;
-  color: #fff;
-  box-shadow: none;
-}
-/* line 108, ../sass/_button.scss */
-.button.button-energized {
+.button.button-theme {
   color: #fff;
   background-color: #f48b28;
-  border-color: #c5650a;
 }
-/* line 10, ../sass/mixins/_button.scss */
-.button.button-energized:hover {
+/* line 9, ../sass/mixins/_button.scss */
+.button.button-theme:hover {
   color: #fff;
   text-decoration: none;
 }
-/* line 14, ../sass/mixins/_button.scss */
-.button.button-energized.active {
-  background-color: #c5650a;
+/* line 13, ../sass/mixins/_button.scss */
+.button.button-theme.active {
+  background-color: #f37e10;
   box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #c5650a;
 }
-/* line 22, ../sass/mixins/_button.scss */
-.button.button-energized.button-clear {
-  color: #f48b28;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.button.button-energized.button-icon {
-  background: none;
-  border-color: transparent;
-}
-/* line 39, ../sass/mixins/_button.scss */
-.button.button-energized.button-outline {
+/* line 20, ../sass/mixins/_button.scss */
+.button.button-theme.button-outline {
   background: transparent;
   border-color: #f48b28;
   color: #f48b28;
 }
-/* line 46, ../sass/mixins/_button.scss */
-.button.button-energized.button-outline.active {
+/* line 27, ../sass/mixins/_button.scss */
+.button.button-theme.button-outline.active {
   background-color: #f48b28;
   color: #fff;
   box-shadow: none;
 }
-/* line 114, ../sass/_button.scss */
-.button.button-royal {
-  color: #fff;
-  background-color: #8a6de9;
-  border-color: #552bdf;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.button.button-royal:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.button.button-royal.active {
-  background-color: #552bdf;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #552bdf;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.button.button-royal.button-clear {
-  color: #8a6de9;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.button.button-royal.button-icon {
-  background: none;
-  border-color: transparent;
-}
-/* line 39, ../sass/mixins/_button.scss */
-.button.button-royal.button-outline {
-  background: transparent;
-  border-color: #8a6de9;
-  color: #8a6de9;
-}
-/* line 46, ../sass/mixins/_button.scss */
-.button.button-royal.button-outline.active {
-  background-color: #8a6de9;
-  color: #fff;
-  box-shadow: none;
-}
-/* line 120, ../sass/_button.scss */
-.button.button-dark {
-  color: #fff;
-  background-color: #444;
-  border-color: #111;
-}
-/* line 10, ../sass/mixins/_button.scss */
-.button.button-dark:hover {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 14, ../sass/mixins/_button.scss */
-.button.button-dark.active {
-  background-color: #262626;
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
-  border-color: #000;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.button.button-dark.button-clear {
-  color: #444;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.button.button-dark.button-icon {
-  background: none;
-  border-color: transparent;
-}
-/* line 39, ../sass/mixins/_button.scss */
-.button.button-dark.button-outline {
-  background: transparent;
-  border-color: #444;
-  color: #444;
-}
-/* line 46, ../sass/mixins/_button.scss */
-.button.button-dark.button-outline.active {
-  background-color: #444;
-  color: #fff;
-  box-shadow: none;
-}
 
-/* line 127, ../sass/_button.scss */
+/* line 78, ../sass/_button.scss */
 .button-small {
   padding: 0 4px;
   min-width: 28px;
@@ -1977,13 +1071,13 @@ a.subdued:last-child {
   font-size: 12px;
   line-height: 28px;
 }
-/* line 134, ../sass/_button.scss */
+/* line 85, ../sass/_button.scss */
 .button-small .icon:before, .button-small.icon:before, .button-small.icon-left:before, .button-small.icon-right:before {
   font-size: 16px;
   line-height: 26px;
 }
 
-/* line 143, ../sass/_button.scss */
+/* line 94, ../sass/_button.scss */
 .button-large {
   padding: 0 16px;
   min-width: 68px;
@@ -1991,14 +1085,14 @@ a.subdued:last-child {
   font-size: 20px;
   line-height: 53px;
 }
-/* line 150, ../sass/_button.scss */
+/* line 101, ../sass/_button.scss */
 .button-large .icon:before, .button-large.icon:before, .button-large.icon-left:before, .button-large.icon-right:before {
   padding-bottom: 2px;
   font-size: 32px;
   line-height: 51px;
 }
 
-/* line 160, ../sass/_button.scss */
+/* line 111, ../sass/_button.scss */
 .button-icon {
   -webkit-transition: opacity 0.1s;
   -moz-transition: opacity 0.1s;
@@ -2009,48 +1103,19 @@ a.subdued:last-child {
   border-color: transparent;
   background: none;
 }
-/* line 167, ../sass/_button.scss */
+/* line 118, ../sass/_button.scss */
 .button-icon.button.active {
   border-color: transparent;
   background: none;
   box-shadow: none;
   opacity: 0.3;
 }
-/* line 174, ../sass/_button.scss */
+/* line 125, ../sass/_button.scss */
 .button-icon .icon:before, .button-icon.icon:before {
   font-size: 32px;
 }
 
-/* line 180, ../sass/_button.scss */
-.button-clear {
-  -webkit-transition: opacity 0.1s;
-  -moz-transition: opacity 0.1s;
-  -o-transition: opacity 0.1s;
-  transition: opacity 0.1s;
-  padding: 0 6px;
-  max-height: 42px;
-  border-color: transparent;
-  background: none;
-  box-shadow: none;
-}
-/* line 22, ../sass/mixins/_button.scss */
-.button-clear.button-clear {
-  color: #b2b2b2;
-  background: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-/* line 32, ../sass/mixins/_button.scss */
-.button-clear.button-icon {
-  background: none;
-  border-color: transparent;
-}
-/* line 189, ../sass/_button.scss */
-.button-clear.active {
-  opacity: 0.3;
-}
-
-/* line 194, ../sass/_button.scss */
+/* line 131, ../sass/_button.scss */
 .button-outline {
   -webkit-transition: opacity 0.1s;
   -moz-transition: opacity 0.1s;
@@ -2059,35 +1124,35 @@ a.subdued:last-child {
   background: none;
   box-shadow: none;
 }
-/* line 39, ../sass/mixins/_button.scss */
+/* line 20, ../sass/mixins/_button.scss */
 .button-outline.button-outline {
   background: transparent;
-  border-color: #b2b2b2;
-  color: #b2b2b2;
+  border-color: #ccc;
+  color: #ccc;
 }
-/* line 46, ../sass/mixins/_button.scss */
+/* line 27, ../sass/mixins/_button.scss */
 .button-outline.button-outline.active {
-  background-color: #b2b2b2;
+  background-color: #ccc;
   color: #fff;
   box-shadow: none;
 }
 
-/* line 201, ../sass/_button.scss */
+/* line 138, ../sass/_button.scss */
 .padding > .button.button-block:first-child {
   margin-top: 0;
 }
 
-/* line 205, ../sass/_button.scss */
+/* line 142, ../sass/_button.scss */
 .button-block {
   display: block;
   clear: both;
 }
-/* line 209, ../sass/_button.scss */
+/* line 146, ../sass/_button.scss */
 .button-block:after {
   clear: both;
 }
 
-/* line 214, ../sass/_button.scss */
+/* line 151, ../sass/_button.scss */
 .button-full,
 .button-full > .button {
   display: block;
@@ -2098,7 +1163,7 @@ a.subdued:last-child {
   border-radius: 0;
 }
 
-/* line 224, ../sass/_button.scss */
+/* line 161, ../sass/_button.scss */
 button.button-block,
 button.button-full,
 .button-full > button.button,
@@ -2106,12 +1171,12 @@ input.button.button-block {
   width: 100%;
 }
 
-/* line 231, ../sass/_button.scss */
+/* line 168, ../sass/_button.scss */
 a.button {
   text-decoration: none;
 }
 
-/* line 235, ../sass/_button.scss */
+/* line 172, ../sass/_button.scss */
 .button.disabled,
 .button[disabled] {
   opacity: .4;

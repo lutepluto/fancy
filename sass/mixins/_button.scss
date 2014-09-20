@@ -16,23 +16,6 @@
   }
 }
 
-@mixin button-clear($color, $font-size:"") {
-  &.button-clear {
-    color: $color;
-    background: none;
-    border-color: transparent;
-    box-shadow: none;
-
-    @if $font-size != "" {
-      font-size: $font-size;
-    }
-  }
-  &.button-icon {
-    background: none;
-    border-color: transparent;
-  }
-}
-
 @mixin button-outline($color, $text-color:"") {
   &.button-outline {
     background: transparent;
