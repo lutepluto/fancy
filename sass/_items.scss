@@ -12,7 +12,7 @@
   display: block;
 
   margin: $item-border-width * -1;
-  padding: 15px 65px 15px 15px;
+  padding: $item-padding;
   min-height: 52px;
 
   border-width: $item-border-width;
@@ -304,6 +304,39 @@ button.item.item-button-right {
     line-height: $item-button-line-height;
   }
 }
+
+/**
+ * Auto Right Arrow Icon
+ * --------------------------------------------------
+ * By default, if an .item is created out of an <a> or <button>
+ * then a arrow will be added to the right side of the item.
+ */
+
+.item-label-left .label-left,
+.item-label-right .label-right {
+  position: absolute;
+  top: 50%;
+  @include translate(0, -50%);
+}
+
+.item-label-left {
+  padding-left: 110px;
+
+  & .label-left {
+    left: $item-padding;
+  }
+}
+
+.item-label-right {
+  padding-right: 110px;
+
+  & .label-right {
+    right: $item-padding;
+  }
+}
+
+
+
 
 
 /**
