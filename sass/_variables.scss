@@ -26,7 +26,7 @@ $font-family-serif:               Georgia, "Times New Roman", Times, serif !defa
 $font-family-monospace:           Monaco, Menlo, Consolas, "Courier New", monospace !default;
 
 $font-family-base:                $font-family-sans-serif !default;
-$font-size-base:                  14px !default;
+$font-size-base:                  16px !default;
 $font-size-large:                 18px !default;
 $font-size-small:                 11px !default;
 
@@ -206,7 +206,7 @@ $input-height-small:              (floor($font-size-small * $line-height-small) 
 $input-bg:                        #fff !default;
 $input-bg-disabled:               #f8f8f8 !default;
 
-$input-color:                     #111 !default;
+$input-color:                     #444 !default;
 $input-border:                    $item-default-border !default;
 $input-border-width:              $item-border-width !default;
 $input-label-color:               $dark !default;
