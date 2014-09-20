@@ -263,7 +263,7 @@ a.item-content {
 
   > .button {
     margin: 0px 2px;
-    min-height: $item-icon-font-size + ($button-border-width * 2);
+    min-height: ($item-icon-font-size * 2) + ($button-border-width * 2);
     font-size: $item-button-font-size;
     line-height: $item-button-line-height;
   }
@@ -284,7 +284,7 @@ button.item.item-button-right {
   top: 50%;
   right: 15px;
   @include translate(0, -50%);
-  min-width: $item-icon-font-size + ($button-border-width * 2);
+  min-width: ($item-icon-font-size * 2) + ($button-border-width * 2);
   min-height: $item-icon-font-size + ($button-border-width * 2);
   font-size: $item-button-font-size;
   line-height: $item-button-line-height;
@@ -336,9 +336,6 @@ button.item.item-button-right {
 }
 
 
-
-
-
 /**
  * Auto Right Arrow Icon
  * --------------------------------------------------
@@ -350,7 +347,7 @@ a.item,
 button.item,
 .item a[href].item-content,
 .item[ng-click] a.item-content {
-  padding-right: (($item-padding * 3) - 5);
+  padding-right: (($item-padding * 3) - 15);
 }
 
 a.item:after,
@@ -358,21 +355,16 @@ button.item:after,
 .item a[href].item-content:after,
 .item[ng-click] a.item-content:after {
   /* By default, both <a> and <button> have right side arrow icons */
-  @include display-flex();
-  @include align-items(center);
-  @include font-smoothing(antialiased);
   position: absolute;
-  top: 0;
-  right: $item-padding - 4;
-  height: 100%;
+  top: 50%;
+  right: $item-padding - 10;
+  content: " ";
+  width: 32px;
+  height: 32px;
+  background-image: url(../images/chevron-right.png);
+  @include translate(0, -50%);
   color: #ccc;
-  content: "\f125"; // ion-chevron-right
-  text-transform: none;
-  font-weight: normal;
-  font-style: normal;
-  font-variant: normal;
   font-size: 16px;
-  font-family: 'Ionicons';
   line-height: 1;
   speak: none;
 }
