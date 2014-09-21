@@ -94,6 +94,41 @@
 }
 
 /**
+ * Content Margin
+ * --------------------------------------------------
+ */
+
+.margin {
+  margin: $content-margin;
+}
+
+.margin-top,
+.margin-vertical {
+  margin-top: $content-margin;
+}
+
+.margin-right,
+.margin-horizontal {
+  margin-right: $content-margin;
+}
+
+.margin-bottom,
+.margin-vertical {
+  margin-bottom: $content-margin;
+}
+
+.margin-left,
+.margin-horizontal {
+  margin-left: $content-margin;
+}
+
+.no-margin-top,
+.no-margin-vertical,
+.no-margin {
+  margin-top: 0;
+}
+
+/**
  * Content Padding
  * --------------------------------------------------
  */
