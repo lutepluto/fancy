@@ -306,10 +306,8 @@ button.item.item-button-right {
 }
 
 /**
- * Auto Right Arrow Icon
+ * Item text label
  * --------------------------------------------------
- * By default, if an .item is created out of an <a> or <button>
- * then a arrow will be added to the right side of the item.
  */
 
 .item-label-left .label-left,
@@ -421,8 +419,9 @@ button.item-button-right:after,
 
   > img:first-child, > .item-image {
     position: absolute;
-    top: $item-thumbnail-margin;
-    left: $item-thumbnail-margin;
+    top: 50%;
+    left: $item-padding;
+    @include translate(0, -50%);
     max-width: $item-thumbnail-width;
     max-height: $item-thumbnail-height;
     width: 100%;
@@ -439,8 +438,9 @@ button.item-button-right:after,
 
   > img:first-child, > .item-image {
     position: absolute;
-    top: $item-thumbnail-margin;
-    right: $item-thumbnail-margin;
+    top: 50%;
+    right: $item-padding;
+    @include translate(0, -50%);
     max-width: $item-thumbnail-width;
     max-height: $item-thumbnail-height;
     width: 100%;
