@@ -1,0 +1,75 @@
+
+/**
+ * Progress step
+ * --------------------------------------------------
+ */
+
+ $progress-setp-padding:       15px;
+ $progress-step-bar-height:    10px;
+ $progress-step-node-size:     20px;
+ $progress-step-tip-size:      32px;
+
+.progress-step {
+  position: relative;
+  margin: 0 auto $progress-setp-padding * 2;
+  padding: $progress-setp-padding * 2 0 $progress-setp-padding;
+  list-style: none;
+
+  & .step {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    .step-bar {
+      position: absolute;
+      left: 50%;
+      bottom: -$progress-setp-padding;
+      width: 100%;
+      height: $progress-step-bar-height;
+      background-color: #d5d5d5;
+    }
+
+    & .node {
+      position: absolute;
+      left: 50%;
+      bottom: -$progress-setp-padding;
+      width: $progress-step-node-size;
+      height: $progress-step-node-size;
+      @include translate(- $progress-step-node-size / 2, $progress-step-bar-height / 2);
+      border: 2px solid transparent;
+      border-radius: 50%;
+      background-color: #d5d5d5;
+      z-index: 10;
+    }
+
+    &.doing .node {
+      background-color: #fff;
+      border-color: $theme-color;
+    }
+
+    &.complete .step-bar,
+    &.complete .node {
+      background-color: $theme-color;
+    }
+
+    & .tip {
+      position: absolute;
+      left: 50%;
+      top: -($progress-setp-padding + 10);
+      @include translate(- $progress-step-tip-size / 2, 0);
+    }
+
+  }
+
+  &.horizontal .step {
+    display: inline-block;
+  }
+
+  &.justified .step {
+    display: table-cell;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 1%;
+    text-align: center;
+  }
+}
