@@ -3,21 +3,21 @@
 
 ## How to run
 
-1. install ruby [Ruby Installer](http://www.rubyinstaller.org/)
+Install ruby [Ruby Installer](http://www.rubyinstaller.org/)
 
-2. install sass:
+Install sass:
 
 ```bash
 $ gem install sass
 ```
 
-3. install compass:
+Install compass:
 
 ```bash
 $ gem install compass
 ```
 
-4. generate css:
+Generate css:
 
 ```bash
 $ cd fancy/ 
