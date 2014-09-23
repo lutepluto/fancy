@@ -1,0 +1,55 @@
+
+/**
+ * Specific payment card for zufangbao
+ * --------------------------------------------------
+ */
+
+
+.zfb-payment-card {
+  overflow: hidden;
+  margin: ($content-padding * 2) $content-padding;
+  padding: 0 $content-margin;
+  border: 1px solid #ddd;
+  border-radius: $border-radius-base;
+  background-color: #fff;
+  border-top: 3px solid $theme-color;
+
+  .payment-row {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    color: #666;
+    @include clearfix();
+
+    &.padding-large {
+      padding: 20px 0;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #000;
+      margin: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .total {
+      color: #000;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .col-2,
+    .col-4 {
+
+    }
+  }
+
+}
