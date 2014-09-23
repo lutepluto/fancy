@@ -167,6 +167,10 @@
   border-radius: $border-radius-base;
 }
 
+.image-rounded {
+  border-radius: 50%;
+}
+
 
 /**
  * Utility Colors
@@ -176,6 +180,15 @@
  * instead have colors which represent an emotion or generic theme.
  */
 
+.theme, a.theme {
+  color: $theme-color;
+}
+.theme-bg {
+  background-color: $theme-color;
+}
+.theme-border {
+  border-color: $theme-color;
+}
 .primary, a.primary {
   color: $brand-primary;
 }

@@ -64,7 +64,7 @@
     margin-right: 5px;
   }
 
-  &.align-right {
+  &.align-right .item-content {
     text-align: right;
   }
 }
@@ -361,9 +361,12 @@ button.item:after,
   top: 50%;
   right: $item-padding - 10;
   content: " ";
-  width: 32px;
-  height: 32px;
+  width: $icon-small-size;
+  height: $icon-small-size;
   background-image: url(../images/chevron-right.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   @include translate(0, -50%);
   color: #ccc;
   font-size: 16px;
