@@ -18,9 +18,19 @@
     display: block;
     width: $icon-size;
     height: $icon-size;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
   }
 
-  &.large {
+  &.small,
+  &.small:after {
+    width: $icon-small-size;
+    height: $icon-small-size;
+  }
+
+  &.large,
+  &.large:after {
     width: $icon-large-size;
     height: $icon-large-size;
   }
