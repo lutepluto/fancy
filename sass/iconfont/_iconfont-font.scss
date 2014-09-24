@@ -1,0 +1,30 @@
+// Iconfont Font Path
+// --------------------------
+
+@font-face {
+ font-family: $iconfont-font-family;
+ src:url("#{$iconfont-font-path}/iconfont.eot");
+ src:url("#{$iconfont-font-path}/iconfont.eot?#iefix") format("embedded-opentype"),
+  url("#{$iconfont-font-path}/iconfont.ttf") format("truetype"),
+  url("#{$iconfont-font-path}/iconfont.woff") format("woff"),
+  url("#{$iconfont-font-path}/iconfont.svg#uxiconfont") format("svg");
+ font-weight: normal;
+ font-style: normal;
+}
+
+.iconfont {
+  display: inline-block;
+  font-family: $iconfont-font-family;
+  font-size: 32px;
+  speak: none;
+  color: $iconfont-font-color;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}

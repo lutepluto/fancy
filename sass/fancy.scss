@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
 @import
+  //Iconfont
+  "iconfont/iconfont",
+
   // Variables
   "mixins",
   "variables",
@@ -25,9 +28,6 @@
 
   // Buttons
   "button",
-
-  // Icons
-  "icons",
-
+  
   // Util
   "util";

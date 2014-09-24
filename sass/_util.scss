@@ -213,7 +213,16 @@
 .warning-border {
   border-color: $brand-warning;
 }
+.warning-bg {
+  background-color: $brand-warning;
+}
+.warning-border {
+  border-color: $brand-warning;
+}
 .danger, a.daneger {
+  color: $brand-danger;
+}
+.danger-bg {
   background-color: $brand-danger;
 }
 .danger-border {

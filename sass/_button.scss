@@ -10,7 +10,7 @@
 
   position: relative;
   display: inline-block;
-  margin: $button-margin 0;
+  margin: 0;
   padding: 0 $button-padding 0 $button-padding;
 
   min-width: ($button-padding * 3) + $button-font-size;
@@ -40,36 +40,29 @@
     content: ' ';
   }
 
-  .icon,
-  .icon:after {
-    width: $button-font-size + 4;
-    height: $button-font-size + 4;
+  .icon {
+    vertical-align: top;
   }
 
-  &.icon-left,
-  &.icon-right {
-
-    .icon {
-      position: absolute;
-      top: 50%;
-      @include translate(0, -50%);
-    }
+  .icon:before,
+  &.icon:before,
+  &.icon-left:before,
+  &.icon-right:before {
+    display: inline-block;
+    padding: 0 0 $button-border-width 0;
+    vertical-align: inherit;
+    font-size: $button-icon-size;
+    line-height: $button-height - $button-border-width + 1;
   }
-
-  &.icon-left {
-    padding-left: $button-font-size + $button-padding + 4;
-
-    .icon {
-      left: $button-padding;
-    }
+  &.icon-left:before {
+    float: left;
+    padding-right: .2em;
+    padding-left: 0;
   }
-
-  &.icon-right {
-    padding-right: $button-font-size + $button-padding + 4;
-
-    .icon {
-      right: $button-padding;
-    }
+  &.icon-right:before {
+    float: right;
+    padding-right: 0;
+    padding-left: .2em;
   }
 
   &.button-block, &.button-full {
@@ -90,26 +83,12 @@
   font-size: $button-small-font-size;
   line-height: $button-small-height - ($button-border-width * 2) + 3;
 
-  .icon,
-  .icon:after {
-    width: $button-small-font-size + 4;
-    height: $button-small-font-size + 4;
-  }
-
-  &.icon-left {
-    padding-left: $button-small-font-size + $button-small-padding + 4;
-
-    .icon {
-      left: $button-small-padding;
-    }
-  }
-
-  &.icon-right {
-    padding-right: $button-small-font-size + $button-small-padding + 4;
-
-    .icon {
-      right: $button-small-padding;
-    }
+  .icon:before,
+  &.icon:before,
+  &.icon-left:before,
+  &.icon-right:before {
+    font-size: $button-small-icon-size;
+    line-height: $button-small-height - $button-border-width - 1;
   }
 }
 
@@ -120,26 +99,13 @@
   font-size: $button-large-font-size;
   line-height: $button-large-height - $button-border-width;
 
-  .icon,
-  .icon:after {
-    width: $button-large-font-size + 4;
-    height: $button-large-font-size + 4;
-  }
-
-  &.icon-left {
-    padding-left: $button-large-font-size + $button-large-padding + 4;
-
-    .icon {
-      left: $button-large-padding;
-    }
-  }
-
-  &.icon-right {
-    padding-right: $button-large-font-size + $button-large-padding + 4;
-
-    .icon {
-      right: $button-large-padding;
-    }
+  .icon:before,
+  &.icon:before,
+  &.icon-left:before,
+  &.icon-right:before {
+    padding-bottom: ($button-border-width * 2);
+    font-size: $button-large-icon-size;
+    line-height: $button-large-height - ($button-border-width * 2) - 1;
   }
 }
 
@@ -157,8 +123,9 @@
     opacity: 0.3;
   }
 
-  .icon {
-    vertical-align: middle;
+  .icon:before,
+  &.icon:before {
+    font-size: $button-large-icon-size;
   }
 }
 

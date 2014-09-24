@@ -106,9 +106,9 @@ $button-theme-text:               #fff;
 $button-theme-active-bg:          lighten($theme-color, 5%);
 $button-theme-active-border:      lighten($theme-color, 5%);
 
-$button-default-bg:               #ccc !default;
-$button-default-border:           #ccc !default;
-$button-default-text:             #fff !default;
+$button-default-bg:               #f8f8f8 !default;
+$button-default-border:           #f8f8f8 !default;
+$button-default-text:             #444 !default;
 $button-default-active-bg:        #b2b2b2 !default;
 $button-default-active-border:    #b2b2b2 !default;
 

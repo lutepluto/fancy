@@ -7,7 +7,7 @@
  $progress-setp-padding:       15px;
  $progress-step-bar-height:    10px;
  $progress-step-node-size:     20px;
- $progress-step-tip-size:      32px;
+ $progress-step-tip-size:      20px;
 
 .progress-step {
   position: relative;
@@ -54,8 +54,12 @@
     & .tip {
       position: absolute;
       left: 50%;
-      top: -($progress-setp-padding + 10);
+      top: -$progress-setp-padding;
       @include translate(- $progress-step-tip-size / 2, 0);
+
+      .icon {
+        font-size: $progress-step-tip-size;
+      }
     }
 
   }

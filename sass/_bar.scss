@@ -106,7 +106,6 @@
 
   .button {
     z-index: $z-index-bar-button;
-    margin: 0;
     padding: 0 $button-bar-button-padding;
     min-width: initial;
     min-height: $button-bar-button-height - 1;
@@ -114,10 +113,40 @@
     font-weight: 400;
     line-height: $button-bar-button-height;
 
-    &.button-icon .icon,
-    &.button-icon .icon:after {
-      width: $icon-size;
-      height: $icon-size;
+    &.button-icon:before,
+    .icon:before,
+    &.icon:before,
+    &.icon-left:before,
+    &.icon-right:before {
+      padding-right: 2px;
+      padding-left: 2px;
+      font-size: $button-bar-button-icon-size;
+      line-height: $button-bar-button-height;
+    }
+
+    &.button-icon {
+      .icon:before,
+      &:before,
+      &.icon-left:before,
+      &.icon-right:before {
+        vertical-align: top;
+        font-size: $button-large-icon-size;
+        line-height: $button-bar-button-height;
+      }
+    }
+    &.button-clear {
+      font-size: $bar-title-font-size;
+      font-weight: 300;
+      padding-right: 2px;
+      padding-left: 2px;
+
+      .icon:before,
+      &.icon:before,
+      &.icon-left:before,
+      &.icon-right:before {
+        font-size: $button-large-icon-size;
+        line-height: $button-bar-button-height;
+      }
     }
 
     &.back-button.active {

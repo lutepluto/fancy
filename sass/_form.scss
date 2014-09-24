@@ -84,6 +84,11 @@ input[type="search"] {
           box-sizing: border-box;
 }
 
+// Vertically align date input
+input[type="date"] {
+  line-height: $line-height-computed + $font-size-base;
+}
+
 input,
 textarea {
   width: 100%;
@@ -281,3 +286,18 @@ input[type="checkbox"][readonly] {
 .item-stacked-label input {
   height: $line-height-computed + $font-size-base + 12px;
 }
+
+.item-select select {
+  display: block;
+  margin: 0;
+  width: 100%;
+  border: none;
+  background-color: #fff;
+  white-space: nowrap;
+  cursor: pointer;
+  text-indent: 0.01px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+

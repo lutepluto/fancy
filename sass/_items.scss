@@ -13,7 +13,6 @@
 
   margin: $item-border-width * -1;
   padding: 11px 15px;
-  min-height: 44px;
 
   border-width: $item-border-width;
   border-style: solid;
@@ -190,6 +189,13 @@ a.item-content {
   position: absolute;
   top: 50%;
   @include translate(0, -50%);
+  font-size: $item-icon-font-size;
+
+  &:before {
+    display: block;
+    width: $item-icon-font-size;
+    text-align: center;
+  }
 }
 
 .item .fill-icon {
@@ -199,10 +205,10 @@ a.item-content {
 }
 
 .item-icon-left {
-  padding-left: ($item-padding * 2) + $icon-size;
+  padding-left: ($item-padding * 3);
 
   .icon {
-    left: $item-padding;
+    left: $item-padding / 2;
   }
 }
 .item-complex.item-icon-left {
@@ -214,10 +220,10 @@ a.item-content {
 }
 
 .item-icon-right {
-  padding-right: ($item-padding * 2) + $icon-size;
+  padding-right: ($item-padding * 3);
 
   .icon {
-    right: $item-padding;
+    right: $item-padding / 2;
   }
 }
 .item-complex.item-icon-right {
@@ -357,19 +363,19 @@ button.item:after,
 .item a[href].item-content:after,
 .item[ng-click] a.item-content:after {
   /* By default, both <a> and <button> have right side arrow icons */
+  @include font-smoothing(antialiased);
   position: absolute;
   top: 50%;
-  right: $item-padding - 10;
-  content: " ";
-  width: $icon-small-size;
-  height: $icon-small-size;
-  background-image: url(../images/chevron-right.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  right: $item-padding - 4;
   @include translate(0, -50%);
   color: #ccc;
-  font-size: 16px;
+  content: "\e6a3"; // ion-chevron-right
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-size: 20px;
+  font-family: 'Iconfont';
   line-height: 1;
   speak: none;
 }
