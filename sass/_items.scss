@@ -504,6 +504,18 @@ button.item-button-right:after,
   background-color: $item-divider-bg;
   color: $item-divider-color;
   font-weight: bold;
+
+  &.ceiling {
+    padding-top: 0;
+    padding-bottom: $item-padding;
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  &.floor {
+    padding-top: $item-padding;
+    padding-bottom: 0;
+  }
 }
 
 
