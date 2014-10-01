@@ -69,8 +69,7 @@
 }
 
 // Link and Button Active States
-.item.active:not(.item-divider):not(.item-input):not(.item-input-inset),
-.item-complex.active .item-content {
+.item.active:not(.item-divider):not(.item-input):not(.item-input-inset) {
   @include item-active-style($item-default-active-bg, $item-default-active-border);
 }
 
@@ -107,39 +106,6 @@ a.item {
   }
 }
 
-
-/**
- * Complex Items
- * --------------------------------------------------
- * Adding .item-complex allows the .item to be slidable and
- * have options underneath the button, but also requires an
- * additional .item-content element inside .item.
- * Basically .item-complex removes any default settings which
- * .item added, so that .item-content looks them as just .item.
- */
-
-.item-complex,
-a.item.item-complex,
-button.item.item-complex {
-  padding: 0;
-}
-.item-complex .item-content,
-.item-radio .item-content {
-  /**
-   * The content area of a complex list item. This area can
-   * Slide left and right and be dragged to support different
-   * UI interactions.
-   */
-  @include transition(all 0.1s ease-in-out);
-  position: relative;
-  z-index: $z-index-item;
-
-  padding: $item-padding (($item-padding * 3) - 5) $item-padding $item-padding;
-  border: none;
-
-  background-color: white;
-}
-
 a.item-content {
   display: block;
   color: inherit;
@@ -165,17 +131,6 @@ a.item-content {
 .item-body p {
   overflow: hidden;
   white-space: normal;
-}
-.item-complex.item-text-wrap,
-.item-complex.item-text-wrap h1,
-.item-complex.item-text-wrap h2,
-.item-complex.item-text-wrap h3,
-.item-complex.item-text-wrap h4,
-.item-complex.item-text-wrap h5,
-.item-complex.item-text-wrap h6,
-.item-complex.item-text-wrap p {
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 
@@ -246,38 +201,8 @@ a.item-content {
  * Item Button
  * --------------------------------------------------
  * An item button is a child button inside an .item (not the entire .item)
+ * Only support right button
  */
-
-.item-button-left {
-  padding-left: 110px;
-}
-
-.item-button-left .button,
-.item-button-left .item-content > .button {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  @include translate(0, -50%);
-  min-width: $item-icon-font-size + ($button-border-width * 2);
-  min-height: $item-icon-font-size + ($button-border-width * 2);
-  font-size: $item-button-font-size;
-  line-height: $item-button-line-height;
-
-  .icon:before {
-    position: relative;
-    left: auto;
-    width: auto;
-    line-height: $item-icon-font-size - 1;
-  }
-
-  > .button {
-    margin: 0px 2px;
-    min-height: ($item-icon-font-size * 2) + ($button-border-width * 2);
-    font-size: $item-button-font-size;
-    line-height: $item-button-line-height;
-  }
-}
 
 .item-button-right,
 a.item.item-button-right,
@@ -318,28 +243,18 @@ button.item.item-button-right {
 /**
  * Item text label
  * --------------------------------------------------
+ * Only support left label
  */
 
-.item-label-left .label-left,
-.item-label-right .label-right {
-  position: absolute;
-  top: 50%;
-  @include translate(0, -50%);
-}
-
-.item-label-left {
+.item-label {
   padding-left: 110px;
 
-  & .label-left {
+  & > label,
+  & > .label-left {
     left: $item-padding;
-  }
-}
-
-.item-label-right {
-  padding-right: 110px;
-
-  & .label-right {
-    right: $item-padding;
+    position: absolute;
+    top: 50%;
+    @include translate(0, -50%);
   }
 }
 
@@ -378,19 +293,6 @@ button.item:after,
   font-family: 'Iconfont';
   line-height: 1;
   speak: none;
-}
-
-.grade-b,
-.grade-c {
-  a.item:after,
-  button.item:after,
-  .item a[href].item-content:after,
-  .item[ng-click] a.item-content:after {
-    // override Ionicon arrow with boring character for low end devices
-    @include font-smoothing(none);
-    content: '>';
-    font-family: 'monospace';
-  }
 }
 
 // do not show the default right arrow when they want their own right side icon
@@ -528,111 +430,3 @@ button.item-button-right:after,
   font-size: 14px;
 }
 
-
-// Item Editing
-// -------------------------------
-
-.item-reordering {
-  position: absolute;
-  z-index: $z-index-item-reordering;
-  width: 100%;
-}
-
-.item-placeholder {
-  opacity: 0.7;
-}
-
-
-/**
- * The left-side edit area of a complex list item. This area shows
- * whe the list item is in edit mode.
- */
-.item-edit {
-  @include transition(left 0.2s ease-in-out, opacity 0.2s ease-in-out);
-  position: absolute;
-  top: 0;
-  left: 8px;
-  z-index: $z-index-item-edit;
-  width: 48px;
-  height: 100%;
-  line-height: 100%;
-
-  .button {
-    height: 100%;
-
-    &.icon {
-      @include display-flex();
-      @include align-items(center);
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      color: #ef4e3a;
-      font-size: 24px;
-    }
-  }
-
-  &.ng-enter {
-    @include transition(left 0.2s ease-in-out, opacity 0.2s ease-in-out);
-    left: -48px;
-    opacity: 0;
-  }
-  &.ng-enter-active {
-    left: 8px;
-    opacity: 1;
-  }
-  &.ng-leave {
-    @include transition(left 0.2s ease-in-out, opacity 0.2s ease-in-out);
-    left: 0px;
-    opacity: 1;
-  }
-  &.ng-leave-active {
-    left: -48px;
-    opacity: 0;
-  }
-}
-
-.item-drag {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 0;
-  width: 50px;
-  height: 100%;
-  background: inherit;
-
-  .button {
-    min-width: 42px;
-    height: 100%;
-
-    &.icon:before {
-      @include display-flex();
-      @include align-items(center);
-      position: absolute;
-      top: 0;
-      height: 100%;
-      font-size: 32px;
-    }
-  }
-}
-/**
- * The hidden right-side buttons that can be exposed under a list item
- * with dragging.
- */
-.item-options {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: $z-index-item-options;
-  height: 100%;
-
-  .button {
-    height: 100%;
-    border: none;
-    border-radius: 0;
-  }
-}
-
-.item-options-hide .item-options {
-  display: none;
-}

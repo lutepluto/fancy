@@ -208,13 +208,7 @@ input[type="checkbox"][readonly] {
     text-align: center;
     font-size: 16px;
   }
-
-  .button-bar {
-    @include border-radius(0);
-    @include flex(1, 0, 220px);
-    @include appearance(none);
-  }
-
+  
   .icon {
     min-width: 14px;
   }
