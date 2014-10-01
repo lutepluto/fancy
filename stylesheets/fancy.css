@@ -1478,6 +1478,17 @@ a.item-content {
   white-space: normal;
 }
 
+.item-body {
+  overflow: auto;
+  padding: 15px;
+  text-overflow: inherit;
+  white-space: normal;
+}
+.item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
 /**
  * Item Icons
  * --------------------------------------------------
@@ -1717,17 +1728,6 @@ button.item-button-right:after,
   vertical-align: middle;
 }
 
-.item-body {
-  overflow: auto;
-  padding: 15px;
-  text-overflow: inherit;
-  white-space: normal;
-}
-.item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
 .item-divider {
   padding-top: 7.5px;
   padding-bottom: 7.5px;
@@ -1875,6 +1875,7 @@ button.item-button-right:after,
   color: #666;
   line-height: 1.42857;
   *zoom: 1;
+  *zoom: 1;
 }
 .list-group .list-group-item:before, .list-group .list-group-item:after {
   content: " ";
@@ -1884,19 +1885,12 @@ button.item-button-right:after,
 .list-group .list-group-item:after {
   clear: both;
 }
-.list-group .list-group-item label,
-.list-group .list-group-item .label {
+.list-group .list-group-item label {
   float: left;
-  padding-right: 10px;
-  width: 40%;
-  font-size: inherit;
-  text-align: right;
+  max-width: 50px;
 }
 .list-group .list-group-item p {
-  float: right;
-  width: 60%;
-}
-.list-group .list-group-item:last-child {
+  margin-left: 50px;
   margin-bottom: 0;
 }
 

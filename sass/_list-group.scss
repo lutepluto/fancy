@@ -16,32 +16,23 @@
     margin-bottom: 0;
   }
 
-
   .list-group-item {
     margin-bottom: 10px;
     font-size: 16px;
     color: #666;
     line-height: $line-height-base;
+    *zoom: 1;
     @include clearfix();
 
-    label,
-    .label {
+    label {
       float: left;
-      padding-right: 10px;
-      width: 40%;
-      font-size: inherit;
-      text-align: right;
+      max-width: 50px;
     }
 
     p {
-      float: right;
-      width: 60%;
-    }
-
-    &:last-child {
+      margin-left: 50px;
       margin-bottom: 0;
     }
-
   }
   
 }

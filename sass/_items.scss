@@ -133,6 +133,22 @@ a.item-content {
   white-space: normal;
 }
 
+// Item Body
+// -------------------------------
+
+.item-body {
+  overflow: auto;
+  padding: $item-padding;
+  text-overflow: inherit;
+  white-space: normal;
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    margin-bottom: $item-padding;
+  }
+}
+
+
 
 /**
  * Item Icons
@@ -353,23 +369,6 @@ button.item-button-right:after,
     vertical-align: middle;
   }
 }
-
-
-// Item Body
-// -------------------------------
-
-.item-body {
-  overflow: auto;
-  padding: $item-padding;
-  text-overflow: inherit;
-  white-space: normal;
-
-  h1, h2, h3, h4, h5, h6, p {
-    margin-top: $item-padding;
-    margin-bottom: $item-padding;
-  }
-}
-
 
 // Item Divider
 // -------------------------------
