@@ -45,8 +45,9 @@ body {
   bottom: 0;
   left: 0;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   background-color: #fff;
+  z-index: 0;
   -webkit-overflow-scrolling: touch;
 }
 
