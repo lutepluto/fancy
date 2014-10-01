@@ -67,11 +67,6 @@ body {
   padding-bottom: $bar-height;
 }
 
-.tabs ~ .content ,
-.footer.tabs ~ .content {
-  bottom: $tabs-height;
-}
-
 // A full screen section with a solid background
 .pane {
   @include translate3d(0,0,0);

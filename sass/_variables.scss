@@ -80,12 +80,6 @@ $border-radius-small:             3px !default;
 $border-width-base:               1px !default;
 
 
-// Content
-// -------------------------------
-
-$scroll-refresh-icon-color:       #666666 !default;
-
-
 // Buttons
 // -------------------------------
 
@@ -101,32 +95,35 @@ $button-padding:                  8px !default;
 $button-margin:                   5px !default;
 $button-icon-size:                24px !default;
 
-$button-large-font-size:          20px !default;
-$button-large-height:             54px !default;
-$button-large-padding:            16px !default;
-$button-large-icon-size:          32px !default;
-
-$button-small-font-size:          12px !default;
-$button-small-height:             28px !default;
-$button-small-padding:            4px !default;
-$button-small-icon-size:          16px !default;
-
-$button-bar-button-font-size:     13px !default;
-$button-bar-button-height:        32px !default;
-$button-bar-button-padding:       8px !default;
-$button-bar-button-icon-size:     20px !default;
-
-$button-theme-bg:                 $theme-color;
-$button-theme-border:             $theme-color;
-$button-theme-text:               #fff;
-$button-theme-active-bg:          lighten($theme-color, 5%);
-$button-theme-active-border:      lighten($theme-color, 5%);
-
-$button-default-bg:               #f8f8f8 !default;
-$button-default-border:           #f8f8f8 !default;
+$button-default-bg:               #fff !default;
+$button-default-border:           #ddd !default;
 $button-default-text:             #444 !default;
-$button-default-active-bg:        #b2b2b2 !default;
+$button-default-active-bg:        #f8f8f8 !default;
 $button-default-active-border:    #b2b2b2 !default;
+
+$button-primary-bg:               $brand-primary !default;
+$button-primary-border:           $brand-primary !default;
+$button-primary-text:             #fff !default;
+$button-primary-active-bg:        darken($brand-primary, 15%) !default;
+$button-primary-active-border:    darken($brand-primary, 15%) !default;
+
+$button-success-bg:               $brand-success !default;
+$button-success-border:           $brand-success !default;
+$button-success-text:             #fff !default;
+$button-success-active-bg:        darken($brand-success, 15%) !default;
+$button-success-active-border:    darken($brand-success, 15%) !default;
+
+$button-warning-bg:               $brand-warning !default;
+$button-warning-border:           $brand-warning !default;
+$button-warning-text:             #fff !default;
+$button-warning-active-bg:        darken($brand-warning, 15%) !default;
+$button-warning-active-border:    darken($brand-warning, 15%) !default;
+
+$button-danger-bg:                $brand-danger !default;
+$button-danger-border:            $brand-danger !default;
+$button-danger-text:              #fff !default;
+$button-danger-active-bg:         darken($brand-danger, 15%) !default;
+$button-danger-active-border:     darken($brand-danger, 15%) !default;
 
 
 // Bars
@@ -143,23 +140,6 @@ $bar-default-text:                #444 !default;
 $bar-default-border:              #ddd !default;
 $bar-default-active-bg:           #fafafa !default;
 $bar-default-active-border:       #ccc !default;
-
-// Tabs
-// -------------------------------
-
-$tabs-height:                     49px !default;
-$tabs-text-font-size:             14px !default;
-$tabs-text-font-size-side-icon:   12px !default;
-$tabs-icon-size:                  32px !default;
-$tabs-badge-padding:              1px 6px !default;
-$tabs-badge-font-size:            12px !default;
-$tabs-text-font-size:             14px !default;
-
-$tabs-default-bg:                 $theme-color !default;
-$tabs-default-border:             darken($theme-color, 15%) !default;
-$tabs-default-text:               #fff !default;
-
-$tab-item-max-width:              150px !default;
 
 
 // Items

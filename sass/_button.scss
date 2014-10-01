@@ -54,58 +54,30 @@
     font-size: $button-icon-size;
     line-height: $button-height - $button-border-width + 1;
   }
-  &.icon-left:before {
-    float: left;
-    padding-right: .2em;
-    padding-left: 0;
-  }
-  &.icon-right:before {
-    float: right;
-    padding-right: 0;
-    padding-left: .2em;
-  }
 
   &.button-block, &.button-full {
     margin-top: $button-block-margin;
     margin-bottom: $button-block-margin;
   }
-  &.button-theme {
-    @include button-style($button-theme-bg, $button-theme-border, $button-theme-active-bg, $button-theme-active-border, $button-theme-text);
-    @include button-clear($button-theme-bg);
-    @include button-outline($button-theme-bg);
+  &.button-primary {
+    @include button-style($button-primary-bg, $button-primary-border, $button-primary-active-bg, $button-primary-active-border, $button-primary-text);
+    @include button-clear($button-primary-bg);
+    @include button-outline($button-primary-bg);
   }
-}
-
-.button-small {
-  padding: 0 $button-small-padding;
-  min-width: $button-small-height;
-  min-height: $button-small-height + 3;
-  font-size: $button-small-font-size;
-  line-height: $button-small-height - ($button-border-width * 2) + 3;
-
-  .icon:before,
-  &.icon:before,
-  &.icon-left:before,
-  &.icon-right:before {
-    font-size: $button-small-icon-size;
-    line-height: $button-small-height - $button-border-width - 1;
+  &.button-success {
+    @include button-style($button-success-bg, $button-success-border, $button-success-active-bg, $button-success-active-border, $button-success-text);
+    @include button-clear($button-success-bg);
+    @include button-outline($button-success-bg);
   }
-}
-
-.button-large {
-  padding: 0 $button-large-padding;
-  min-width: ($button-large-padding * 3) + $button-large-font-size;
-  min-height: $button-large-height + 5;
-  font-size: $button-large-font-size;
-  line-height: $button-large-height - $button-border-width;
-
-  .icon:before,
-  &.icon:before,
-  &.icon-left:before,
-  &.icon-right:before {
-    padding-bottom: ($button-border-width * 2);
-    font-size: $button-large-icon-size;
-    line-height: $button-large-height - ($button-border-width * 2) - 1;
+  &.button-warning {
+    @include button-style($button-warning-bg, $button-warning-border, $button-warning-active-bg, $button-warning-active-border, $button-warning-text);
+    @include button-clear($button-warning-bg);
+    @include button-outline($button-warning-bg);
+  }
+  &.button-danger {
+    @include button-style($button-danger-bg, $button-danger-border, $button-danger-active-bg, $button-danger-active-border, $button-danger-text);
+    @include button-clear($button-danger-bg);
+    @include button-outline($button-danger-bg);
   }
 }
 
@@ -121,11 +93,6 @@
     background: none;
     box-shadow: none;
     opacity: 0.3;
-  }
-
-  .icon:before,
-  &.icon:before {
-    font-size: $button-large-icon-size;
   }
 }
 
@@ -178,10 +145,6 @@ button.button-full,
 .button-full > button.button,
 input.button.button-block  {
   width: 100%;
-}
-
-a.button {
-  text-decoration: none;
 }
 
 .button.disabled,
