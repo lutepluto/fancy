@@ -144,13 +144,6 @@ a.item-content {
   position: absolute;
   top: 50%;
   @include translate(0, -50%);
-  font-size: $item-icon-font-size;
-
-  &:before {
-    display: block;
-    width: $item-icon-font-size;
-    text-align: center;
-  }
 }
 
 .item .fill-icon {
@@ -166,26 +159,12 @@ a.item-content {
     left: $item-padding / 2;
   }
 }
-.item-complex.item-icon-left {
-  padding-left: 0;
-
-  .item-content {
-    padding-left: ($item-padding * 3);
-  }
-}
 
 .item-icon-right {
   padding-right: ($item-padding * 3);
 
   .icon {
     right: $item-padding / 2;
-  }
-}
-.item-complex.item-icon-right {
-  padding-right: 0;
-
-  .item-content {
-    padding-right: ($item-padding * 3);
   }
 }
 
@@ -275,24 +254,20 @@ button.item,
 
 a.item:after,
 button.item:after,
-.item a[href].item-content:after,
-.item[ng-click] a.item-content:after {
+.item a[href].item-content:after {
   /* By default, both <a> and <button> have right side arrow icons */
-  @include font-smoothing(antialiased);
   position: absolute;
   top: 50%;
   right: $item-padding - 4;
   @include translate(0, -50%);
-  color: #ccc;
-  content: "\e6a3"; // ion-chevron-right
-  text-transform: none;
-  font-weight: normal;
-  font-style: normal;
-  font-variant: normal;
-  font-size: 20px;
-  font-family: 'Iconfont';
-  line-height: 1;
-  speak: none;
+  
+  content: " ";
+  width: $icon-small-size;
+  height: $icon-small-size;
+  background-image: url(#{$icon-image-path}#{$icon-var-chevron-right});
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 // do not show the default right arrow when they want their own right side icon

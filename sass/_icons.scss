@@ -1,0 +1,53 @@
+/**
+ * Icons
+ * --------------------------------------------------
+ */
+$icon-image-path:    "../images/" !default;
+$icon-prefix:        "icon-";
+
+$icon-var-arrow-left:     "arrow-left.png";
+$icon-var-chevron-right:  "chevron-right.png";
+$icon-var-user:           "user.png";
+
+
+
+.icon {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  width: $icon-size;
+  height: $icon-size;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: $icon-size;
+    height: $icon-size;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  &.large,
+  &.large:before {
+    width: $icon-large-size;
+    height: $icon-large-size;
+  }
+
+  &.small,
+  &.small:before {
+    width: $icon-small-size;
+    height: $icon-small-size;
+  }
+}
+
+.#{$icon-prefix}arrow-left,
+.#{$icon-prefix}chevron-right,
+.#{$icon-prefix}user {
+  @extend .icon;
+}
+
+.#{$icon-prefix}arrow-left:before { background-image: url(#{$icon-image-path}#{$icon-var-arrow-left}); }
+.#{$icon-prefix}chevron-right:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-right}); }
+.#{$icon-prefix}user:before { background-image: url(#{$icon-image-path}#{$icon-var-user}); }
