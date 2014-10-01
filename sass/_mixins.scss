@@ -5,6 +5,12 @@
 // Utilities
 @import "mixins/vender-prefixes";
 
+// Background Color
+@import "mixins/background-variant";
+
+// Text Color
+@import "mixins/text-emphasis";
+
 // Components
 @import "mixins/bar";
 @import "mixins/button";

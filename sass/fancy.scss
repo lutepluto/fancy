@@ -1,16 +1,13 @@
 @charset "UTF-8";
 
 @import
-  //Iconfont
-  "iconfont/iconfont",
-
   // Variables
   "mixins",
   "variables",
 
   // Base
   "reset",
-  "scaffolding",
+  "base",
   "type",
 
   // Forms
@@ -22,12 +19,7 @@
   "items",
   "list",
   "list-group",
-  "components/progress-step",
-  "components/zfb-payment-card",
   "components/division",
 
   // Buttons
-  "button",
-  
-  // Util
-  "util";
+  "button";

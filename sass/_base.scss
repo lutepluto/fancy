@@ -1,5 +1,102 @@
 
 /**
+ * Scaffolding
+ * --------------------------------------------------
+ */
+
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+body, .ionic-body {
+  @include touch-callout(none);
+  @include font-smoothing(antialiased);
+  @include text-size-adjust(none);
+  @include tap-highlight-transparent();
+  @include user-select(none);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+
+  color: $gray;
+  word-wrap: break-word;
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  line-height: $line-height-computed;
+  text-rendering: optimizeLegibility;
+  -webkit-backface-visibility: hidden;
+  -webkit-user-drag: none;
+}
+
+.content {
+  // used for content areas not using the content directive
+  position: relative;
+}
+
+.overflow-scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  .scroll {
+    position: static;
+    height: 100%;
+  }
+}
+
+// Pad top/bottom of content so it doesn't hide behind .bar-title and .bar-tab.
+// Note: For these to work, content must come after both bars in the markup
+.has-header {
+  top: $bar-height;
+}
+
+.has-subheader {
+  top: $bar-height * 2;
+}
+
+.has-footer {
+  bottom: $bar-height;
+}
+
+.has-tabs,
+.bar-footer.has-tabs {
+  bottom: $tabs-height;
+}
+
+.has-footer.has-tabs {
+  bottom: $tabs-height + $bar-height;
+}
+
+// A full screen section with a solid background
+.pane {
+  @include translate3d(0,0,0);
+  z-index: $z-index-pane;
+}
+.view {
+  z-index: $z-index-view;
+}
+.pane, .view {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+
+/**
  * Utility Classes
  * --------------------------------------------------
  */
@@ -93,6 +190,21 @@
   }
 }
 
+
+/**
+ * Quick Floats
+ * --------------------------------------------------
+ */
+
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+
+
+
 /**
  * Content Margin
  * --------------------------------------------------
@@ -175,56 +287,28 @@
 /**
  * Utility Colors
  * --------------------------------------------------
- * Utility colors are added to help set a naming convention. You'll
- * notice we purposely do not use words like "red" or "blue", but
- * instead have colors which represent an emotion or generic theme.
  */
 
-.theme, a.theme {
-  color: $theme-color;
+.text-muted {
+  color: $gray-light;
 }
-.theme-bg {
-  background-color: $theme-color;
+
+@include text-emphasis-variant('.text-primary', $brand-primary);
+
+@include text-emphasis-variant('.text-success', $state-success-text);
+
+@include text-emphasis-variant('.text-warning', $state-warning-text);
+
+@include text-emphasis-variant('.text-danger', $state-danger-text);
+
+.bg-primary {
+  color: #fff;
 }
-.theme-border {
-  border-color: $theme-color;
-}
-.primary, a.primary {
-  color: $brand-primary;
-}
-.primary-bg {
-  background-color: $brand-primary;
-}
-.primary-border {
-  border-color: $brand-primary;
-}
-.success, a.success {
-  color: $brand-success;
-}
-.success-bg {
-  background-color: $brand-success;
-}
-.success-border {
-  border-color: $brand-success;
-}
-.warning, a.warning {
-  color: $brand-warning;
-}
-.warning-border {
-  border-color: $brand-warning;
-}
-.warning-bg {
-  background-color: $brand-warning;
-}
-.warning-border {
-  border-color: $brand-warning;
-}
-.danger, a.daneger {
-  color: $brand-danger;
-}
-.danger-bg {
-  background-color: $brand-danger;
-}
-.danger-border {
-  border-color: $brand-danger;
-}
+
+@include bg-variant('.bg-primary', $brand-primary);
+
+@include bg-variant('.bg-success', $state-success-bg);
+
+@include bg-variant('.bg-warning', $state-warning-bg);
+
+@include bg-variant('.bg-danger', $state-danger-bg);
