@@ -81,6 +81,23 @@
   }
 }
 
+.button-small {
+  padding: 0 $button-small-padding;
+  min-width: $button-small-height;
+  min-height: $button-small-height + 3;
+  font-size: $button-small-font-size;
+  line-height: $button-small-height - $button-border-width + 1;
+
+  .icon:before,
+  &.icon:before,
+  &.icon-left:before,
+  &.icon-right:before {
+    font-size: $button-small-icon-size;
+    line-height: $button-small-height - $button-border-width - 1;
+  }
+}
+
+
 .button-icon {
   @include transition(opacity .1s);
   padding: 0 6px;

@@ -610,17 +610,6 @@ a:active {
 }
 
 /**
- * Item right corner
- * --------------------------------------------------
- * The right corner link or button in item
- */
-.right-corner {
-  position: absolute;
-  right: 15px;
-  top: 11px;
-}
-
-/**
  * Content Margin
  * --------------------------------------------------
  */
@@ -1124,7 +1113,7 @@ input[type="checkbox"][readonly] {
   -moz-appearance: none;
   appearance: none;
   margin: 0;
-  background-color: transparent;
+  background-color: #fff;
   border: none;
 }
 .item-input .button .icon, .item-input .button .icon-arrow-left,
@@ -1146,6 +1135,9 @@ input[type="checkbox"][readonly] {
   position: relative;
   overflow: hidden;
   padding: 10px;
+}
+.item-input-inset input {
+  margin-bottom: 0;
 }
 
 .item-input-wrapper {
@@ -1487,6 +1479,11 @@ a.item-content {
 .item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p {
   margin-top: 0;
   margin-bottom: 15px;
+}
+.item-body .button.right-corner {
+  position: absolute;
+  right: 15px;
+  top: 11px;
 }
 
 /**
@@ -2145,6 +2142,22 @@ button.item-button-right:after,
   background-color: #d9534f;
   color: #fff;
   box-shadow: none;
+}
+
+.button-small {
+  padding: 0 4px;
+  min-width: 28px;
+  min-height: 31px;
+  font-size: 12px;
+  line-height: 28px;
+}
+.button-small .icon:before, .button-small .icon-arrow-left:before,
+.button-small .icon-chevron-right:before,
+.button-small .icon-user:before, .button-small.icon:before, .button-small.icon-arrow-left:before,
+.button-small.icon-chevron-right:before,
+.button-small.icon-user:before, .button-small.icon-left:before, .button-small.icon-right:before {
+  font-size: 16px;
+  line-height: 26px;
 }
 
 .button-icon {
