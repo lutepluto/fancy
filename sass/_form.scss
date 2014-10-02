@@ -197,7 +197,7 @@ input[type="checkbox"][readonly] {
     @include border-radius(0);
     @include appearance(none);
     margin: 0;
-    background-color: transparent;
+    background-color: #fff;
     border: none;
   }
 
@@ -218,6 +218,10 @@ input[type="checkbox"][readonly] {
   position: relative;
   overflow: hidden;
   padding: ($item-padding / 3) * 2;
+
+  input {
+    margin-bottom: 0;
+  }
 }
 
 .item-input-wrapper {
