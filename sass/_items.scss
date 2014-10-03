@@ -248,14 +248,21 @@ button.item.item-button-right {
  */
 
 .item-label {
-  padding-left: 110px;
+  padding-left: 90px;
 
   & > label,
   & > .label-left {
-    left: $item-padding;
     position: absolute;
     top: 50%;
+    left: $item-padding;
+    display: block;
+    width: 75px;
+    padding-right: 10px;
     @include translate(0, -50%);
+
+    &.align-right {
+      text-align: right;
+    }
   }
 }
 
