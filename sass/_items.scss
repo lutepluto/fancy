@@ -253,7 +253,7 @@ button.item.item-button-right {
  */
 
 .item-label {
-  padding-left: 90px;
+  padding-left: 110px;
 
   & > label,
   & > .label-left {
@@ -261,7 +261,7 @@ button.item.item-button-right {
     top: 50%;
     left: $item-padding;
     display: block;
-    width: 75px;
+    width: 90px;
     padding-right: 10px;
     @include translate(0, -50%);
 
