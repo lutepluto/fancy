@@ -12,7 +12,7 @@
   display: block;
 
   margin: $item-border-width * -1;
-  padding: 11px 15px;
+  padding: ($item-padding - 4) $item-padding;
 
   border-width: $item-border-width;
   border-style: solid;
@@ -138,7 +138,7 @@ a.item-content {
 
 .item-body {
   overflow: auto;
-  padding: $item-padding;
+  padding: $item-padding - 4 $item-padding;
   text-overflow: inherit;
   white-space: normal;
 
@@ -166,6 +166,11 @@ a.item-content {
   position: absolute;
   top: 50%;
   @include translate(0, -50%);
+
+  &.align-top {
+    top: $item-padding - 4;
+    @include translate(0, 0);
+  }
 }
 
 .item .fill-icon {
@@ -260,8 +265,9 @@ button.item.item-button-right {
     padding-right: 10px;
     @include translate(0, -50%);
 
-    &.vertical-align-top {
-      
+    &.align-top {
+      top: $item-padding - 4;
+      @include translate(0, 0);
     }
   }
 }
@@ -367,6 +373,15 @@ button.item-button-right:after,
 }
 .item-thumbnail-left.item-complex {
   padding-right: 0;
+}
+
+.item-thumbnail-left,
+.item-thumbnail-right {
+  &.align-top > img:first-child,
+  &.align-top > .item-image {
+    top: $item-padding - 4;
+    @include translate(0, 0);
+  }
 }
 
 
