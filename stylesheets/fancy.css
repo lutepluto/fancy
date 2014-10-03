@@ -1112,12 +1112,17 @@ input[type="checkbox"][readonly] {
   background-color: transparent;
 }
 
+textarea {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .item-input {
   position: relative;
   overflow: hidden;
   padding: 6px 8px 5px;
 }
-.item-input input, .item-input select {
+.item-input input, .item-input select, .item-input textarea {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -1629,14 +1634,14 @@ button.item.item-button-right {
  * Only support left label
  */
 .item-label {
-  padding-left: 90px;
+  padding-left: 110px;
 }
 .item-label > label, .item-label > .label-left {
   position: absolute;
   top: 50%;
   left: 15px;
   display: block;
-  width: 75px;
+  width: 90px;
   padding-right: 10px;
   -webkit-transform: translate(0, -50%);
   -moz-transform: translate(0, -50%);

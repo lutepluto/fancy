@@ -183,6 +183,11 @@ input[type="radio"][readonly],
 input[type="checkbox"][readonly] {
   background-color: transparent;
 }
+// Add textarea vertical padding
+textarea {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 
 
 // Input List
@@ -193,7 +198,7 @@ input[type="checkbox"][readonly] {
   overflow: hidden;
   padding: 6px 8px 5px;
 
-  input, select {
+  input, select, textarea {
     @include border-radius(0);
     @include appearance(none);
     margin: 0;
