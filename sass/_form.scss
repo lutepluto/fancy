@@ -193,7 +193,7 @@ input[type="checkbox"][readonly] {
   overflow: hidden;
   padding: 6px 8px 5px;
 
-  input {
+  input, select {
     @include border-radius(0);
     @include appearance(none);
     margin: 0;
@@ -219,7 +219,7 @@ input[type="checkbox"][readonly] {
   overflow: hidden;
   padding: ($item-padding / 3) * 2;
 
-  input {
+  input, textarea, select {
     margin-bottom: 0;
   }
 }
