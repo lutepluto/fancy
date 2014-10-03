@@ -17,21 +17,66 @@
   }
 
   .list-group-item {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-size: 16px;
     color: #666;
     line-height: $line-height-base;
-    *zoom: 1;
     @include clearfix();
 
-    label {
+    label,
+    .label,
+    .label-wide,
+    .label-wider, {
       float: left;
-      max-width: 50px;
+      display: block;
+
+      &.control-label {
+        line-height: $line-height-computed + $font-size-base;
+      }
     }
 
-    p {
-      margin-left: 50px;
+    label,
+    .label {
+      width: $list-group-label-default;
+
+      + .description {
+        margin-left: $list-group-label-default;
+      }
+    }
+
+    .label-wide {
+      width: $list-group-label-wide;
+
+      &.align-right {
+        text-align: right;
+      }
+
+      + .description {
+        margin-left: $list-group-label-wide;
+      }
+    }
+
+    .label-wider {
+      width: $list-group-label-wider;
+
+      &.align-right {
+        text-align: right;
+      }
+
+      + .description {
+        margin-left: $list-group-label-wider;
+      }
+    }
+
+    .description {
       margin-bottom: 0;
+      padding: 0 5px;
+
+      &.form-control {
+        input, select, textarea {
+          margin-bottom: 0;
+        }
+      }
     }
   }
   
