@@ -1713,8 +1713,8 @@ button.item-button-right:after,
 
 .item-thumbnail-left,
 .item-thumbnail-left .item-content {
-  padding-left: 89px;
-  min-height: 84px;
+  padding-left: 105px;
+  min-height: 100px;
 }
 .item-thumbnail-left > img:first-child, .item-thumbnail-left > .item-image,
 .item-thumbnail-left .item-content > img:first-child,
@@ -1725,8 +1725,8 @@ button.item-button-right:after,
   -webkit-transform: translate(0, -50%);
   -moz-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  max-width: 64px;
-  max-height: 64px;
+  max-width: 80px;
+  max-height: 80px;
   width: 100%;
   border: 1px solid #ddd;
 }
@@ -1737,8 +1737,8 @@ button.item-button-right:after,
 
 .item-thumbnail-right,
 .item-thumbnail-right .item-content {
-  padding-right: 89px;
-  min-height: 84px;
+  padding-right: 105px;
+  min-height: 100px;
 }
 .item-thumbnail-right > img:first-child, .item-thumbnail-right > .item-image,
 .item-thumbnail-right .item-content > img:first-child,
@@ -1749,8 +1749,8 @@ button.item-button-right:after,
   -webkit-transform: translate(0, -50%);
   -moz-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  max-width: 64px;
-  max-height: 64px;
+  max-width: 80px;
+  max-height: 80px;
   width: 100%;
 }
 
