@@ -1896,29 +1896,29 @@ button.item-button-right:after,
 }
 .list-group .list-group-item label,
 .list-group .list-group-item .label {
-  width: 60px;
+  width: 50px;
 }
 .list-group .list-group-item label + .description,
 .list-group .list-group-item .label + .description {
-  margin-left: 60px;
+  margin-left: 50px;
 }
 .list-group .list-group-item .label-wide {
-  width: 80px;
+  width: 70px;
 }
 .list-group .list-group-item .label-wide.align-right {
   text-align: right;
 }
 .list-group .list-group-item .label-wide + .description {
-  margin-left: 80px;
+  margin-left: 70px;
 }
 .list-group .list-group-item .label-wider {
-  width: 100px;
+  width: 90px;
 }
 .list-group .list-group-item .label-wider.align-right {
   text-align: right;
 }
 .list-group .list-group-item .label-wider + .description {
-  margin-left: 100px;
+  margin-left: 90px;
 }
 .list-group .list-group-item .description {
   margin-bottom: 0;
