@@ -262,7 +262,6 @@ button.item.item-button-right {
     left: $item-padding;
     display: block;
     width: 90px;
-    padding-right: 10px;
     @include translate(0, -50%);
 
     &.align-top {
