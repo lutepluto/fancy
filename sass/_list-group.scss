@@ -29,6 +29,7 @@
     .label-wider, {
       float: left;
       display: block;
+      font-size: inherit;
 
       &.control-label {
         line-height: $line-height-computed + $font-size-base;
@@ -63,6 +64,7 @@
     .description {
       margin-bottom: 0;
       padding: 0 5px;
+      font-size: inherit;
 
       &.form-control {
         input, select, textarea {

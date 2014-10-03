@@ -1936,6 +1936,7 @@ button.item-button-right:after,
 .list-group .list-group-item .label-wider {
   float: left;
   display: block;
+  font-size: inherit;
 }
 .list-group .list-group-item label.control-label,
 .list-group .list-group-item .label.control-label,
@@ -1966,6 +1967,7 @@ button.item-button-right:after,
 .list-group .list-group-item .description {
   margin-bottom: 0;
   padding: 0 5px;
+  font-size: inherit;
 }
 .list-group .list-group-item .description.form-control input, .list-group .list-group-item .description.form-control select, .list-group .list-group-item .description.form-control textarea {
   margin-bottom: 0;
