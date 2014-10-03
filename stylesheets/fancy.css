@@ -1642,6 +1642,9 @@ button.item.item-button-right {
   left: 15px;
   display: block;
   width: 90px;
+  height: 38px;
+  line-height: 38px;
+  padding-right: 5px;
   -webkit-transform: translate(0, -50%);
   -moz-transform: translate(0, -50%);
   transform: translate(0, -50%);
