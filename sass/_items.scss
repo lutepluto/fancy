@@ -332,6 +332,7 @@ button.item-button-right:after,
     max-height: $item-avitar-height;
     width: 100%;
     border-radius: 4px;
+    border: 1px solid $button-default-border;
   }
 }
 
@@ -352,6 +353,7 @@ button.item-button-right:after,
     max-width: $item-thumbnail-width;
     max-height: $item-thumbnail-height;
     width: 100%;
+    border: 1px solid $button-default-border;
   }
 }
 .item-thumbnail-left.item-complex {
