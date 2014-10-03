@@ -47,10 +47,6 @@
     .label-wide {
       width: $list-group-label-wide;
 
-      &.align-right {
-        text-align: right;
-      }
-
       + .description {
         margin-left: $list-group-label-wide;
       }
@@ -58,10 +54,6 @@
 
     .label-wider {
       width: $list-group-label-wider;
-
-      &.align-right {
-        text-align: right;
-      }
 
       + .description {
         margin-left: $list-group-label-wider;
