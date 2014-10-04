@@ -30,6 +30,7 @@
       float: left;
       display: block;
       font-size: inherit;
+      font-weight: bold;
 
       &.control-label {
         line-height: $line-height-computed + $font-size-base;

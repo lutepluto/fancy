@@ -1939,6 +1939,7 @@ button.item-button-right:after,
   float: left;
   display: block;
   font-size: inherit;
+  font-weight: bold;
 }
 .list-group .list-group-item label.control-label,
 .list-group .list-group-item .label.control-label,
