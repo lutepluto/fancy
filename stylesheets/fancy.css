@@ -1969,7 +1969,7 @@ button.item-button-right:after,
 }
 .list-group .list-group-item .description {
   margin-bottom: 0;
-  padding: 0 5px;
+  padding: 0 0 0 3px;
   font-size: inherit;
 }
 .list-group .list-group-item .description.form-control input, .list-group .list-group-item .description.form-control select, .list-group .list-group-item .description.form-control textarea {
