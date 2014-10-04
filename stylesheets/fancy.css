@@ -1949,11 +1949,11 @@ button.item-button-right:after,
 }
 .list-group .list-group-item label,
 .list-group .list-group-item .label {
-  width: 50px;
+  width: 52px;
 }
 .list-group .list-group-item label + .description,
 .list-group .list-group-item .label + .description {
-  margin-left: 50px;
+  margin-left: 52px;
 }
 .list-group .list-group-item .label-wide {
   width: 70px;
