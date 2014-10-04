@@ -655,6 +655,24 @@ a:active {
   margin-top: 0;
 }
 
+.no-margin-right,
+.no-margin-horizontal,
+.no-margin {
+  margin-right: 0;
+}
+
+.no-margin-bottom,
+.no-margin-vertical,
+.no-margin {
+  margin-bottom: 0;
+}
+
+.no-margin-left,
+.no-margin-horizontal,
+.no-margin {
+  margin-left: 0;
+}
+
 /**
  * Content Padding
  * --------------------------------------------------
@@ -681,6 +699,30 @@ a:active {
 .padding-left,
 .padding-horizontal {
   padding-left: 10px;
+}
+
+.no-padding-top,
+.no-padding-vertical,
+.no-padding {
+  padding-top: 0;
+}
+
+.no-padding-right,
+.no-padding-horizontal,
+.no-padding {
+  padding-right: 0;
+}
+
+.no-padding-bottom,
+.no-padding-vertical,
+.no-padding {
+  padding-bottom: 0;
+}
+
+.no-padding-left,
+.no-padding-horizontal,
+.no-padding {
+  padding-left: 0;
 }
 
 /**
