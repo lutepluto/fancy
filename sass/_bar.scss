@@ -43,7 +43,7 @@
   }
 
   &.transparent {
-    opacity: 0.9;
+    background-color: $bar-transparent-bg;
   }
 
   &.item-input-inset {
