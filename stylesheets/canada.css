@@ -2007,124 +2007,266 @@ button.item-button-right:after,
 }
 
 /**
- * Progress step
+ * Time line
  * --------------------------------------------------
  */
-.progress-step {
+.timeline {
   position: relative;
-  margin: 0 auto 30px;
-  padding: 30px 0 15px;
+  margin-bottom: 15px;
+  padding: 10px 0;
   list-style: none;
 }
-.progress-step .step {
+.timeline:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  content: " ";
+  width: 3px;
+  background-color: #eee;
+  -webkit-transform: translate(-1.5px, 0);
+  -moz-transform: translate(-1.5px, 0);
+  transform: translate(-1.5px, 0);
+}
+.timeline li {
   position: relative;
-  margin: 0;
-  padding: 0;
-}
-.progress-step .step .step-bar {
-  position: absolute;
-  left: 50%;
-  bottom: -15px;
-  width: 100%;
-  height: 10px;
-  background-color: #d5d5d5;
-}
-.progress-step .step .node {
-  position: absolute;
-  left: 50%;
-  bottom: -15px;
-  width: 20px;
-  height: 20px;
-  -webkit-transform: translate(-10px, 5px);
-  -moz-transform: translate(-10px, 5px);
-  transform: translate(-10px, 5px);
-  border: 2px solid transparent;
-  border-radius: 50%;
-  background-color: #d5d5d5;
-}
-.progress-step .step.doing .node {
-  background-color: #fff;
-  border-color: #f48b28;
-}
-.progress-step .step.complete .step-bar, .progress-step .step.complete .node {
-  background-color: #f48b28;
-}
-.progress-step .step .tip {
-  position: absolute;
-  left: 50%;
-  top: -15px;
-  -webkit-transform: translate(-10px, 0);
-  -moz-transform: translate(-10px, 0);
-  transform: translate(-10px, 0);
-}
-.progress-step .step .tip .icon, .progress-step .step .tip .icon-arrow-left,
-.progress-step .step .tip .icon-chevron-right,
-.progress-step .step .tip .icon-user {
-  font-size: 20px;
-}
-.progress-step.horizontal .step {
-  display: inline-block;
-}
-.progress-step.justified .step {
-  display: table-cell;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 1%;
-  text-align: center;
-}
-
-/**
- * Division
- * --------------------------------------------------
- */
-.division {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 14px;
-  color: #666;
+  margin-bottom: 20px;
   *zoom: 1;
 }
-.division:before, .division:after {
+.timeline li:before, .timeline li:after {
   content: " ";
   display: table;
   line-height: 0;
 }
-.division:after {
+.timeline li:after {
   clear: both;
 }
-.division li {
+.timeline li > .timeline-panel {
+  position: relative;
+  padding: 10px;
+  width: 46%;
   float: left;
-  padding: 0 5px;
-  border-right: 1px solid #ddd;
+  border-radius: 2px;
+  border: 1px solid #ddd;
 }
-.division li h3 {
-  font-size: 16px;
-  line-height: 20px;
-  color: #222;
-  margin: 0 0 5px 0;
+.timeline li > .timeline-panel:before, .timeline li > .timeline-panel:after {
+  position: absolute;
+  content: " ";
+  top: 12px;
+  display: inline-block;
+  border: 9px solid transparent;
 }
-.division li p {
-  font-size: inherit;
-  line-height: 18px;
-  margin: 0 0 5px 0;
+.timeline li > .timeline-panel:before {
+  right: -9px;
+  border-left-color: #ddd;
+  border-right-width: 0;
 }
-.division li p:last-child {
+.timeline li > .timeline-panel:after {
+  right: -8px;
+  border-left-color: #fff;
+  border-right-width: 0;
+}
+.timeline li > .timeline-badge {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #777;
+  -webkit-transform: translate(-3px, 0);
+  -moz-transform: translate(-3px, 0);
+  transform: translate(-3px, 0);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.timeline li > .timeline-time {
+  position: absolute;
+  top: 23px;
+  right: 0;
+  -webkit-transform: translate(0, -10px);
+  -moz-transform: translate(0, -10px);
+  transform: translate(0, -10px);
+  width: 46%;
+}
+.timeline li.timeline-inverse > .timeline-panel {
+  float: right;
+}
+.timeline li.timeline-inverse > .timeline-panel:before {
+  border-right: 9px solid #ddd;
+  border-left-width: 0;
+  left: -9px;
+  right: auto;
+}
+.timeline li.timeline-inverse > .timeline-panel:after {
+  border-right: 9px solid #fff;
+  border-left-width: 0;
+  left: -8px;
+  right: auto;
+}
+.timeline li.timeline-inverse > .timeline-time {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+
+.timeline-body {
+  max-height: 70px;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.timeline-body p {
   margin-bottom: 0;
 }
-.division li:last-child {
-  border-right: 0;
+
+/**
+ * Nav tabs
+ * --------------------------------------------------
+ */
+.nav-tabs {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
 }
-.division.large li {
-  padding: 0 10px;
-  font-size: 16px;
+.nav-tabs li {
+  float: left;
+  position: relative;
+  display: block;
+  margin-bottom: -1px;
 }
-.division.large li h3 {
-  font-size: 18px;
-  line-height: 22px;
+.nav-tabs li a {
+  position: relative;
+  padding: 12px 10px;
+  display: block;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  color: #555;
 }
-.division.large li p {
-  line-height: 20px;
+.nav-tabs li.dropdown.open a:before {
+  position: absolute;
+  content: " ";
+  bottom: 0;
+  left: 50%;
+  margin-left: -12px;
+  border: 8px solid transparent;
+  border-left-width: 12px;
+  border-right-width: 12px;
+  border-bottom-color: #ddd;
+}
+.nav-tabs li.dropdown.open a:after {
+  position: absolute;
+  content: " ";
+  bottom: -1px;
+  left: 50%;
+  margin-left: -12px;
+  border: 8px solid transparent;
+  border-left-width: 12px;
+  border-right-width: 12px;
+  border-bottom-color: #fff;
+}
+.nav-tabs.tabs-justified li {
+  float: none;
+  display: table-cell;
+  width: 1%;
+}
+.nav-tabs.tabs-justified li a {
+  text-align: center;
+}
+
+/**
+ * Nav dropdown menu
+ * --------------------------------------------------
+ */
+.nav-dropdown {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-bottom: -1px;
+  z-index: 9;
+}
+.nav-dropdown .menu-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dropdown-menu {
+  position: relative;
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 270px;
+  overflow-y: hidden;
+  background-color: #fff;
+}
+.dropdown-menu.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.dropdown-menu.fade.in {
+  opacity: 1;
+}
+.dropdown-menu.active {
+  display: block;
+}
+.dropdown-menu .menu {
+  position: relative;
+  float: left;
+  height: 100%;
+}
+.dropdown-menu .menu.full {
+  width: 100%;
+}
+.dropdown-menu .main, .dropdown-menu .sub {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.dropdown-menu .main li, .dropdown-menu .sub li {
+  padding: 10px 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: transparent;
+}
+.dropdown-menu .main li.active, .dropdown-menu .sub li.active {
+  background-color: #fff;
+}
+.dropdown-menu .main li a, .dropdown-menu .sub li a {
+  display: block;
+  color: inherit;
+}
+.dropdown-menu .main {
+  width: 45%;
+  background-color: #f5f5f5;
+}
+.dropdown-menu .main ~ .sub {
+  display: none;
+  width: 55%;
+}
+.dropdown-menu .sub li {
+  border-bottom: 1px solid #ddd;
 }
 
 /**
