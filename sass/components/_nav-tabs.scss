@@ -20,6 +20,14 @@ $nav-tabs-default-color:        #555;
     display: block;
     margin-bottom: -1px;
 
+    &:not(:last-child):after {
+      position: absolute;
+      content: "|";
+      top: 50%;
+      right: 0;
+      @include translate(0, -50%);
+    }
+
     a {
       position: relative;
       padding: $nav-tabs-padding + 2 $nav-tabs-padding;
