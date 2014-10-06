@@ -429,6 +429,12 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
   margin: 0;
   padding: 0;
   color: #555555;
@@ -442,9 +448,14 @@ body {
 }
 
 .content {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+  background-color: #fff;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1575,7 +1586,7 @@ a.item-content {
 .item-icon-left .icon, .item-icon-left .icon-arrow-left,
 .item-icon-left .icon-chevron-right,
 .item-icon-left .icon-user {
-  left: 7.5px;
+  left: 12.5px;
 }
 
 .item-icon-right {
@@ -1584,7 +1595,7 @@ a.item-content {
 .item-icon-right .icon, .item-icon-right .icon-arrow-left,
 .item-icon-right .icon-chevron-right,
 .item-icon-right .icon-user {
-  right: 7.5px;
+  right: 12.5px;
 }
 
 .item-icon-left.item-icon-right .icon:first-child, .item-icon-left.item-icon-right .icon-arrow-left:first-child,
