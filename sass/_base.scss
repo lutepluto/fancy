@@ -17,6 +17,13 @@ body {
   @include tap-highlight-transparent();
   @include user-select(none);
 
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+
   margin: 0;
   padding: 0;
 
@@ -32,9 +39,14 @@ body {
 
 .content {
   // used for content areas not using the content directive
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+  background-color: #fff;
   -webkit-overflow-scrolling: touch;
 }
 
