@@ -59,6 +59,9 @@ $nav-dropdown-default-font-size:        14px !default;
     li a {
       display: block;
       padding: 10px 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       font-size: $nav-dropdown-default-font-size;
       color: inherit;
     }

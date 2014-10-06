@@ -2295,6 +2295,9 @@ button.item-button-right:after,
 .dropdown-menu .main li a, .dropdown-menu .sub li a, .dropdown-menu .tertiary li a {
   display: block;
   padding: 10px 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 14px;
   color: inherit;
 }
