@@ -3,16 +3,33 @@
  * --------------------------------------------------
  */
 
-$nav-tabs-padding:              10px;
-$nav-tabs-default-background:   #fff;
-$nav-tabs-default-border:       #ddd;
-$nav-tabs-default-color:        #555;
+$nav-tabs-padding:              10px !default;
+$nav-tabs-default-background:   #fff !default;
+$nav-tabs-default-border:       #ddd !default;
+$nav-tabs-default-color:        #555 !default;
+$nav-tabs-default-font-size:    14px !default;
 
 .nav-tabs {
   margin: 0;
   padding: 0;
   width: 100%;
   list-style: none;
+
+  &.tabs-justified {
+    display: table;
+    table-layout: fixed;
+
+    li {
+      float: none;
+      display: table-cell;
+      width: 1%;
+
+      a {
+        text-align: center;
+        font-size: $nav-tabs-default-font-size;
+      }
+    }
+  }
 
   li {
     float: left;
@@ -26,6 +43,7 @@ $nav-tabs-default-color:        #555;
       top: 50%;
       right: 0;
       @include translate(0, -50%);
+      color: $nav-tabs-default-border;
     }
 
     a {
@@ -34,41 +52,14 @@ $nav-tabs-default-color:        #555;
       display: block;
       background-color: $nav-tabs-default-background;
       border-bottom: 1px solid $nav-tabs-default-border;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       color: $nav-tabs-default-color;
     }
 
-    &.dropdown.open a:before {
-      position: absolute;
-      content: " ";
-      bottom: 0;
-      left: 50%;
-      margin-left: -12px;
-      border: 8px solid transparent;
-      border-left-width: 12px;
-      border-right-width: 12px;
-      border-bottom-color: $nav-tabs-default-border;
-    }
-
-    &.dropdown.open a:after {
-      position: absolute;
-      content: " ";
-      bottom: -1px;
-      left: 50%;
-      margin-left: -12px;
-      border: 8px solid transparent;
-      border-left-width: 12px;
-      border-right-width: 12px;
-      border-bottom-color: $nav-tabs-default-background;
-    }
-  }
-
-  &.tabs-justified li {
-    float: none;
-    display: table-cell;
-    width: 1%;
-
-    a {
-      text-align: center;
+    &.open a {
+      color: $brand-warning;
     }
   }
 }

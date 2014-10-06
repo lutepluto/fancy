@@ -1,28 +1,4 @@
-/**
- * Animation utils
- * --------------------------------------------------
- */
-.fade.in {
-  opacity: 1;
-}
-
-.collapsed {
-  display: none;
-}
-
-.collapsed.in {
-  display: block;
-}
-
-.collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  -webkit-transition: height .35s ease;
-  -o-transition: height .35s ease;
-  transition: height .35s ease;
-}
-
+@charset "UTF-8";
 /**
  * Icons
  * --------------------------------------------------
@@ -2110,6 +2086,55 @@ button.item-button-right:after,
 }
 
 /**
+ * Specific payment card for zufangbao
+ * --------------------------------------------------
+ */
+.zfb-payment-card {
+  overflow: hidden;
+  margin: 20px 10px;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  border-top: 3px solid #f48b28;
+}
+.zfb-payment-card .payment-row {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  color: #666;
+  *zoom: 1;
+}
+.zfb-payment-card .payment-row:before, .zfb-payment-card .payment-row:after {
+  content: " ";
+  display: table;
+  line-height: 0;
+}
+.zfb-payment-card .payment-row:after {
+  clear: both;
+}
+.zfb-payment-card .payment-row.padding-large {
+  padding: 20px 0;
+}
+.zfb-payment-card .payment-row:last-child {
+  border-bottom: 0;
+}
+.zfb-payment-card .payment-row h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  margin: 0;
+}
+.zfb-payment-card .payment-row p:last-child {
+  margin-bottom: 0;
+}
+.zfb-payment-card .payment-row .total {
+  color: #000;
+  font-size: 24px;
+  text-align: center;
+}
+
+/**
  * Division
  * --------------------------------------------------
  */
@@ -2161,6 +2186,266 @@ button.item-button-right:after,
 }
 .division.large li p {
   line-height: 20px;
+}
+
+/**
+ * Nav tabs
+ * --------------------------------------------------
+ */
+.nav-tabs {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+}
+.nav-tabs.tabs-justified {
+  display: table;
+  table-layout: fixed;
+}
+.nav-tabs.tabs-justified li {
+  float: none;
+  display: table-cell;
+  width: 1%;
+}
+.nav-tabs.tabs-justified li a {
+  text-align: center;
+  font-size: 14px;
+}
+.nav-tabs li {
+  float: left;
+  position: relative;
+  display: block;
+  margin-bottom: -1px;
+}
+.nav-tabs li:not(:last-child):after {
+  position: absolute;
+  content: "|";
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #ddd;
+}
+.nav-tabs li a {
+  position: relative;
+  padding: 12px 10px;
+  display: block;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #555;
+}
+.nav-tabs li.open a {
+  color: #f0ad4e;
+}
+
+/**
+ * Nav dropdown menu
+ * --------------------------------------------------
+ */
+.nav-dropdown {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-bottom: -1px;
+  z-index: 9;
+}
+.nav-dropdown .menu-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dropdown-menu {
+  position: relative;
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 270px;
+  overflow-y: hidden;
+  background-color: #fff;
+}
+.dropdown-menu.active {
+  display: block;
+}
+.dropdown-menu .menu {
+  position: relative;
+  float: left;
+  height: 100%;
+}
+.dropdown-menu .main, .dropdown-menu .sub, .dropdown-menu .tertiary {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.dropdown-menu .main li a, .dropdown-menu .sub li a, .dropdown-menu .tertiary li a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: inherit；;
+}
+.dropdown-menu .main {
+  width: 45%;
+  background-color: #f5f5f5;
+}
+.dropdown-menu .main ~ .sub {
+  display: none;
+  width: 55%;
+}
+.dropdown-menu .main > li.active {
+  background-color: #fff;
+  border-left: 4px solid #f0ad4e;
+}
+.dropdown-menu .sub > li {
+  border-bottom: 1px solid #ddd;
+}
+.dropdown-menu .sub > li.active {
+  border-bottom-color: #f0ad4e;
+}
+.dropdown-menu .tertiary > li a {
+  font-size: 12px;
+  text-indent: 10px;
+}
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+/**
+ * Time line
+ * --------------------------------------------------
+ */
+.timeline {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  list-style: none;
+}
+.timeline:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  content: " ";
+  width: 3px;
+  background-color: #eee;
+  -webkit-transform: translate(-1.5px, 0);
+  -moz-transform: translate(-1.5px, 0);
+  transform: translate(-1.5px, 0);
+}
+.timeline li {
+  position: relative;
+  margin-bottom: 20px;
+  *zoom: 1;
+}
+.timeline li:before, .timeline li:after {
+  content: " ";
+  display: table;
+  line-height: 0;
+}
+.timeline li:after {
+  clear: both;
+}
+.timeline li > .timeline-panel {
+  position: relative;
+  padding: 10px;
+  width: 46%;
+  float: left;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+}
+.timeline li > .timeline-panel:before, .timeline li > .timeline-panel:after {
+  position: absolute;
+  content: " ";
+  top: 12px;
+  display: inline-block;
+  border: 9px solid transparent;
+}
+.timeline li > .timeline-panel:before {
+  right: -9px;
+  border-left-color: #ddd;
+  border-right-width: 0;
+}
+.timeline li > .timeline-panel:after {
+  right: -8px;
+  border-left-color: #fff;
+  border-right-width: 0;
+}
+.timeline li > .timeline-badge {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #777;
+  -webkit-transform: translate(-3px, 0);
+  -moz-transform: translate(-3px, 0);
+  transform: translate(-3px, 0);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.timeline li > .timeline-time {
+  position: absolute;
+  top: 23px;
+  right: 0;
+  -webkit-transform: translate(0, -10px);
+  -moz-transform: translate(0, -10px);
+  transform: translate(0, -10px);
+  width: 46%;
+}
+.timeline li.timeline-inverse > .timeline-panel {
+  float: right;
+}
+.timeline li.timeline-inverse > .timeline-panel:before {
+  border-right: 9px solid #ddd;
+  border-left-width: 0;
+  left: -9px;
+  right: auto;
+}
+.timeline li.timeline-inverse > .timeline-panel:after {
+  border-right: 9px solid #fff;
+  border-left-width: 0;
+  left: -8px;
+  right: auto;
+}
+.timeline li.timeline-inverse > .timeline-time {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+
+.timeline-body {
+  max-height: 70px;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.timeline-body p {
+  margin-bottom: 0;
 }
 
 /**

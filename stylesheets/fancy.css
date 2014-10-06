@@ -1,4 +1,29 @@
 /**
+ * Animation utils
+ * --------------------------------------------------
+ */
+.fade.in {
+  opacity: 1;
+}
+
+.collapsed {
+  display: none;
+}
+
+.collapsed.in {
+  display: block;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .35s ease;
+  -o-transition: height .35s ease;
+  transition: height .35s ease;
+}
+
+/**
  * Icons
  * --------------------------------------------------
  */
