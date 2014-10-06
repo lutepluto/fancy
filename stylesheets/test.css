@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * Icons
  * --------------------------------------------------
@@ -2297,7 +2296,7 @@ button.item-button-right:after,
   display: block;
   padding: 10px 15px;
   font-size: 14px;
-  color: inherit；;
+  color: inherit;
 }
 .dropdown-menu .main {
   width: 45%;
