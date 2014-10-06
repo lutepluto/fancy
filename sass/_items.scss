@@ -183,7 +183,7 @@ a.item-content {
   padding-left: ($item-padding * 3);
 
   .icon {
-    left: $item-padding / 2;
+    left: $item-padding / 2 + 5;
   }
 }
 
@@ -191,7 +191,7 @@ a.item-content {
   padding-right: ($item-padding * 3);
 
   .icon {
-    right: $item-padding / 2;
+    right: $item-padding / 2 + 5;
   }
 }
 
