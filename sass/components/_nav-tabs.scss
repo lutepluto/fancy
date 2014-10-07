@@ -27,6 +27,10 @@ $nav-tabs-default-font-size:    14px !default;
       a {
         text-align: center;
         font-size: $nav-tabs-default-font-size;
+
+        .icon {
+          @include transition(-webkit-transform .3s);
+        }
       }
     }
   }
@@ -60,6 +64,11 @@ $nav-tabs-default-font-size:    14px !default;
 
     &.open a {
       color: $brand-warning;
+
+      .icon {
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+      }
     }
   }
 }
