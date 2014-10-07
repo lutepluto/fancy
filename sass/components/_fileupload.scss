@@ -1,0 +1,26 @@
+/**
+ * Fileupload
+ * --------------------------------------------------
+ */
+
+
+.fileupload {
+  position: relative;
+  padding-right: $item-padding * 2;
+
+  > input {
+    cursor: no-drop;
+  }
+
+  > .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    @include translate(0, -50%);
+  }
+
+  > img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
