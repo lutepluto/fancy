@@ -3,6 +3,10 @@
  * --------------------------------------------------
  */
 
+.fade {
+  opacity: 0;
+  @include transition(opacity .15s linear);
+}
 
 .fade.in {
   opacity: 1;
