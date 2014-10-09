@@ -1,0 +1,78 @@
+/**
+ * Modal
+ * --------------------------------------------------
+ */
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-modal - 1;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, .3);
+  @include translateZ(0);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-modal;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  &.fade .modal-dialog {
+    @include transition(transform .3s ease-out);
+    @include translate3d(0, -25%, 0);
+  }
+
+  &.in .modal-dialog {
+    @include translate3d(0, 0, 0);
+  }
+}
+
+.modal-dialog {
+  margin: 100px auto auto;
+  width: 280px;
+  background-color: #fff;
+  border-radius: $border-radius-base;
+}
+
+.dialog-body {
+  padding: $content-margin;
+  font-size: inherit;
+  text-align: center;
+
+  h3, .title, .h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.dialog-footer {
+  border-top: 1px solid #ddd;
+  padding: $content-padding $content-margin;
+
+  a {
+    font-size: 18px;
+    display: block;
+    text-align: center;
+  }
+}
+
+
+
