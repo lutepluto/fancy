@@ -46,10 +46,41 @@ $icon-var-select:         "select.png";
   }
 }
 
+// Animation Icons
+// --------------------------
+
+.#{$icon-prefix}spin {
+  -webkit-animation: spin 1s infinite linear;
+  -moz-animation: spin 1s infinite linear;
+  -o-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+}
+
+@-moz-keyframes spin {
+  0% { -moz-transform: rotate(0deg); }
+  100% { -moz-transform: rotate(359deg); }
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(359deg); }
+}
+@-o-keyframes spin {
+  0% { -o-transform: rotate(0deg); }
+  100% { -o-transform: rotate(359deg); }
+}
+@-ms-keyframes spin {
+  0% { -ms-transform: rotate(0deg); }
+  100% { -ms-transform: rotate(359deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+
 .#{$icon-prefix}chevron-down:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-down}); }
 .#{$icon-prefix}chevron-right:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-right}); }
 .#{$icon-prefix}chevron-up:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-up}); }
 .#{$icon-prefix}clip:before { background-image: url(#{$icon-image-path}#{$icon-var-clip}); }
-.#{$icon-prefix}loading:before { background-image: url(#{$icon-image-path}#{$icon-var-loading}); }
+.#{$icon-prefix}loading:before { @extend.#{$icon-prefix}spin; background-image: url(#{$icon-image-path}#{$icon-var-loading}); }
 .#{$icon-prefix}select:before { background-image: url(#{$icon-image-path}#{$icon-var-select}); }
 
