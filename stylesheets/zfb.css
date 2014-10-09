@@ -62,10 +62,6 @@
   height: 16px;
 }
 
-.icon-arrow-left:before {
-  background-image: url(../images/arrow-left.png);
-}
-
 .icon-chevron-down:before {
   background-image: url(../images/chevron-down.png);
 }
@@ -82,8 +78,12 @@
   background-image: url(../images/clip.png);
 }
 
-.icon-user:before {
-  background-image: url(../images/user.png);
+.icon-loading:before {
+  background-image: url(../images/loading.png);
+}
+
+.icon-select:before {
+  background-image: url(../images/select.png);
 }
 
 /**
@@ -2149,6 +2149,85 @@ button.item-button-right:after,
 .fileupload > img {
   max-width: 100px;
   max-height: 100px;
+}
+
+/**
+ * Modal
+ * --------------------------------------------------
+ */
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.modal.fade .modal-dialog {
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  -webkit-transform: translate3d(0, -25%, 0);
+  -moz-transform: translate3d(0, -25%, 0);
+  transform: translate3d(0, -25%, 0);
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.modal-dialog {
+  margin: 100px auto auto;
+  width: 280px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.dialog-body {
+  padding: 15px;
+  font-size: inherit;
+  text-align: center;
+}
+.dialog-body h3, .dialog-body .title, .dialog-body .h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.dialog-body p:last-child {
+  margin-bottom: 0;
+}
+
+.dialog-footer {
+  border-top: 1px solid #ddd;
+  padding: 10px 15px;
+}
+.dialog-footer a {
+  font-size: 18px;
+  display: block;
+  text-align: center;
 }
 
 /**
