@@ -2214,6 +2214,7 @@ button.item-button-right:after,
   right: 0;
   bottom: 0;
   left: 0;
+  overflow: hidden;
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.6);
 }

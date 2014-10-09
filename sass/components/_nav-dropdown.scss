@@ -26,6 +26,7 @@ $nav-dropdown-default-font-size:        14px !default;
   right: 0;
   bottom: 0;
   left: 0;
+  overflow: hidden;
   z-index: $z-index-dropdown - 1;
   background-color: rgba(0, 0, 0, .6);
 }
