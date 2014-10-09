@@ -5,12 +5,12 @@
 $icon-image-path:    "../images/" !default;
 $icon-prefix:        "icon-";
 
-$icon-var-arrow-left:     "arrow-left.png";
 $icon-var-chevron-down:   "chevron-down.png";
 $icon-var-chevron-right:  "chevron-right.png";
 $icon-var-chevron-up:     "chevron-up.png";
 $icon-var-clip:           "clip.png";
-$icon-var-user:           "user.png";
+$icon-var-loading:        "loading.png"
+$icon-var-select:         "select.png"
 
 
 
@@ -46,10 +46,10 @@ $icon-var-user:           "user.png";
   }
 }
 
-.#{$icon-prefix}arrow-left:before { background-image: url(#{$icon-image-path}#{$icon-var-arrow-left}); }
 .#{$icon-prefix}chevron-down:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-down}); }
 .#{$icon-prefix}chevron-right:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-right}); }
 .#{$icon-prefix}chevron-up:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-up}); }
 .#{$icon-prefix}clip:before { background-image: url(#{$icon-image-path}#{$icon-var-clip}); }
-.#{$icon-prefix}user:before { background-image: url(#{$icon-image-path}#{$icon-var-user}); }
+.#{$icon-prefix}loading:before { background-image: url(#{$icon-image-path}#{$icon-var-loading}); }
+.#{$icon-prefix}select:before { background-image: url(#{$icon-image-path}#{$icon-var-select}); }
 
