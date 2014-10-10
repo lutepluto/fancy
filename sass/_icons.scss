@@ -9,6 +9,7 @@ $icon-var-chevron-down:   "chevron-down.png";
 $icon-var-chevron-right:  "chevron-right.png";
 $icon-var-chevron-up:     "chevron-up.png";
 $icon-var-clip:           "clip.png";
+$icon-var-gray-loading:   "gray-loading";
 $icon-var-loading:        "loading.png";
 $icon-var-select:         "select.png";
 
@@ -56,6 +57,12 @@ $icon-var-select:         "select.png";
   animation: spin 1s infinite linear;
 }
 
+.#{$icon-prefix}gray-loading {
+  -webkit-animation-timing-function: steps(8, start);
+  -moz-animation-timing-function: steps(8, start);
+  animation-timing-function: steps(8, start);
+}
+
 @-moz-keyframes spin {
   0% { -moz-transform: rotate(0deg); }
   100% { -moz-transform: rotate(359deg); }
@@ -85,6 +92,7 @@ $icon-var-select:         "select.png";
 .#{$icon-prefix}chevron-right:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-right}); }
 .#{$icon-prefix}chevron-up:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-up}); }
 .#{$icon-prefix}clip:before { background-image: url(#{$icon-image-path}#{$icon-var-clip}); }
+.#{$icon-prefix}gray-loading:before { background-image: url(#{$icon-image-path}#{$icon-var-gray-loading}); }
 .#{$icon-prefix}load:before { background-image: url(#{$icon-image-path}#{$icon-var-loading}); }
 .#{$icon-prefix}loading:before { @extend .#{$icon-prefix}load:before; }
 .#{$icon-prefix}select:before { background-image: url(#{$icon-image-path}#{$icon-var-select}); }

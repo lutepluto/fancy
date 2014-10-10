@@ -69,6 +69,12 @@
   animation: spin 1s infinite linear;
 }
 
+.icon-gray-loading {
+  -webkit-animation-timing-function: steps(8, start);
+  -moz-animation-timing-function: steps(8, start);
+  animation-timing-function: steps(8, start);
+}
+
 @-moz-keyframes spin {
   0% {
     -moz-transform: rotate(0deg);
@@ -123,6 +129,10 @@
 
 .icon-clip:before {
   background-image: url(../images/clip.png);
+}
+
+.icon-gray-loading:before {
+  background-image: url(../images/gray-loading);
 }
 
 .icon-load:before, .icon-loading:before {
