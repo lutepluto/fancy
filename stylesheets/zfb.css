@@ -132,7 +132,7 @@
 }
 
 .icon-gray-loading:before {
-  background-image: url(../images/gray-loading);
+  background-image: url(../images/gray-loading.png);
 }
 
 .icon-load:before, .icon-loading:before {
