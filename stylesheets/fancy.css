@@ -62,7 +62,7 @@
   height: 16px;
 }
 
-.icon-spin, .icon-loading:before {
+.icon-spin, .icon-loading {
   -webkit-animation: spin 1s infinite linear;
   -moz-animation: spin 1s infinite linear;
   -o-animation: spin 1s infinite linear;
@@ -125,7 +125,7 @@
   background-image: url(../images/clip.png);
 }
 
-.icon-loading:before {
+.icon-load:before, .icon-loading:before {
   background-image: url(../images/loading.png);
 }
 

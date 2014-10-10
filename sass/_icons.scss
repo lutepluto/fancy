@@ -77,10 +77,15 @@ $icon-var-select:         "select.png";
   100% { transform: rotate(359deg); }
 }
 
+.#{$icon-prefix}loading {
+  @extend.#{$icon-prefix}spin;
+}
+
 .#{$icon-prefix}chevron-down:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-down}); }
 .#{$icon-prefix}chevron-right:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-right}); }
 .#{$icon-prefix}chevron-up:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-up}); }
 .#{$icon-prefix}clip:before { background-image: url(#{$icon-image-path}#{$icon-var-clip}); }
-.#{$icon-prefix}loading:before { @extend.#{$icon-prefix}spin; background-image: url(#{$icon-image-path}#{$icon-var-loading}); }
+.#{$icon-prefix}load:before { background-image: url(#{$icon-image-path}#{$icon-var-loading}); }
+.#{$icon-prefix}loading:before { @extend .#{$icon-prefix}load:before; }
 .#{$icon-prefix}select:before { background-image: url(#{$icon-image-path}#{$icon-var-select}); }
 
