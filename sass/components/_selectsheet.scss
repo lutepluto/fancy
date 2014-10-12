@@ -1,0 +1,65 @@
+/**
+ * Fileupload
+ * --------------------------------------------------
+ */
+
+
+.selectsheet {
+  position: fixed;
+  display: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 200px;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: $z-index-selectsheet;
+  @include transition(transform .3s ease-out);
+    @include translate(0, 200px);
+
+  &.open {
+    @include translate(0, 0);
+  }
+}
+
+.selectsheet-header {
+  position: relative;
+  padding: $content-padding $content-margin;
+  background-color: #ddd;
+
+  .sheet-confirm {
+    position: absolute;
+    top: 50%;
+    right: $content-margin;
+    min-width: 60px;
+    @include translate(0, -50%);
+  }
+}
+
+.selectsheet-body {
+  display: table;
+  height: 100%;
+
+  .select-group {
+    display: table-cell;
+    list-style: none;
+    padding: 0;
+    width: 1%;
+  }
+}
+
+.selectsheet-open {
+  overflow: hidden;
+}
+
+.selectsheet-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-backdrop;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, .3);
+  @include translateZ(0);
+}
