@@ -10,6 +10,7 @@
   padding-bottom: $item-border-width;
   padding-left: 0; // reset padding because ul and ol
   margin-bottom: 20px;
+  overflow: hidden;
 }
 /* If a list is the last item in a container, don't add margin-bottom */
 .list:last-child {
