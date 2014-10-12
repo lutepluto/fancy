@@ -521,7 +521,6 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -1901,6 +1900,7 @@ button.item-button-right:after,
   padding-bottom: 1px;
   padding-left: 0;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 /* If a list is the last item in a container, don't add margin-bottom */
@@ -2286,6 +2286,78 @@ button.item-button-right:after,
   font-size: 18px;
   display: block;
   text-align: center;
+}
+
+/**
+ * Fileupload
+ * --------------------------------------------------
+ */
+.selectsheet {
+  position: fixed;
+  display: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 200px;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 11;
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  -webkit-transform: translate(0, 200px);
+  -moz-transform: translate(0, 200px);
+  transform: translate(0, 200px);
+}
+.selectsheet.open {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.selectsheet-header {
+  position: relative;
+  padding: 10px 15px;
+  background-color: #ddd;
+}
+.selectsheet-header .sheet-confirm {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  min-width: 60px;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.selectsheet-body {
+  display: table;
+  height: 100%;
+}
+.selectsheet-body .select-group {
+  display: table-cell;
+  list-style: none;
+  padding: 0;
+  width: 1%;
+}
+
+.selectsheet-open {
+  overflow: hidden;
+}
+
+.selectsheet-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 /**

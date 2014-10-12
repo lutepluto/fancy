@@ -521,7 +521,6 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -1901,6 +1900,7 @@ button.item-button-right:after,
   padding-bottom: 1px;
   padding-left: 0;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 /* If a list is the last item in a container, don't add margin-bottom */
