@@ -2350,7 +2350,7 @@ button.item-button-right:after,
 }
 .selectsheet-body .select-group ul {
   display: block;
-  height: 52px 0;
+  padding: 52px 0;
   width: 100%;
 }
 .selectsheet-body .select-group ul li a {
