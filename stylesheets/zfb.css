@@ -2289,7 +2289,7 @@ button.item-button-right:after,
 }
 
 /**
- * Fileupload
+ * Selectsheet
  * --------------------------------------------------
  */
 .selectsheet {
@@ -2298,7 +2298,7 @@ button.item-button-right:after,
   right: 0;
   bottom: 0;
   left: 0;
-  height: 200px;
+  height: 172px;
   overflow: hidden;
   background-color: #fff;
   z-index: 11;
@@ -2319,6 +2319,7 @@ button.item-button-right:after,
 .selectsheet-header {
   position: relative;
   padding: 10px 15px;
+  height: 42px;
   background-color: #ddd;
 }
 .selectsheet-header .sheet-confirm {
@@ -2332,14 +2333,31 @@ button.item-button-right:after,
 }
 
 .selectsheet-body {
-  display: table;
-  height: 100%;
+  position: relative;
+  height: 130px;
 }
 .selectsheet-body .select-group {
-  display: table-cell;
-  list-style: none;
+  position: relative;
+  float: left;
   padding: 0;
-  width: 1%;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+}
+.selectsheet-body .select-group::-webkit-scrollbar {
+  display: none;
+}
+.selectsheet-body .select-group ul {
+  display: block;
+  height: 52px 0;
+  width: 100%;
+}
+.selectsheet-body .select-group ul li a {
+  display: block;
+  height: 26px;
+  line-height: 27px;
+  background-color: transparent;
 }
 
 .selectsheet-open {
@@ -2358,6 +2376,15 @@ button.item-button-right:after,
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   transform: translateZ(0);
+}
+
+.selectsheet-highlight {
+  position: absolute;
+  top: 52px;
+  height: 26px;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 /**

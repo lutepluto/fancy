@@ -1,7 +1,10 @@
 /**
- * Fileupload
+ * Selectsheet
  * --------------------------------------------------
  */
+
+ $selectsheet-option-height:   26px;
+
 
 
 .selectsheet {
@@ -10,7 +13,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  height: 200px;
+  height: 172px;
   overflow: hidden;
   background-color: #fff;
   z-index: $z-index-selectsheet;
@@ -25,6 +28,7 @@
 .selectsheet-header {
   position: relative;
   padding: $content-padding $content-margin;
+  height: 42px;
   background-color: #ddd;
 
   .sheet-confirm {
@@ -37,14 +41,34 @@
 }
 
 .selectsheet-body {
-  display: table;
-  height: 100%;
+  position: relative;
+  height: 130px;
 
   .select-group {
-    display: table-cell;
-    list-style: none;
+    position: relative;
+    float: left;
     padding: 0;
-    width: 1%;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    ul {
+      display: block;
+      height: $selectsheet-option-height * 2 0;
+      width: 100%;
+
+      li a {
+        display: block;
+        height: $selectsheet-option-height;
+        line-height: $selectsheet-option-height + 1;
+        background-color: transparent;
+      }
+    }
   }
 }
 
@@ -62,4 +86,13 @@
   overflow: hidden;
   background-color: rgba(0, 0, 0, .3);
   @include translateZ(0);
+}
+
+.selectsheet-highlight {
+  position: absolute;
+  top: $selectsheet-option-height * 2;
+  height: $selectsheet-option-height;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
