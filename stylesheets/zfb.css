@@ -2298,7 +2298,6 @@ button.item-button-right:after,
   right: 0;
   bottom: 0;
   left: 0;
-  height: 172px;
   overflow: hidden;
   background-color: #fff;
   z-index: 11;
@@ -2306,9 +2305,9 @@ button.item-button-right:after,
   -moz-transition: transform 0.3s ease-out;
   -o-transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-  -webkit-transform: translate(0, 200px);
-  -moz-transform: translate(0, 200px);
-  transform: translate(0, 200px);
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  transform: translate(0, 100%);
 }
 .selectsheet.open {
   -webkit-transform: translate(0, 0);
@@ -2319,63 +2318,84 @@ button.item-button-right:after,
 .selectsheet-header {
   position: relative;
   padding: 10px 15px;
-  height: 42px;
-  background-color: #ddd;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
 }
-.selectsheet-header .sheet-confirm {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  min-width: 60px;
-  -webkit-transform: translate(0, -50%);
-  -moz-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+.selectsheet-header label {
+  font-weight: bold;
 }
 
 .selectsheet-body {
   position: relative;
-  height: 130px;
+  height: 180px;
 }
-.selectsheet-body .select-group {
+
+.selectsheet-group {
   position: relative;
-  float: left;
+  margin: 0;
   padding: 0;
-  text-align: center;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  width: 100%;
   height: 100%;
 }
-.selectsheet-body .select-group::-webkit-scrollbar {
+.selectsheet-group.coordinate {
+  overflow: hidden;
+  background-color: #fff;
+}
+.selectsheet-group.coordinate .menu {
+  position: relative;
   display: none;
+  float: left;
+  height: 100%;
 }
-.selectsheet-body .select-group ul {
+.selectsheet-group.coordinate .menu.active {
   display: block;
-  padding: 52px 0;
-  width: 100%;
 }
-.selectsheet-body .select-group ul li a {
+.selectsheet-group.coordinate .menu li a {
   display: block;
-  height: 26px;
-  line-height: 27px;
-  background-color: transparent;
+  padding: 5px;
+  text-align: center;
+  color: #555;
 }
-
-.selectsheet-open {
-  overflow: hidden;
+.selectsheet-group.coordinate .menu li.active a {
+  color: #f0ad4e;
 }
-
-.selectsheet-backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.3);
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  transform: translateZ(0);
+.selectsheet-group.coordinate .main, .selectsheet-group.coordinate .sub, .selectsheet-group.coordinate .tertiary {
+  width: 33.3%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #fff;
+}
+.selectsheet-group.coordinate .main {
+  background-color: #f5f5f5;
+}
+.selectsheet-group.coordinate .sub {
+  background-color: #fbfbfb;
+}
+.selectsheet-group.independent {
+  float: left;
+}
+.selectsheet-group.independent.half {
+  width: 50%;
+}
+.selectsheet-group.independent.trible {
+  width: 33.3%;
+}
+.selectsheet-group.independent ul {
+  height: 100%;
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.selectsheet-group.independent ul a.button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-color: #f0ad4e;
+  color: #f0ad4e;
+  background-color: #fff;
+}
+.selectsheet-group.independent ul .active a {
+  background-color: #f0ad4e;
+  color: #fff;
 }
 
 .selectsheet-highlight {
