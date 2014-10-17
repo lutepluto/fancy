@@ -8,6 +8,7 @@ $icon-image-path:    "../images/" !default;
 $icon-prefix:        "icon-";
 
 $icon-var-chevron-down:   "chevron-down.png";
+$icon-var-chevron-left:   "chevron-left.png";
 $icon-var-chevron-right:  "chevron-right.png";
 $icon-var-chevron-up:     "chevron-up.png";
 $icon-var-clip:           "clip.png";
@@ -92,6 +93,7 @@ $icon-var-select:         "select.png";
 }
 
 .#{$icon-prefix}chevron-down:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-down}); }
+.#{$icon-prefix}chevron-left:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-left}); }
 .#{$icon-prefix}chevron-right:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-right}); }
 .#{$icon-prefix}chevron-up:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-up}); }
 .#{$icon-prefix}clip:before { background-image: url(#{$icon-image-path}#{$icon-var-clip}); }
