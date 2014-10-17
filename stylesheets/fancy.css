@@ -120,6 +120,10 @@
   background-image: url(../images/chevron-down.png);
 }
 
+.icon-chevron-left:before {
+  background-image: url(../images/chevron-left.png);
+}
+
 .icon-chevron-right:before {
   background-image: url(../images/chevron-right.png);
 }

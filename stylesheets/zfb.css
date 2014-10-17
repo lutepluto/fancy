@@ -120,6 +120,10 @@
   background-image: url(../images/chevron-down.png);
 }
 
+.icon-chevron-left:before {
+  background-image: url(../images/chevron-left.png);
+}
+
 .icon-chevron-right:before {
   background-image: url(../images/chevron-right.png);
 }
@@ -2458,6 +2462,104 @@ button.item-button-right:after,
 }
 .actionsheet-group .cancel {
   color: #d9534f;
+}
+
+/**
+ * Datetimepicker
+ * --------------------------------------------------
+ */
+.datetimepicker {
+  position: fixed;
+  display: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 11;
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
+.datetimepicker.open {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.datetimepicker-head {
+  position: relative;
+  padding: 5px 10px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+  *zoom: 1;
+}
+.datetimepicker-head:before, .datetimepicker-head:after {
+  content: " ";
+  display: table;
+  line-height: 0;
+}
+.datetimepicker-head:after {
+  clear: both;
+}
+.datetimepicker-head .button {
+  min-height: 28px;
+  line-height: 28px;
+}
+
+.datetimepicker-body {
+  position: relative;
+}
+.datetimepicker-body .calendar {
+  width: 100%;
+  height: 266px;
+  border-collapse: collapse;
+}
+.datetimepicker-body .calendar thead tr {
+  border: 1px solid #fff;
+}
+.datetimepicker-body .calendar thead th {
+  background-color: #f8f8f8;
+}
+.datetimepicker-body .calendar th, .datetimepicker-body .calendar td {
+  text-align: center;
+  color: #000;
+  font-weight: normal;
+}
+.datetimepicker-body .calendar td {
+  border-top: 1px solid #ddd;
+  width: 14.3%;
+  padding: 3px 0;
+  vertical-align: middle;
+  text-align: center;
+}
+.datetimepicker-body .calendar td a {
+  display: inline-block;
+  padding: 3px;
+  width: 28px;
+  height: 28px;
+  border-radius: 15px;
+}
+.datetimepicker-body .calendar .currentMonth {
+  padding: 5px;
+  font-weight: bold;
+}
+.datetimepicker-body .calendar .old, .datetimepicker-body .calendar .new {
+  background-color: #ddd;
+}
+.datetimepicker-body .calendar .old a, .datetimepicker-body .calendar .new a {
+  color: #aaa;
+}
+.datetimepicker-body .calendar .current a {
+  color: #d9534f;
+}
+.datetimepicker-body .calendar .active a {
+  background-color: #428bca;
+  color: #fff;
 }
 
 /**
