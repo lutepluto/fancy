@@ -144,6 +144,10 @@
   background-image: url(../images/loading.png);
 }
 
+.icon-search:before {
+  background-image: url(../images/search.png);
+}
+
 .icon-select:before {
   background-image: url(../images/select.png);
 }
@@ -722,10 +726,24 @@ a:active {
 .margin {
   margin: 15px !important;
 }
+.margin.narrow {
+  margin: 10px !important;
+}
+.margin.narrower {
+  margin: 5px !important;
+}
 
 .margin-top,
 .margin-vertical {
   margin-top: 15px !important;
+}
+.margin-top.narrow,
+.margin-vertical.narrow {
+  margin: 10px !important;
+}
+.margin-top.narrower,
+.margin-vertical.narrower {
+  margin: 5px !important;
 }
 
 .margin-right,
@@ -1365,6 +1383,27 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.search-group {
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.search-group .icon-search {
+  display: table-cell;
+  float: left;
+}
+.search-group .icon-search:before {
+  padding: 5px 0;
+  height: 34px;
+  background-size: contain;
+}
+.search-group input {
+  display: table-cell;
+  width: 90%;
+  border: none;
+  height: 32px;
 }
 
 /**
@@ -2350,9 +2389,18 @@ button.item-button-right:after,
   display: none;
   float: left;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #fff;
 }
 .selectsheet-group.coordinate .menu.active {
   display: block;
+}
+.selectsheet-group.coordinate .menu.half {
+  width: 50%;
+}
+.selectsheet-group.coordinate .menu.triple {
+  width: 33.3%;
 }
 .selectsheet-group.coordinate .menu li a {
   display: block;
@@ -2362,12 +2410,6 @@ button.item-button-right:after,
 }
 .selectsheet-group.coordinate .menu li.active a {
   color: #f0ad4e;
-}
-.selectsheet-group.coordinate .main, .selectsheet-group.coordinate .sub, .selectsheet-group.coordinate .tertiary {
-  width: 33.3%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background-color: #fff;
 }
 .selectsheet-group.coordinate .main {
   background-color: #f5f5f5;
@@ -2381,7 +2423,7 @@ button.item-button-right:after,
 .selectsheet-group.independent.half {
   width: 50%;
 }
-.selectsheet-group.independent.trible {
+.selectsheet-group.independent.triple {
   width: 33.3%;
 }
 .selectsheet-group.independent ul {
@@ -2493,7 +2535,7 @@ button.item-button-right:after,
 
 .datetimepicker-head {
   position: relative;
-  padding: 5px 10px;
+  padding: 10px;
   background-color: #f8f8f8;
   border-bottom: 1px solid #ccc;
   *zoom: 1;
@@ -2524,6 +2566,7 @@ button.item-button-right:after,
 }
 .datetimepicker-body .calendar thead th {
   background-color: #f8f8f8;
+  line-height: 32px;
 }
 .datetimepicker-body .calendar th, .datetimepicker-body .calendar td {
   text-align: center;
@@ -2547,11 +2590,12 @@ button.item-button-right:after,
 .datetimepicker-body .calendar .currentMonth {
   padding: 5px;
   font-weight: bold;
+  font-size: 18px;
 }
-.datetimepicker-body .calendar .old, .datetimepicker-body .calendar .new {
+.datetimepicker-body .calendar .old, .datetimepicker-body .calendar .new, .datetimepicker-body .calendar .disabled {
   background-color: #ddd;
 }
-.datetimepicker-body .calendar .old a, .datetimepicker-body .calendar .new a {
+.datetimepicker-body .calendar .old a, .datetimepicker-body .calendar .new a, .datetimepicker-body .calendar .disabled a {
   color: #aaa;
 }
 .datetimepicker-body .calendar .current a {
@@ -2560,6 +2604,34 @@ button.item-button-right:after,
 .datetimepicker-body .calendar .active a {
   background-color: #428bca;
   color: #fff;
+}
+
+/**
+ * Searchsheet
+ * --------------------------------------------------
+ */
+.searchsheet {
+  position: fixed;
+  display: none;
+  top: 40%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 11;
+  -webkit-transition: transform 0.6s ease-out;
+  -moz-transition: transform 0.6s ease-out;
+  -o-transition: transform 0.6s ease-out;
+  transition: transform 0.6s ease-out;
+  -webkit-transform: translate3d(0, 100%, 0);
+  -moz-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+.searchsheet.open {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 /**

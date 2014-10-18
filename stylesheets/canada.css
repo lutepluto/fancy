@@ -144,6 +144,10 @@
   background-image: url(../images/loading.png);
 }
 
+.icon-search:before {
+  background-image: url(../images/search.png);
+}
+
 .icon-select:before {
   background-image: url(../images/select.png);
 }
@@ -722,10 +726,24 @@ a:active {
 .margin {
   margin: 15px !important;
 }
+.margin.narrow {
+  margin: 10px !important;
+}
+.margin.narrower {
+  margin: 5px !important;
+}
 
 .margin-top,
 .margin-vertical {
   margin-top: 15px !important;
+}
+.margin-top.narrow,
+.margin-vertical.narrow {
+  margin: 10px !important;
+}
+.margin-top.narrower,
+.margin-vertical.narrower {
+  margin: 5px !important;
 }
 
 .margin-right,
@@ -1365,6 +1383,27 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.search-group {
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.search-group .icon-search {
+  display: table-cell;
+  float: left;
+}
+.search-group .icon-search:before {
+  padding: 5px 0;
+  height: 34px;
+  background-size: contain;
+}
+.search-group input {
+  display: table-cell;
+  width: 90%;
+  border: none;
+  height: 32px;
 }
 
 /**
