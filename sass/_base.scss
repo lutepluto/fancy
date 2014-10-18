@@ -225,11 +225,23 @@ a {
 
 .margin {
   margin: $content-margin !important;
+  &.narrow {
+    margin: $content-margin - 5 !important;
+  }
+  &.narrower {
+    margin: $content-margin - 10 !important
+  }
 }
 
 .margin-top,
 .margin-vertical {
   margin-top: $content-margin !important;
+  &.narrow {
+    margin: $content-margin - 5 !important;
+  }
+  &.narrower {
+    margin: $content-margin - 10 !important
+  }
 }
 
 .margin-right,
