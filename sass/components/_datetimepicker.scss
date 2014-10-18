@@ -23,7 +23,7 @@
 
 .datetimepicker-head {
   position: relative;
-  padding: ($content-padding / 2) $content-padding;
+  padding: $content-padding;
   background-color: #f8f8f8;
   border-bottom: 1px solid #ccc;
   @include clearfix();
@@ -48,6 +48,7 @@
 
     thead th {
       background-color: #f8f8f8;
+      line-height: 32px;
     }
 
     th, td {
@@ -75,9 +76,10 @@
     .currentMonth {
       padding: 5px;
       font-weight: bold;
+      font-size: 18px;
     }
 
-    .old, .new {
+    .old, .new, .disabled {
       background-color: #ddd;
 
       a {
