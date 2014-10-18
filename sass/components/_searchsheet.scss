@@ -1,0 +1,23 @@
+/**
+ * Searchsheet
+ * --------------------------------------------------
+ */
+
+
+.searchsheet {
+  position: fixed;
+  display: none;
+  top: 40%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: $z-index-action-sheet;
+  @include transition(transform 0.6s ease-out);
+  @include translate3d(0, 100%, 0);
+
+  &.open {
+    @include translate3d(0, 0, 0);
+  }
+}
