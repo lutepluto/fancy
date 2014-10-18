@@ -56,9 +56,20 @@ $selectsheet-option-height:   26px;
       display: none;
       float: left;
       height: 100%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      background-color: #fff;
 
       &.active {
         display: block;
+      }
+
+      &.half {
+        width: 50%;
+      }
+
+      &.triple {
+        width: 33.3%;
       }
 
       li {
@@ -74,13 +85,6 @@ $selectsheet-option-height:   26px;
           color: $brand-warning;
         }
       }
-    }
-
-    .main, .sub, .tertiary {
-      width: 33.3%;
-      overflow-x: hidden;
-      overflow-y: scroll;
-      background-color: #fff;
     }
 
     .main {
@@ -99,7 +103,7 @@ $selectsheet-option-height:   26px;
       width: 50%;
     }
 
-    &.trible {
+    &.triple {
       width: 33.3%;
     }
 
