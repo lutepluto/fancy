@@ -14,6 +14,7 @@ $icon-var-chevron-up:     "chevron-up.png";
 $icon-var-clip:           "clip.png";
 $icon-var-gray-loading:   "gray-loading.png";
 $icon-var-loading:        "loading.png";
+$icon-var-search:         "search.png";
 $icon-var-select:         "select.png";
 
 
@@ -101,5 +102,6 @@ $icon-var-select:         "select.png";
 .#{$icon-prefix}gray-loading:before { @extend .#{$icon-prefix}gray-load:before; }
 .#{$icon-prefix}load:before { background-image: url(#{$icon-image-path}#{$icon-var-loading}); }
 .#{$icon-prefix}loading:before { @extend .#{$icon-prefix}load:before; }
+.#{$icon-prefix}search:before { background-image: url(#{$icon-image-path}#{$icon-var-search}); }
 .#{$icon-prefix}select:before { background-image: url(#{$icon-image-path}#{$icon-var-select}); }
 

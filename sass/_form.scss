@@ -304,3 +304,27 @@ textarea {
           appearance: none;
 }
 
+.search-group {
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  .icon-search {
+    display: table-cell;
+    float: left;
+  }
+
+  .icon-search:before {
+    padding: 5px 0;
+    height: 34px;
+    background-size: contain;
+  }
+
+  input {
+    display: table-cell;
+    width: 90%;
+    border: none;
+    height: 32px;
+  }
+}
+
