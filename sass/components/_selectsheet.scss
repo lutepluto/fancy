@@ -47,6 +47,14 @@ $selectsheet-option-height:   26px;
   width: 100%;
   height: 100%;
 
+  &.double .menu {
+    width: 50%;
+  }
+
+  &.triple .menu {
+    width: 33.3%;
+  }
+
   &.coordinate {
     overflow: hidden;
     background-color: #fff;
@@ -62,14 +70,6 @@ $selectsheet-option-height:   26px;
 
       &.active {
         display: block;
-      }
-
-      &.half {
-        width: 50%;
-      }
-
-      &.triple {
-        width: 33.3%;
       }
 
       li {
