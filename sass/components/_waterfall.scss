@@ -1,0 +1,76 @@
+/**
+ * Waterfall
+ * --------------------------------------------------
+ */
+
+$waterfall-bg:              #e7e7e7;
+$waterfall-border:          #ddd;
+$waterfall-active:          #f48b28;
+$waterfall-left-padding:    20px;
+$waterfall-milestone-size:  10px;
+$waterfall-z-index-default: 1;
+
+
+.waterfall {
+  position: relative;
+  padding: 20px 0;
+  background-color: $waterfall-bg;
+
+  &:before {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: $waterfall-left-padding;
+    height: 100%;
+    border-left: 2px solid #aaa;
+    z-index: $waterfall-z-index-default;
+  }
+
+  li {
+    position: relative;
+    padding: $content-padding $content-padding $content-padding $waterfall-left-padding * 2;
+    border-top: 1px solid $waterfall-border;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: darken($waterfall-border, 15%);
+
+    &.done, &.doing {
+      color: $waterfall-active;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $waterfall-border;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      left: $waterfall-left-padding + 1;
+      top: 50%;
+      width: $waterfall-milestone-size;
+      height: $waterfall-milestone-size;
+      border: 1px solid $waterfall-bg;
+      border-radius: 50%;
+      background-color: darken($waterfall-border, 15%);
+      z-index: $waterfall-z-index-default + 2;
+      @include translate(-50%, -50%);
+    }
+
+    &.doing:before,
+    &.done:before {
+      background-color: $waterfall-active;
+    }
+
+    &.done:after {
+      position: absolute;
+      content: "";
+      height: 100%;
+      top: 50%;
+      left: $waterfall-left-padding;
+      border-left: 2px solid $waterfall-active;
+      z-index: $waterfall-z-index-default + 1;
+    }
+  }
+}

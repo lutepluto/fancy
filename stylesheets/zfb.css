@@ -2163,9 +2163,6 @@ button.item-button-right:after,
 .progress-step .step .tip .icon {
   font-size: 20px;
 }
-.progress-step.horizontal .step {
-  display: inline-block;
-}
 .progress-step.justified .step {
   display: table-cell;
   padding-top: 10px;
@@ -2380,6 +2377,12 @@ button.item-button-right:after,
   width: 100%;
   height: 100%;
 }
+.selectsheet-group.double .menu {
+  width: 50%;
+}
+.selectsheet-group.triple .menu {
+  width: 33.3%;
+}
 .selectsheet-group.coordinate {
   overflow: hidden;
   background-color: #fff;
@@ -2395,12 +2398,6 @@ button.item-button-right:after,
 }
 .selectsheet-group.coordinate .menu.active {
   display: block;
-}
-.selectsheet-group.coordinate .menu.half {
-  width: 50%;
-}
-.selectsheet-group.coordinate .menu.triple {
-  width: 33.3%;
 }
 .selectsheet-group.coordinate .menu li a {
   display: block;
@@ -2632,6 +2629,65 @@ button.item-button-right:after,
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+
+/**
+ * Waterfall
+ * --------------------------------------------------
+ */
+.waterfall {
+  position: relative;
+  padding: 20px 0;
+  background-color: #e7e7e7;
+}
+.waterfall:before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 20px;
+  height: 100%;
+  border-left: 2px solid #aaa;
+  z-index: 1;
+}
+.waterfall li {
+  position: relative;
+  padding: 10px 10px 10px 40px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  color: #b7b7b7;
+}
+.waterfall li.done, .waterfall li.doing {
+  color: #f48b28;
+}
+.waterfall li:last-child {
+  border-bottom: 1px solid #ddd;
+}
+.waterfall li:before {
+  position: absolute;
+  content: "";
+  left: 21px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #e7e7e7;
+  border-radius: 50%;
+  background-color: #b7b7b7;
+  z-index: 3;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.waterfall li.doing:before, .waterfall li.done:before {
+  background-color: #f48b28;
+}
+.waterfall li.done:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  top: 50%;
+  left: 20px;
+  border-left: 2px solid #f48b28;
+  z-index: 2;
 }
 
 /**
