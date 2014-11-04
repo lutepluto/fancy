@@ -117,8 +117,6 @@ $timeline-badge-color:          #777;
 }
 
 .timeline-body {
-  max-height: 70px;
-  -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
 
