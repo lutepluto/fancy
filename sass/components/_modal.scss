@@ -65,12 +65,22 @@
 
 .dialog-footer {
   border-top: 1px solid #ddd;
-  padding: $content-padding $content-margin;
 
   a {
     font-size: 18px;
-    display: block;
+    display: table-cell;
+    width: 1%;
+    padding: $content-padding $content-margin;
+    vertical-align: middle;
     text-align: center;
+
+    &:first-child {
+      border-right: 1px solid #ddd;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
   }
 }
 
