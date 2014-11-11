@@ -17,10 +17,10 @@ $selectsheet-option-height:   26px;
   background-color: #fff;
   z-index: $z-index-selectsheet;
   @include transition(transform .3s ease-out);
-  @include translate(0, 100%);
+  @include translate3d(0, 100%, 0);
 
   &.open {
-    @include translate(0, 0);
+    @include translate3d(0, 0, 0);
   }
 }
 
