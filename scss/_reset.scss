@@ -34,9 +34,6 @@ time, mark, audio, video {
   font-size: 100%;
 }
 
-ol, ul {
-  list-style: none;
-}
 blockquote, q {
   quotes: none;
 }
@@ -44,6 +41,19 @@ blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
 }
 
 /**
@@ -130,6 +140,14 @@ a {
 
 
 /**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
 
@@ -214,6 +232,30 @@ sub {
 }
 
 /**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
  * Define consistent border, margin, and padding.
  */
 
@@ -252,6 +294,14 @@ textarea {
   outline-style: none; /* 4 */
   outline-width: 0; /* 4 */
   -webkit-font-smoothing: inherit; /* 5 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+
+button {
+  overflow: visible;
 }
 
 /**
@@ -302,6 +352,31 @@ html input[disabled] {
 }
 
 /**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
  * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *  (include `-moz` to future-proof).
@@ -349,6 +424,15 @@ img {
   -webkit-user-drag: none;
 }
 
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+
+optgroup {
+  font-weight: bold;
+}
+
 /* ==========================================================================
    Tables
    ========================================================================== */
@@ -361,3 +445,9 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
 }
+
+td,
+th {
+  padding: 0;
+}
+

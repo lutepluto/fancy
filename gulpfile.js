@@ -6,7 +6,6 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     del = require('del');
 
-
 /**
  * ---------- sass task ----------
  */
