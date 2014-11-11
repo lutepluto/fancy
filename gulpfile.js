@@ -29,8 +29,7 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('dist/css/'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
-    .pipe(gulp.dest('dist/css/'))
-    .pipe(notify({ message: 'Sass task complete' }));
+    .pipe(gulp.dest('dist/css/'));
 });
 
 /**
