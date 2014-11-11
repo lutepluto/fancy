@@ -2,8 +2,6 @@
 // Colors
 // -------------------------------
 
-$theme-color:                     #f48b28;
-
 $dark:                            #444;
 $gray-darker:                     lighten(#000, 13.5%) !default; // #222
 $gray-dark:                       lighten(#000, 20%) !default;   // #333
@@ -36,13 +34,13 @@ $state-danger-border:             darken(adjust-hue($state-danger-bg, -10), 5%) 
 // Base
 // -------------------------------
 
-$font-family-sans-serif:          "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
-$font-family-light-sans-serif:    "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
-$font-family-serif:               Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:           Monaco, Menlo, Consolas, "Courier New", monospace !default;
+$font-family-sans-serif:          "Helvetica Neue", "Roboto" sans-serif !default;
+$font-family-light-sans-serif:    "HelveticaNeue-Light", "Roboto-Light", sans-serif-light !default;
+$font-family-serif:               serif !default;
+$font-family-monospace:           monospace !default;
 
 $font-family-base:                $font-family-sans-serif !default;
-$font-size-base:                  16px !default;
+$font-size-base:                  14px !default;
 $font-size-large:                 18px !default;
 $font-size-small:                 11px !default;
 

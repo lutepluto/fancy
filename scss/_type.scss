@@ -16,7 +16,7 @@ p {
 // Emphasis & misc
 // -------------------------
 
-small   { font-size: 75%; }
+small   { font-size: 85%; }
 cite    { font-style: normal; }
 
 
@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6,
   color: $base-color;
   font-weight: $headings-font-weight;
   font-family: $headings-font-family;
-  line-height: $headings-line-height;
+  line-height: inherit;
 
   small {
     font-weight: normal;
@@ -123,17 +123,6 @@ blockquote {
       content: '\2014 \00A0';// EM DASH, NBSP;
     }
   }
-}
-
-
-// Quotes
-// -------------------------
-
-q:before,
-q:after,
-blockquote:before,
-blockquote:after {
-  content: "";
 }
 
 
