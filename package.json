@@ -1,0 +1,25 @@
+{
+  "name": "fancy",
+  "version": "0.0.1",
+  "description": "simple mobile web framework for rapid development",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/lutepluto/fancy.git"
+  },
+  "keywords": [
+    "css",
+    "mobile",
+    "web",
+    "framework"
+  ],
+  "author": "lute downpour",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-ruby-sass": "^0.7.1"
+  }
+}
