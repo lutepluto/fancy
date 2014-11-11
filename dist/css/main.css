@@ -191,13 +191,6 @@ q {
 }
 
 /**
- * Address inconsistent and variable font size in all browsers.
- */
-small {
-  font-size: 80%;
-}
-
-/**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
 sub,
@@ -570,7 +563,7 @@ p {
   margin: 0 0 10px;
 }
 
-small {
+small, .small {
   font-size: 85%;
 }
 
