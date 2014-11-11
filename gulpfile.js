@@ -6,6 +6,18 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     del = require('del');
 
+
+/**
+ * ---------- sass task ----------
+ */
+
+gulp.task('watch', function() {
+
+  // watch .scss files
+  gulp.watch('scss/*.scss', ['sass']);
+
+});
+
 /**
  * ---------- sass task ----------
  */
