@@ -21,7 +21,6 @@ body {
   @include tap-highlight-transparent();
   @include user-select(none);
 
-  overflow: hidden;
   margin: 0;
   padding: 0;
 
