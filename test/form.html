@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fancy Form</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="../dist/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content">
+      <form>
+        <fieldset>
+          <legend>基本信息<small>一些信息</small></legend>
+          <input type="text" placeholder="用户名" >  
+        </fieldset>
+      </form>
+
+      <form>
+        <input type="text" placeholder="用户名" >
+        <input type="search" >
+        <input type="date">
+        <input type="time">
+        <input type="number">
+        <input type="tel">
+        <input type="checkbox">
+        <input type="file">
+        <select  style="-webkit-appearance: none;">
+          <option>123</option>
+        </select>
+        <textarea rows="5"></textarea>
+        <input type="submit" value="提交" class="button button-success button-block">
+      </form>
+    </div>
+
+  </body>
+</html>
