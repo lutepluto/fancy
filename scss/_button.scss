@@ -6,26 +6,23 @@
 
 .button {
   // set the color defaults
-  @include button-style($button-default-bg, $button-default-border, $button-default-active-bg, $button-default-active-border, $button-default-text);
+  @include button-style($button-default-bg, $button-default-border, $button-default-text);
 
   position: relative;
   display: inline-block;
   margin: 0;
-  padding: 0 $button-padding 0 $button-padding;
+  padding: 0 $button-padding;
 
   min-width: ($button-padding * 3) + $button-font-size;
-  min-height: $button-height + 5px;
+  min-height: $button-height;
 
   border-width: $button-border-width;
   border-style: solid;
   border-radius: $button-border-radius;
 
-  vertical-align: top;
   text-align: center;
-
-  text-overflow: ellipsis;
   font-size: $button-font-size;
-  line-height: $button-height - ($button-border-width * 2) + 5px;
+  line-height: $button-height - ($button-border-width * 2);
   font-weight: 500;
 
   cursor: pointer;
@@ -40,43 +37,24 @@
     content: ' ';
   }
 
-  .icon {
-    vertical-align: top;
-  }
-
-  .icon:before,
-  &.icon:before,
-  &.icon-left:before,
-  &.icon-right:before {
-    display: inline-block;
-    padding: 0 0 $button-border-width 0;
-    vertical-align: inherit;
-    font-size: $button-icon-size;
-    line-height: $button-height - $button-border-width + 1;
-  }
-
   &.button-block, &.button-full {
     margin-top: $button-block-margin;
     margin-bottom: $button-block-margin;
   }
   &.button-primary {
-    @include button-style($button-primary-bg, $button-primary-border, $button-primary-active-bg, $button-primary-active-border, $button-primary-text);
-    @include button-clear($button-primary-bg);
+    @include button-style($button-primary-bg, $button-primary-border, $button-primary-text);
     @include button-outline($button-primary-bg);
   }
   &.button-success {
-    @include button-style($button-success-bg, $button-success-border, $button-success-active-bg, $button-success-active-border, $button-success-text);
-    @include button-clear($button-success-bg);
+    @include button-style($button-success-bg, $button-success-border, $button-success-text);
     @include button-outline($button-success-bg);
   }
   &.button-warning {
-    @include button-style($button-warning-bg, $button-warning-border, $button-warning-active-bg, $button-warning-active-border, $button-warning-text);
-    @include button-clear($button-warning-bg);
+    @include button-style($button-warning-bg, $button-warning-border, $button-warning-text);
     @include button-outline($button-warning-bg);
   }
   &.button-danger {
-    @include button-style($button-danger-bg, $button-danger-border, $button-danger-active-bg, $button-danger-active-border, $button-danger-text);
-    @include button-clear($button-danger-bg);
+    @include button-style($button-danger-bg, $button-danger-border, $button-danger-text);
     @include button-outline($button-danger-bg);
   }
 }
@@ -87,54 +65,15 @@
   min-height: $button-small-height + 3;
   font-size: $button-small-font-size;
   line-height: $button-small-height - $button-border-width + 1;
-
-  .icon:before,
-  &.icon:before,
-  &.icon-left:before,
-  &.icon-right:before {
-    font-size: $button-small-icon-size;
-    line-height: $button-small-height - $button-border-width - 1;
-  }
-}
-
-
-.button-icon {
-  @include transition(opacity .1s);
-  padding: 0 6px;
-  min-width: initial;
-  border-color: transparent;
-  background: none;
-
-  &.button.active {
-    border-color: transparent;
-    background: none;
-    box-shadow: none;
-    opacity: 0.3;
-  }
-}
-
-.button-clear {
-  @include button-clear($button-default-bg);
-  @include transition(opacity .1s);
-  padding: 0 $button-clear-padding;
-  max-height: $button-height;
-  border-color: #fff;
-  background: none;
-  box-shadow: none;
-
-  &.active {
-    opacity: 0.3;
-  }
 }
 
 .button-outline {
-  @include button-outline($button-default-bg);
   @include transition(opacity .1s);
   background: none;
   box-shadow: none;
 }
 
-.padding > .button.button-block:first-child {
+.padding > .button-block:first-child {
   margin-top: 0;
 }
 

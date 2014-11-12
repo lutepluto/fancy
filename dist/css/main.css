@@ -504,7 +504,7 @@ th {
 }
 
 .text-primary {
-  color: #428bca;
+  color: #3A89C9;
 }
 
 .text-success {
@@ -520,7 +520,7 @@ th {
 }
 
 .bg-primary {
-  background-color: #428bca;
+  background-color: #3A89C9;
 }
 
 .bg-success {
@@ -764,7 +764,6 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  overflow: hidden;
   margin: 0;
   padding: 0;
   color: #555555;
@@ -788,10 +787,202 @@ body {
 }
 
 a {
-  color: #428bca;
+  color: #3A89C9;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
 a:active {
-  color: #3071a9;
+  color: #2d6ea3;
+}
+
+/**
+ * Buttons
+ * --------------------------------------------------
+ */
+.button {
+  color: #444;
+  background-color: #fff;
+  border-color: #ddd;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0 8px;
+  min-width: 40px;
+  min-height: 42px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 40px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.button:hover {
+  color: #444;
+  text-decoration: none;
+}
+.button.active, .button:active {
+  background-color: #e6e6e6;
+  border-color: #e6e6e6;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+.button:after {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  bottom: -6px;
+  left: -8px;
+  content: ' ';
+}
+.button.button-block, .button.button-full {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.button.button-primary {
+  color: #fff;
+  background-color: #3A89C9;
+  border-color: #3A89C9;
+}
+.button.button-primary:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.button.button-primary.active, .button.button-primary:active {
+  background-color: #2d6ea3;
+  border-color: #2d6ea3;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+.button.button-primary.button-outline {
+  background: #fff;
+  border-color: #3A89C9;
+  color: #3A89C9;
+}
+.button.button-primary.button-outline.active {
+  background-color: #3A89C9;
+  color: #fff;
+  box-shadow: none;
+}
+.button.button-success {
+  color: #fff;
+  background-color: #61C155;
+  border-color: #61C155;
+}
+.button.button-success:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.button.button-success.active, .button.button-success:active {
+  background-color: #48a63d;
+  border-color: #48a63d;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+.button.button-success.button-outline {
+  background: #fff;
+  border-color: #61C155;
+  color: #61C155;
+}
+.button.button-success.button-outline.active {
+  background-color: #61C155;
+  color: #fff;
+  box-shadow: none;
+}
+.button.button-warning {
+  color: #fff;
+  background-color: #F8A13F;
+  border-color: #F8A13F;
+}
+.button.button-warning:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.button.button-warning.active, .button.button-warning:active {
+  background-color: #f6890e;
+  border-color: #f6890e;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+.button.button-warning.button-outline {
+  background: #fff;
+  border-color: #F8A13F;
+  color: #F8A13F;
+}
+.button.button-warning.button-outline.active {
+  background-color: #F8A13F;
+  color: #fff;
+  box-shadow: none;
+}
+.button.button-danger {
+  color: #fff;
+  background-color: #E84A5F;
+  border-color: #E84A5F;
+}
+.button.button-danger:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.button.button-danger.active, .button.button-danger:active {
+  background-color: #e21d37;
+  border-color: #e21d37;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+.button.button-danger.button-outline {
+  background: #fff;
+  border-color: #E84A5F;
+  color: #E84A5F;
+}
+.button.button-danger.button-outline.active {
+  background-color: #E84A5F;
+  color: #fff;
+  box-shadow: none;
+}
+
+.button-small {
+  padding: 0 4px;
+  min-width: 28px;
+  min-height: 31px;
+  font-size: 12px;
+  line-height: 28px;
+}
+
+.button-outline {
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
+  background: none;
+  box-shadow: none;
+}
+
+.padding > .button-block:first-child {
+  margin-top: 0;
+}
+
+.button-block {
+  display: block;
+  clear: both;
+}
+.button-block:after {
+  clear: both;
+}
+
+.button-full,
+.button-full > .button {
+  display: block;
+  margin-right: 0;
+  margin-left: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-radius: 0;
+}
+
+button.button-block,
+button.button-full,
+.button-full > button.button,
+input.button.button-block {
+  width: 100%;
+}
+
+.button.disabled,
+.button[disabled] {
+  opacity: .4;
+  cursor: default !important;
+  pointer-events: none;
 }

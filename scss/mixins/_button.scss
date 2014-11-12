@@ -1,7 +1,7 @@
 // Button Mixins
 // --------------------------------------------------
 
-@mixin button-style($bg-color, $border-color, $active-bg-color, $active-border-color, $color) {
+@mixin button-style($bg-color, $border-color, $color) {
   color: $color;
   background-color: $bg-color;
   border-color: $border-color;
@@ -11,30 +11,12 @@
     color: $color;
     text-decoration: none;
   }
-  &.active {
-    background-color: $active-bg-color;
-    border-color: $active-border-color;
+  &.active, &:active {
+    background-color: darken($bg-color, 10%);
+    border-color: darken($bg-color, 10%);
     box-shadow: inset 0px 1px 3px rgba(0,0,0,0.15);
   }
 }
-
-@mixin button-clear($color, $font-size:"") {
-  &.button-clear {
-    color: $color;
-    background: none;
-    border-color: transparent;
-    box-shadow: none;
-
-    @if $font-size != "" {
-      font-size: $font-size;
-    }
-  }
-  &.button-icon {
-    background: none;
-    border-color: transparent;
-  }
-}
-
 
 @mixin button-outline($color, $text-color:"") {
   &.button-outline {
