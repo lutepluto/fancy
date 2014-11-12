@@ -6,7 +6,7 @@
 // Make all forms have space below them
 form {
   margin: 0 0 10px;
-  padding: $content-padding; // set padding for nomarl layout
+  padding: 0 $content-padding; // set padding for nomarl layout
 }
 
 // Groups of fields with labels on top (legends)
@@ -41,7 +41,6 @@ textarea {
 // -------------------------------
 
 // Shared size and type resets
-select,
 textarea,
 input[type="text"],
 input[type="password"],
@@ -61,6 +60,8 @@ input[type="color"] {
   margin-bottom: 15px;
   padding: 0 10px;
   height: $line-height-computed + $font-size-base;
+
+  @include appearance(none);
   background-color: #fff;
   color: $dark;
   vertical-align: middle;
@@ -81,12 +82,16 @@ input[type="search"] {
 }
 
 // Vertically align date input
-input[type="date"] {
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"] {
   line-height: $line-height-computed + $font-size-base;
 }
 
 input,
-select,
 textarea {
   width: 100%;
 }

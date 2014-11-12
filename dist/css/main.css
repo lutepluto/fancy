@@ -993,7 +993,7 @@ input.button.button-block {
  */
 form {
   margin: 0 0 10px;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 legend {
@@ -1024,7 +1024,6 @@ textarea {
   font-family: "Helvetica Neue", "Roboto" sans-serif;
 }
 
-select,
 textarea,
 input[type="text"],
 input[type="password"],
@@ -1044,6 +1043,9 @@ input[type="color"] {
   margin-bottom: 15px;
   padding: 0 10px;
   height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: #fff;
   color: #444;
   vertical-align: middle;
@@ -1059,12 +1061,16 @@ input[type="search"] {
   box-sizing: border-box;
 }
 
-input[type="date"] {
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"] {
   line-height: 34px;
 }
 
 input,
-select,
 textarea {
   width: 100%;
 }
