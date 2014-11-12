@@ -77,6 +77,17 @@ $border-radius-small:             3px !default;
 
 $border-width-base:               1px !default;
 
+// Forms
+// -------------------------------
+
+$input-bg:                        #fff !default;
+$input-bg-disabled:               #f8f8f8 !default;
+
+$input-border:                    #ddd !default;
+$input-border-width:              $border-width-base !default;
+$input-label-color:               $dark !default;
+$input-color-placeholder:         lighten($dark, 40%) !default;
+
 
 // Buttons
 // -------------------------------
@@ -185,24 +196,6 @@ $list-group-label-wider:          90px;
 $icon-size:          24px;
 $icon-small-size:    16px;
 $icon-large-size:    32px;
-
-
-
-// Forms
-// -------------------------------
-
-$input-height-base:               ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
-$input-height-large:              (floor($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
-$input-height-small:              (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
-
-$input-bg:                        #fff !default;
-$input-bg-disabled:               #f8f8f8 !default;
-
-$input-color:                     #444 !default;
-$input-border:                    $item-default-border !default;
-$input-border-width:              $item-border-width !default;
-$input-label-color:               $dark !default;
-$input-color-placeholder:         lighten($dark, 40%) !default;
 
 
 // Z-Indexes

@@ -5,23 +5,20 @@
 
 // Make all forms have space below them
 form {
-  margin: 0 0 $line-height-base;
+  margin: 0 0 10px;
+  padding: $content-padding; // set padding for nomarl layout
 }
 
 // Groups of fields with labels on top (legends)
 legend {
   display: block;
-  margin-bottom: $line-height-base;
-  padding: 0;
-  width: 100%;
-  border: $input-border-width solid $input-border;
+  padding: 0 $content-padding;
   color: $dark;
-  font-size: $font-size-base * 1.5;
-  line-height: $line-height-base * 2;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
 
   small {
-    color: #f8f8f8;
-    font-size: $line-height-base * .75;
+    color: $gray-light;
   }
 }
 
@@ -65,7 +62,7 @@ input[type="color"] {
   padding: 0 10px;
   height: $line-height-computed + $font-size-base;
   background-color: #fff;
-  color: $input-color;
+  color: $dark;
   vertical-align: middle;
   font-size: $font-size-base;
   border: 1px solid #ddd;
@@ -75,7 +72,6 @@ input[type="color"] {
 
 // Rounded search input
 input[type="search"] {
-  padding: 0 10px;
   font-size: 16px;
   border-radius: 20px;
   // Override content-box in normalize
@@ -90,6 +86,7 @@ input[type="date"] {
 }
 
 input,
+select,
 textarea {
   width: 100%;
 }
@@ -97,25 +94,6 @@ textarea {
 // Reset height since textareas have rows
 textarea {
   height: auto;
-}
-
-// Everything else
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"] {
-  // border: 0;
 }
 
 // Position radios and checkboxes better
@@ -140,12 +118,6 @@ input[type="checkbox"] {
 select[multiple],
 select[size] {
   height: auto;
-}
-
-// Set the height of select and file controls to match text inputs
-select,
-input[type="file"] {
-  line-height: $input-height-base;
 }
 
 // Make select elements obey height by applying a border
