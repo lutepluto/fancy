@@ -22,8 +22,8 @@ gulp.task('watch', function() {
  */
 
 gulp.task('sass', function() {
-  return gulp.src('scss/main.scss')
-    .pipe(sass({ style: 'expanded', sourcemap: true, sourcemapPath: '../scss/' }))
+  return gulp.src('scss/fancy.scss')
+    .pipe(sass({ style: 'expanded', sourcemapPath: '../../scss/' }))
     .on('error', function(err) { console.log(err.message); })
     .pipe(autoprefixer())
     .pipe(gulp.dest('dist/css/'))
