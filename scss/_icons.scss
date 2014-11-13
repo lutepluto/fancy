@@ -17,8 +17,6 @@ $icon-var-loading:        "loading.png";
 $icon-var-search:         "search.png";
 $icon-var-select:         "select.png";
 
-
-
 .icon {
   position: relative;
   display: inline-block;
@@ -38,14 +36,14 @@ $icon-var-select:         "select.png";
     background-size: cover;
   }
 
-  &.large,
-  &.large:before {
+  &.icon-large,
+  &.icon-large:before {
     width: $icon-large-size;
     height: $icon-large-size;
   }
 
-  &.small,
-  &.small:before {
+  &.icon-small,
+  &.icon-small:before {
     width: $icon-small-size;
     height: $icon-small-size;
   }
