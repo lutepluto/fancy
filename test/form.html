@@ -18,28 +18,45 @@
 
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content">
-      <form>
-        <fieldset>
-          <legend>基本信息<small>一些信息</small></legend>
-          <input type="text" placeholder="用户名" >  
-        </fieldset>
-      </form>
 
-      <form>
+      <form class="padding">
         <input type="text" placeholder="用户名" >
         <input type="search" >
         <input type="date">
-        <input type="time">
-        <input type="number">
-        <input type="tel">
-        <input type="checkbox">
-        <input type="file">
-        <select  style="-webkit-appearance: none;">
-          <option>123</option>
-        </select>
         <textarea rows="5"></textarea>
         <input type="submit" value="提交" class="button button-success button-block">
       </form>
+
+      <form class="form-group">
+        <input type="text" class="form-control" placeholder="用户名">
+        <input type="password" class="form-control" placeholder="密码">
+        <div class="padding">
+          <input type="submit" class="button button-success button-block" value="提交">
+        </div>
+      </form>
+
+      <form class="form-group">
+        <div class="input-group">
+          <label>填姓名</label>
+          <input type="text" class="form-control" placeholder="请填写您的姓名">
+        </div>
+        <div class="input-group">
+          <label class="wide">填写昵称</label>
+          <input type="text" class="form-control" placeholder="请填写您的姓名">
+        </div>
+        <div class="input-group">
+          <label>密码</label>
+          <input type="password" class="form-control" placeholder="请填写您的密码">
+        </div>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="请填写购买金额">
+          <label>元</label>
+        </div>
+        <div class="padding">
+          <button type="button" class="button button-primary button-block">填好了</button>
+        </div>
+      </form>
+
     </div>
 
   </body>
