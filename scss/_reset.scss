@@ -23,10 +23,10 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; // 2
   -webkit-text-size-adjust: 100%; // 2
-  -webkit-user-select: $select;
-     -moz-user-select: $select;
-      -ms-user-select: $select; // IE10+
-          user-select: $select;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none; // IE10+
+          user-select: none;
 }
 
 //
