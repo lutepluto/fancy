@@ -1,24 +1,13 @@
-/**
- * Forms
- * --------------------------------------------------
- */
+// Forms
+// ==========================================================================
 
-// Make all forms have space below them
-form {
-  margin: 0 0 10px;
-}
+// Make legend visually hidden on page
+// Note: do not recommend render form with default legend style on mobile
 
-// Groups of fields with labels on top (legends)
 legend {
-  display: block;
-  padding: 0 $content-padding;
-  color: $dark;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-
-  small {
-    color: $gray-light;
-  }
+  width: 0px;
+  height: 1px;
+  overflow: hidden;
 }
 
 // Set font for forms
@@ -29,17 +18,12 @@ select,
 textarea {
   @include font-shorthand($font-size-base, normal, $line-height-base); // Set size, weight, line-height here
 }
-input,
-button,
-select,
-textarea {
-  font-family: $font-family-base; // And only set font-family here for those that need it (note the missing label element)
-}
 
 // Form Controls
-// -------------------------------
+// --------------------------------------------------
 
 // Shared size and type resets
+
 textarea,
 input[type="text"],
 input[type="password"],
@@ -57,50 +41,36 @@ input[type="tel"],
 input[type="color"] {
   display: block;
   margin-bottom: 15px;
-  padding: 0 $content-padding;
+  padding: 0 10px;
+  width: 100%;
   height: $line-height-computed + $input-font-size;
 
-  @include appearance(none);
-  background-color: #fff;
+  @include appearance(none); // reset appearance
+  background-color: $input-bg;
   color: $dark;
   vertical-align: middle;
   font-size: $input-font-size;
-  border: $input-border-width solid $input-border;
+  border: 1px solid $input-border-color;
   border-radius: $border-radius-base;
-  line-height: $input-font-size + 4;
+  line-height: 1.1; // here prefer unitless number instead of length(px, em or rem)
 }
 
 // Rounded search input
+
 input[type="search"] {
   font-size: 16px;
   border-radius: 20px;
-  // Override content-box in normalize
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-// Vertically align date input
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"] {
-  line-height: $line-height-computed + $font-size-base;
-}
-
-input,
-textarea {
-  width: 100%;
+  @include box-sizing(border-box); // Override content-box in normalize
 }
 
 // Reset height since textareas have rows
+
 textarea {
   height: auto;
 }
 
 // Position radios and checkboxes better
+
 input[type="radio"],
 input[type="checkbox"] {
   margin: 0;
@@ -108,6 +78,7 @@ input[type="checkbox"] {
 }
 
 // Reset width of input images, buttons, radios, checkboxes
+
 input[type="file"],
 input[type="image"],
 input[type="submit"],
@@ -119,6 +90,7 @@ input[type="checkbox"] {
 }
 
 // Make multiple select elements height not fixed
+
 select[multiple],
 select[size] {
   height: auto;
@@ -126,23 +98,24 @@ select[size] {
 
 // Make select elements obey height by applying a border
 select {
-  border: $input-border-width solid $input-border;
+  border: 1px solid $input-border-color;
   background-color: $input-bg; // Chrome on Linux and Mobile Safari need background-color
 }
 
 
 // Placeholder
-// -------------------------------
+// --------------------------------------------------
+
 input,
 textarea {
   @include placeholder();
 }
 
-
 // DISABLED STATE
-// -------------------------------
+// --------------------------------------------------
 
 // Disabled and read-only inputs
+
 input[disabled],
 select[disabled],
 textarea[disabled],
@@ -152,21 +125,25 @@ textarea[readonly] {
   background-color: $input-bg-disabled;
   cursor: not-allowed;
 }
+
 // Explicitly reset the colors here
+
 input[type="radio"][disabled],
 input[type="checkbox"][disabled],
 input[type="radio"][readonly],
 input[type="checkbox"][readonly] {
   background-color: transparent;
 }
+
 // Add textarea vertical padding
+
 textarea {
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
 // Form group
-// -------------------------------
+// --------------------------------------------------
 
 .form-group {
 
@@ -191,8 +168,8 @@ textarea {
   position: relative;
   margin-top: -1px;
   padding: $padding-base-vertical 0;
-  border-top: $input-border-width solid $input-border;
-  border-bottom: $input-border-width solid $input-border;
+  border-top: 1px solid $input-border-color;
+  border-bottom: 1px solid $input-border-color;
 
   &:first-child {
     margin-top: 0;

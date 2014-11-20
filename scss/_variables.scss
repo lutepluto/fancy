@@ -75,8 +75,6 @@ $border-radius-base:              4px !default;
 $border-radius-large:             6px !default;
 $border-radius-small:             3px !default;
 
-$border-width-base:               1px !default;
-
 // Icons
 // -------------------------------
 
@@ -91,8 +89,7 @@ $input-font-size:                 16px;
 $input-bg:                        #fff !default;
 $input-bg-disabled:               #f8f8f8 !default;
 
-$input-border:                    #ddd !default;
-$input-border-width:              $border-width-base !default;
+$input-border-color:                    #ddd !default;
 $input-label-color:               $dark !default;
 $input-color-placeholder:         lighten($dark, 40%) !default;
 
