@@ -1085,43 +1085,24 @@ textarea {
   display: table-cell;
 }
 
-.form-group .form-control {
-  margin-top: -1px;
-  margin-bottom: 0;
-  border-left-width: 0;
-  border-right-width: 0;
-  border-radius: 0;
-}
-.form-group .form-control:first-child {
-  margin-top: 0;
-}
-.form-group > .form-control {
-  height: 48px;
-}
-
-.input-row {
+.field-row {
   position: relative;
   margin-top: -1px;
   padding: 6px 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-.input-row:first-child {
+.field-row:first-child {
   margin-top: 0;
 }
-.input-row .form-control {
+.field-row .form-control {
   margin: 0;
-  border: none;
+  border: 0;
   height: 34px;
 }
-.input-row .form-control:first-child {
-  padding-right: 52px;
-}
-.input-row .form-control:last-child {
-  padding-left: 52px;
-}
-.input-row label,
-.input-row .icon {
+.field-row label:first-child,
+.field-row .icon:first-child,
+.field-row .suffix {
   position: absolute;
   top: 50%;
   -webkit-transform: translate(0, -50%);
@@ -1129,19 +1110,34 @@ textarea {
       transform: translate(0, -50%);
   font-size: 16px;
 }
-.input-row label:first-child,
-.input-row .icon:first-child {
+.field-row label,
+.field-row .icon:first-child {
   left: 10px;
 }
-.input-row label:last-child,
-.input-row .icon:last-child {
-  right: 10px;
+.field-row label + .form-control,
+.field-row .icon:first-child + .form-control {
+  padding-left: 52px;
 }
-.input-row .label-wide + .form-control {
+.field-row .label-wide + .form-control {
   padding-left: 84px;
 }
-
-.item-select select {
+.field-row .label-wider + .form-control {
+  padding-left: 116px;
+}
+.field-row .suffix {
+  right: 10px;
+  font-size: inherit;
+}
+.field-row .has-suffix {
+  padding-right: 52px;
+}
+.field-row .has-wide-suffix {
+  padding-right: 84px;
+}
+.field-row .has-wider-suffix {
+  padding-right: 116px;
+}
+.field-row select {
   display: block;
   margin: 0;
   width: 100%;
@@ -1152,5 +1148,4 @@ textarea {
   text-indent: 0.01px;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
 }

@@ -190,29 +190,10 @@ textarea {
   display: table-cell;
 }
 
-// Input row
+// Fancy form field row
 // --------------------------------------------------
 
-.form-group {
-
-  .form-control {
-    margin-top: -1px;
-    margin-bottom: 0;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-radius: 0;
-
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-
-  > .form-control {
-    height: $line-height-computed + $input-font-size + $padding-base-vertical * 2;
-  }
-}
-
-.input-row {
+.field-row {
   position: relative;
   margin-top: -1px;
   padding: $padding-base-vertical 0;
@@ -225,53 +206,64 @@ textarea {
 
   .form-control {
     margin: 0;
-    border: none;
+    border: 0;
     height: $line-height-computed + $input-font-size - 2;
-    
-    &:first-child {
-      padding-right: $content-padding * 2 + $input-font-size * 2;
-    }
-
-    &:last-child {
-      padding-left: $content-padding * 2 + $input-font-size * 2;
-    }
   }
 
-  label,
-  .icon {
+  label:first-child,
+  .icon:first-child,
+  .suffix {
     position: absolute;
     top: 50%;
     @include translate(0, -50%);
     font-size: $input-font-size;
+  }
 
-    &:first-child {
-      left: $content-padding;
-    }
+  label,
+  .icon:first-child {
+    left: $content-padding;
 
-    &:last-child {
-      right: $content-padding;
+    + .form-control {
+      padding-left: $content-padding * 2 + $input-font-size * 2;
     }
   }
 
   .label-wide + .form-control {
-    padding-left: $content-padding * 2 + $input-font-size * 4
+    padding-left: $content-padding * 2 + $input-font-size * 4;
   }
-}
 
-// Form select
-// -------------------------------
+  .label-wider + .form-control {
+    padding-left: $content-padding * 2 + $input-font-size * 6;
+  }
 
-.item-select select {
-  display: block;
-  margin: 0;
-  width: 100%;
-  border: none;
-  background-color: #fff;
-  white-space: nowrap;
-  cursor: pointer;
-  text-indent: 0.01px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  .suffix {
+    right: $content-padding;
+    font-size: inherit;
+  }
+
+  .has-suffix {
+    padding-right: $content-padding * 2 + $input-font-size * 2;
+  }
+
+  .has-wide-suffix {
+    padding-right: $content-padding * 2 + $input-font-size * 4
+  }
+
+  .has-wider-suffix {
+    padding-right: $content-padding * 2 + $input-font-size * 6;
+  }
+
+  select {
+    display: block;
+    margin: 0;
+    width: 100%;
+    border: none;
+    background-color: #fff;
+    white-space: nowrap;
+    cursor: pointer;
+    text-indent: 0.01px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+  }
 }
 
