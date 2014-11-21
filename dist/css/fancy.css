@@ -1088,7 +1088,7 @@ textarea {
 .field-row {
   position: relative;
   margin-top: -1px;
-  padding: 6px 0;
+  padding: 8px 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
@@ -1108,11 +1108,11 @@ textarea {
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
       transform: translate(0, -50%);
-  font-size: 16px;
 }
 .field-row label,
 .field-row .icon:first-child {
   left: 10px;
+  font-size: 16px;
 }
 .field-row label + .form-control,
 .field-row .icon:first-child + .form-control {
@@ -1126,7 +1126,6 @@ textarea {
 }
 .field-row .suffix {
   right: 10px;
-  font-size: inherit;
 }
 .field-row .has-suffix {
   padding-right: 52px;

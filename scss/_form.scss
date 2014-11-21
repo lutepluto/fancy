@@ -196,7 +196,7 @@ textarea {
 .field-row {
   position: relative;
   margin-top: -1px;
-  padding: $padding-base-vertical 0;
+  padding: 8px 0;
   border-top: 1px solid $input-border-color;
   border-bottom: 1px solid $input-border-color;
 
@@ -216,12 +216,12 @@ textarea {
     position: absolute;
     top: 50%;
     @include translate(0, -50%);
-    font-size: $input-font-size;
   }
 
   label,
   .icon:first-child {
     left: $content-padding;
+    font-size: $input-font-size;
 
     + .form-control {
       padding-left: $content-padding * 2 + $input-font-size * 2;
@@ -238,7 +238,6 @@ textarea {
 
   .suffix {
     right: $content-padding;
-    font-size: inherit;
   }
 
   .has-suffix {
@@ -252,6 +251,8 @@ textarea {
   .has-wider-suffix {
     padding-right: $content-padding * 2 + $input-font-size * 6;
   }
+
+  // make select not so ugly
 
   select {
     display: block;
