@@ -200,10 +200,6 @@ textarea {
   border-top: 1px solid $input-border-color;
   border-bottom: 1px solid $input-border-color;
 
-  &:first-child {
-    margin-top: 0;
-  }
-
   .form-control {
     margin: 0;
     border: 0;
@@ -268,3 +264,6 @@ textarea {
   }
 }
 
+.field-row-divider {
+  margin-bottom: 20px;
+}
