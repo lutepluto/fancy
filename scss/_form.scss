@@ -267,3 +267,28 @@ textarea {
 .field-row-divider {
   margin-bottom: 20px;
 }
+
+// Fancy form fieldset
+// --------------------------------------------------
+
+// override fieldset and legend in fancy form
+
+.fancy-form {
+
+  fieldset {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  legend {
+    width: auto;
+    height: $input-font-size * 1.1;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    font-size: $input-font-size;
+    font-weight: bold;
+  }
+} 
+
