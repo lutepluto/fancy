@@ -16,58 +16,47 @@
   </head>
   <body>
 
+    <header class="bar header fixed-top transparent">
+      <a href="#" class="left"><i class="icon icon-chevron-left"></i>主页</a>
+      <h1 class="title">付房租</h1>
+      <a href="#" class="right">关于<i class="icon icon-chevron-right"></i></a>
+    </header>
+
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
-    <div class="content">
+    <div class="content has-header has-footer">
 
-      <form class="padding">
-        <input type="text" placeholder="用户名" >
-        <input type="search" >
-        <input type="datetime">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="icon icon-load"></i></span>
-          <input type="text" placeholder="邮箱地址" >
-        </div>
-        <textarea rows="5"></textarea>
-        <input type="submit" value="提交" class="button button-success button-block">
-      </form>
-
-      <form class="">
-        <fieldset>
-          <legend>jello</legend>
-          <h1>12</h1>
-          <input type="text" class="form-control" placeholder="用户名">
-          <input type="password" class="form-control" placeholder="密码">
-          <div class="padding">
-            <input type="submit" class="button button-success button-block" value="提交">
-          </div>
-        </fieldset>
-      </form>
+      <button class="button button-clear">123</button>
+      <button class="button button-primary button-clear"><i class="icon icon-load"></i>&nbsp;123</button>
+      <button class="button button-success button-clear">123</button>
+      <button class="button button-warning button-clear">123</button>
+      <button class="button button-danger button-clear">123</button>
+      <button class="button"><i class="icon icon-load"></i></button>
 
       <form class="fancy-form">
-        <div class="field-row">
-          <input type="text" class="form-control" placeholder="username">
-        </div>
         <div class="field-row">
           <label class="label-wide">填姓名</label>
           <input type="text" class="form-control" placeholder="请填写您的姓名">
         </div>
-        <div class="field-row">
+        <div class="field-row field-row-divider">
           <label class="label-wide">填写昵称</label>
           <input type="text" class="form-control" placeholder="请填写您的姓名">
         </div>
-        <div class="field-row">
-          <label>密码</label>
-          <input type="password" class="form-control" placeholder="请填写您的密码">
-        </div>
-        <div class="field-row">
-          <label class="label-wider">身份证正面照</label>
-          <div class="form-control"></div>
-        </div>
-        <div class="field-row">
-          <i class="icon icon-load"></i>
-          <input type="text" class="form-control has-wider-suffix" placeholder="Loading placeholder here">
-          <button class="button button-small button-warning button-outline suffix">获取验证码</button>
-        </div>
+        <fieldset>
+          <legend>上传照片</legend>
+          <div class="field-row">
+            <label>密码</label>
+            <input type="password" class="form-control" placeholder="请填写您的密码">
+          </div>
+          <div class="field-row">
+            <label class="label-wider">身份证正面照</label>
+            <div class="form-control"></div>
+          </div>
+          <div class="field-row">
+            <i class="icon icon-load"></i>
+            <input type="text" class="form-control has-wider-suffix" placeholder="Loading placeholder here">
+            <button class="button button-small button-warning button-outline suffix">获取验证码</button>
+          </div>
+        </fieldset>
         <div class="field-row">
           <i class="icon icon-load"></i>
           <select class="form-control">
@@ -76,19 +65,40 @@
             <option>3</option>
           </select>
         </div>
+        <div class="field-row">
+          <label class="label-wide">填姓名</label>
+          <input type="text" class="form-control" placeholder="请填写您的姓名">
+        </div>
+        <div class="field-row field-row-divider">
+          <label class="label-wide">填写昵称</label>
+          <input type="text" class="form-control" placeholder="请填写您的姓名">
+        </div>
+        <fieldset>
+          <legend>上传照片</legend>
+          <div class="field-row">
+            <label>密码</label>
+            <input type="password" class="form-control" placeholder="请填写您的密码">
+          </div>
+          <div class="field-row">
+            <label class="label-wider">身份证正面照</label>
+            <div class="form-control"></div>
+          </div>
+          <div class="field-row">
+            <i class="icon icon-load"></i>
+            <input type="text" class="form-control has-wider-suffix" placeholder="Loading placeholder here">
+            <button class="button button-small button-warning button-outline suffix">获取验证码</button>
+          </div>
+        </fieldset>
         <div class="padding">
           <button type="button" class="button button-primary button-block">填好了</button>
         </div>
       </form>
 
-      <div style="width: 70%; padding: 10px;" class="search">
-        <div class="input-group search">
-          <span class="input-group-addon"><i class="icon icon-search"></i></span>
-          <input type="search" placeholder="数字数字">
-        </div>
-      </div>
-
     </div>
+
+    <footer class="bar footer fixed-bottom">
+      
+    </footer>
 
   </body>
 </html>
