@@ -338,22 +338,6 @@ th {
   color: #a94442;
 }
 
-.bg-primary {
-  background-color: #3A89C9;
-}
-
-.bg-success {
-  background-color: #dff0d8;
-}
-
-.bg-warning {
-  background-color: #fcf8e3;
-}
-
-.bg-danger {
-  background-color: #f2dede;
-}
-
 .disable-user-behavior {
   -webkit-user-select: none;
   -moz-user-select: none;

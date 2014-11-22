@@ -104,17 +104,6 @@
 
 @include text-emphasis-variant('.text-danger', $state-danger-text);
 
-// Background color
-
-@include bg-variant('.bg-primary', $brand-primary);
-
-@include bg-variant('.bg-success', $state-success-bg);
-
-@include bg-variant('.bg-warning', $state-warning-bg);
-
-@include bg-variant('.bg-danger', $state-danger-bg);
-
-
 // Disable user behavior
 
 .disable-user-behavior {
@@ -131,7 +120,7 @@
   -ms-content-zooming: none;
 }
 
-// User behaviour enable
+// User behaviour disable reset
 
 .user-select {
   @include user-select(text);
