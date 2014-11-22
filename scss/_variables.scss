@@ -135,8 +135,6 @@ $button-danger-text:              #fff !default;
 
 $bar-height:                      44px !default;
 $bar-title-font-size:             17px !default;
-$bar-padding-portrait:            5px !default;
-$bar-padding-landscape:           5px !default;
 $bar-transparency:                1 !default;
 
 $bar-default-bg:                  rgba(#fff, $bar-transparency) !default;
@@ -200,8 +198,6 @@ $list-group-label-wider:          90px;
 
 $z-index-action-sheet:            11 !default;
 $z-index-bar:                     10 !default;
-$z-index-bar-title:               0 !default;
-$z-index-bar-button:              1 !default;
 $z-index-item:                    2 !default;
 $z-index-item-checkbox:           3 !default;
 $z-index-item-drag:               0 !default;

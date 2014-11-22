@@ -543,16 +543,18 @@ a.subdued:last-child {
  * Scaffolding
  * --------------------------------------------------
  */
-*,
-*:before,
-*:after {
+html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-html {
-  -webkit-tap-highlight-color: transparent;
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 body {
@@ -588,6 +590,14 @@ body {
 .content > * {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+}
+
+.has-header {
+  padding-top: 44px;
+}
+
+.has-footer {
+  padding-bottom: 44px;
 }
 
 a {
@@ -670,6 +680,17 @@ a:active {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+.button.button-primary.button-clear {
+  border-color: transparent;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #3A89C9;
+}
+.button.button-primary.button-icon {
+  border-color: transparent;
+  background: none;
+}
 .button.button-success {
   color: #fff;
   background-color: #61C155;
@@ -695,6 +716,17 @@ a:active {
   color: #fff;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+.button.button-success.button-clear {
+  border-color: transparent;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #61C155;
+}
+.button.button-success.button-icon {
+  border-color: transparent;
+  background: none;
 }
 .button.button-warning {
   color: #fff;
@@ -722,6 +754,17 @@ a:active {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+.button.button-warning.button-clear {
+  border-color: transparent;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #F8A13F;
+}
+.button.button-warning.button-icon {
+  border-color: transparent;
+  background: none;
+}
 .button.button-danger {
   color: #fff;
   background-color: #E84A5F;
@@ -748,6 +791,17 @@ a:active {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+.button.button-danger.button-clear {
+  border-color: transparent;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #E84A5F;
+}
+.button.button-danger.button-icon {
+  border-color: transparent;
+  background: none;
+}
 
 .button-small {
   padding: 0 4px;
@@ -763,6 +817,29 @@ a:active {
   background: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.button-clear {
+  padding: 0 6px;
+  max-height: 42px;
+  border-color: transparent;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.button-clear.button-clear {
+  border-color: transparent;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #ddd;
+}
+.button-clear.button-icon {
+  border-color: transparent;
+  background: none;
+}
+.button-clear.active, .button-clear.activated {
+  opacity: 0.3;
 }
 
 .padding > .button-block:first-child {
@@ -1075,9 +1152,6 @@ textarea {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-.field-row:first-child {
-  margin-top: 0;
-}
 .field-row .form-control {
   margin: 0;
   border: 0;
@@ -1130,4 +1204,122 @@ textarea {
   text-indent: 0.01px;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+.field-row-divider {
+  margin-bottom: 20px;
+}
+
+.fancy-form fieldset {
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+  border: 0;
+}
+.fancy-form legend {
+  width: auto;
+  height: 17.6px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/**
+ * Bar (Headers and Footers)
+ * --------------------------------------------------
+ */
+.bar {
+  padding: 5px;
+  width: 100%;
+  height: 44px;
+  border-width: 0;
+  border-style: solid;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+  -webkit-background-size: 0 0;
+          background-size: 0;
+}
+.bar.fixed-top, .bar.fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.bar.fixed-top {
+  top: 0;
+}
+.bar.fixed-bottom {
+  bottom: 0;
+}
+.bar.transparent {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.bar a {
+  color: inherit;
+}
+
+.bar .title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+  margin: 0 10px;
+  padding: 0 80px;
+  min-width: 30px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 17px;
+  color: #444;
+  line-height: 44px;
+}
+.bar .title.title-left {
+  text-align: left;
+}
+.bar .title.title-right {
+  text-align: right;
+}
+
+.bar .left,
+.bar .right {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+  z-index: 1;
+  color: inherit;
+  font-size: 15px;
+  line-height: 44px;
+}
+
+.bar .left {
+  left: 10px;
+}
+
+.bar .right {
+  right: 10px;
+}
+
+.header {
+  top: 0;
+  border-top-width: 0;
+  border-bottom-width: 1px;
+}
+
+.footer {
+  bottom: 0;
+  border-top-width: 1px;
+  border-bottom-width: 0;
+  background-position: top;
+}
+
+.tabs {
+  padding: 0;
 }

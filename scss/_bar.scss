@@ -5,25 +5,15 @@
  */
 
 .bar {
-  @include translate3d(0,0,0);
-  @include user-select(none);
-  position: absolute;
-  right: 0;
-  left: 0;
-  z-index: $z-index-bar;
-
-  box-sizing: border-box;
-  padding: $bar-padding-portrait;
-
+  padding: 5px;
   width: 100%;
   height: $bar-height;
   border-width: 0;
   border-style: solid;
-  border-top: 1px solid transparent;
+  border-top: 1px solid $bar-default-border;
   border-bottom: 1px solid $bar-default-border;
 
   background-color: $bar-default-bg;
-
   background-size: 0;
 
   &.fixed-top,
@@ -31,6 +21,7 @@
     position: fixed;
     right: 0;
     left: 0;
+    z-index: $z-index-bar;
     @include translate3d(0, 0, 0);
   }
 
@@ -46,79 +37,71 @@
     background-color: $bar-transparent-bg;
   }
 
-  &.item-input-inset {
-    .item-input-wrapper {
-      margin-top: -1px;
-
-      input {
-        padding-left: 8px;
-        height: 28px;
-      }
-    }
-  }
-
-  // Title inside of a bar is centered
-  .title {
-    position: absolute;
-
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: $z-index-bar-title;
-    overflow: hidden;
-
-    margin: 0 10px;
-    padding: 0 50px;
-
-    min-width: 30px;
-
-    text-align: center;
-
-    // Go into ellipsis if too small
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
-    font-size: $bar-title-font-size;
-    color: $bar-default-text;
-
-    line-height: $bar-height;
-
-    &.title-left {
-      text-align: left;
-    }
-    &.title-right {
-      text-align: right;
-    }
-  }
-
   a {
     color: inherit;
   }
 
-  .icon {
-    position: absolute;
-    top: 50%;
-    max-width: 40px;
-    max-height: 32px;
-    z-index: $z-index-bar-title + 1;
-    @include translate(0, -50%);
+}
 
-    &.left {
-      left: 10px;
-    }
+// Title inside of a bar is centered
 
-    &.right {
-      right: 10px;
-    }
+.bar .title {
+  position: absolute;
 
-    img {
-      height: 100%;
-    }
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+
+  margin: 0 10px;
+  padding: 0 80px;
+
+  min-width: 30px;
+
+  text-align: center;
+
+  // Go into ellipsis if too small
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: $bar-title-font-size;
+  color: $bar-default-text;
+
+  line-height: $bar-height;
+
+  &.title-left {
+    text-align: left;
   }
+  &.title-right {
+    text-align: right;
+  }
+}
 
+// bar with left and right
+
+.bar .left,
+.bar .right {
+  position: absolute;
+  top: 50%;
+  @include translate(0, -50%);
+  z-index: 1;
+
+  color: inherit;
+  font-size: 15px;
+  line-height: $bar-height;
+}
+
+.bar .left {
+  left: 10px;
+}
+
+.bar .right {
+  right: 10px;
 }
 
 // Header at top
+
 .header {
   top: 0;
   border-top-width: 0;
@@ -126,6 +109,7 @@
 }
 
 // Footer at bottom
+
 .footer {
   bottom: 0;
   border-top-width: 1px;
@@ -134,6 +118,7 @@
 }
 
 // Don't render padding if the bar is just for tabs
+
 .tabs {
   padding: 0;
 }
