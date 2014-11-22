@@ -44,18 +44,22 @@
   &.button-primary {
     @include button-style($button-primary-bg, $button-primary-border, $button-primary-text);
     @include button-outline($button-primary-bg);
+    @include button-clear($button-primary-bg);
   }
   &.button-success {
     @include button-style($button-success-bg, $button-success-border, $button-success-text);
     @include button-outline($button-success-bg);
+    @include button-clear($button-success-bg);
   }
   &.button-warning {
     @include button-style($button-warning-bg, $button-warning-border, $button-warning-text);
     @include button-outline($button-warning-bg);
+    @include button-clear($button-warning-bg);
   }
   &.button-danger {
     @include button-style($button-danger-bg, $button-danger-border, $button-danger-text);
     @include button-outline($button-danger-bg);
+    @include button-clear($button-danger-bg);
   }
 }
 
@@ -71,6 +75,20 @@
   @include transition(opacity .1s);
   background: none;
   box-shadow: none;
+}
+
+.button-clear {
+  @include button-clear($button-default-border);
+  padding: 0 6px;
+  max-height: $button-height;
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+
+  &.active,
+  &.activated {
+    opacity: 0.3;
+  }
 }
 
 .padding > .button-block:first-child {
