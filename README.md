@@ -1,30 +1,43 @@
 #fancy
 =====================
 
-## How to run
+## For dev
 
-Install ruby [Ruby Installer](http://www.rubyinstaller.org/)
+### Run gulp
 
-Install sass:
+Install node [Node Installer](http://nodejs.org/download/)
+
+Run following command:
 
 ```bash
-$ gem install sass
+$ cd fancy/
+$ npm install
 ```
-
-Install compass:
+Start watch task:
 
 ```bash
-$ gem install compass
+$ cd fancy/
+$ gulp watch
 ```
 
 Generate css:
 
 ```bash
-$ cd fancy/ 
-$ compass watch
+$ cd fancy/
+$ gulp sass
 ```
-or 
+or just
 ```bash
-$ compass compile --productionss 
+$ gulp
 ```
-for production use
+
+## For test
+
+Run commands below:
+
+```bash
+$ cd fancy/
+$ npm start
+```
+
+Then go to your browser and type the address **http://localhost:8000/test**
