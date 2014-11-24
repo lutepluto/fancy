@@ -1225,6 +1225,88 @@ textarea {
   font-weight: bold;
 }
 
+.toggle {
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  width: 52px;
+  height: 32px;
+  border-radius: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.toggle input[type="checkbox"] {
+  display: none;
+}
+.toggle .checkbox {
+  position: relative;
+  width: 52px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+.toggle .checkbox:before {
+  position: absolute;
+  content: ' ';
+  top: 2px;
+  left: 2px;
+  z-index: 1;
+  width: 48px;
+  height: 28px;
+  border-radius: 20px;
+  background-color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+      transform: scale(1);
+}
+.toggle .checkbox:after {
+  position: absolute;
+  content: ' ';
+  top: 2px;
+  left: 2px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  border-radius: 28px;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
+}
+.toggle input[type="checkbox"]:checked + .checkbox {
+  background-color: #aaa;
+}
+.toggle input[type="checkbox"]:checked + .checkbox:before {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+      transform: scale(0);
+}
+.toggle input[type="checkbox"]:checked + .checkbox:after {
+  -webkit-transform: translate(21px, 0);
+  -ms-transform: translate(21px, 0);
+      transform: translate(21px, 0);
+}
+.toggle.primary input[type="checkbox"]:checked + .checkbox {
+  background-color: #3A89C9;
+}
+.toggle.success input[type="checkbox"]:checked + .checkbox {
+  background-color: #61C155;
+}
+.toggle.warning input[type="checkbox"]:checked + .checkbox {
+  background-color: #F8A13F;
+}
+.toggle.danger input[type="checkbox"]:checked + .checkbox {
+  background-color: #E84A5F;
+}
+
 /**
  * Bar (Headers and Footers)
  * --------------------------------------------------
