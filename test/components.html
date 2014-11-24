@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fancy Components</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="../dist/css/fancy.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header class="bar header fixed-top transparent">
+      <h1 class="title">组件</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content has-header has-footer">
+      <ul class="fancy-progress">
+        <li class="fancy-progress-step done">
+          <p class="content">上传</p>
+          <a href="#" class="tip">点我</a>
+          <div class="bar"></div>
+          <div class="node"></div>
+        </li>
+        <li class="fancy-progress-step doing">
+          <p class="content">审核</p>
+          <div class="bar"></div>
+          <div class="node"></div>
+        </li>
+        <li class="fancy-progress-step">
+          <p class="content">通过</p>
+          <div class="node"></div>
+        </li>
+      </ul>
+    </div>
+
+  </body>
+</html>
