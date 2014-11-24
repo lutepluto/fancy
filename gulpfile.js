@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 gulp.task('watch', function() {
 
   // watch .scss files
-  gulp.watch('scss/*.scss', ['sass']);
+  gulp.watch(['scss/*.scss', 'scss/**/*.scss'], ['sass']);
 
 });
 
