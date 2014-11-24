@@ -1387,3 +1387,54 @@ textarea {
   -ms-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
 }
+
+.fancy-division {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  *zoom: 1;
+}
+.fancy-division:before, .fancy-division:after {
+  content: " ";
+  display: table;
+  line-height: 0;
+}
+.fancy-division:after {
+  clear: both;
+}
+.fancy-division.small {
+  font-size: 10px;
+}
+.fancy-division.small .fancy-division-zone .zone-label {
+  font-size: 16px;
+}
+.fancy-division.justified .fancy-division-zone {
+  display: table-cell;
+  float: none;
+  width: 1%;
+}
+
+.fancy-division-zone {
+  float: left;
+  height: 100%;
+  padding: 5px 10px;
+  border-right: 1px solid #ddd;
+  text-align: center;
+}
+.fancy-division-zone .zone-label {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 20px;
+  color: #404040;
+}
+.fancy-division-zone .zone-label ~ .zone-note {
+  margin-top: 10px;
+  font-size: inherit;
+}
+.fancy-division-zone .zone-label ~ .zone-note:last-child {
+  margin-bottom: 0;
+}
+.fancy-division-zone:last-child {
+  border-right: 0;
+}
