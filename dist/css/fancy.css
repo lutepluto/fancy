@@ -1324,10 +1324,6 @@ textarea {
   padding: 0;
 }
 
-/**
- * Progress step
- * --------------------------------------------------
- */
 .fancy-progress {
   position: relative;
   margin: 0 auto 15px;
