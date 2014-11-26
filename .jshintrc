@@ -1,0 +1,17 @@
+{
+  "index": 2,
+  "newcap": true,
+  "noempty": true,
+  "nonew": true,
+  "plusplus": flase,
+  "qutomark": true,
+  "onevar": false,
+
+
+  "undef": true,
+  "unused": true,
+
+  "es5": true,
+  "strict": false,
+  "globalstrict": false
+}

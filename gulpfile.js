@@ -2,6 +2,9 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     notify = require('gulp-notify'),
     del = require('del');
@@ -33,11 +36,26 @@ gulp.task('sass', function() {
 });
 
 /**
+ * ---------- scripts task ----------
+ */
+
+gulp.task('scripts', function() {
+  return gulp.src('src/scripts/**/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(concat('fancy.js'))
+    .pipe(gulp.dest('dist/js'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'));
+});
+
+/**
  * ---------- clean task ----------
  */
 
 gulp.task('clean', function(cb) {
-  del(['dist/css'], cb);
+  del(['dist/css', 'dist/js'], cb);
 });
 
 /**
@@ -45,5 +63,5 @@ gulp.task('clean', function(cb) {
  */
 
 gulp.task('default', ['clean'], function() {
-  gulp.start('sass');
+  gulp.start('sass', 'scripts');
 });
