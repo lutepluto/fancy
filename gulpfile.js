@@ -16,7 +16,10 @@ var gulp = require('gulp'),
 gulp.task('watch', function() {
 
   // watch .scss files
-  gulp.watch(['scss/*.scss', 'scss/**/*.scss'], ['sass']);
+  gulp.watch(['src/scss/*.scss', 'src/scss/**/*.scss'], ['sass']);
+
+  // watch .js files
+  gulp.watch('src/scripts/**/*.js', ['scripts']);
 
 });
 
@@ -25,7 +28,7 @@ gulp.task('watch', function() {
  */
 
 gulp.task('sass', function() {
-  return gulp.src('scss/fancy.scss')
+  return gulp.src('src/scss/fancy.scss')
     .pipe(sass({ style: 'expanded', sourcemapPath: '../../scss/' }))
     .on('error', function(err) { console.log(err.message); })
     .pipe(autoprefixer({ browsers: ['> 1%', 'Android > 2.2', 'iOS > 5', 'Firefox >= 20', 'Chrome >= 20', 'ExplorerMobile > 9'] }))
