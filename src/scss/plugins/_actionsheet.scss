@@ -1,25 +1,19 @@
-/**
- * Actionsheet
- * --------------------------------------------------
- */
-
-$actionsheet-option-height:   26px;
-
-
+// Actionsheet
+// ==========================================================================
 
 .actionsheet {
-  position: fixed;
   display: none;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
   overflow: hidden;
   background: transparent;
-  z-index: $z-index-action-sheet;
-  @include transition(transform .3s ease-out);
+  z-index: $z-index-modal;
+  @include transition(all .3s ease-out);
   @include translate(0, 100%);
 
-  &.open {
+  &.in {
     @include translate(0, 0);
   }
 }
@@ -28,7 +22,6 @@ $actionsheet-option-height:   26px;
   position: relative;
   margin-left: $content-margin;
   margin-right: $content-margin;
-  width: auto;
   overflow: hidden;
 }
 

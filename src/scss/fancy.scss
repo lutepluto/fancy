@@ -10,6 +10,7 @@
   // Base
   "reset",
   "util",
+  "animations",
   "type",
   "scaffolding",
 
@@ -28,4 +29,7 @@
 
   // Components
   "components/fancy-progress",
-  "components/fancy-division";
+  "components/fancy-division",
+
+  // Plugins
+  "plugins/actionsheet";
