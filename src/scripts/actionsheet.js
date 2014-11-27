@@ -10,10 +10,8 @@
     this.options = options
     this.$backdrop =
     this.isOpen = null
-  }
 
-  Actionsheet.DEFAULTS = {
-
+    if(this.options.feedback) this.$element.on('click.select.fancy.actionsheet', '.actionsheet-feedback', $.proxy(this.select, this))
   }
 
   Actionsheet.prototype.toggle = function(_relatedTarget) {
@@ -113,13 +111,28 @@
     this.$backdrop = null
   }
 
+  Actionsheet.prototype.select = function(evt) {
+    if(evt.target !== evt.currentTarget) return
+
+    var e = $.Event('select.fancy.actionsheet', { relateTarget: this.options.feedback })
+    this.$element.trigger(e)
+
+    var text = $(evt.target).text(),
+        value = $(evt.target).data('value')
+    $(this.options.feedback).val(text)
+    this.options.valueback && $(this.options.valueback).val(value)
+
+    this.$backdrop.trigger('click')
+    this.$element.trigger('selected.fancy.actionsheet')
+  }
+
   var old = $.fn.actionsheet
 
   function Plugin(option, _relatedTarget) {
     return this.each(function() {
       var $this = $(this),
         data = $(this).data('fancy.actionsheet'),
-        options = $.extend({}, Actionsheet.DEFAULTS, $(this).data(), typeof option == 'object' && option)
+        options = $.extend({}, $(this).data(), typeof option == 'object' && option)
 
       if(!data) $this.data('fancy.actionsheet', (data = new Actionsheet(this, options)))
       if(typeof option == 'string') data[option](_relatedTarget)
@@ -144,3 +157,4 @@
   })
 
 }(window.Zepto || window.jQuery)
+
