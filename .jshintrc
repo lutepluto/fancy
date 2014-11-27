@@ -1,17 +1,14 @@
 {
-  "index": 2,
+  "asi": true,
+  "bitwise": true,
+  "camelcase": true,
+  "indent": 2,
   "newcap": true,
-  "noempty": true,
-  "nonew": true,
-  "plusplus": flase,
-  "qutomark": true,
-  "onevar": false,
-
-
-  "undef": true,
   "unused": true,
-
-  "es5": true,
-  "strict": false,
-  "globalstrict": false
+  "undef": true,
+  "strict": true,
+  "immed": false,
+  "expr": true,
+  "newcap": true,
+  "browser": true
 }
