@@ -32,7 +32,7 @@
       var transition = $.support.transition && that.$element.hasClass('fade')
       that.$element.show()
 
-      if(transition) that.$element[0].offsetWidth
+      if(transition) that.$element[0].offsetWidth // reflow
       that.$element.addClass('in')
 
       var e = $.Event('opend.fancy.actionsheet')
