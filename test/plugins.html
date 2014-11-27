@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fancy Form</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="../dist/css/fancy.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header class="bar header fixed-top transparent">
+      <a href="#" class="left"><i class="icon icon-chevron-left"></i>上一页</a>
+      <h1 class="title">标题</h1>
+      <a href="#" class="right">关于<i class="icon icon-chevron-right"></i></a>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content has-header">
+
+      <form class="fancy-form">
+        <div class="field-row" data-toggle="actionsheet" data-target="#actionsheet" data-feedback="#sns-text" data-valueback="#sns-hidden">
+          <label class="label-wide">社交媒体</label>
+          <input type="text" id="sns-text" class="form-control" placeholder="选择社交媒体">
+          <input type="hidden" id="sns-hidden">
+        </div>
+      </form>
+      
+    </div>
+
+    <div id="actionsheet" class="actionsheet fade">
+      <div class="actionsheet-body">
+        <div class="actionsheet-group">
+          <a href="javascript: void(0)" class="button actionsheet-feedback" data-value="wechat">分享到微信</a>
+          <a href="javascript: void(0)" class="button actionsheet-feedback" data-value="weibo">分享到微博</a>
+        </div>
+
+        <div class="actionsheet-group">
+          <a href="javascript: void(0)" class="button cancel" data-dismiss="actionsheet">取消</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="../dist/js/vendor/zepto.js"></script>
+    <script src="../dist/js/fancy.js"></script>
+
+  </body>
+</html>
