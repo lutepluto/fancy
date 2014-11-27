@@ -358,6 +358,45 @@ th {
   user-select: text;
 }
 
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+.collapsed {
+  display: none;
+}
+
+.collapsed.in {
+  display: block;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
 /**
  * Typography
  * --------------------------------------------------
@@ -1519,4 +1558,50 @@ textarea {
 }
 .fancy-division-zone:last-child {
   border-right: 0;
+}
+
+.actionsheet {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background: transparent;
+  z-index: 10;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+      transform: translate(0, 100%);
+}
+.actionsheet.in {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
+}
+
+.actionsheet-body {
+  position: relative;
+  margin-left: 15px;
+  margin-right: 15px;
+  overflow: hidden;
+}
+
+.actionsheet-group {
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.actionsheet-group button, .actionsheet-group .button {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 0;
+  border-width: 1px 0 0 0;
+  border-color: #b2b2b2;
+  color: #3A89C9;
+}
+.actionsheet-group .cancel {
+  color: #E84A5F;
 }
