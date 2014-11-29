@@ -62,58 +62,43 @@
   padding: 0;
   width: 100%;
   height: 100%;
+  float: left;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  list-style: none;
+  background-color: #fff;
 
-  .menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    float: left;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    background-color: #fff;
-
-    &.main {
-      background-color: #ddd;
-    }
-
-    &.sub {
-      background-color: #eee;
-    }
-  }
-
-  &.double .menu {
+  &.double {
     width: 50%;
   }
 
-  &.triple .menu {
+  &.triple {
     width: 33.3%;
   }
 
-  &.gear .menu {
-    position: relative;
+  &.gear {
     display: none;
 
     &.active {
       display: block;
     }
 
-    .menu-item {
+    .selector-item {
       display: block;
       padding: 5px;
       text-align: center;
       color: #555;
     }
 
-    .active .menu-item {
+    .active .selector-item {
       color: $brand-warning;
     }
   }
 
-  &.fixed .menu {
+  &.fixed {
     padding: $content-padding;
 
-    .menu-item.button {
+    .selector-item.button {
       margin-top: 5px;
       margin-bottom: 5px;
       border-color: $brand-warning;
@@ -121,7 +106,7 @@
       background-color: #fff;
     }
 
-    .active .menu-item {
+    .active .selector-item {
       background-color: $brand-warning;
       color: #fff;
     }

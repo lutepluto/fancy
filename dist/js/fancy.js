@@ -315,7 +315,7 @@
     this.$backdrop = 
     this.isOpen = null
 
-    this.$element.on('tap.switch.fancy.gear-selector', '.menu-item', $.proxy(this.switchMenu, this))
+    this.$element.on('tap.switch.fancy.gear-selector', '.selector-item', $.proxy(this.switchMenu, this))
   }
 
   GearSelector.prototype.toggle = function(_relatedTarget) {
@@ -423,7 +423,7 @@
       submenu = $(evt.target).data('submenu')
 
     // deactive previous active menu
-    var $prev = $menu.closest('.menu').find('.active')
+    var $prev = $menu.closest('.selector-group').find('.active')
     if($prev.length) {
       $prev.removeClass('active')
       var $temp = $prev
@@ -461,7 +461,7 @@
     var placeholder = '',
       selectAll = true
 
-    this.$element.find('.menu.active').each(function() {
+    this.$element.find('.selector-group.active').each(function() {
       var $menu = $(this)
 
       $($menu.data('valueback')).val($menu.find('.active').children().data('value'))

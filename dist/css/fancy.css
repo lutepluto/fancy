@@ -1669,56 +1669,44 @@ textarea {
   padding: 0;
   width: 100%;
   height: 100%;
-}
-.selector-group .menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: 100%;
   float: left;
   overflow-x: hidden;
   overflow-y: scroll;
+  list-style: none;
   background-color: #fff;
 }
-.selector-group .menu.main {
-  background-color: #ddd;
-}
-.selector-group .menu.sub {
-  background-color: #eee;
-}
-.selector-group.double .menu {
+.selector-group.double {
   width: 50%;
 }
-.selector-group.triple .menu {
+.selector-group.triple {
   width: 33.3%;
 }
-.selector-group.gear .menu {
-  position: relative;
+.selector-group.gear {
   display: none;
 }
-.selector-group.gear .menu.active {
+.selector-group.gear.active {
   display: block;
 }
-.selector-group.gear .menu .menu-item {
+.selector-group.gear .selector-item {
   display: block;
   padding: 5px;
   text-align: center;
   color: #555;
 }
-.selector-group.gear .menu .active .menu-item {
+.selector-group.gear .active .selector-item {
   color: #F8A13F;
 }
-.selector-group.fixed .menu {
+.selector-group.fixed {
   padding: 10px;
 }
-.selector-group.fixed .menu .menu-item.button {
+.selector-group.fixed .selector-item.button {
   margin-top: 5px;
   margin-bottom: 5px;
   border-color: #F8A13F;
   color: #F8A13F;
   background-color: #fff;
 }
-.selector-group.fixed .menu .active .menu-item {
+.selector-group.fixed .active .selector-item {
   background-color: #F8A13F;
   color: #fff;
 }
