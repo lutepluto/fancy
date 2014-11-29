@@ -1195,6 +1195,7 @@ textarea {
   margin: 0;
   border: 0;
   height: 34px;
+  background-color: transparent;
 }
 .field-row label:first-child,
 .field-row .icon:first-child,
@@ -1604,4 +1605,120 @@ textarea {
 }
 .actionsheet-group .cancel {
   color: #E84A5F;
+}
+
+.selector {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 10;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+.selector.in {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.selector-header {
+  position: relative;
+  padding: 10px 10px 10px 40px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+  line-height: 1.2;
+}
+.selector-header .selector-down {
+  position: absolute;
+  content: " ";
+  left: 15px;
+  width: 12px;
+  height: 12px;
+  border: 0px solid #aaa;
+  border-left-width: 3px;
+  border-bottom-width: 3px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+}
+.selector-header .selector-down:after {
+  position: absolute;
+  content: " ";
+  top: 0;
+  right: 0;
+  bottom: -10px;
+  left: -10px;
+}
+.selector-header label {
+  font-weight: bold;
+}
+
+.selector-body {
+  position: relative;
+  height: 180px;
+}
+
+.selector-group {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.selector-group .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  float: left;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #fff;
+}
+.selector-group .menu.main {
+  background-color: #ddd;
+}
+.selector-group .menu.sub {
+  background-color: #eee;
+}
+.selector-group.double .menu {
+  width: 50%;
+}
+.selector-group.triple .menu {
+  width: 33.3%;
+}
+.selector-group.gear .menu {
+  position: relative;
+  display: none;
+}
+.selector-group.gear .menu.active {
+  display: block;
+}
+.selector-group.gear .menu .menu-item {
+  display: block;
+  padding: 5px;
+  text-align: center;
+  color: #555;
+}
+.selector-group.gear .menu .active .menu-item {
+  color: #F8A13F;
+}
+.selector-group.fixed .menu {
+  padding: 10px;
+}
+.selector-group.fixed .menu .menu-item.button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-color: #F8A13F;
+  color: #F8A13F;
+  background-color: #fff;
+}
+.selector-group.fixed .menu .active .menu-item {
+  background-color: #F8A13F;
+  color: #fff;
 }

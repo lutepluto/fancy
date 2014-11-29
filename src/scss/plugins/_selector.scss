@@ -1,0 +1,129 @@
+// Selector
+// ==========================================================================
+
+.selector {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: $z-index-modal;
+  @include transition(all .3s ease-out);
+  @include translate3d(0, 100%, 0);
+
+  &.in {
+    @include translate3d(0, 0, 0);
+  }
+}
+
+.selector-header {
+  position: relative;
+  padding: $content-padding $content-padding $content-padding $content-padding * 4;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+  line-height: 1.2;
+
+  .selector-down {
+    position: absolute;
+    content: " ";
+    left: $content-padding + 5;
+    width: 12px;
+    height: 12px;
+    border: 0px solid #aaa;
+    border-left-width: 3px;
+    border-bottom-width: 3px;
+    @include rotate(-45deg);
+
+    &:after {
+      position: absolute;
+      content: " ";
+      top: 0;
+      right: 0;
+      bottom: -10px;
+      left: -10px;
+    }
+  }
+
+  label {
+    font-weight: bold;
+  }
+}
+
+.selector-body {
+  position: relative;
+  height: 180px;
+}
+
+.selector-group {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    float: left;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #fff;
+
+    &.main {
+      background-color: #ddd;
+    }
+
+    &.sub {
+      background-color: #eee;
+    }
+  }
+
+  &.double .menu {
+    width: 50%;
+  }
+
+  &.triple .menu {
+    width: 33.3%;
+  }
+
+  &.gear .menu {
+    position: relative;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    .menu-item {
+      display: block;
+      padding: 5px;
+      text-align: center;
+      color: #555;
+    }
+
+    .active .menu-item {
+      color: $brand-warning;
+    }
+  }
+
+  &.fixed .menu {
+    padding: $content-padding;
+
+    .menu-item.button {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border-color: $brand-warning;
+      color: $brand-warning;
+      background-color: #fff;
+    }
+
+    .active .menu-item {
+      background-color: $brand-warning;
+      color: #fff;
+    }
+  }
+}
