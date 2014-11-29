@@ -171,6 +171,8 @@
     this.options = options
     this.$backdrop = 
     this.isOpen = null
+
+    this.$element.on('tap.select.fancy.fixed-selector', '.selector-item', $.proxy(this.selectMenu, this))
   }
 
   FixedSelector.prototype.toggle = function(_relatedTarget) {
@@ -185,7 +187,8 @@
     if(this.isOpen) return
     this.isOpen = true
 
-    this.$element.one('click.dismiss.fancy.fixed-selector', '[data-dismiss="fixed-selector"]', $.proxy(this.close, this))
+    this.$element.one('tap.dismiss.fancy.fixed-selector', '[data-dismiss="fixed-selector"]', $.proxy(this.close, this))
+    this.$element.on('tap.confirm.fancy.fixed-selector', '[data-confirm="fixed-selector"]', $.proxy(this.confirm, this))
 
     this.backdrop(function() {
       var transition = $.support.transition && that.$element.hasClass('fade')
@@ -209,7 +212,7 @@
     e = $.Event('close.fancy.fixed-selector')
     this.$element.trigger(e)
 
-    if(this.isOpen) return
+    if(!this.isOpen) return
     this.isOpen = false
 
     this.$element.removeClass('in')
@@ -225,6 +228,7 @@
     var that = this
     this.$element.hide()
     this.backdrop(function() {
+      that.$element.off('tap.confirm.fancy.fixed-selector')
       that.$element.trigger('closed.fancy.fixed-selector')
     })
   }
@@ -237,7 +241,7 @@
       var transition = $.support.transition
       this.$backdrop = $('<div class="backdrop ' + animate + '"/>')
         .appendTo(this.$doc)
-        .one('click.dismiss.fancy.fixed-selector', $.proxy(this.close, this))
+        .one('tap.dismiss.fancy.fixed-selector', $.proxy(this.close, this))
 
       if(transition) this.$backdrop[0].offsetWidth
 
@@ -254,7 +258,7 @@
         that.removeBackdrop()
         callback && callback()
       }
-      $.support.transition && this.$backdrop.hasClass('in') ?
+      $.support.transition && this.$backdrop.hasClass('fade') ?
         this.$backdrop
           .one($.support.transition.end, callbackRemove)
           .emulateTransitionEnd(150) :
@@ -267,6 +271,28 @@
   FixedSelector.prototype.removeBackdrop = function() {
     this.$backdrop && this.$backdrop.remove()
     this.$backdrop = null
+  }
+
+  FixedSelector.prototype.selectMenu = function(evt) {
+    if(evt.target !== evt.currentTarget) return
+
+    var $menu = $(evt.target)
+    $menu.closest('.selector-group').find('.active').removeClass('active')
+    $menu.parent().addClass('active')
+  }
+
+  FixedSelector.prototype.confirm = function() {
+    var placeholder = ''
+
+    this.$element.find('.selector-group').each(function() {
+      var $menu = $(this)
+
+      $($menu.data('valueback')).val($menu.find('.active').children().data('value'))
+      placeholder = placeholder.concat($menu.find('.active').children().text() + ' ')
+    })
+
+    $(this.options.feedback).val(placeholder)
+    this.close()
   }
 
   var old = $.fn.FixedSelector
@@ -291,7 +317,7 @@
     return this
   }
 
-  $(document).on('click.fancy.fixed-selector', '[data-toggle="fixed-selector"]', function() {
+  $(document).on('tap.fancy.fixed-selector', '[data-toggle="fixed-selector"]', function() {
     var $this = $(this)
     var $target = $($this.data('target'))
     var options = $this.data('fancy.fixed-selector') ? 'toggle' : $.extend({}, $target.data(), $this.data())

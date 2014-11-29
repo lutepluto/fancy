@@ -38,6 +38,12 @@
           <input type="hidden" id="city">
           <input type="hidden" id="county">
         </div>
+        <div class="field-row" data-toggle="fixed-selector" data-target="#fixed" data-feedback="#house-info">
+          <label class="label-wide">户型</label>
+          <input type="text" id="house-info" class="form-control" readonly placeholder="选择户型">
+          <input type="hidden" id="room">
+          <input type="hidden" id="hall">
+        </div>
       </form>
       
     </div>
@@ -61,48 +67,68 @@
         <a href="javascript: void(0)"  class="pull-right" data-confirm="gear-selector">确认</a>
       </div>
       <div class="selector-body">
-        <div class="selector-group gear triple">
-          <ul class="menu main active" data-valueback="#province">
-            <li><a href="javascript: void(0)" class="menu-item" data-value="北京市" data-submenu="#beijing">北京市</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="上海市" data-submenu="#shanghai">上海市</a></li>
-            <li class="active"><a href="javascript: void(0)" class="menu-item" data-value="浙江省" data-submenu="#zhejiang">浙江省</a></li>
-          </ul>
-          <ul id="beijing" class="menu sub" data-valueback="#city">
-            <li><a href="javascript: void(0)" class="menu-item" data-value="东城区">东城区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="西城区">西城区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="海淀区">海淀区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="朝阳区">朝阳区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="石景山区">石景山区</a></li>
-          </ul>
-          <ul id="shanghai" class="menu sub" data-valueback="#city">
-            <li><a href="javascript: void(0)" class="menu-item"  data-value="黄浦区">黄埔区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item"  data-value="卢湾区">卢湾区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item"  data-value="徐汇区">徐汇区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item"  data-value="长宁区">长宁区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item"  data-value="静安区">静安区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item"  data-value="普陀区">普陀区</a></li>
-          </ul>
-          <ul id="zhejiang" class="menu sub active" data-valueback="#city">
-            <li class="active"><a href="javascript: void(0)" class="menu-item" data-value="杭州市" data-submenu="#hangzhou">杭州市</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="宁波市" data-submenu="#ningbo">宁波市</a></li>
-          </ul>
-          <ul id="hangzhou" class="menu tertiary active" data-valueback="#county">
-            <li class="active"><a href="javascript: void(0)" class="menu-item"  data-value="上城区">上城区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="下城区">下城区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="江干区">江干区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="西湖区">西湖区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="滨江区">滨江区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="萧山区">萧山区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="余杭区">余杭区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="下沙区">下沙区</a></li>
-          </ul>
-          <ul id="ningbo" class="menu tertiary" data-valueback="#county">
-            <li><a href="javascript: void(0)" class="menu-item" data-value="海曙区">海曙区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="江东区">江东区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="江北区">江北区</a></li>
-            <li><a href="javascript: void(0)" class="menu-item" data-value="北仑区">北仑区</a></li>
-          </ul>
-        </div>
+        <ul class="selector-group gear triple main active" data-valueback="#province">
+          <li><a href="javascript: void(0)" class="selector-item" data-value="北京市" data-submenu="#beijing">北京市</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="上海市" data-submenu="#shanghai">上海市</a></li>
+          <li class="active"><a href="javascript: void(0)" class="selector-item" data-value="浙江省" data-submenu="#zhejiang">浙江省</a></li>
+        </ul>
+        <ul id="beijing" class="selector-group gear triple sub" data-valueback="#city">
+          <li><a href="javascript: void(0)" class="selector-item" data-value="东城区">东城区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="西城区">西城区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="海淀区">海淀区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="朝阳区">朝阳区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="石景山区">石景山区</a></li>
+        </ul>
+        <ul id="shanghai" class="selector-group gear triple sub" data-valueback="#city">
+          <li><a href="javascript: void(0)" class="selector-item"  data-value="黄浦区">黄埔区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item"  data-value="卢湾区">卢湾区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item"  data-value="徐汇区">徐汇区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item"  data-value="长宁区">长宁区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item"  data-value="静安区">静安区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item"  data-value="普陀区">普陀区</a></li>
+        </ul>
+        <ul id="zhejiang" class="selector-group gear triple sub active" data-valueback="#city">
+          <li class="active"><a href="javascript: void(0)" class="selector-item" data-value="杭州市" data-submenu="#hangzhou">杭州市</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="宁波市" data-submenu="#ningbo">宁波市</a></li>
+        </ul>
+        <ul id="hangzhou" class="selector-group gear triple tertiary active" data-valueback="#county">
+          <li class="active"><a href="javascript: void(0)" class="selector-item"  data-value="上城区">上城区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="下城区">下城区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="江干区">江干区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="西湖区">西湖区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="滨江区">滨江区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="萧山区">萧山区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="余杭区">余杭区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="下沙区">下沙区</a></li>
+        </ul>
+        <ul id="ningbo" class="selector-group gear triple tertiary" data-valueback="#county">
+          <li><a href="javascript: void(0)" class="selector-item" data-value="海曙区">海曙区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="江东区">江东区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="江北区">江北区</a></li>
+          <li><a href="javascript: void(0)" class="selector-item" data-value="北仑区">北仑区</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="fixed" class="selector fade">
+      <div class="selector-header">
+        <a href="#" class="selector-down" data-dismiss="fixed-selector"></a>
+        <label class="">户型</label>
+        <a href="javascript: void(0)" class="pull-right" data-confirm="fixed-selector">确认</a>
+      </div>
+      <div class="selector-body">
+        <ul class="selector-group fixed double" data-valueback="#room">
+          <li class="active"><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="1">1室</a></li>
+          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="2">2室</a></li>
+          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="3">3室</a></li>
+          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="4">4室</a></li>
+          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="5">5室</a></li>
+        </ul>
+        <ul class="selector-group fixed double" data-valueback="#hall">
+          <li class="active"><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="0">无厅</a></li>
+          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="1">1厅</a></li>
+          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="2">2厅</a></li>
+        </ul>
       </div>
     </div>
 
