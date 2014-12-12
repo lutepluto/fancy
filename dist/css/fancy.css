@@ -1446,6 +1446,284 @@ textarea {
   padding: 0;
 }
 
+.item {
+  color: #444;
+  background-color: #fff;
+  border-color: #ddd;
+  -webkit-transition: margin-left 0.2s ease-in-out, margin-right 0.2s ease-in-out, left 0.2s ease-in-out;
+  transition: margin-left 0.2s ease-in-out, margin-right 0.2s ease-in-out, left 0.2s ease-in-out;
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: -1px;
+  padding: 10px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 16px;
+}
+.item h2 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+}
+.item h3 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+}
+.item h4 {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+}
+.item h5, .item h6 {
+  margin: 0 0 3px 0;
+  font-size: 10px;
+}
+.item p {
+  color: #666;
+  font-size: 14px;
+}
+.item h1:last-child,
+.item h2:last-child,
+.item h3:last-child,
+.item h4:last-child,
+.item h5:last-child,
+.item h6:last-child,
+.item p:last-child {
+  margin-bottom: 0;
+}
+.item.align-right, .item.align-right .item-content {
+  text-align: right;
+}
+
+.item.active:not(.item-divider) {
+  background-color: #D9D9D9;
+  border-color: #ccc;
+}
+
+.item,
+.item h1,
+.item h2,
+.item h3,
+.item h4,
+.item h5,
+.item h6,
+.item p,
+.item-content,
+.item-content h1,
+.item-content h2,
+.item-content h3,
+.item-content h4,
+.item-content h5,
+.item-content h6,
+.item-content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a.item {
+  color: inherit;
+  text-decoration: none;
+}
+a.item:hover, a.item:focus {
+  text-decoration: none;
+}
+
+a.item-content {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.item-body h1,
+.item-body h2,
+.item-body h3,
+.item-body h4,
+.item-body h5,
+.item-body h6,
+.item-body p {
+  overflow: hidden;
+  white-space: normal;
+}
+
+.item-body {
+  overflow: auto;
+  padding: 6px 10px;
+  text-overflow: inherit;
+  white-space: normal;
+}
+.item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.item-body .button.right-corner {
+  position: absolute;
+  right: 15px;
+  top: 11px;
+}
+
+.item.chevron-right {
+  padding-right: 25px;
+}
+.item.chevron-right:after {
+  position: absolute;
+  content: " ";
+  right: 10px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border: 0px solid #ccc;
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+  -webkit-transform: translate(0, -50%) rotate(-45deg);
+  -ms-transform: translate(0, -50%) rotate(-45deg);
+      transform: translate(0, -50%) rotate(-45deg);
+}
+
+.item-avatar {
+  padding-left: 60px;
+  min-height: 60px;
+}
+.item-avatar img:first-child, .item-avatar .item-img {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  max-width: 40px;
+  max-height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.item-thumbnail-left,
+.item-thumbnail-left .item-content {
+  padding-left: 100px;
+  min-height: 100px;
+}
+.item-thumbnail-left > img:first-child, .item-thumbnail-left > .item-image,
+.item-thumbnail-left .item-content > img:first-child,
+.item-thumbnail-left .item-content > .item-image {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+  max-width: 80px;
+  max-height: 80px;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.item-thumbnail-left.item-complex {
+  padding-left: 0;
+}
+
+.item-thumbnail-right,
+.item-thumbnail-right .item-content {
+  padding-right: 100px;
+  min-height: 100px;
+}
+.item-thumbnail-right > img:first-child, .item-thumbnail-right > .item-image,
+.item-thumbnail-right .item-content > img:first-child,
+.item-thumbnail-right .item-content > .item-image {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+  max-width: 80px;
+  max-height: 80px;
+  width: 100%;
+}
+
+.item-thumbnail-left.item-complex {
+  padding-right: 0;
+}
+
+.item-thumbnail-left.align-top > img:first-child, .item-thumbnail-left.align-top > .item-image,
+.item-thumbnail-right.align-top > img:first-child,
+.item-thumbnail-right.align-top > .item-image {
+  top: 6px;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
+}
+
+.item-image {
+  padding: 0;
+  text-align: center;
+}
+.item-image img:first-child, .item-image .list-img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.item-divider {
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  color: #777;
+  font-weight: bold;
+}
+.item-divider.ceiling {
+  padding-top: 0;
+  padding-bottom: 10px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.item-divider.floor {
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+
+.item-button,
+.item-toggle {
+  padding-right: 72px;
+}
+
+.item-button .button,
+.item-toggle .toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+}
+
+.item-button > .button {
+  min-width: 18px;
+  min-height: 18px;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.list {
+  position: relative;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+/* If a list is the last item in a container, don't add margin-bottom */
+.list:last-child {
+  margin-bottom: 0px;
+}
+
+/**
+ * List Header
+ * --------------------------------------------------
+ */
+.list-header {
+  margin-top: 20px;
+  padding: 5px 15px;
+  background-color: transparent;
+  color: #222;
+  font-weight: bold;
+}
+
 .fancy-progress {
   position: relative;
   margin: 0 auto 15px;
