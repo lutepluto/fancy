@@ -1,8 +1,5 @@
-
-/**
- * Lists
- * --------------------------------------------------
- */
+// List
+// ==========================================================================
 
 .list {
   position: relative;
@@ -17,24 +14,6 @@
   margin-bottom: 0px;
 }
 
-/**
- * List editing styles. These trigger when the entire list goes into
- * "edit mode" or reordering list items
- */
-.list-editing {
-  .item-content {
-    @include translate3d(50px, 0, 0);
-  }
-}
-.list-reordering {
-  .item-content {
-    margin-right: 50px;
-  }
-  .item-drag {
-    z-index: 1;
-  }
-}
-
 
 /**
  * List Header
@@ -47,63 +26,4 @@
   background-color: $list-header-bg;
   color: $list-header-color;
   font-weight: bold;
-}
-
-// when its a card make sure it doesn't duplicate top and bottom borders
-.card.list .list-item {
-  padding-right: 1px;
-  padding-left: 1px;
-}
-
-
-/**
- * Inset Lists
- * --------------------------------------------------
- */
-
-.list-inset {
-  overflow: hidden;
-  margin: ($content-padding * 2) $content-padding;
-  border-radius: $border-radius-base;
-  background-color: #fff;
-}
-
-.list-inset .item,
-.padding > .list .item
-{
-  &:first-child {
-    border-top-left-radius: $border-radius-base;
-    border-top-right-radius: $border-radius-base;
-
-    .item-content {
-      border-top-left-radius: $border-radius-base;
-      border-top-right-radius: $border-radius-base;
-    }
-  }
-  &:last-child {
-    border-bottom-right-radius: $border-radius-base;
-    border-bottom-left-radius: $border-radius-base;
-
-    .item-content {
-      border-bottom-right-radius: $border-radius-base;
-      border-bottom-left-radius: $border-radius-base;
-    }
-  }
-}
-
-.list-inset .item:last-child {
-  margin-bottom: $item-border-width * -1;
-}
-
-.list-inset .item,
-.padding > .list .item,
-.padding-horizontal > .list .item {
-  margin-right: 0;
-  margin-left: 0;
-}
-.padding-left > .list .item {
-  margin-left: 0;
-}
-.padding-right > .list .item {
-  margin-right: 0;
 }

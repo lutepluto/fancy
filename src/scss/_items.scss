@@ -1,7 +1,5 @@
-/**
- * Items
- * --------------------------------------------------
- */
+// List items
+// ==========================================================================
 
 .item {
   @include item-style($item-default-bg, $item-default-border, $item-default-text);
@@ -12,7 +10,7 @@
   display: block;
 
   margin: $item-border-width * -1;
-  padding: ($item-padding - 4) $item-padding;
+  padding: $item-padding;
 
   border-width: $item-border-width;
   border-style: solid;
@@ -49,27 +47,14 @@
     margin-bottom: 0;
   }
 
-  // Align badges within items
-  .badge {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    @include translate(0, -50%);
-  }
-  &.item-divider .badge {
-    top: $item-padding / 2;
-  }
-  .badge + .badge {
-    margin-right: 5px;
-  }
-
+  &.align-right,
   &.align-right .item-content {
     text-align: right;
   }
 }
 
 // Link and Button Active States
-.item.active:not(.item-divider):not(.item-input):not(.item-input-inset) {
+.item.active:not(.item-divider) {
   @include item-active-style($item-default-active-bg, $item-default-active-border);
 }
 
@@ -112,16 +97,6 @@ a.item-content {
   text-decoration: none;
 }
 
-.item-text-wrap .item,
-.item-text-wrap,
-.item-text-wrap h1,
-.item-text-wrap h2,
-.item-text-wrap h3,
-.item-text-wrap h4,
-.item-text-wrap h5,
-.item-text-wrap h6,
-.item-text-wrap p,
-.item-complex.item-text-wrap .item-content,
 .item-body h1,
 .item-body h2,
 .item-body h3,
@@ -134,7 +109,7 @@ a.item-content {
 }
 
 // Item Body
-// -------------------------------
+// --------------------------------------------------
 
 .item-body {
   overflow: auto;
@@ -154,182 +129,39 @@ a.item-content {
   }
 }
 
+// Chevron right arrow
+// --------------------------------------------------
 
+.item.chevron-right {
+  padding-right: $item-padding + 15;
 
-/**
- * Item Icons
- * --------------------------------------------------
- */
-
-.item-icon-left .icon,
-.item-icon-right .icon {
-  position: absolute;
-  top: 50%;
-  @include translate(0, -50%);
-
-  &.align-top {
-    top: $item-padding - 4;
-    @include translate(0, 0);
-  }
-}
-
-.item .fill-icon {
-  min-width: $item-icon-fill-font-size + 2;
-  min-height: $item-icon-fill-font-size + 2;
-  font-size: $item-icon-fill-font-size;
-}
-
-.item-icon-left {
-  padding-left: ($item-padding * 3);
-
-  .icon {
-    left: $item-padding / 2 + 5;
-  }
-}
-
-.item-icon-right {
-  padding-right: ($item-padding * 3);
-
-  .icon {
-    right: $item-padding / 2 + 5;
-  }
-}
-
-.item-icon-left.item-icon-right .icon:first-child {
-  right: auto;
-}
-.item-icon-left.item-icon-right .icon:last-child {
-  left: auto;
-}
-
-
-/**
- * Item Button
- * --------------------------------------------------
- * An item button is a child button inside an .item (not the entire .item)
- * Only support right button
- */
-
-.item-button-right,
-a.item.item-button-right,
-button.item.item-button-right {
-  padding-right: 110px;
-}
-
-.item-button-right > .button,
-.item-button-right .item-content > .button,
-.item-button-right > .buttons,
-.item-button-right .item-content > .buttons {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  @include translate(0, -50%);
-  min-width: ($item-icon-font-size * 2) + ($button-border-width * 2);
-  min-height: $item-icon-font-size + ($button-border-width * 2);
-  font-size: $item-button-font-size;
-  line-height: $item-button-line-height;
-
-  .icon:before {
-    position: relative;
-    left: auto;
-    width: auto;
-    line-height: $item-icon-font-size - 1;
-  }
-
-  > .button {
-    margin: 0px 2px;
-    min-width: $item-icon-font-size + ($button-border-width * 2);
-    min-height: $item-icon-font-size + ($button-border-width * 2);
-    font-size: $item-button-font-size;
-    line-height: $item-button-line-height;
-  }
-}
-
-/**
- * Item text label
- * --------------------------------------------------
- * Only support left label
- */
-
-.item-label {
-  padding-left: 110px;
-
-  & > label,
-  & > .label-left {
+  &:after {
     position: absolute;
+    content: " ";
+    right: $item-padding;
     top: 50%;
-    left: $item-padding;
-    display: block;
-    width: 90px;
-    height: $line-height-computed + $font-size-base;
-    line-height: $line-height-computed + $font-size-base;
-    padding-right: 5px;
-    @include translate(0, -50%);
-
-    &.align-top {
-      top: $item-padding - 4;
-      @include translate(0, 0);
-    }
+    width: 12px;
+    height: 12px;
+    border: 0px solid $item-default-active-border;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    @include transform(translate(0, -50%) rotate(-45deg));
   }
 }
-
-
-/**
- * Auto Right Arrow Icon
- * --------------------------------------------------
- * By default, if an .item is created out of an <a> or <button>
- * then a arrow will be added to the right side of the item.
- */
-
-a.item,
-button.item,
-.item a[href].item-content,
-.item[ng-click] a.item-content {
-  padding-right: (($item-padding * 3) - 15);
-}
-
-a.item:after,
-button.item:after,
-.item a[href].item-content:after {
-  /* By default, both <a> and <button> have right side arrow icons */
-  position: absolute;
-  top: 50%;
-  right: $item-padding - 4;
-  @include translate(0, -50%);
-  
-  content: " ";
-  width: $icon-small-size;
-  height: $icon-small-size;
-  background-image: url(#{$icon-image-path}#{$icon-var-chevron-right});
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-// do not show the default right arrow when they want their own right side icon
-a.item-icon-right:after,
-button.item-icon-right:after,
-a.item-button-right:after,
-button.item-button-right:after,
-.item a.item-content:after {
-  display: none;
-}
-
 
 // Item Avatar
-// -------------------------------
+// --------------------------------------------------
 
 .item-avatar {
-  padding-left: $item-avitar-width + ($item-padding * 2);
-  min-height: $item-avitar-width + ($item-padding * 2);
+  padding-left: $item-avatar-width + ($item-padding * 2);
+  min-height: $item-avatar-width + ($item-padding * 2);
 
   img:first-child, .item-img {
     position: absolute;
-    top: $item-padding;
+    top: $item-padding - 4;
     left: $item-padding;
-    max-width: $item-avitar-width;
-    max-height: $item-avitar-height;
+    max-width: $item-avatar-width;
+    max-height: $item-avatar-height;
     width: 100%;
     border-radius: 4px;
     border: 1px solid $button-default-border;
@@ -338,7 +170,7 @@ button.item-button-right:after,
 
 
 // Item Thumbnails
-// -------------------------------
+// --------------------------------------------------
 
 .item-thumbnail-left,
 .item-thumbnail-left .item-content {
@@ -353,7 +185,7 @@ button.item-button-right:after,
     max-width: $item-thumbnail-width;
     max-height: $item-thumbnail-height;
     width: 100%;
-    border: 1px solid $button-default-border;
+    border: 1px solid $item-default-border;
   }
 }
 .item-thumbnail-left.item-complex {
@@ -390,7 +222,7 @@ button.item-button-right:after,
 
 
 // Item Image
-// -------------------------------
+// --------------------------------------------------
 
 .item-image {
   padding: 0;
@@ -403,12 +235,10 @@ button.item-button-right:after,
 }
 
 // Item Divider
-// -------------------------------
+// --------------------------------------------------
 
 .item-divider {
-  padding-top: $item-padding / 2;
-  padding-bottom: $item-padding / 2;
-  min-height: 30px;
+  padding: $item-padding / 2 $item-padding;
   background-color: $item-divider-bg;
   color: $item-divider-color;
   font-weight: bold;
@@ -426,13 +256,34 @@ button.item-button-right:after,
   }
 }
 
+// Item button & toggle
+// --------------------------------------------------
 
-// Item Note
-// -------------------------------
-
-.item-note {
-  float: right;
-  color: #aaa;
-  font-size: 14px;
+.item-button,
+.item-toggle {
+  padding-right: $item-padding * 4 + $item-font-size * 2;
 }
+
+.item-button .button,
+.item-toggle .toggle {
+  position: absolute;
+  top: 50%;
+  right: $item-padding;
+  @include translate(0, -50%);
+}
+
+.item-button > .button {
+  min-width: $item-font-size + ($button-border-width * 2);
+  min-height: $item-font-size + ($button-border-width * 2);
+  font-size: $item-font-size - 2;
+  line-height: $item-button-line-height;
+}
+
+// Item icon
+// --------------------------------------------------
+// TODO
+
+// Item badge
+// --------------------------------------------------
+// TODO
 
