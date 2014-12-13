@@ -1,0 +1,49 @@
+// Card
+// ==========================================================================
+
+.card {
+  margin: $content-margin $content-padding;
+  padding: 10px 5px;
+  overflow: hidden;
+  border-radius: $border-radius-small;
+  border-top: 3px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .10);
+}
+
+.card-head,
+.card-item {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-head {
+  padding-bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  color: $dark;
+}
+
+.card-item {
+  white-space: normal;
+  font-size: inherit;
+}
+
+.card-item:last-child {
+  border-bottom: 0;
+}
+
+.card-primary {
+  border-top-color: $brand-primary;
+}
+.card-success {
+  border-top-color: $brand-success;
+}
+.card-warning {
+  border-top-color: $brand-warning;
+}
+.card-danger {
+  border-top-color: $brand-danger;
+}
