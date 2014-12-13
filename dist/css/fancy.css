@@ -1724,6 +1724,57 @@ a.item-content {
   font-weight: bold;
 }
 
+.card {
+  margin: 15px 10px;
+  padding: 10px 5px;
+  overflow: hidden;
+  border-radius: 3px;
+  border-top: 3px solid #ddd;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-head,
+.card-item {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-head {
+  padding-bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  color: #444;
+}
+
+.card-item {
+  white-space: normal;
+  font-size: inherit;
+}
+
+.card-item:last-child {
+  border-bottom: 0;
+}
+
+.card-primary {
+  border-top-color: #3A89C9;
+}
+
+.card-success {
+  border-top-color: #61C155;
+}
+
+.card-warning {
+  border-top-color: #F8A13F;
+}
+
+.card-danger {
+  border-top-color: #E84A5F;
+}
+
 .fancy-progress {
   position: relative;
   margin: 0 auto 15px;
