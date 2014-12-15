@@ -215,7 +215,15 @@ textarea {
     @include translate(0, -50%);
   }
 
-  label,
+  label {
+    left: $content-padding;
+    font-size: $input-font-size;
+
+    + .form-control {
+      padding-left: $content-padding * 2 + $input-font-size * 4;
+    }
+  }
+
   .icon:first-child {
     left: $content-padding;
     font-size: $input-font-size;
@@ -226,10 +234,6 @@ textarea {
   }
 
   .label-wide + .form-control {
-    padding-left: $content-padding * 2 + $input-font-size * 4;
-  }
-
-  .label-wider + .form-control {
     padding-left: $content-padding * 2 + $input-font-size * 6;
   }
 
@@ -242,10 +246,10 @@ textarea {
   }
 
   .has-wide-suffix {
-    padding-right: $content-padding * 2 + $input-font-size * 4
+    padding-right: $content-padding * 2 + $input-font-size * 4;
   }
 
-  .has-wider-suffix {
+  .has-xwide-suffix {
     padding-right: $content-padding * 2 + $input-font-size * 6;
   }
 

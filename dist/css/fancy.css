@@ -1206,19 +1206,21 @@ textarea {
   -ms-transform: translate(0, -50%);
       transform: translate(0, -50%);
 }
-.field-row label,
+.field-row label {
+  left: 10px;
+  font-size: 16px;
+}
+.field-row label + .form-control {
+  padding-left: 84px;
+}
 .field-row .icon:first-child {
   left: 10px;
   font-size: 16px;
 }
-.field-row label + .form-control,
 .field-row .icon:first-child + .form-control {
   padding-left: 52px;
 }
 .field-row .label-wide + .form-control {
-  padding-left: 84px;
-}
-.field-row .label-wider + .form-control {
   padding-left: 116px;
 }
 .field-row .suffix {
@@ -1230,7 +1232,7 @@ textarea {
 .field-row .has-wide-suffix {
   padding-right: 84px;
 }
-.field-row .has-wider-suffix {
+.field-row .has-xwide-suffix {
   padding-right: 116px;
 }
 .field-row select {
