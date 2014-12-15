@@ -239,6 +239,7 @@ a.item-content {
 
 .item-divider {
   padding: $item-padding / 2 $item-padding;
+  min-height: $item-padding * 3;
   background-color: $item-divider-bg;
   color: $item-divider-color;
   font-weight: bold;

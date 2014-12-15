@@ -1663,6 +1663,7 @@ a.item-content {
 
 .item-divider {
   padding: 5px 10px;
+  min-height: 30px;
   background-color: #f5f5f5;
   color: #777;
   font-weight: bold;
