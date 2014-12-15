@@ -157,7 +157,7 @@ a.item-content {
   padding-left: $item-avatar-width + ($item-padding * 2);
   min-height: $item-avatar-width + ($item-padding * 2);
 
-  img:first-child, .item-img {
+  .item-image {
     position: absolute;
     top: $item-padding - 4;
     left: $item-padding;
@@ -178,7 +178,7 @@ a.item-content {
   padding-left: $item-thumbnail-width + $item-thumbnail-margin + $item-padding;
   min-height: $item-thumbnail-height + ($item-thumbnail-margin * 2);
 
-  > img:first-child, > .item-image {
+  > .item-image {
     position: absolute;
     top: 50%;
     left: $item-padding;
@@ -198,7 +198,7 @@ a.item-content {
   padding-right: $item-thumbnail-width + $item-thumbnail-margin + $item-padding;
   min-height: $item-thumbnail-height + ($item-thumbnail-margin * 2);
 
-  > img:first-child, > .item-image {
+  > .item-image {
     position: absolute;
     top: 50%;
     right: $item-padding;

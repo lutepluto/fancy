@@ -1586,7 +1586,7 @@ a.item-content {
   padding-left: 60px;
   min-height: 60px;
 }
-.item-avatar img:first-child, .item-avatar .item-img {
+.item-avatar .item-image {
   position: absolute;
   top: 6px;
   left: 10px;
@@ -1602,8 +1602,7 @@ a.item-content {
   padding-left: 100px;
   min-height: 100px;
 }
-.item-thumbnail-left > img:first-child, .item-thumbnail-left > .item-image,
-.item-thumbnail-left .item-content > img:first-child,
+.item-thumbnail-left > .item-image,
 .item-thumbnail-left .item-content > .item-image {
   position: absolute;
   top: 50%;
@@ -1626,8 +1625,7 @@ a.item-content {
   padding-right: 100px;
   min-height: 100px;
 }
-.item-thumbnail-right > img:first-child, .item-thumbnail-right > .item-image,
-.item-thumbnail-right .item-content > img:first-child,
+.item-thumbnail-right > .item-image,
 .item-thumbnail-right .item-content > .item-image {
   position: absolute;
   top: 50%;
