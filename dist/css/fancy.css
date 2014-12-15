@@ -1459,6 +1459,7 @@ textarea {
   display: block;
   margin: -1px;
   padding: 10px;
+  min-height: 40px;
   border-width: 1px;
   border-style: solid;
   font-size: 16px;

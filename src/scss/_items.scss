@@ -11,6 +11,7 @@
 
   margin: $item-border-width * -1;
   padding: $item-padding;
+  min-height: $line-height-computed + $item-padding * 2;
 
   border-width: $item-border-width;
   border-style: solid;
