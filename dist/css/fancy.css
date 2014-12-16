@@ -1653,6 +1653,11 @@ a.item-content {
       transform: translate(0, 0);
 }
 
+.item-thumbnail-left.single-line,
+.item-thumbanil-right.single-line {
+  line-height: 80px;
+}
+
 .item-image {
   padding: 0;
   text-align: center;

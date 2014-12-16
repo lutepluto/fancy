@@ -219,6 +219,11 @@ a.item-content {
   @include translate(0, 0);
 }
 
+.item-thumbnail-left.single-line,
+.item-thumbanil-right.single-line {
+  line-height: $item-thumbnail-height;
+}
+
 // Item Image
 // --------------------------------------------------
 
