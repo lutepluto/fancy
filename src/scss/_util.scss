@@ -96,7 +96,7 @@
   color: $gray-light;
 }
 
-@include text-emphasis-variant('.text-default', $gray-light);
+@include text-emphasis-variant('.text-default', #a8a8a8);
 
 @include text-emphasis-variant('.text-primary', $brand-primary);
 
