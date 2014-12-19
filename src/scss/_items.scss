@@ -264,12 +264,16 @@ a.item-content {
 // --------------------------------------------------
 
 .item-button,
-.item-toggle {
+.item-toggle,
+.item-checkbox,
+.item-radio, {
   padding-right: $item-padding * 4 + $item-font-size * 2;
 }
 
 .item-button .button,
-.item-toggle .toggle {
+.item-toggle .toggle,
+.item-checkbox .checkbox,
+.item-radio .radio {
   position: absolute;
   top: 50%;
   right: $item-padding;

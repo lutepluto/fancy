@@ -1353,14 +1353,18 @@ textarea {
   background-color: #E84A5F;
 }
 
-.checkbox {
+.checkbox,
+.radio {
   display: inline-block;
   width: 28px;
   height: 28px;
   border: 0;
   background: #fff;
 }
-.checkbox input[type="checkbox"] {
+.checkbox input[type="checkbox"],
+.checkbox input[type="radio"],
+.radio input[type="checkbox"],
+.radio input[type="radio"] {
   position: relative;
   display: block;
   width: 28px;
@@ -1371,10 +1375,13 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-transition: background-color 0.3s ease-out;
-  transition: background-color 0.3s ease-out;
+  -webkit-transition: background-color 0.15s ease-out;
+  transition: background-color 0.15s ease-out;
 }
-.checkbox input[type="checkbox"]:after {
+.checkbox input[type="checkbox"]:after,
+.checkbox input[type="radio"]:after,
+.radio input[type="checkbox"]:after,
+.radio input[type="radio"]:after {
   position: absolute;
   content: " ";
   top: 50%;
@@ -1387,31 +1394,50 @@ textarea {
   -ms-transform: translate(-50%, -65%) rotate(-45deg);
       transform: translate(-50%, -65%) rotate(-45deg);
 }
-.checkbox input[type="checkbox"]:checked {
+.checkbox input[type="checkbox"]:checked,
+.checkbox input[type="radio"]:checked,
+.radio input[type="checkbox"]:checked,
+.radio input[type="radio"]:checked {
   background-color: #aaa;
 }
-.checkbox.primary input[type="checkbox"] {
+.checkbox.primary input[type="checkbox"], .checkbox.primary input[type="radio"],
+.radio.primary input[type="checkbox"],
+.radio.primary input[type="radio"] {
   border-color: #3A89C9;
 }
-.checkbox.primary input[type="checkbox"]:checked {
+.checkbox.primary input[type="checkbox"]:checked, .checkbox.primary input[type="radio"]:checked,
+.radio.primary input[type="checkbox"]:checked,
+.radio.primary input[type="radio"]:checked {
   background-color: #3A89C9;
 }
-.checkbox.success input[type="checkbox"] {
+.checkbox.success input[type="checkbox"], .checkbox.success input[type="radio"],
+.radio.success input[type="checkbox"],
+.radio.success input[type="radio"] {
   border-color: #61C155;
 }
-.checkbox.success input[type="checkbox"]:checked {
+.checkbox.success input[type="checkbox"]:checked, .checkbox.success input[type="radio"]:checked,
+.radio.success input[type="checkbox"]:checked,
+.radio.success input[type="radio"]:checked {
   background-color: #61C155;
 }
-.checkbox.warning input[type="checkbox"] {
+.checkbox.warning input[type="checkbox"], .checkbox.warning input[type="radio"],
+.radio.warning input[type="checkbox"],
+.radio.warning input[type="radio"] {
   border-color: #F8A13F;
 }
-.checkbox.warning input[type="checkbox"]:checked {
+.checkbox.warning input[type="checkbox"]:checked, .checkbox.warning input[type="radio"]:checked,
+.radio.warning input[type="checkbox"]:checked,
+.radio.warning input[type="radio"]:checked {
   background-color: #F8A13F;
 }
-.checkbox.danger input[type="checkbox"] {
+.checkbox.danger input[type="checkbox"], .checkbox.danger input[type="radio"],
+.radio.danger input[type="checkbox"],
+.radio.danger input[type="radio"] {
   border-color: #E84A5F;
 }
-.checkbox.danger input[type="checkbox"]:checked {
+.checkbox.danger input[type="checkbox"]:checked, .checkbox.danger input[type="radio"]:checked,
+.radio.danger input[type="checkbox"]:checked,
+.radio.danger input[type="radio"]:checked {
   background-color: #E84A5F;
 }
 
@@ -1748,12 +1774,16 @@ a.item-content {
 }
 
 .item-button,
-.item-toggle {
+.item-toggle,
+.item-checkbox,
+.item-radio {
   padding-right: 72px;
 }
 
 .item-button .button,
-.item-toggle .toggle {
+.item-toggle .toggle,
+.item-checkbox .checkbox,
+.item-radio .radio {
   position: absolute;
   top: 50%;
   right: 10px;

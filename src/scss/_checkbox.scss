@@ -3,14 +3,16 @@
 
 $checkbox-size:            28px;
 
-.checkbox {
+.checkbox,
+.radio {
   display: inline-block;
   width: $checkbox-size;
   height: $checkbox-size;
   border: 0;
   background: #fff;
 
-  input[type="checkbox"] {
+  input[type="checkbox"],
+  input[type="radio"] {
     position: relative;
     display: block;
     width: $checkbox-size;
@@ -19,10 +21,11 @@ $checkbox-size:            28px;
     border-radius: 28px;
     background-color: #fff;
     @include appearance(none);
-    @include transition(background-color .3s ease-out);
+    @include transition(background-color .15s ease-out);
   }
 
-  input[type="checkbox"]:after {
+  input[type="checkbox"]:after,
+  input[type="radio"]:after {
     position: absolute;
     content: " ";
     top: 50%;
@@ -34,11 +37,13 @@ $checkbox-size:            28px;
     @include transform(translate(-50%, -65%) rotate(-45deg));
   }
 
-  input[type="checkbox"]:checked {
+  input[type="checkbox"]:checked,
+  input[type="radio"]:checked {
     background-color: #aaa;
   }
 
-  &.primary input[type="checkbox"] {
+  &.primary input[type="checkbox"],
+  &.primary input[type="radio"] {
     border-color: $brand-primary;
 
     &:checked {
@@ -46,7 +51,8 @@ $checkbox-size:            28px;
     }
   }
 
-  &.success input[type="checkbox"] {
+  &.success input[type="checkbox"],
+  &.success input[type="radio"] {
     border-color: $brand-success;
 
     &:checked {
@@ -54,7 +60,8 @@ $checkbox-size:            28px;
     }
   }
 
-  &.warning input[type="checkbox"] {
+  &.warning input[type="checkbox"],
+  &.warning input[type="radio"] {
     border-color: $brand-warning;
 
     &:checked {
@@ -62,7 +69,8 @@ $checkbox-size:            28px;
     }
   }
 
-  &.danger input[type="checkbox"] {
+  &.danger input[type="checkbox"],
+  &.danger input[type="radio"] {
     border-color: $brand-danger;
 
     &:checked {
