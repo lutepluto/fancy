@@ -1,0 +1,72 @@
+// Form checkbox
+// ==========================================================================
+
+$checkbox-size:            28px;
+
+.checkbox {
+  display: inline-block;
+  width: $checkbox-size;
+  height: $checkbox-size;
+  border: 0;
+  background: #fff;
+
+  input[type="checkbox"] {
+    position: relative;
+    display: block;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    border: 1px solid #aaa;
+    border-radius: 28px;
+    background-color: #fff;
+    @include appearance(none);
+    @include transition(background-color .3s ease-out);
+  }
+
+  input[type="checkbox"]:after {
+    position: absolute;
+    content: " ";
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 8px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    @include transform(translate(-50%, -65%) rotate(-45deg));
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: #aaa;
+  }
+
+  &.primary input[type="checkbox"] {
+    border-color: $brand-primary;
+
+    &:checked {
+      background-color: $brand-primary;
+    }
+  }
+
+  &.success input[type="checkbox"] {
+    border-color: $brand-success;
+
+    &:checked {
+      background-color: $brand-success;
+    }
+  }
+
+  &.warning input[type="checkbox"] {
+    border-color: $brand-warning;
+
+    &:checked {
+      background-color: $brand-warning;
+    }
+  }
+
+  &.danger input[type="checkbox"] {
+    border-color: $brand-danger;
+
+    &:checked {
+      background-color: $brand-danger;
+    }
+  }
+}
