@@ -19,7 +19,7 @@ $toggle-border:  20px;
     display: none;
   }
 
-  .checkbox {
+  .toggle-switcher {
     position: relative;
     width: $toggle-width;
     height: $toggle-height;
@@ -58,7 +58,7 @@ $toggle-border:  20px;
     }
   }
 
-  input[type="checkbox"]:checked + .checkbox {
+  input[type="checkbox"]:checked + .toggle-switcher {
     background-color: #aaa;
 
     &:before {
@@ -70,19 +70,19 @@ $toggle-border:  20px;
     }
   }
 
-  &.primary input[type="checkbox"]:checked + .checkbox {
+  &.primary input[type="checkbox"]:checked + .toggle-switcher {
     background-color: $brand-primary;
   }
 
-  &.success input[type="checkbox"]:checked + .checkbox {
+  &.success input[type="checkbox"]:checked + .toggle-switcher {
     background-color: $brand-success;
   }
 
-  &.warning input[type="checkbox"]:checked + .checkbox {
+  &.warning input[type="checkbox"]:checked + .toggle-switcher {
     background-color: $brand-warning;
   }
 
-  &.danger input[type="checkbox"]:checked + .checkbox {
+  &.danger input[type="checkbox"]:checked + .toggle-switcher {
     background-color: $brand-danger;
   }
 }
