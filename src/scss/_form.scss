@@ -268,6 +268,22 @@ textarea {
     text-indent: 0.01px;
     @include appearance(none);
   }
+
+  // support textarea twice height
+
+  textarea.form-control {
+    height: 50px;
+  }
+
+  // support label, icon, button and anything other to align top
+
+  &.align-top label:first-child,
+  &.align-top .icon:first-child,
+  &.align-top .suffix {
+    top: 10px;
+    @include transform(translateY(0));
+  }
+
 }
 
 .field-row-divider {
