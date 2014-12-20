@@ -44,14 +44,25 @@ $division-font-color:          #666;
     white-space: nowrap;
     font-size: $division-base-font + 6;
     color: darken($division-font-color, 15%);
+  }
+
+  .zone-note {
+    margin-top: 10px;
+    font-size: inherit;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .zone-image {
+    display: inline-block;
+    margin-top: 5px;
 
     ~ .zone-note {
-      margin-top: 10px;
-      font-size: inherit;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      margin-top: 0;
     }
   }
 

@@ -1985,12 +1985,21 @@ a.item-content {
   font-size: 20px;
   color: #404040;
 }
-.fancy-division-zone .zone-label ~ .zone-note {
+.fancy-division-zone .zone-note {
   margin-top: 10px;
   font-size: inherit;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.fancy-division-zone .zone-label ~ .zone-note:last-child {
+.fancy-division-zone .zone-note:last-child {
   margin-bottom: 0;
+}
+.fancy-division-zone .zone-image {
+  display: inline-block;
+  margin-top: 5px;
+}
+.fancy-division-zone .zone-image ~ .zone-note {
+  margin-top: 0;
 }
 .fancy-division-zone:last-child {
   border-right: 0;
