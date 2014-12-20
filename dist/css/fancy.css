@@ -1221,6 +1221,7 @@ textarea {
 }
 .field-row label + .form-control {
   padding-left: 84px;
+  font-weight: bold;
 }
 .field-row .icon:first-child {
   left: 10px;
@@ -1231,6 +1232,7 @@ textarea {
 }
 .field-row .label-wide + .form-control {
   padding-left: 116px;
+  font-weight: bold;
 }
 .field-row .suffix {
   right: 10px;
@@ -1255,6 +1257,7 @@ textarea {
   text-indent: 0.01px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
 }
 
 .field-row-divider {

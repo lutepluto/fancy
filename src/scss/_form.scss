@@ -221,6 +221,7 @@ textarea {
 
     + .form-control {
       padding-left: $content-padding * 2 + $input-font-size * 4;
+      font-weight: bold;
     }
   }
 
@@ -235,6 +236,7 @@ textarea {
 
   .label-wide + .form-control {
     padding-left: $content-padding * 2 + $input-font-size * 6;
+    font-weight: bold;
   }
 
   .suffix {
@@ -264,8 +266,7 @@ textarea {
     white-space: nowrap;
     cursor: pointer;
     text-indent: 0.01px;
-    -webkit-appearance: none;
-       -moz-appearance: none;
+    @include appearance(none);
   }
 }
 
