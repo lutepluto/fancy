@@ -310,6 +310,11 @@ th {
   padding: 10px !important;
 }
 
+.vertical-padding {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
 .no-padding {
   padding: 0 !important;
 }

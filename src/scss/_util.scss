@@ -78,10 +78,16 @@
   padding: $content-padding !important;
 }
 
+// vertical padding
+
+.vertical-padding {
+  padding-top: $content-padding !important;
+  padding-bottom: $content-padding !important;
+}
+
 .no-padding {
   padding: 0 !important;
 }
-
 
 // Border
 
