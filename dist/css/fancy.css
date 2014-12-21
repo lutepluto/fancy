@@ -1896,14 +1896,14 @@ a.item-content {
 .fancy-progress {
   position: relative;
   margin: 0 auto 15px;
-  padding: 30px 0 15px;
+  padding: 15px 0;
   list-style: none;
 }
 .fancy-progress .fancy-progress-step {
   display: table-cell;
   width: 1%;
   padding-top: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 7px;
   vertical-align: middle;
   text-align: center;
 }
@@ -1942,19 +1942,13 @@ a.item-content {
   background-color: #fff;
   border-color: #3A89C9;
 }
+.fancy-progress-step.doing .content {
+  font-size: 120%;
+  font-weight: bold;
+  color: #3A89C9;
+}
 .fancy-progress-step.done .bar, .fancy-progress-step.done .node {
   background-color: #3A89C9;
-}
-.fancy-progress-step .tip {
-  position: absolute;
-  left: 50%;
-  top: -15px;
-  margin: 0;
-  padding: 0;
-  font-size: 80%;
-  -webkit-transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-      transform: translate(-50%, 0);
 }
 
 .fancy-division {
