@@ -1075,7 +1075,7 @@ input[type="color"] {
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 input[type="search"] {
@@ -1263,7 +1263,7 @@ textarea {
   height: 50px;
 }
 .field-row.align-top label:first-child, .field-row.align-top .icon:first-child, .field-row.align-top .suffix {
-  top: 10px;
+  top: 12px;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
       transform: translateY(0);

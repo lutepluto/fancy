@@ -52,7 +52,7 @@ input[type="color"] {
   font-size: $input-font-size;
   border: 1px solid $input-border-color;
   border-radius: $border-radius-base;
-  line-height: 1.1; // here prefer unitless number instead of length(px, em or rem)
+  line-height: 1.2; // here prefer unitless number instead of length(px, em or rem)
 }
 
 // Rounded search input
@@ -280,7 +280,7 @@ textarea {
   &.align-top label:first-child,
   &.align-top .icon:first-child,
   &.align-top .suffix {
-    top: 10px;
+    top: 12px;
     @include transform(translateY(0));
   }
 
