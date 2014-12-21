@@ -70,19 +70,18 @@
   margin: $content-margin !important;
 }
 
+// vetical margin
+.vertical-margin {
+  margin-top: $content-margin !important;
+  margin-bottom: $content-margin !important;
+}
+
 .no-margin {
   margin: 0 !important;
 }
 
 .padding {
   padding: $content-padding !important;
-}
-
-// vertical padding
-
-.vertical-padding {
-  padding-top: $content-padding !important;
-  padding-bottom: $content-padding !important;
 }
 
 .no-padding {

@@ -302,17 +302,17 @@ th {
   margin: 15px !important;
 }
 
+.vertical-margin {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+
 .no-margin {
   margin: 0 !important;
 }
 
 .padding {
   padding: 10px !important;
-}
-
-.vertical-padding {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
 }
 
 .no-padding {
