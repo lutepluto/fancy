@@ -1943,8 +1943,7 @@ a.item-content {
   border-color: #3A89C9;
 }
 .fancy-progress-step.doing .content {
-  font-size: 120%;
-  font-weight: bold;
+  font-weight: bolder;
   color: #3A89C9;
 }
 .fancy-progress-step.done .bar, .fancy-progress-step.done .node {
