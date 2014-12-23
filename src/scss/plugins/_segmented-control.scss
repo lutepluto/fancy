@@ -117,4 +117,13 @@
   }
 }
 
+// segmented control content
+.content-item {
+  position: relative;
+  display: none;
+  @include transition(all, .3s ease-out);
 
+  &.active {
+    display: block;
+  }
+}

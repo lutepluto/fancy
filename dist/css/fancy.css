@@ -2255,3 +2255,13 @@ a.item-content {
   background-color: #E84A5F;
   color: #fff;
 }
+
+.content-item {
+  position: relative;
+  display: none;
+  -webkit-transition: all, 0.3s ease-out;
+  transition: all, 0.3s ease-out;
+}
+.content-item.active {
+  display: block;
+}
