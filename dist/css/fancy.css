@@ -2159,3 +2159,99 @@ a.item-content {
   background-color: #F8A13F;
   color: #fff;
 }
+
+.segmented-control {
+  position: relative;
+  display: table;
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #a8a8a8;
+  border-radius: 4px;
+}
+.segmented-control .control-item {
+  display: table-cell;
+  width: 1%;
+  padding: 3px 5px;
+  overflow: hidden;
+  border-right: 1px solid #a8a8a8;
+  background-color: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: inherit;
+  color: #a8a8a8;
+}
+.segmented-control .control-item:last-child {
+  border-right: 0px;
+}
+.segmented-control .control-item:active {
+  background-color: #ddd;
+}
+.segmented-control .control-item.active {
+  background-color: #a8a8a8;
+  color: #fff;
+}
+
+.segmented-control.primary {
+  border-color: #3A89C9;
+}
+.segmented-control.primary .control-item {
+  border-color: #3A89C9;
+  color: #3A89C9;
+}
+.segmented-control.primary .control-item:active {
+  background-color: #76add9;
+  color: #fff;
+}
+.segmented-control.primary .control-item.active {
+  background-color: #3A89C9;
+  color: #fff;
+}
+
+.segmented-control.success {
+  border-color: #61C155;
+}
+.segmented-control.success .control-item {
+  border-color: #61C155;
+  color: #61C155;
+}
+.segmented-control.success .control-item:active {
+  background-color: #95d58d;
+  color: #fff;
+}
+.segmented-control.success .control-item.active {
+  background-color: #61C155;
+  color: #fff;
+}
+
+.segmented-control.warning {
+  border-color: #F8A13F;
+}
+.segmented-control.warning .control-item {
+  border-color: #F8A13F;
+  color: #F8A13F;
+}
+.segmented-control.warning .control-item:active {
+  background-color: #fbc589;
+  color: #fff;
+}
+.segmented-control.warning .control-item.active {
+  background-color: #F8A13F;
+  color: #fff;
+}
+
+.segmented-control.danger {
+  border-color: #E84A5F;
+}
+.segmented-control.danger .control-item {
+  border-color: #E84A5F;
+  color: #E84A5F;
+}
+.segmented-control.danger .control-item:active {
+  background-color: #f18e9b;
+  color: #fff;
+}
+.segmented-control.danger .control-item.active {
+  background-color: #E84A5F;
+  color: #fff;
+}
