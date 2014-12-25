@@ -54,8 +54,11 @@
 
         var selector = $('#time-selector')
 
-        selector.on('fancy:drawerselector:change', function(e) {
-          alert(e.val)
+        selector.on('fancy:drawerselector:selected', function(e) {
+          $(this).find('#hidden-time')[0] ?
+            $(this).find('#hidden-time ').val(e.id) :
+            $(this).append('<input type="hidden" id="hidden-time" value="' + e.id + '">')
+          $(this).find('.form-control').val(e.val)
         })
 
       })

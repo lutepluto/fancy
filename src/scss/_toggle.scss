@@ -38,7 +38,7 @@ $toggle-border:       20px;
       height: $toggle-height - 4;
       border-radius: $toggle-border;
       background-color: #fff;
-      @include transition(.3s);
+      @include transition(.15s);
       @include scale(1);
     }
 
@@ -53,7 +53,7 @@ $toggle-border:       20px;
       border-radius: $toggle-height - 4;
       background-color: #fff;
       box-shadow: 1px 1px 5px rgba(0, 0, 0, .4);
-      @include transition(.3s);
+      @include transition(.15s);
       @include translate(0, 0);
     }
   }

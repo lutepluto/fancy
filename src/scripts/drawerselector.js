@@ -30,7 +30,7 @@
     if(this.isOpen) return
     this.isOpen = true
 
-    this.$target.on('tap.select.fancy.drawerselector', 'input[type="radio"]', $.proxy(this.select, this))
+    this.$target.find('input[type="radio"]').on('change', $.proxy(this.select, this))
 
     this.backdrop(function() {
       var transition = $.support.transition && that.$target.hasClass('fade')
@@ -48,9 +48,8 @@
     })
   }
 
-  Drawerselector.prototype.close = function(e) {
-    if(e) e.preventDefault()
-    e = $.Event('fancy:drawerselector:close')
+  Drawerselector.prototype.close = function(callback) {
+    var e = $.Event('fancy:drawerselector:close')
     this.$element.trigger(e)
 
     if(!this.isOpen) return
@@ -60,16 +59,17 @@
 
     $.support.transition ?
       this.$target
-        .one($.support.transition.end, $.proxy(this.hideDrawer, this))
+        .one($.support.transition.end, $.proxy(this.hideDrawer, this, callback))
         .emulateTransitionEnd(300) :
-      this.hideDrawer()
+      this.hideDrawer(callback)
   }
 
-  Drawerselector.prototype.hideDrawer = function() {
+  Drawerselector.prototype.hideDrawer = function(callback) {
     var that = this
     this.$target.hide()
     this.backdrop(function() {
       that.$element.trigger('fancy:drawerselector:closed')
+      callback && callback()
     })
   }
 
@@ -81,7 +81,7 @@
     var transition = $.support.transition
     this.$backdrop = $('<div class="backdrop ' + animate + '"/>')
       .appendTo(this.$doc)
-      .one('tap:dismiss:fancy:drawerselector', $.proxy(this.close, this))
+      .one('tap', $.proxy(this.close, this))
 
     if(transition) this.$backdrop[0].offsetWidth
 
@@ -118,10 +118,15 @@
   Drawerselector.prototype.select = function(e) {
     if(e.currentTarget !== e.target) return
 
-    var e = $.Event('fancy:drawerselector:change', { val: e.target.value })
+    var that = this
+    var id = e.target.value
+    var value = $(e.target).parents('.item-radio').text()
 
-    this.$backdrop.trigger('tap')
-    this.$element.trigger(e)
+    var e = $.Event('fancy:drawerselector:selected', { id: id, val: value })
+
+    this.close(function() {
+      that.$element.trigger(e)
+    })
   }
 
   var old = $.fn.drawerselector
