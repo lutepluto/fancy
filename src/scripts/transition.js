@@ -35,5 +35,5 @@
     $.support.transition = transitionEnd()
   })
   
-}(window.Zepto || window.jQuery)
+}(window.Zepto)
 

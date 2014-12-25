@@ -2160,6 +2160,28 @@ a.item-content {
   color: #fff;
 }
 
+.drawerselector {
+  display: none;
+  position: fixed;
+  width: 70%;
+  top: 44px;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 10;
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+      transform: translate(100%, 0);
+}
+.drawerselector.in {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
+}
+
 .segmented-control {
   position: relative;
   display: table;

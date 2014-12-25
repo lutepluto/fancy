@@ -58,4 +58,4 @@
     Plugin.call($(this), 'switch')
   })
 
-}(window.Zepto || window.jQuery)
+}(window.Zepto)

@@ -156,5 +156,5 @@
     Plugin.call($target, options, this)
   })
 
-}(window.Zepto || window.jQuery)
+}(window.Zepto);
 
