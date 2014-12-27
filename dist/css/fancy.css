@@ -1228,7 +1228,7 @@ textarea {
   font-size: 16px;
 }
 .field-row .icon:first-child + .form-control {
-  padding-left: 52px;
+  padding-left: 44px;
 }
 .field-row .label-wide + .form-control {
   padding-left: 116px;

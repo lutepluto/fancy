@@ -230,7 +230,7 @@ textarea {
     font-size: $input-font-size;
 
     + .form-control {
-      padding-left: $content-padding * 2 + $input-font-size * 2;
+      padding-left: $content-padding * 2 + $icon-size;
     }
   }
 
