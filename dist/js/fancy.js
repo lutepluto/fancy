@@ -729,7 +729,7 @@
 
     var $previousControl = $controlContainer.find('.active')
     var $previousContent = $contentContainer.find('.active')
-    var e = $.Event('switching.fancy.segmented-control')
+    var e = $.Event('fancy:segmentedcontrol:switching')
 
     $this.trigger(e)
 
@@ -740,6 +740,8 @@
     // switch content
     $previousContent.removeClass('active')
     $target.addClass('active')
+
+    $this.trigger('fancy:segmentedcontrol:switched')
   }
 
   var old = $.fn.SegmentedControl
@@ -747,9 +749,9 @@
   function Plugin(option) {
     return this.each(function() {
       var $this = $(this)
-      var data = $this.data('fancy.segmented-control')
+      var data = $this.data('fancy.segmentedcontrol')
 
-      if(!data) $this.data('fancy.segmented-control', (data = new SegmentedControl(this)))
+      if(!data) $this.data('fancy.segmentedcontrol', (data = new SegmentedControl(this)))
       if(typeof option == 'string') data[option]()
     })
   }
@@ -762,7 +764,7 @@
     return this
   }
 
-  $(document).on('tap.fancy.segmented-control', '[data-toggle="segmented"]', function(e) {
+  $(document).on('tap', '[data-toggle="segmented"]', function(e) {
     e.preventDefault()
     Plugin.call($(this), 'switch')
   })
