@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fancy SVG</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="../dist/css/fancy.css" rel="stylesheet">
+
+    <style type="text/css">
+
+      .arc-text {
+        fill: #7ED23D;
+        font-size: 24px;
+        font-weight: bolder;
+      }
+
+      .arc-text .order-number {
+        fill: rgba(0, 0, 0, .3);
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header class="bar header fixed-top transparent">
+      <h1 class="title">SVG</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content has-header">
+
+      <div style="position: absolute; top: 50%; left: 50%; width: 300px; height: 300px; transform: translate(-50%, -50%);">
+        <svg version="1.1"
+          baseProfile="full"
+          width="100%" height="100%"
+          xmlns="http://www.w3.org/2000/svg">
+
+          <defs>
+            <radialGradient id="gradient" cx="0.5" cy="0.5" r="0.5" fx="0.4" fy="0.4" spreadMethod="reflect">
+              <stop offset="0%" stop-color="#5EBE24"></stop>
+              <stop offset="50%" stop-color="#6AC62E"></stop>
+              <stop offset="80%" stop-color="#7CD13A"></stop>
+            </radialGradient>
+          </defs>
+
+          <circle cx="50%" cy="50%" r="100" fill="url(#gradient)" stroke="#aaa" stroke-width="1"/>
+          <a xlink:href="http://baidu.com">
+            <text width="100" height="100" textLength="100" style="fill: #fff; font-size: 50px; font-weight: bold;">
+              <tspan x="100" y="140">一键</tspan>
+              <tspan x="100" y="190">报单</tspan>
+            </text>
+          </a>
+
+          <path id="step1"
+            d="M 30 150 A 120 120, 0, 0, 1, 90 46" fill="transparent" />
+          <g>
+            <circle cx="26" cy="138" r="8" stroke="rgba(0, 0, 0, .3)" stroke-width="2" fill="transparent"/>
+            <text class="arc-text">
+              <textPath xlink:href="#step1">
+                <tspan class="order-number">&nbsp;&nbsp;1</tspan>&nbsp;选择菜品
+              </textPath>
+            </text>
+            <path d="M 90 46 A 120 120, 0, 0, 1, 210 46" stroke="rgba(0, 0, 0, .3)" stroke-width="2" fill="transparent"/>
+          </g>
+
+          <path id="step2"
+            d="M 210 46 A 120 120, 0, 0, 1, 270 150" fill="transparent" />
+          <g>
+            <circle cx="222" cy="49" r="8" stroke="rgba(0, 0, 0, .3)" stroke-width="2" fill="transparent" />
+            <text class="arc-text">
+              <textPath xlink:href="#step2">
+                <tspan class="order-number">&nbsp;&nbsp;2</tspan>&nbsp;挑供应商
+              </textPath>
+            </text>
+            <path d="M 270 150 A 120 120, 0, 0, 1, 210 254" stroke="rgba(0, 0, 0, .3)" stroke-width="2" fill="transparent" />
+          </g>
+
+          <path id="step3"
+            d="M 80 270 A 120 120, 0, 0, 0, 220 270" fill="transparent" />
+          <g>
+            <circle cx="92" cy="272" r="8" stroke="rgba(0, 0, 0, .3)" stroke-width="2" fill="transparent" />
+            <text class="arc-text">
+              <textPath xlink:href="#step3">
+                <tspan class="order-number">&nbsp;&nbsp;3</tspan>&nbsp;配送到餐厅
+              </textPath>
+            </text>
+            <path d="M 90 254 A 120 120, 0, 0, 1, 30 150" stroke="rgba(0, 0, 0, .3)" stroke-width="2" fill="transparent" />
+          </g>
+          
+        </svg>
+      </div>
+
+    </div>
+
+  </body>
+</html>

@@ -10,23 +10,25 @@
     this.options = options
     this.$backdrop =
     this.isOpen = null
-
-    if(this.options.feedback) this.$element.on('click.select.fancy.actionsheet', '.actionsheet-feedback', $.proxy(this.select, this))
   }
 
   Actionsheet.prototype.toggle = function(_relatedTarget) {
-    return this.isOpen ? this.close() : this.open(_relatedTarget)
+    this.isOpen ? this.close() : this.open(_relatedTarget)
   }
 
   Actionsheet.prototype.open = function(_relatedTarget) {
     var that = this
-    var e = $.Event('open.fancy.actionsheet', { relateTarget: _relatedTarget })
+    var e = $.Event('fancy:actionsheet:open', { relateTarget: _relatedTarget })
     this.$element.trigger(e)
 
     if(this.isOpen) return
     this.isOpen = true
 
-    this.$element.one('click.dismiss.fancy.actionsheet', '[data-dismiss="actionsheet"]', $.proxy(this.close, this))
+    // dismiss handler
+    this.$element.one('tap', '[data-dismiss="actionsheet"]', $.proxy(this.close, this))
+
+    // value handle
+    this.$element.one('tap', '[data-value]', $.proxy(this.select, this))
 
     this.backdrop(function() {
       var transition = $.support.transition && that.$element.hasClass('fade')
@@ -35,7 +37,7 @@
       if(transition) that.$element[0].offsetWidth // reflow
       that.$element.addClass('in')
 
-      var e = $.Event('opend.fancy.actionsheet')
+      var e = $.Event('fancy:actionsheet:opend')
 
       transition ? 
         that.$element.one($.support.transition.end, function() {
@@ -46,7 +48,7 @@
 
   Actionsheet.prototype.close = function(e) {
     if(e) e.preventDefault()
-    e = $.Event('close.fancy.actionsheet')
+    e = $.Event('fancy:actionsheet:close')
     this.$element.trigger(e)
 
     if(!this.isOpen) return
@@ -65,45 +67,45 @@
     var that = this
     this.$element.hide()
     this.backdrop(function() {
-      that.$element.trigger('closed.fancy.actionsheet')
+      that.$element.trigger('fancy:actionsheet:closed')
     })
   }
 
   Actionsheet.prototype.backdrop = function(callback) {
-   var that = this
-   var animate = this.$element.hasClass('fade') ? 'fade' : ''
+    var that = this
+    var animate = this.$element.hasClass('fade') ? 'fade' : ''
 
-   if(this.isOpen) {
-    var transition = $.support.transition
-    this.$backdrop = $('<div class="backdrop ' + animate + '"/>')
-      .appendTo(this.$doc)
-      .one('click.dismiss.fancy.actionsheet', $.proxy(this.close, this))
+    if(this.isOpen) {
+      var transition = $.support.transition
+      this.$backdrop = $('<div class="backdrop ' + animate + '"/>')
+        .appendTo(this.$doc)
+        .one('tap', $.proxy(this.close, this))
 
-    if(transition) this.$backdrop[0].offsetWidth
+      if(transition) this.$backdrop[0].offsetWidth
 
-    this.$backdrop.addClass('in')
+      this.$backdrop.addClass('in')
 
-    if(!callback) return
+      if(!callback) return
 
-    transition ? this.$backdrop
-      .one($.support.transition.end, callback)
-      .emulateTransitionEnd(150) : callback()
-   } else if(!this.isOpen && this.$backdrop) {
-    this.$backdrop.removeClass('in')
+      transition ? this.$backdrop
+        .one($.support.transition.end, callback)
+        .emulateTransitionEnd(150) : callback()
+    } else if(!this.isOpen && this.$backdrop) {
+      this.$backdrop.removeClass('in')
 
-    var callbackRemove = function() {
-      that.removeBackdrop()
-      callback && callback()
+      var callbackRemove = function() {
+        that.removeBackdrop()
+        callback && callback()
+      }
+
+      $.support.transition && this.$backdrop.hasClass('fade') ? 
+        this.$backdrop
+          .one($.support.transition.end, callbackRemove)
+          .emulateTransitionEnd(150) :
+        callbackRemove()
+    } else if(callback) {
+      callback()
     }
-    $.support.transition && this.$backdrop.hasClass('fade') ?
-      this.$backdrop
-        .one($.support.transition.end, callbackRemove)
-        .emulateTransitionEnd(150) :
-      callbackRemove()
-
-   } else if(callback) {
-    callback()
-   }
   }
 
   Actionsheet.prototype.removeBackdrop = function() {
@@ -114,16 +116,13 @@
   Actionsheet.prototype.select = function(evt) {
     if(evt.target !== evt.currentTarget) return
 
-    var e = $.Event('select.fancy.actionsheet', { relateTarget: this.options.feedback })
+    var $action = $(evt.target)
+    var id = $action.text(),
+        value = $action.data('value')
+    var e = $.Event('fancy:actionsheet:selected', { id: id, val: value })
+
+    this.close()
     this.$element.trigger(e)
-
-    var text = $(evt.target).text(),
-        value = $(evt.target).data('value')
-    $(this.options.feedback).val(text)
-    this.options.valueback && $(this.options.valueback).val(value)
-
-    this.$backdrop.trigger('click')
-    this.$element.trigger('selected.fancy.actionsheet')
   }
 
   var old = $.fn.actionsheet
@@ -148,7 +147,7 @@
     return this
   }
 
-  $(document).on('click.fancy.actionsheet.data-api', '[data-toggle="actionsheet"]', function() {
+  $(document).on('tap', '[data-toggle="actionsheet"]', function() {
     var $this = $(this)
     var $target = $($this.data('target'))
     var options = $target.data('fancy.actionsheet') ? 'toggle' : $.extend({}, $target.data(), $this.data())
@@ -191,7 +190,7 @@
     if(this.isOpen) return
     this.isOpen = true
 
-    this.$target.find('input[type="radio"]').on('change', $.proxy(this.select, this))
+    this.$target.find('input[type="radio"]').one('change', $.proxy(this.select, this))
 
     this.backdrop(function() {
       var transition = $.support.transition && that.$target.hasClass('fade')
@@ -312,7 +311,7 @@
     return this
   }
 
-  $(document).on('tap.fancy.drawerselector', '[data-toggle="drawerselector"]', function(e) {
+  $(document).on('tap', '[data-toggle="drawerselector"]', function(e) {
     var $this = $(this)
     var option = $this.data('fancy.drawerselector') ? 'toggle' : $.extend({}, $this.data())
 

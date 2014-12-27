@@ -30,7 +30,7 @@
     if(this.isOpen) return
     this.isOpen = true
 
-    this.$target.find('input[type="radio"]').on('change', $.proxy(this.select, this))
+    this.$target.find('input[type="radio"]').one('change', $.proxy(this.select, this))
 
     this.backdrop(function() {
       var transition = $.support.transition && that.$target.hasClass('fade')
@@ -151,7 +151,7 @@
     return this
   }
 
-  $(document).on('tap.fancy.drawerselector', '[data-toggle="drawerselector"]', function(e) {
+  $(document).on('tap', '[data-toggle="drawerselector"]', function(e) {
     var $this = $(this)
     var option = $this.data('fancy.drawerselector') ? 'toggle' : $.extend({}, $this.data())
 

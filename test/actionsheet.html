@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Action Sheet</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="../dist/css/fancy.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header class="bar header fixed-top transparent">
+      <h1 class="title">Action Sheet</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content has-header">
+
+      <form class="fancy-form">
+        <div class="field-row" data-toggle="actionsheet" data-target="#actionsheet">
+          <label class="label-wide">社交媒体</label>
+          <input type="text" id="sns-text" class="form-control" readonly placeholder="选择社交媒体">
+          <input type="hidden" id="sns-hidden">
+        </div>
+      </form>
+      
+    </div>
+
+    <div id="actionsheet" class="actionsheet fade">
+      <div class="actionsheet-body">
+        <div class="actionsheet-group">
+          <a href="javascript: void(0)" class="button" data-value="wechat">分享到微信</a>
+          <a href="javascript: void(0)" class="button" data-value="weibo">分享到微博</a>
+        </div>
+        <div class="actionsheet-group">
+          <a href="javascript: void(0)" class="button cancel" data-dismiss="actionsheet">取消</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="../dist/js/vendor/zepto.js"></script>
+    <script src="../dist/js/fancy.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#actionsheet').on('fancy:actionsheet:selected', function(e) {
+          console.log(e.id + '-' + e.val)
+        })
+      })
+    </script>
+
+  </body>
+</html>
