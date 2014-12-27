@@ -117,8 +117,8 @@
     if(evt.target !== evt.currentTarget) return
 
     var $action = $(evt.target)
-    var id = $action.text(),
-        value = $action.data('value')
+    var value = $action.text(),
+        id = $action.data('value')
     var e = $.Event('fancy:actionsheet:selected', { id: id, val: value })
 
     this.close()
