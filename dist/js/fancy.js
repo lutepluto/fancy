@@ -332,7 +332,11 @@
     this.$backdrop = 
     this.isOpen = null
 
-    this.$element.on('tap.select.fancy.fixed-selector', '.selector-item', $.proxy(this.selectMenu, this))
+    this.$element.on('tap', '.selector-item', $.proxy(this.selectMenu, this))
+  }
+
+  FixedSelector.DEFAULTS = {
+
   }
 
   FixedSelector.prototype.toggle = function(_relatedTarget) {
@@ -341,14 +345,14 @@
 
   FixedSelector.prototype.open = function(_relatedTarget) {
     var that = this
-    var e = $.Event('open.fancy.fixed-selector', { relateTarget: _relatedTarget })
+    var e = $.Event('fancy:fixedselector:open', { relateTarget: _relatedTarget })
     this.$element.trigger(e)
 
     if(this.isOpen) return
     this.isOpen = true
 
-    this.$element.one('tap.dismiss.fancy.fixed-selector', '[data-dismiss="fixed-selector"]', $.proxy(this.close, this))
-    this.$element.on('tap.confirm.fancy.fixed-selector', '[data-confirm="fixed-selector"]', $.proxy(this.confirm, this))
+    this.$element.one('tap', '[data-dismiss="fixedselector"]', $.proxy(this.close, this))
+    this.$element.one('tap', '[data-confirm="fixedselector"]', $.proxy(this.confirm, this))
 
     this.backdrop(function() {
       var transition = $.support.transition && that.$element.hasClass('fade')
@@ -357,7 +361,7 @@
       if(transition) that.$element[0].offsetWidth
       that.$element.addClass('in')
 
-      var e = $.Event('opend.fancy.fixed-selector')
+      var e = $.Event('fancy:fixedselector:opend')
 
       transition ?
         that.$element.one($.support.transition.end, function() {
@@ -369,7 +373,7 @@
   FixedSelector.prototype.close = function(e) {
     if(e) e.preventDefault()
 
-    e = $.Event('close.fancy.fixed-selector')
+    e = $.Event('fancy:fixedselector:close')
     this.$element.trigger(e)
 
     if(!this.isOpen) return
@@ -388,8 +392,7 @@
     var that = this
     this.$element.hide()
     this.backdrop(function() {
-      that.$element.off('tap.confirm.fancy.fixed-selector')
-      that.$element.trigger('closed.fancy.fixed-selector')
+      that.$element.trigger('fancy:fixedselector:closed')
     })
   }
 
@@ -401,7 +404,7 @@
       var transition = $.support.transition
       this.$backdrop = $('<div class="backdrop ' + animate + '"/>')
         .appendTo(this.$doc)
-        .one('tap.dismiss.fancy.fixed-selector', $.proxy(this.close, this))
+        .one('tap', $.proxy(this.close, this))
 
       if(transition) this.$backdrop[0].offsetWidth
 
@@ -442,17 +445,17 @@
   }
 
   FixedSelector.prototype.confirm = function() {
-    var placeholder = ''
+    var valueStack = []
 
     this.$element.find('.selector-group').each(function() {
       var $menu = $(this)
 
-      $($menu.data('valueback')).val($menu.find('.active').children().data('value'))
-      placeholder = placeholder.concat($menu.find('.active').children().text() + ' ')
+      valueStack.push({id:$menu.find('.active').children().data('value'), val: $menu.find('.active').children().text() })
     })
 
-    $(this.options.feedback).val(placeholder)
     this.close()
+    var e = $.Event('fancy:fixedselector:confirm', { values: valueStack })
+    this.$element.trigger(e)
   }
 
   var old = $.fn.FixedSelector
@@ -460,10 +463,10 @@
   function Plugin(option, _relatedTarget) {
     return this.each(function() {
       var $this = $(this),
-        data = $(this).data('fancy.fixed-selector'),
+        data = $(this).data('fancy.fixedselector'),
         options = $.extend({}, $(this).data(), typeof option == 'object' && option)
 
-      if(!data) $this.data('fancy.fixed-selector', (data = new FixedSelector(this, options)))
+      if(!data) $this.data('fancy.fixedselector', (data = new FixedSelector(this, options)))
       if(typeof option == 'string') data[option](_relatedTarget)
       else data.open(_relatedTarget)
     })
@@ -477,10 +480,10 @@
     return this
   }
 
-  $(document).on('tap.fancy.fixed-selector', '[data-toggle="fixed-selector"]', function() {
+  $(document).on('tap', '[data-toggle="fixedselector"]', function() {
     var $this = $(this)
     var $target = $($this.data('target'))
-    var options = $this.data('fancy.fixed-selector') ? 'toggle' : $.extend({}, $target.data(), $this.data())
+    var options = $this.data('fancy.fixedselector') ? 'toggle' : $.extend({}, $target.data(), $this.data())
 
     Plugin.call($target, options, this)
   })

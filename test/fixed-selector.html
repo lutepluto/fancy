@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fixed selector</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="../dist/css/fancy.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header class="bar header fixed-top transparent">
+      <h1 class="title">标题</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content has-header">
+
+      <form class="fancy-form">
+        <div class="field-row" data-toggle="fixedselector" data-target="#fixed">
+          <label class="label-wide">户型</label>
+          <input type="text" id="house-info" class="form-control" readonly placeholder="选择户型">
+        </div>
+      </form>
+      
+    </div>
+
+    <div id="fixed" class="selector fade">
+      <div class="selector-header">
+        <a href="#" class="selector-down" data-dismiss="fixedselector"></a>
+        <label class="">户型</label>
+        <a href="javascript: void(0)" class="pull-right" data-confirm="fixedselector">确认</a>
+      </div>
+      <div class="selector-body">
+        <ul class="selector-group fixed double">
+          <li class="active">
+            <a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="1">1室</a>
+          </li>
+          <li>
+            <a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="2">2室</a>
+          </li>
+          <li>
+            <a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="3">3室</a>
+          </li>
+          <li>
+            <a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="4">4室</a>
+          </li>
+          <li>
+            <a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="5">5室</a>
+          </li>
+        </ul>
+        <ul class="selector-group fixed double">
+          <li class="active">
+            <a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="0">无厅</a>
+          </li>
+          <li>
+            <a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="1">1厅</a>
+          </li>
+          <li>
+            <a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="2">2厅</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="../dist/js/vendor/zepto.js"></script>
+    <script src="../dist/js/fancy.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#fixed').on('fancy:fixedselector:confirm', function(e) {
+          console.log(e.values)
+        })
+      })
+    </script>
+
+  </body>
+</html>
