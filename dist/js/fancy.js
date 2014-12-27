@@ -504,7 +504,11 @@
     this.$backdrop = 
     this.isOpen = null
 
-    this.$element.on('tap.switch.fancy.gear-selector', '.selector-item', $.proxy(this.switchMenu, this))
+    this.$element.on('tap', '.selector-item', $.proxy(this.switchMenu, this))
+  }
+
+  GearSelector.DEFAULTS = {
+
   }
 
   GearSelector.prototype.toggle = function(_relatedTarget) {
@@ -513,14 +517,14 @@
 
   GearSelector.prototype.open = function(_relatedTarget) {
     var that = this
-    var e = $.Event('open.fancy.gear-selector', { relateTarget: _relatedTarget })
+    var e = $.Event('fancy:gearselector:open', { relateTarget: _relatedTarget })
     this.$element.trigger(e)
 
     if(this.isOpen) return
     this.isOpen = true
 
-    this.$element.one('tap.dismiss.fancy.gear-selector', '[data-dismiss="gear-selector"]', $.proxy(this.close, this))
-    this.$element.on('tap.confirm.fancy.gear-selector', '[data-confirm="gear-selector"]', $.proxy(this.confirm, this))
+    this.$element.one('tap', '[data-dismiss="gearselector"]', $.proxy(this.close, this))
+    this.$element.one('tap', '[data-confirm="gearselector"]', $.proxy(this.confirm, this))
 
     this.backdrop(function() {
       var transition = $.support.transition && that.$element.hasClass('fade')
@@ -529,7 +533,7 @@
       if(transition) that.$element[0].offsetWidth
       that.$element.addClass('in')
 
-      var e = $.Event('opend.fancy.gear-selector')
+      var e = $.Event('fancy:gearselector:opend')
 
       transition ?
         that.$element.one($.support.transition.end, function() {
@@ -541,7 +545,7 @@
   GearSelector.prototype.close = function(e) {
     if(e) e.preventDefault()
 
-    e = $.Event('close.fancy.gear-selector')
+    e = $.Event('fancy:gearselector:close')
     this.$element.trigger(e)
 
     if(!this.isOpen) return
@@ -560,8 +564,7 @@
     var that = this
     this.$element.hide()
     this.backdrop(function() {
-      that.$element.off('tap.confirm.fancy.gear-selector')
-      that.$element.trigger('closed.fancy.gear-selector')
+      that.$element.trigger('fancy:gearselector:closed')
     })
   }
 
@@ -573,7 +576,7 @@
       var transition = $.support.transition
       this.$backdrop = $('<div class="backdrop ' + animate + '"/>')
         .appendTo(this.$doc)
-        .one('tap.dismiss.fancy.gear-selector', $.proxy(this.close, this))
+        .one('tap', $.proxy(this.close, this))
 
       if(transition) this.$backdrop[0].offsetWidth
 
@@ -647,16 +650,16 @@
 
   GearSelector.prototype.confirm = function() {
 
-    var placeholder = '',
-      selectAll = true
+    var selectAll = true,
+      valueStack = []
 
-    this.$element.find('.selector-group.active').each(function() {
+    this.$element.find('.selector-group.active').each(function(index) {
       var $menu = $(this)
+      var id = $menu.find('.active').children().data('value'),
+        value = $menu.find('.active').children().text()
 
-      $($menu.data('valueback')).val($menu.find('.active').children().data('value'))
-      var text = $menu.find('.active').children().text() + ' '
-      if(text.trim() != 'null') {
-        placeholder = placeholder.concat(text)
+      if(value.trim() != 'null') {
+        valueStack.push({ index: index, id: id, val: value })
       } else {
         selectAll = false
         return false
@@ -664,8 +667,10 @@
     })
 
     if(selectAll) {
-      $(this.options.feedback).val(placeholder)
       this.close()
+
+      var e = $.Event('fancy:gearselector:confirm', { values: valueStack })
+      this.$element.trigger(e)
     }
   }
 
@@ -674,10 +679,10 @@
   function Plugin(option, _relatedTarget) {
     return this.each(function() {
       var $this = $(this),
-        data = $(this).data('fancy.gear-selector'),
+        data = $(this).data('fancy.gearselector'),
         options = $.extend({}, $(this).data(), typeof option == 'object' && option)
 
-      if(!data) $this.data('fancy.gear-selector', (data = new GearSelector(this, options)))
+      if(!data) $this.data('fancy.gearselector', (data = new GearSelector(this, options)))
       if(typeof option == 'string') data[option](_relatedTarget)
       else data.open(_relatedTarget)
     })
@@ -691,10 +696,10 @@
     return this
   }
 
-  $(document).on('tap.fancy.gear-selector', '[data-toggle="gear-selector"]', function() {
+  $(document).on('tap', '[data-toggle="gearselector"]', function() {
     var $this = $(this)
     var $target = $($this.data('target'))
-    var options = $this.data('fancy.gear-selector') ? 'toggle' : $.extend({}, $target.data(), $this.data())
+    var options = $this.data('fancy.gearselector') ? 'toggle' : $.extend({}, $target.data(), $this.data())
 
     Plugin.call($target, options, this)
   })

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Fancy Form</title>
+    <title>Gear Selector</title>
 
     <!-- Sets initial viewport load and disables zooming  -->
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
@@ -17,54 +17,26 @@
   <body>
 
     <header class="bar header fixed-top transparent">
-      <a href="#" class="left"><i class="icon icon-chevron-left"></i>上一页</a>
-      <h1 class="title">标题</h1>
-      <a href="#" class="right">关于<i class="icon icon-chevron-right"></i></a>
+      <h1 class="title">Gear Selector</h1>
     </header>
 
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content has-header">
 
       <form class="fancy-form">
-        <div class="field-row" data-toggle="actionsheet" data-target="#actionsheet">
-          <label class="label-wide">社交媒体</label>
-          <input type="text" id="sns-text" class="form-control" readonly placeholder="选择社交媒体">
-          <input type="hidden" id="sns-hidden">
-        </div>
-        <div class="field-row" data-toggle="gear-selector" data-target="#gear" data-feedback="#location-text">
+        <div class="field-row" data-toggle="gearselector" data-target="#gear" >
           <label class="label-wide">所在地</label>
           <input type="text" id="location-text" class="form-control" readonly placeholder="选择所在地">
-          <input type="hidden" id="province">
-          <input type="hidden" id="city">
-          <input type="hidden" id="county">
-        </div>
-        <div class="field-row" data-toggle="fixed-selector" data-target="#fixed" data-feedback="#house-info">
-          <label class="label-wide">户型</label>
-          <input type="text" id="house-info" class="form-control" readonly placeholder="选择户型">
-          <input type="hidden" id="room">
-          <input type="hidden" id="hall">
         </div>
       </form>
       
     </div>
 
-    <div id="actionsheet" class="actionsheet fade">
-      <div class="actionsheet-body">
-        <div class="actionsheet-group">
-          <a href="javascript: void(0)" class="button actionsheet-feedback" data-value="wechat">分享到微信</a>
-          <a href="javascript: void(0)" class="button actionsheet-feedback" data-value="weibo">分享到微博</a>
-        </div>
-        <div class="actionsheet-group">
-          <a href="javascript: void(0)" class="button cancel" data-dismiss="actionsheet">取消</a>
-        </div>
-      </div>
-    </div>
-
     <div id="gear" class="selector fade">
       <div class="selector-header">
-        <a href="#" class="selector-down" data-dismiss="gear-selector"></a>
+        <a href="#" class="selector-down" data-dismiss="gearselector"></a>
         <label class="sheet-title">地区</label>
-        <a href="javascript: void(0)"  class="pull-right" data-confirm="gear-selector">确认</a>
+        <a href="javascript: void(0)"  class="pull-right" data-confirm="gearselector">确认</a>
       </div>
       <div class="selector-body">
         <ul class="selector-group gear triple main active" data-valueback="#province">
@@ -110,35 +82,17 @@
       </div>
     </div>
 
-    <div id="fixed" class="selector fade">
-      <div class="selector-header">
-        <a href="#" class="selector-down" data-dismiss="fixed-selector"></a>
-        <label class="">户型</label>
-        <a href="javascript: void(0)" class="pull-right" data-confirm="fixed-selector">确认</a>
-      </div>
-      <div class="selector-body">
-        <ul class="selector-group fixed double" data-valueback="#room">
-          <li class="active"><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="1">1室</a></li>
-          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="2">2室</a></li>
-          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="3">3室</a></li>
-          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="4">4室</a></li>
-          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="5">5室</a></li>
-        </ul>
-        <ul class="selector-group fixed double" data-valueback="#hall">
-          <li class="active"><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="0">无厅</a></li>
-          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="1">1厅</a></li>
-          <li><a href="javascript: void(0)" class="selector-item button button-block button-small" data-value="2">2厅</a></li>
-        </ul>
-      </div>
-    </div>
 
     <script src="../dist/js/vendor/zepto.js"></script>
     <script src="../dist/js/fancy.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function() {
-        $('#actionsheet').on('closed.fancy.actionsheet', function() {
-          console.log('aaaaa')
+        $('#gear').on('fancy:gearselector:confirm', function(e) {
+          console.log(e)
+          for(index in e.values) {
+            console.log(e.values[index])
+          }
         })
       })
     </script>
