@@ -926,10 +926,6 @@ input.button.button-block {
   pointer-events: none;
 }
 
-/**
- * Icons
- * --------------------------------------------------
- */
 .icon {
   position: relative;
   display: inline-block;
@@ -963,11 +959,6 @@ input.button.button-block {
   -webkit-animation: spin 1s infinite linear;
   animation: spin 1s infinite linear;
 }
-
-.icon-gray-loading {
-  -webkit-animation-timing-function: steps(8, start);
-  animation-timing-function: steps(8, start);
-}
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -994,40 +985,51 @@ input.button.button-block {
             transform: rotate(359deg);
   }
 }
-.icon-chevron-down:before {
-  background-image: url(../images/chevron-down.png);
-}
-
-.icon-chevron-left:before {
-  background-image: url(../images/chevron-left.png);
-}
-
-.icon-chevron-right:before {
-  background-image: url(../images/chevron-right.png);
-}
-
-.icon-chevron-up:before {
-  background-image: url(../images/chevron-up.png);
-}
-
-.icon-clip:before {
-  background-image: url(../images/clip.png);
-}
-
-.icon-gray-load:before, .icon-gray-loading:before {
-  background-image: url(../images/gray-loading.png);
-}
-
 .icon-load:before, .icon-loading:before {
   background-image: url(../images/loading.png);
 }
 
-.icon-search:before {
-  background-image: url(../images/search.png);
+.icon-chevron-left:before,
+.icon-chevron-right:before,
+.icon-chevron-up:before,
+.icon-chevron-down:before {
+  width: 13px;
+  height: 13px;
+  top: 50%;
+  left: 50%;
+  border: 0px solid #a8a8a8;
 }
 
-.icon-select:before {
-  background-image: url(../images/select.png);
+.icon-chevron-left:before {
+  border-left-width: 3px;
+  border-bottom-width: 3px;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+      transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.icon-chevron-right:before {
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+      transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.icon-chevron-up:before {
+  border-top-width: 3px;
+  border-right-width: 3px;
+  -webkit-transform: translate(-50%, -25%) rotate(-45deg);
+  -ms-transform: translate(-50%, -25%) rotate(-45deg);
+      transform: translate(-50%, -25%) rotate(-45deg);
+}
+
+.icon-chevron-down:before {
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+  -webkit-transform: translate(-50%, -75%) rotate(45deg);
+  -ms-transform: translate(-50%, -75%) rotate(45deg);
+      transform: translate(-50%, -75%) rotate(45deg);
 }
 
 legend {
@@ -1528,7 +1530,7 @@ textarea {
       transform: translate(0, -50%);
   z-index: 1;
   color: inherit;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 44px;
 }
 

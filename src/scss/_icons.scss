@@ -1,21 +1,11 @@
-/**
- * Icons
- * --------------------------------------------------
- */
-
+// Icons
+// ==========================================================================
  
 $icon-image-path:    "../images/" !default;
 $icon-prefix:        "icon-";
 
-$icon-var-chevron-down:   "chevron-down.png";
-$icon-var-chevron-left:   "chevron-left.png";
-$icon-var-chevron-right:  "chevron-right.png";
-$icon-var-chevron-up:     "chevron-up.png";
-$icon-var-clip:           "clip.png";
 $icon-var-gray-loading:   "gray-loading.png";
 $icon-var-loading:        "loading.png";
-$icon-var-search:         "search.png";
-$icon-var-select:         "select.png";
 
 .icon {
   position: relative;
@@ -50,19 +40,13 @@ $icon-var-select:         "select.png";
 }
 
 // Animation Icons
-// --------------------------
+// --------------------------------------------------
 
 .#{$icon-prefix}spin {
   -webkit-animation: spin 1s infinite linear;
   -moz-animation: spin 1s infinite linear;
   -o-animation: spin 1s infinite linear;
   animation: spin 1s infinite linear;
-}
-
-.#{$icon-prefix}gray-loading {
-  -webkit-animation-timing-function: steps(8, start);
-  -moz-animation-timing-function: steps(8, start);
-  animation-timing-function: steps(8, start);
 }
 
 @-moz-keyframes spin {
@@ -91,15 +75,45 @@ $icon-var-select:         "select.png";
   @extend.#{$icon-prefix}spin;
 }
 
-.#{$icon-prefix}chevron-down:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-down}); }
-.#{$icon-prefix}chevron-left:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-left}); }
-.#{$icon-prefix}chevron-right:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-right}); }
-.#{$icon-prefix}chevron-up:before { background-image: url(#{$icon-image-path}#{$icon-var-chevron-up}); }
-.#{$icon-prefix}clip:before { background-image: url(#{$icon-image-path}#{$icon-var-clip}); }
-.#{$icon-prefix}gray-load:before { background-image: url(#{$icon-image-path}#{$icon-var-gray-loading}); }
-.#{$icon-prefix}gray-loading:before { @extend .#{$icon-prefix}gray-load:before; }
+
 .#{$icon-prefix}load:before { background-image: url(#{$icon-image-path}#{$icon-var-loading}); }
 .#{$icon-prefix}loading:before { @extend .#{$icon-prefix}load:before; }
-.#{$icon-prefix}search:before { background-image: url(#{$icon-image-path}#{$icon-var-search}); }
-.#{$icon-prefix}select:before { background-image: url(#{$icon-image-path}#{$icon-var-select}); }
 
+// Pseudo icons
+// --------------------------------------------------
+
+.#{$icon-prefix}chevron-left:before,
+.#{$icon-prefix}chevron-right:before,
+.#{$icon-prefix}chevron-up:before,
+.#{$icon-prefix}chevron-down:before {
+  width: $pseudo-icon-size;
+  height: $pseudo-icon-size;
+  top: 50%;
+  left: 50%;
+  border: 0px solid $icon-default-color;
+}
+
+
+.#{$icon-prefix}chevron-left:before {
+  border-left-width: 3px;
+  border-bottom-width: 3px;
+  @include transform(translate(-50%, -50%) rotate(45deg));
+}
+
+.#{$icon-prefix}chevron-right:before {
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+  @include transform(translate(-50%, -50%) rotate(-45deg));
+}
+
+.#{$icon-prefix}chevron-up:before {
+  border-top-width: 3px;
+  border-right-width: 3px;
+  @include transform(translate(-50%, -25%) rotate(-45deg));
+}
+
+.#{$icon-prefix}chevron-down:before {
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+  @include transform(translate(-50%, -75%) rotate(45deg));
+}
