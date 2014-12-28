@@ -1,36 +1,30 @@
-// drawerselector.js
+// fullcover.js
 // ==================================================
 
 +function($) {
   'use strict'
 
-  var Drawerselector = function(element, options) {
+  var Fullcover = function(element, options) {
     this.$element = $(element)
     this.$target = $(this.$element.data('target') || this.$element.attr('href'))
     this.$doc = $(document.body)
     this.options = options
-    this.$backdrop = 
+    this.$backdrop = null
     this.isOpen = null
   }
 
-  Drawerselector.DEFAULTS = {
+  Fullcover.DEFAULTS = {
 
   }
 
-  Drawerselector.prototype.toggle = function() {
-    this.isOpen ? this.close() : this.open()
-  }
-
-  Drawerselector.prototype.open = function() {
+  Fullcover.prototype.open = function() {
 
     var that = this
-    var e = $.Event('fancy:drawerselector:open')
+    var e = $.Event('fancy:fullcover:open')
     this.$element.trigger(e)
 
     if(this.isOpen) return
     this.isOpen = true
-
-    this.$target.find('input[type="radio"]').one('change', $.proxy(this.select, this))
 
     this.backdrop(function() {
       var transition = $.support.transition && that.$target.hasClass('fade')
@@ -39,7 +33,7 @@
       if(transition) that.$target[0].offsetWidth // reflow
       that.$target.addClass('in')
 
-      var e = $.Event('fancy:drawerselector:opend')
+      var e = $.Event('fancy:fullcover:opend')
 
       transition ? 
         that.$target.one($.support.transition.end, function() {
@@ -48,8 +42,8 @@
     })
   }
 
-  Drawerselector.prototype.close = function(callback) {
-    var e = $.Event('fancy:drawerselector:close')
+  Fullcover.prototype.close = function(callback) {
+    var e = $.Event('fancy:fullcover:close')
     this.$element.trigger(e)
 
     if(!this.isOpen) return
@@ -59,21 +53,21 @@
 
     $.support.transition ?
       this.$target
-        .one($.support.transition.end, $.proxy(this.hideDrawer, this, callback))
+        .one($.support.transition.end, $.proxy(this.hideCover, this, callback))
         .emulateTransitionEnd(300) :
-      this.hideDrawer(callback)
+      this.hideCover(callback)
   }
 
-  Drawerselector.prototype.hideDrawer = function(callback) {
+  Fullcover.prototype.hideCover = function(callback) {
     var that = this
     this.$target.hide()
     this.backdrop(function() {
-      that.$element.trigger('fancy:drawerselector:closed')
+      that.$element.trigger('fancy:fullcover:closed')
       callback && callback()
     })
   }
 
-  Drawerselector.prototype.backdrop = function(callback) {
+  Fullcover.prototype.backdrop = function(callback) {
    var that = this
    var animate = this.$target.hasClass('fade') ? 'fade' : ''
 
@@ -110,52 +104,37 @@
    }
   }
 
-  Drawerselector.prototype.removeBackdrop = function() {
+  Fullcover.prototype.removeBackdrop = function() {
     this.$backdrop && this.$backdrop.remove()
-    this.$backdrop = null
+    
   }
 
-  Drawerselector.prototype.select = function(e) {
-    if(e.currentTarget !== e.target) return
-
-    var that = this
-    var id = e.target.value
-    var value = $(e.target).parents('.item-radio').text()
-
-    e = $.Event('fancy:drawerselector:selected', { id: id, val: value })
-
-    this.close(function() {
-      that.$element.trigger(e)
-    })
-  }
-
-  var old = $.fn.drawerselector
+  var old = $.fn.fullcover
 
   function Plugin(option) {
     return this.each(function() {
       var $this = $(this)
-      var data = $this.data('fancy.drawerselector')
-      var options = $.extend({}, Drawerselector.DEFAULTS, $this.data(), typeof option == 'object' && option)
+      var data = $this.data('fancy.fullcover')
+      var options = $.extend({}, Fullcover.DEFAULTS, $this.data(), typeof option == 'object' && option)
 
-      if(!data) $this.data('fancy.drawerselector', (data = new Drawerselector(this, options)))
+      if(!data) $this.data('fancy.fullcover', (data = new Fullcover(this, options)))
       if(typeof option == 'string') data[option]()
       else data.open()
     })
   }
 
-  $.fn.drawerselector = Plugin
-  $.fn.drawerselector.constructor = Drawerselector
+  $.fn.fullcover = Plugin
 
-  $.fn.drawerselector.noConflict = function() {
-    $.fn.drawerselector = old
+  $.fn.fullcover.noConflict = function() {
+    $.fn.fullcover = old
     return this
   }
 
-  $(document).on('tap', '[data-toggle="drawerselector"]', function() {
+  $(document).on('tap', '[data-toggle="fullcover"]', function() {
     var $this = $(this)
-    var option = $this.data('fancy.drawerselector') ? 'toggle' : $.extend({}, $this.data())
+    var options = $this.data('fancy.fullcover') ? 'toggle' : $.extend({}, $this.data())
 
-    Plugin.call($this, option)
+    Plugin.call($this, options)
   })
 
 }(window.Zepto)

@@ -2289,3 +2289,25 @@ a.item-content {
 .content-item.active {
   display: block;
 }
+
+.full-cover {
+  display: none;
+  position: fixed;
+  top: 44px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 10;
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+      transform: translate(0, 100%);
+}
+.full-cover.in {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
+}

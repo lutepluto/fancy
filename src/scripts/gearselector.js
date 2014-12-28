@@ -146,7 +146,7 @@
         url: url,
         data: params,
         type: 'GET',
-        success: function(data) {
+        success: function() {
           // TODO json data parse
         }
       }).done(function() {

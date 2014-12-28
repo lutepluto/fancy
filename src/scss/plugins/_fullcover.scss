@@ -1,0 +1,20 @@
+// Fullcover
+// ==========================================================================
+
+.full-cover {
+  display: none;
+  position: fixed;
+  top: 44px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: $z-index-modal;
+  background-color: #fff;
+  @include transition(all .3s ease-out);
+  @include translate(0, 100%);
+
+  &.in {
+    @include translate(0, 0);
+  }
+}
