@@ -6,10 +6,11 @@
 
   var Fullcover = function(element, options) {
     this.$element = $(element)
-    this.$target = $(this.$element.data('target') || this.$element.attr('href'))
+    this.target = this.$element.data('target') || this.$element.attr('href')
     this.$doc = $(document.body)
     this.options = options
     this.$backdrop = null
+    this.$target = null
     this.isOpen = null
   }
 
@@ -22,7 +23,6 @@
   }
 
   Fullcover.prototype.open = function() {
-
     var that = this
     var e = $.Event('fancy:fullcover:open')
     this.$element.trigger(e)
@@ -30,16 +30,20 @@
     if(this.isOpen) return
     this.isOpen = true
 
-    var transition = $.support.transition && that.$target.hasClass('fade')
-    that.$target.show()
+    var transition = $.support.transition
 
-    if(transition) that.$target[0].offsetWidth // reflow
-    that.$target.addClass('in')
+    var cover = '<div id="' + this.target.substring(1) + '" class="full-cover fade"></div>'
+    this.$target = $(cover).appendTo(this.$doc)
 
-    var e = $.Event('fancy:fullcover:opend')
+    this.$element.trigger('fancy:fullcover:opening')
+
+    if(transition) this.$target[0].offsetWidth // reflow
+    this.$target.addClass('in')
+
+    e = $.Event('fancy:fullcover:opend')
 
     transition ? 
-      that.$target.one($.support.transition.end, function() {
+      this.$target.one($.support.transition.end, function() {
         that.$target.trigger(e)
       }).emulateTransitionEnd(300) : that.$target.trigger(e)
   }
@@ -61,9 +65,8 @@
   }
 
   Fullcover.prototype.hideCover = function(callback) {
-    var that = this
-    this.$target.hide()
-    that.$element.trigger('fancy:fullcover:closed')
+    this.$target.remove()
+    this.$element.trigger('fancy:fullcover:closed')
     callback && callback()
   }
 

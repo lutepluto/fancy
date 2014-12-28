@@ -2291,7 +2291,6 @@ a.item-content {
 }
 
 .full-cover {
-  display: none;
   position: fixed;
   top: 44px;
   right: 0;

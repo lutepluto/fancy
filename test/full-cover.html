@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div id="full" class="full-cover fade">
+    <!-- <div id="full" class="full-cover fade">
       <div class="list">
         <a class="item item-radio" href="javascript: void(0)" data-value="1">7:30 ~ 8:00
           <label class="radio success">
@@ -39,8 +39,8 @@
             <input name="time" type="radio" value="2">
           </label>
         </a>
-      </ul>
-    </div>
+      </div>
+    </div> -->
 
     <script src="../dist/js/vendor/zepto.js"></script>
     <script src="../dist/js/fancy.js"></script>
@@ -49,11 +49,20 @@
 
       $(document).ready(function() {
 
-        $('[data-toggle="fullcover"]').on('fancy:fullcover:closed', function(e) {
-          console.log(e)
+        $('[data-toggle="fullcover"]').on('fancy:fullcover:opening', function(e) {
+
+          var content = '<div class="list">' +
+                          '<a href="#" class="item item-radio">7:30 ~ 8:00' +
+                            '<label class="radio success">' +
+                              '<input name="time" type="radio" value="1">' +
+                            '</label>' +
+                          '</a>' +
+                        '</div>'
+
+          $($(this).data('target')).append(content)
         })
 
-        $('#full').on('change', 'input[type="radio"]', function() {
+        $(this).on('change', 'input[type="radio"]', function() {
           $('[data-toggle="fullcover"]').fullcover('close')
         })
 
