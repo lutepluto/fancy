@@ -96,19 +96,15 @@
 
 // Text color
 
-.text-muted {
-  color: $gray-light;
-}
-
-@include text-emphasis-variant('.text-default', #a8a8a8);
+@include text-emphasis-variant('.text-default', $brand-default);
 
 @include text-emphasis-variant('.text-primary', $brand-primary);
 
-@include text-emphasis-variant('.text-success', $state-success-text);
+@include text-emphasis-variant('.text-success', $brand-success);
 
-@include text-emphasis-variant('.text-warning', $state-warning-text);
+@include text-emphasis-variant('.text-warning', $brand-warning);
 
-@include text-emphasis-variant('.text-danger', $state-danger-text);
+@include text-emphasis-variant('.text-danger', $brand-danger);
 
 // Disable user behavior
 

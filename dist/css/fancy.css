@@ -323,10 +323,6 @@ th {
   border: none !important;
 }
 
-.text-muted {
-  color: #777777;
-}
-
 .text-default {
   color: #a8a8a8;
 }
@@ -336,15 +332,15 @@ th {
 }
 
 .text-success {
-  color: #3c763d;
+  color: #61C155;
 }
 
 .text-warning {
-  color: #c29c5a;
+  color: #F8A13F;
 }
 
 .text-danger {
-  color: #a94442;
+  color: #E84A5F;
 }
 
 .disable-user-behavior {
