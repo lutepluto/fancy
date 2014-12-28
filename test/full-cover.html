@@ -53,6 +53,10 @@
           console.log(e)
         })
 
+        $('#full').on('change', 'input[type="radio"]', function() {
+          $('[data-toggle="fullcover"]').fullcover('close')
+        })
+
       })
 
     </script>

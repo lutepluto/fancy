@@ -17,6 +17,10 @@
 
   }
 
+  Fullcover.prototype.toggle = function() {
+    this.isOpen ? this.close() : this.open()
+  }
+
   Fullcover.prototype.open = function() {
 
     var that = this
@@ -26,20 +30,18 @@
     if(this.isOpen) return
     this.isOpen = true
 
-    this.backdrop(function() {
-      var transition = $.support.transition && that.$target.hasClass('fade')
-      that.$target.show()
+    var transition = $.support.transition && that.$target.hasClass('fade')
+    that.$target.show()
 
-      if(transition) that.$target[0].offsetWidth // reflow
-      that.$target.addClass('in')
+    if(transition) that.$target[0].offsetWidth // reflow
+    that.$target.addClass('in')
 
-      var e = $.Event('fancy:fullcover:opend')
+    var e = $.Event('fancy:fullcover:opend')
 
-      transition ? 
-        that.$target.one($.support.transition.end, function() {
-          that.$target.trigger(e)
-        }).emulateTransitionEnd(300) : that.$target.trigger(e)
-    })
+    transition ? 
+      that.$target.one($.support.transition.end, function() {
+        that.$target.trigger(e)
+      }).emulateTransitionEnd(300) : that.$target.trigger(e)
   }
 
   Fullcover.prototype.close = function(callback) {
@@ -61,52 +63,8 @@
   Fullcover.prototype.hideCover = function(callback) {
     var that = this
     this.$target.hide()
-    this.backdrop(function() {
-      that.$element.trigger('fancy:fullcover:closed')
-      callback && callback()
-    })
-  }
-
-  Fullcover.prototype.backdrop = function(callback) {
-   var that = this
-   var animate = this.$target.hasClass('fade') ? 'fade' : ''
-
-   if(this.isOpen) {
-    var transition = $.support.transition
-    this.$backdrop = $('<div class="backdrop ' + animate + '"/>')
-      .appendTo(this.$doc)
-      .one('tap', $.proxy(this.close, this))
-
-    if(transition) this.$backdrop[0].offsetWidth
-
-    this.$backdrop.addClass('in')
-
-    if(!callback) return
-
-    transition ? this.$backdrop
-      .one($.support.transition.end, callback)
-      .emulateTransitionEnd(150) : callback()
-   } else if(!this.isOpen && this.$backdrop) {
-    this.$backdrop.removeClass('in')
-
-    var callbackRemove = function() {
-      that.removeBackdrop()
-      callback && callback()
-    }
-    $.support.transition && this.$backdrop.hasClass('fade') ?
-      this.$backdrop
-        .one($.support.transition.end, callbackRemove)
-        .emulateTransitionEnd(150) :
-      callbackRemove()
-
-   } else if(callback) {
-    callback()
-   }
-  }
-
-  Fullcover.prototype.removeBackdrop = function() {
-    this.$backdrop && this.$backdrop.remove()
-    
+    that.$element.trigger('fancy:fullcover:closed')
+    callback && callback()
   }
 
   var old = $.fn.fullcover
