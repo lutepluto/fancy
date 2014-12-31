@@ -2345,3 +2345,64 @@ a.item-content {
   -ms-transform: translate(0, 0);
       transform: translate(0, 0);
 }
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  -webkit-transform: translate3d(0, -25%, 0);
+  transform: translate3d(0, -25%, 0);
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.modal-dialog {
+  margin: 100px auto auto;
+  width: 280px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.dialog-body {
+  padding: 15px;
+  font-size: inherit;
+  text-align: center;
+}
+.dialog-body h3, .dialog-body .title, .dialog-body .h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.dialog-body p:last-child {
+  margin-bottom: 0;
+}
+
+.dialog-footer {
+  border-top: 1px solid #ddd;
+}
+.dialog-footer a {
+  font-size: 18px;
+  display: table-cell;
+  width: 1%;
+  padding: 10px 15px;
+  vertical-align: middle;
+  text-align: center;
+}
+.dialog-footer a:first-child {
+  border-right: 1px solid #ddd;
+}
+.dialog-footer a:last-child {
+  border-right: 0;
+}

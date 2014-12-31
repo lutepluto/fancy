@@ -76,7 +76,7 @@
     var animate = this.$element.hasClass('fade') ? 'fade' : ''
 
     if(this.isOpen) {
-      var transition = $.support.transition
+      var transition = $.support.transition && annimate
       this.$backdrop = $('<div class="backdrop ' + animate + '"/>')
         .appendTo(this.$doc)
         .one('tap', $.proxy(this.close, this))
@@ -155,5 +155,5 @@
     Plugin.call($target, options, this)
   })
 
-}(window.Zepto);
+}(window.Zepto)
 
