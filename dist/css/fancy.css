@@ -662,10 +662,10 @@ a:active {
 }
 
 /**
- * Labels
+ * Tag
  * ==========================================================================
  */
-.label {
+.tag {
   display: inline;
   padding: 2px 5px 3px;
   border-radius: 4px;
@@ -677,30 +677,30 @@ a:active {
   vertical-align: baseline;
   line-height: 1;
 }
-.label:empty {
+.tag:empty {
   display: none;
 }
 
-a.label,
-a.label:hover,
-a.label:focus {
+a.tag,
+a.tag:hover,
+a.tag:focus {
   text-decoration: none;
   cursor: pointer;
 }
 
-.label.success {
+.tag.success {
   background-color: #61C155;
 }
 
-.label.primary {
+.tag.primary {
   background-color: #3A89C9;
 }
 
-.label.warning {
+.tag.warning {
   background-color: #F8A13F;
 }
 
-.label.danger {
+.tag.danger {
   background-color: #E84A5F;
 }
 
@@ -1622,6 +1622,10 @@ textarea {
   padding: 0;
 }
 
+/**
+ * Tabs
+ * ==========================================================================
+ */
 /**
  * List items
  * ==========================================================================

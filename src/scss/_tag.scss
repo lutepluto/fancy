@@ -1,9 +1,9 @@
 /**
- * Labels
+ * Tag
  * ==========================================================================
  */
 
-.label {
+.tag {
   display: inline;
   padding: 2px 5px 3px;
   border-radius: $border-radius-base;
@@ -15,31 +15,31 @@
   vertical-align: baseline;
   line-height: 1;
 
-  // Empty labels collapse automatically (not available in IE8)
+  // Empty tags collapse automatically (not available in IE8)
   &:empty {
     display: none;
   }
 }
 
-a.label,
-a.label:hover,
-a.label:focus {
+a.tag,
+a.tag:hover,
+a.tag:focus {
   text-decoration: none;
   cursor: pointer;
 }
 
-.label.success {
+.tag.success {
   background-color: $brand-success;
 }
 
-.label.primary {
+.tag.primary {
   background-color: $brand-primary;
 }
 
-.label.warning {
+.tag.warning {
   background-color: $brand-warning;
 }
 
-.label.danger {
+.tag.danger {
   background-color: $brand-danger;
 }
