@@ -1,3 +1,7 @@
+/**
+ * Resets
+ * ==========================================================================
+ */
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -243,8 +247,8 @@ th {
 }
 
 /**
- * Utility Classes
- * --------------------------------------------------
+ * Utility classes
+ * ==========================================================================
  */
 .clearfix {
   *zoom: 1;
@@ -363,6 +367,10 @@ th {
   user-select: text;
 }
 
+/**
+ * Animations
+ * ==========================================================================
+ */
 .fade {
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
@@ -404,7 +412,7 @@ th {
 
 /**
  * Typography
- * --------------------------------------------------
+ * ==========================================================================
  */
 p {
   margin: 0 0 10px;
@@ -585,7 +593,7 @@ a.subdued:last-child {
 
 /**
  * Scaffolding
- * --------------------------------------------------
+ * ==========================================================================
  */
 html {
   -webkit-box-sizing: border-box;
@@ -653,6 +661,10 @@ a:active {
   color: #2d6ea3;
 }
 
+/**
+ * Labels
+ * ==========================================================================
+ */
 .label {
   display: inline;
   padding: 2px 5px 3px;
@@ -694,7 +706,7 @@ a.label:focus {
 
 /**
  * Buttons
- * --------------------------------------------------
+ * ==========================================================================
  */
 .button {
   color: #444;
@@ -961,6 +973,10 @@ input.button.button-block {
   pointer-events: none;
 }
 
+/**
+ * Icons
+ * ==========================================================================
+ */
 .icon {
   position: relative;
   display: inline-block;
@@ -1067,6 +1083,10 @@ input.button.button-block {
       transform: translate(-50%, -75%) rotate(45deg);
 }
 
+/**
+ * Forms
+ * ==========================================================================
+ */
 legend {
   width: 0px;
   height: 1px;
@@ -1325,6 +1345,10 @@ textarea {
   font-weight: bold;
 }
 
+/**
+ * Toggle
+ * ==========================================================================
+ */
 .toggle {
   display: inline-block;
   position: relative;
@@ -1407,6 +1431,10 @@ textarea {
   background-color: #E84A5F;
 }
 
+/**
+ * Checkbox
+ * ==========================================================================
+ */
 .checkbox,
 .radio {
   display: inline-block;
@@ -1497,7 +1525,7 @@ textarea {
 
 /**
  * Bar (Headers and Footers)
- * --------------------------------------------------
+ * ==========================================================================
  */
 .bar {
   padding: 5px;
@@ -1594,6 +1622,10 @@ textarea {
   padding: 0;
 }
 
+/**
+ * List items
+ * ==========================================================================
+ */
 .item {
   color: #444;
   background-color: #fff;
@@ -1853,6 +1885,10 @@ a.item-content {
   line-height: 28px;
 }
 
+/**
+ * List
+ * ==========================================================================
+ */
 .list {
   position: relative;
   padding-top: 1px;
@@ -1879,6 +1915,10 @@ a.item-content {
   font-weight: bold;
 }
 
+/**
+ * Card
+ * ==========================================================================
+ */
 .card {
   margin: 15px 10px;
   padding: 10px 5px;
@@ -1930,6 +1970,10 @@ a.item-content {
   border-top-color: #E84A5F;
 }
 
+/**
+ * Fancy progress
+ * ==========================================================================
+ */
 .fancy-progress {
   position: relative;
   margin: 0 auto 15px;
@@ -1987,6 +2031,10 @@ a.item-content {
   background-color: #3A89C9;
 }
 
+/**
+ * Fancy divison
+ * ==========================================================================
+ */
 .fancy-division {
   margin: 0;
   padding: 0;
@@ -2047,6 +2095,10 @@ a.item-content {
   border-right: 0;
 }
 
+/**
+ * Actionsheet
+ * ==========================================================================
+ */
 .actionsheet {
   display: none;
   position: fixed;
@@ -2093,6 +2145,10 @@ a.item-content {
   color: #E84A5F;
 }
 
+/**
+ * Selector
+ * ==========================================================================
+ */
 .selector {
   display: none;
   position: fixed;
@@ -2197,6 +2253,10 @@ a.item-content {
   color: #fff;
 }
 
+/**
+ * Drawer selector
+ * ==========================================================================
+ */
 .drawerselector {
   display: none;
   position: fixed;
@@ -2219,6 +2279,10 @@ a.item-content {
       transform: translate(0, 0);
 }
 
+/**
+ * Segmented control
+ * ==========================================================================
+ */
 .segmented-control {
   position: relative;
   display: table;
@@ -2325,6 +2389,10 @@ a.item-content {
   display: block;
 }
 
+/**
+ * Fullcover
+ * ==========================================================================
+ */
 .full-cover {
   position: fixed;
   top: 44px;
@@ -2346,6 +2414,10 @@ a.item-content {
       transform: translate(0, 0);
 }
 
+/**
+ * Modal
+ * ==========================================================================
+ */
 .modal {
   position: fixed;
   top: 0;

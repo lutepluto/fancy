@@ -1,6 +1,5 @@
-
 // Mixins
-// --------------------------------------------------
+//==========================================================================
 
 // Utilities
 @import "mixins/vender-prefixes";
@@ -12,12 +11,10 @@
 @import "mixins/text-emphasis";
 
 // Components
-@import "mixins/bar";
 @import "mixins/button";
 @import "mixins/items";
 
 // Skins
-@import "mixins/border-radius";
 
 // Layout
 @import "mixins/clearfix";
