@@ -158,6 +158,14 @@ textarea {
     width: 100%;
   }
 
+  input:first-child {
+    padding-right: 0;
+  }
+
+  input:last-child {
+    padding-left: 0;
+  }
+
   .input-group-addon:first-child,
   input:first-child {
     border-right: 0;
@@ -179,7 +187,7 @@ textarea {
 }
 
 .input-group-addon {
-  padding: 5px 0px 5px 10px;
+  padding: 5px 10px;
   border: 1px solid $input-border-color;
   border-radius: $border-radius-base;
   vertical-align: middle;

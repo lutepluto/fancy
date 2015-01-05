@@ -1219,6 +1219,12 @@ textarea {
   margin-bottom: 0;
   width: 100%;
 }
+.input-group input:first-child {
+  padding-right: 0;
+}
+.input-group input:last-child {
+  padding-left: 0;
+}
 .input-group .input-group-addon:first-child,
 .input-group input:first-child {
   border-right: 0;
@@ -1237,7 +1243,7 @@ textarea {
 }
 
 .input-group-addon {
-  padding: 5px 0px 5px 10px;
+  padding: 5px 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
   vertical-align: middle;
