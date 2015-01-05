@@ -1632,6 +1632,45 @@ textarea {
  * Tabs
  * ==========================================================================
  */
+.tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: table;
+  height: 33px;
+  background-color: #fff;
+  border-color: #ddd;
+  color: #a8a8a8;
+}
+
+.tab-item {
+  display: table-cell;
+  width: 1%;
+  height: 100%;
+  overflow: hidden;
+  border-right: 1px solid #ddd;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.tab-item:last-child {
+  border-right: 0;
+}
+.tab-item a {
+  color: inherit;
+}
+.tab-item.active, .tab-item:active {
+  color: #555555;
+}
+
+.footer .tab-item {
+  border: 0;
+}
+
 /**
  * List items
  * ==========================================================================
