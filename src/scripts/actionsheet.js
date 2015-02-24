@@ -76,7 +76,7 @@
     var animate = this.$element.hasClass('fade') ? 'fade' : ''
 
     if(this.isOpen) {
-      var transition = $.support.transition && annimate
+      var transition = $.support.transition && animate
       this.$backdrop = $('<div class="backdrop ' + animate + '"/>')
         .appendTo(this.$doc)
         .one('tap', $.proxy(this.close, this))
