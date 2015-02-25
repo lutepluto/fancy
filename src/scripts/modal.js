@@ -46,7 +46,7 @@
         that.$target.find('.modal-dialog').one($.support.transition.end, function() {
           that.$target.trigger('focus').trigger(e)
         }).emulateTransitionEnd(300) : that.$target.trigger('focus').trigger(e)
-    });
+    })
   }
 
   Modal.prototype.close = function(e) {
@@ -68,7 +68,7 @@
 
   Modal.prototype.hideDialog = function() {
     var that = this
-    this.$target.hide();
+    this.$target.hide()
     this.backdrop(function() {
       that.$element.trigger('fancy:modal:hidden')
     });
@@ -106,7 +106,7 @@
         that.removeBackdrop()
         callback && callback()
       }
-      $.support.transition && this.$target.hasClass('fade') ?
+      $.support.transition && this.$backdrop.hasClass('fade') ?
         this.$backdrop
           .one($.support.transition.end, callbackRemove)
           .emulateTransitionEnd(150) :
