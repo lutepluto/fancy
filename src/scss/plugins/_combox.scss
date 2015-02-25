@@ -1,0 +1,126 @@
+/**
+ * Combox - sudoku options
+ * ==========================================================================
+ */
+
+.combox-container {
+  display: block;
+  position: relative;
+  height: 48px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  vertical-align: middle;
+  z-index: $z-index-modal;
+
+  .combox-current {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 48px;
+    margin: -1px 0;
+    background: #fff;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;  // play with desktop
+    border: 1px solid #d5d5d5;
+  }
+
+  .combox-chosen {
+    display: inline-block;
+    padding: 10px;
+    line-height: 26px;
+    color: #666;
+  }
+
+  .combox-menu-indicator {
+    font-size: 14px;
+    @include transition(transform .2s linear)
+  }
+
+  &.combox-menu-open .combox-menu-indicator {
+    @include transform(rotate(180deg))
+  }
+
+  .option-container {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    border-top: 0;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+  }
+}
+
+.combox-option-row {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.combox-option {
+  position: relative;
+  display: table-cell;
+  padding: 10px;
+  height: 30px;
+  width: 1%;
+  border: 1px solid #ddd;
+  background-color: transparent;
+  vertical-align: middle;
+  font-size: 16px;
+  text-align: center;
+  color: #777;
+  text-decoration: none;
+  line-height: 24px;
+
+  > img {
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .option-horizontal-dots,
+  .option-horizontal-dots:before,
+  .option-horizontal-dots:after {
+    position: absolute;
+    content: " ";
+    width: 5px;
+    height: 5px;
+    border-radius: 20px;
+    background-color: #555;
+  }
+
+  .option-horizontal-dots {
+    top:50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+  }
+
+  .option-horizontal-dots:before {
+    left: -10px;
+  }
+
+  .option-horizontal-dots:after {
+    right: -10px;
+  }
+}
+
+.combox-option[disabled] {
+  cursor: not-allowed;  // play with desktop
+
+  &:before {
+    position: absolute;
+    content: " ";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .1);
+  }
+}

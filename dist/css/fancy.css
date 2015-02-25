@@ -2528,3 +2528,123 @@ a.item-content {
 .dialog-footer a:last-child {
   border-right: 0;
 }
+
+/**
+ * Combox - sudoku options
+ * ==========================================================================
+ */
+.combox-container {
+  display: block;
+  position: relative;
+  height: 48px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  vertical-align: middle;
+  z-index: 10;
+}
+.combox-container .combox-current {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 48px;
+  margin: -1px 0;
+  background: #fff;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #555;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #d5d5d5;
+}
+.combox-container .combox-chosen {
+  display: inline-block;
+  padding: 10px;
+  line-height: 26px;
+  color: #666;
+}
+.combox-container .combox-menu-indicator {
+  font-size: 14px;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+}
+.combox-container.combox-menu-open .combox-menu-indicator {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+}
+.combox-container .option-container {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #d5d5d5;
+  border-top: 0;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.combox-option-row {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.combox-option {
+  position: relative;
+  display: table-cell;
+  padding: 10px;
+  height: 30px;
+  width: 1%;
+  border: 1px solid #ddd;
+  background-color: transparent;
+  vertical-align: middle;
+  font-size: 16px;
+  text-align: center;
+  color: #777;
+  text-decoration: none;
+  line-height: 24px;
+}
+.combox-option > img {
+  display: block;
+  margin: 0 auto 10px;
+}
+.combox-option .option-horizontal-dots,
+.combox-option .option-horizontal-dots:before,
+.combox-option .option-horizontal-dots:after {
+  position: absolute;
+  content: " ";
+  width: 5px;
+  height: 5px;
+  border-radius: 20px;
+  background-color: #555;
+}
+.combox-option .option-horizontal-dots {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+.combox-option .option-horizontal-dots:before {
+  left: -10px;
+}
+.combox-option .option-horizontal-dots:after {
+  right: -10px;
+}
+
+.combox-option[disabled] {
+  cursor: not-allowed;
+}
+.combox-option[disabled]:before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
