@@ -1051,6 +1051,14 @@ input.button.button-block {
   border: 0px solid #a8a8a8;
 }
 
+.icon-chevron-left.icon-small:before,
+.icon-chevron-right.icon-small:before,
+.icon-chevron-up.icon-small:before,
+.icon-chevron-down.icon-small:before {
+  width: 10px;
+  height: 10px;
+}
+
 .icon-chevron-left:before {
   border-left-width: 3px;
   border-bottom-width: 3px;
@@ -1078,9 +1086,9 @@ input.button.button-block {
 .icon-chevron-down:before {
   border-right-width: 3px;
   border-bottom-width: 3px;
-  -webkit-transform: translate(-50%, -75%) rotate(45deg);
-  -ms-transform: translate(-50%, -75%) rotate(45deg);
-      transform: translate(-50%, -75%) rotate(45deg);
+  -webkit-transform: translate(-50%, -85%) rotate(45deg);
+  -ms-transform: translate(-50%, -85%) rotate(45deg);
+      transform: translate(-50%, -85%) rotate(45deg);
 }
 
 /**

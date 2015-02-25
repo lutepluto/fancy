@@ -189,7 +189,7 @@
     var container = '<div class="combox-container">' +
                       '<a href="javascript: void(0)" class="combox-current ' + this.options.clazz + '" data-role="currentOption">' +
                         '<span class="combox-chosen">' + this.options.placeholder + '</span>' +
-                        '<span class="icon icon-chevron-down combox-menu-indicator">' +
+                        '<span class="icon icon-chevron-down icon-small combox-menu-indicator">' +
                       '</a>' + 
                       '<div class="option-container fade"></div>' +
                     '</div>'

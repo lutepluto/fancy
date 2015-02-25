@@ -95,6 +95,13 @@ $icon-var-loading:        "loading.png";
   border: 0px solid $icon-default-color;
 }
 
+.#{$icon-prefix}chevron-left.icon-small:before,
+.#{$icon-prefix}chevron-right.icon-small:before,
+.#{$icon-prefix}chevron-up.icon-small:before,
+.#{$icon-prefix}chevron-down.icon-small:before {
+  width: $pseudo-icon-small-size;
+  height: $pseudo-icon-small-size;
+}
 
 .#{$icon-prefix}chevron-left:before {
   border-left-width: 3px;
@@ -117,5 +124,5 @@ $icon-var-loading:        "loading.png";
 .#{$icon-prefix}chevron-down:before {
   border-right-width: 3px;
   border-bottom-width: 3px;
-  @include transform(translate(-50%, -75%) rotate(45deg));
+  @include transform(translate(-50%, -85%) rotate(45deg));
 }
