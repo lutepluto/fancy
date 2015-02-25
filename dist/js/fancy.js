@@ -229,7 +229,7 @@
       // switch combox chosen text
       that.$container.find('.combox-chosen').text($(this).text())
       // tigger menu chosen event
-      that.trigger(e)
+      that.$element.trigger(e)
     })
   }
 
