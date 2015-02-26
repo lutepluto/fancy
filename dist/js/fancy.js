@@ -1354,6 +1354,11 @@
     Plugin.call($(this), 'show')
   })
 
+  // temporary fix for ios click event delay
+  $(document).on('click', '[data-toggle="tab"]', function(e) {
+    e.preventDefault()
+  })
+
 }(window.Zepto);
 
 // transition.js
