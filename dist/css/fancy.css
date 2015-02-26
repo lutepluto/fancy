@@ -2656,3 +2656,16 @@ a.item-content {
   left: 0;
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+/**
+ * Tab
+ * ==========================================================================
+ */
+.tab-content > .tab-pane {
+  display: none;
+  visibility: hidden;
+}
+.tab-content > .active {
+  display: block;
+  visibility: visible;
+}
