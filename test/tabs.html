@@ -26,11 +26,17 @@
     <div class="content has-header has-footer">
       
       <div class="padding">
-        <ul class="tabs">
-          <li class="tab-item"><a href="#">Item one</a></li>
-          <li class="tab-item active"><a href="#">Item two</a></li>
-          <li class="tab-item"><a href="#">Item three</a></li>
+        <ul class="tabs justified no-divider">
+          <li class="tab-item"><a href="#tab1" data-toggle="tab">Item one</a></li>
+          <li class="tab-item active"><a href="#tab2" data-toggle="tab">Item two</a></li>
+          <li class="tab-item"><a href="#tab3" data-toggle="tab">Item three</a></li>
         </ul>
+
+        <div class="tab-content">
+          <div id="tab1" class="tab-pane fade">tab1</div>
+          <div id="tab2" class="tab-pane fade in active">tab2</div>
+          <div id="tab3" class="tab-pane fade">tab3</div>
+        </div>
       </div>
 
     </div>
@@ -42,6 +48,9 @@
         <a class="tab-item" href="#">Three</a>
       </div>
     </div>
+
+    <script src="../dist/js/vendor/zepto.js"></script>
+    <script src="../dist/js/fancy.js"></script>
 
   </body>
 </html>

@@ -8,15 +8,15 @@
   padding: 0;
   list-style: none;
   display: table;
-  height: $tabs-height;
+  table-layout: fixed;
 
   @include tab-style(#fff, #ddd, $brand-default);
 }
 
 .tab-item {
-  display: table-cell;
-  width: 1%;
-  height: 100%;
+  float: left;
+  position: relative;
+  display: block;
   overflow: hidden;
   border-right: 1px solid #ddd;
 
@@ -34,6 +34,8 @@
 
   a {
     color: inherit;
+    display: block;
+    padding: 10px 5px;
   }
 
   &.active,
@@ -42,8 +44,18 @@
   }
 }
 
-.footer {
-  .tab-item {
-    border: 0;
-  }
+.tabs.justified .tab-item,
+.footer .tab-item {
+  float: none;
+  display: table-cell;
+  width: 1%;
+}
+
+.tabs.no-divider .tab-item,
+.footer .tab-item {
+  border: 0;
+}
+
+.footer .tab-item {
+  height: $tabs-height;
 }
