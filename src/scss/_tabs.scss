@@ -59,3 +59,16 @@
 .footer .tab-item {
   height: $tabs-height;
 }
+
+// handle tab plugin
+.tab-content {
+  > .tab-pane {
+    display: none;
+    visibility: hidden;
+  }
+
+  > .active {
+    display: block;
+    visibility: visible;
+  }
+}
