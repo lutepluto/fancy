@@ -635,7 +635,6 @@ body {
 }
 
 .content {
-  position: relative;
   background-color: transparent;
   -webkit-overflow-scrolling: touch;
 }
