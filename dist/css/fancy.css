@@ -2679,3 +2679,100 @@ a.item-content {
   left: 0;
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+/**
+ * Dropwizard
+ * Author        : lute
+ * Last modified : 2015-03-06 14:01
+ * ==========================================================================
+ */
+.dropwizard {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-bottom: -1px;
+  z-index: 10;
+}
+.dropwizard .tabs {
+  color: #555;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+}
+.dropwizard .tabs .icon-chevron-down {
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+.dropwizard .tabs .open .icon-chevron-down {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+}
+.dropwizard .menu-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.dropwizard-menu {
+  position: relative;
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+.dropwizard-menu.active {
+  display: block;
+}
+.dropwizard-menu .menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+.dropwizard-menu .menu .menu-list {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+.dropwizard-menu .menu .menu-list a {
+  display: block;
+  padding: 10px 15px;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+.dropwizard-menu .menu .menu-list a > img {
+  max-width: 36px;
+  max-height: 36px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.dropwizard-menu.binary .menu:not(:first-child) {
+  display: none;
+  left: 45%;
+  width: 55%;
+  background-color: #f5f5f5;
+}
+.dropwizard-menu.binary .menu:not(:first-child).active {
+  display: block;
+}
+.dropwizard-menu.binary .menu:first-child {
+  left: 0;
+  width: 45%;
+}

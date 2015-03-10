@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fancy Dropwizard</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="../dist/css/fancy.css" rel="stylesheet">
+    <style type="text/css">
+      #wrapper {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <header class="bar header fixed-top transparent">
+      <a href="#" class="left"><i class="icon icon-chevron-left"></i>主页</a>
+      <h1 class="title">Dropwozard</h1>
+      <a href="#" class="right">关于<i class="icon icon-chevron-right"></i></a>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content has-header has-footer">
+      
+      <div class="dropwizard">
+        <ul class="tabs justified no-divider">
+          <li class="tab-item">
+            <a href="#category1" data-toggle="dropwizard"><span>菜品1</span>&nbsp;<i class="icon icon-small icon-chevron-down"></i></a>
+          </li>
+          <li class="tab-item">
+            <a href="#category2" data-toggle="dropwizard"><span>菜品2</span>&nbsp;<i class="icon icon-small icon-chevron-down"></i></a>
+          </li>
+        </ul>
+        <div class="menu-content">
+          <div id="category1" class="dropwizard-menu binary">
+            <div class="menu">
+              <ul class="menu-list">
+                <li>
+                  <a href="javascript: void(0)" data-direct="#sub1-1">
+                    <img src="http://st-test.bicaijia.com/beast/upload/c/c-01.jpg">category-1
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0)" data-direct="#sub1-2">
+                    <img src="http://st-test.bicaijia.com/beast/upload/c/c-03.jpg">category-1
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0)" data-direct="#sub1-3">
+                    <img src="http://st-test.bicaijia.com/beast/upload/c/c-04.jpg">category-1
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="menu" id="sub1-1">
+              <ul class="menu-list">
+                <li>
+                  <a href="javascript: void(0)" data-confirm="dropwizard">
+                    <img src="http://st-test.bicaijia.com/beast/upload/c/c-01-100.jpg">sub1-1-1
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0)" data-confirm="dropwizard">
+                    <img src="http://st-test.bicaijia.com/beast/upload/c/c-01-101.jpg">sub1-1-1
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0)" data-confirm="dropwizard">
+                    <img src="http://st-test.bicaijia.com/beast/upload/c/c-01-102.jpg">sub1-1-1
+                  </a>
+                </li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-1-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-1-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-1-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-1-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-1-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-1-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-1-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-1-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-1-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-1-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-1-1</a></li>
+              </ul>
+            </div>
+            <div class="menu" id="sub1-2">
+              <ul class="menu-list">
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-2-1</a></li>
+              </ul>
+            </div>
+            <div class="menu" id="sub1-3">
+              <ul class="menu-list">
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">sub1-3-1</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="category2" class="dropwizard-menu">
+            <div class="menu">
+              <ul class="menu-list">
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-1</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-2</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-3</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-4</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-5</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-6</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-7</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-8</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-9</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-10</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-11</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-12</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-13</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-14</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-15</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-16</a></li>
+                <li><a href="javascript: void(0)" data-confirm="dropwizard">category2-17</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="wrapper">
+        <ul class="list">
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+          <li class="item">this is item</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="bar footer fixed-bottom">
+      <div class="tabs">
+        <a class="tab-item active" href="#">One</a>
+        <a class="tab-item" href="#">Two</a>
+        <a class="tab-item" href="#">Three</a>
+      </div>
+    </div>
+
+    <script src="../dist/js/vendor/zepto.js"></script>
+    <script src="iscroll-lite.js"></script>
+    <script src="../dist/js/fancy.js"></script>
+    <script type="text/javascript">
+
+    $(function() {
+
+      $(document).on('touchmove', function(e) { e.preventDefault() })
+
+      new IScroll('#wrapper', { tap: true })
+
+    })
+
+    </script>
+  </body>
+</html>
