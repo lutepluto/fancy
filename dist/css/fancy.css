@@ -2764,6 +2764,7 @@ a.item-content {
 }
 .dropwizard-menu .menu .menu-list .active > a {
   background-color: #fff;
+  color: #F8A13F;
 }
 .dropwizard-menu.binary .menu:not(:first-child) {
   display: none;
@@ -2777,4 +2778,10 @@ a.item-content {
 .dropwizard-menu.binary .menu:first-child {
   left: 0;
   width: 45%;
+}
+.dropwizard-menu.binary .menu:first-child > .menu-list > li {
+  border-left: 2px solid transparent;
+}
+.dropwizard-menu.binary .menu:first-child > .menu-list > .active {
+  border-left-color: #F8A13F;
 }

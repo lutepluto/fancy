@@ -101,7 +101,7 @@
 
   Dropwizard.prototype.direct = function(e) {
     e.preventDefault()
-    
+
     var $this = $(e.target)
     var $direct = $($this.data('direct'))
     e = $.Event('fancy:dropwizard:direct', { relatedTarget: $direct[0] })
@@ -123,12 +123,16 @@
     var $this = $(e.target)
     var text = $this.text().trim()
 
+    $this.closest('ul').find('.active').removeClass('active')
+    $this.parent().addClass('active')
+
     this.$ul
       .find('.open > a > span')
       .text(text.length > this.options.maxTextLength ?
         text.substring(0, this.options.maxTextLength - 1) + '...' :
         text
       )
+
     this.$ul.find('.open > a').trigger('tap').trigger('fancy:dropwizard:confirm')
   }
 

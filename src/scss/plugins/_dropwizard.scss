@@ -87,6 +87,7 @@
 
       .active > a {
         background-color: #fff;
+        color: $brand-warning;
       }
     }
   }
@@ -107,6 +108,14 @@
       &:first-child {
         left: 0;
         width: 45%;
+
+        > .menu-list > li {
+          border-left: 2px solid transparent;
+        }
+
+        > .menu-list > .active {
+          border-left-color: $brand-warning;
+        }
       }
     }
   }
