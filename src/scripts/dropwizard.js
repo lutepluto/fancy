@@ -100,6 +100,8 @@
   }
 
   Dropwizard.prototype.direct = function(e) {
+    e.preventDefault()
+    
     var $this = $(e.target)
     var $direct = $($this.data('direct'))
     e = $.Event('fancy:dropwizard:direct', { relatedTarget: $direct[0] })
