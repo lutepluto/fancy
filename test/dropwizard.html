@@ -200,9 +200,11 @@
 
     $(function() {
 
-      $(document).on('touchmove', function(e) { e.preventDefault() })
-
-      new IScroll('#wrapper', { tap: true })
+      $(document).on('fancy:dropwizard:directed', '[data-direct]', function(e) {
+        var $target = $(e.relatedTarget)
+        var iscroll = $target.data('iscroll')
+        if(!iscroll) $target.data('iscroll', new IScroll(e.relatedTarget, { tap: true }))
+      })
 
     })
 

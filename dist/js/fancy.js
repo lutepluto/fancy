@@ -545,16 +545,9 @@
 // dropwizard.js
 // ==================================================
 // Author        : lute
-// Last modified : 2015-03-06
+// Last modified : 2015-03-13 10:33
 // Style         : ../scss/plugins/_dropwizard.scss
-// Dependency    : tabs style | IScroll
-// ==================================================
-// Caution: The iScroll will cause the delegated tap
-// events get fired twice. This can resolved by setting
-// preventDefault to false when initialize iScroll.
-// However, this needs the document to listen touchmove
-// event and prevent the event default. See
-// dropwizar.html for the test case.
+// Dependency    : tabs style
 // ==================================================
 
 +function($) {
@@ -602,19 +595,11 @@
       that.$target.addClass('in')
 
       var e = $.Event('fancy:dropwizard:opend', { relatedTarget: that.$target[0] })
-      var openCallback = function() {
-        that.$element.trigger(e)
-        var $scrollMenu = that.$target.find('.menu').first()
-        var iscroll = $scrollMenu.data('fancy.dropwizard.iscroll')
-        if(!iscroll) {
-          $scrollMenu.data('fancy.dropwizard.iscroll', (iscroll = new IScroll($scrollMenu[0], { preventDefault: false })))
-        }
-      }
       transition ?
         that.$target
-          .one($.support.transition.end, openCallback)
+          .one($.support.transition.end, function() { that.$element.trigger(e) })
           .emulateTransitionEnd(150) :
-        openCallback()
+        that.$element.trigger(e)
     })
   }
 
@@ -671,9 +656,7 @@
     if($active.length) $($active.removeClass('active').children().data('direct')).removeClass('active')
     $this.parent().addClass('active')
     $direct.addClass('active')
-    var iscroll = $direct.data('fancy.dropwizard.iscroll')
-    if(!iscroll)
-      $direct.data('fancy.dropwizard.iscroll', new IScroll($direct[0], { preventDefault: false }))
+
     e = $.Event('fancy:dropwizard:directed', { relatedTarget: $direct[0] })
     $this.trigger(e)
   }
