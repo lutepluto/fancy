@@ -43,7 +43,6 @@ body {
 
 // Hack to force all relatively and absolutely positioned elements still render while scrolling
 // Note: This is a bug for "-webkit-overflow-scrolling: touch"
-
 .content > * {
   @include translateZ(0);
 }
@@ -56,8 +55,27 @@ body {
   padding-bottom: $bar-height;
 }
 
-// Universal link reset
+// Single full page
+.coverage {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
 
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+// Universal link reset
 a {
   color: $brand-primary;
   text-decoration: none;

@@ -18,14 +18,14 @@
         position: absolute;
         top: 80px;
         right: 0;
-        bottom: 0;
+        bottom: 44px;
         left: 0;
         overflow: hidden;
       }
     </style>
 
   </head>
-  <body>
+  <body class="coverage">
 
     <header class="bar header fixed-top transparent">
       <a href="#" class="left"><i class="icon icon-chevron-left"></i>主页</a>
@@ -205,6 +205,8 @@
         var iscroll = $target.data('iscroll')
         if(!iscroll) $target.data('iscroll', new IScroll(e.relatedTarget, { tap: true }))
       })
+
+      new IScroll('#wrapper')
 
     })
 
