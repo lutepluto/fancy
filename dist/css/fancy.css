@@ -1993,6 +1993,7 @@ a.item-content {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 0;
+  margin-top: 0;
   margin-bottom: 20px;
   overflow: hidden;
 }

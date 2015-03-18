@@ -8,6 +8,7 @@
   padding-top: $item-border-width;
   padding-bottom: $item-border-width;
   padding-left: 0; // reset padding because ul and ol
+  margin-top: 0; // reset margin top because user agent style
   margin-bottom: 20px;
   overflow: hidden;
 }
