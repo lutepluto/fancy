@@ -177,7 +177,9 @@ a.item-content {
 .item-thumbnail-left,
 .item-thumbnail-left .item-content {
   padding-left: $item-thumbnail-width + ($item-padding * 2);
-  min-height: $item-thumbnail-height + ($item-padding * 2);
+  // min height needs to be reconsidered
+  // temporarily commented
+  // min-height: $item-thumbnail-height + ($item-padding * 2);
 
   > .item-image {
     position: absolute;

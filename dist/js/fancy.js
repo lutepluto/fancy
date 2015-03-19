@@ -667,7 +667,10 @@
     var $this = $(e.target)
     var text = $this.text().trim()
 
-    $this.closest('ul').find('.active').removeClass('active')
+    // deactive all uls' active li in current dropwizar-menu
+    $this.closest('.dropwizard-menu').find('.menu li.active').each(function() {
+      if($(this).children().data('confirm')) $(this).removeClass('active')
+    })
     $this.parent().addClass('active')
 
     this.$ul
