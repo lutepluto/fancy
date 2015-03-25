@@ -1,0 +1,25 @@
+/**
+ * Validate
+ * Author        : lute
+ * Last modified : 2015-03-25 17:15
+ * ==========================================================================
+ */
+
+.validate-tooltip {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 10px 15px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.danger {
+    background-color: rgba(169, 68, 66, .95);
+  }
+}

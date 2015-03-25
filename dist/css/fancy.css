@@ -2803,3 +2803,27 @@ a.item-content {
 .dropwizard-menu.binary .menu:first-child > .menu-list > .active {
   border-left-color: #F8A13F;
 }
+
+/**
+ * Validate
+ * Author        : lute
+ * Last modified : 2015-03-25 17:15
+ * ==========================================================================
+ */
+.validate-tooltip {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 10px 15px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.validate-tooltip.danger {
+  background-color: rgba(169, 68, 66, 0.95);
+}
