@@ -54,14 +54,14 @@
     'integer' : '"{alias}"的输入值必须为整数！',
     'float' : '"{alias}"的输入值必须为小数！',
     'number' : '"{alias}"的输入值必须是数字格式！',
-    'equal' : '"{alias}"输入值与"{param}"不匹配！',
-    'match' : '"{alias}"输入值与"{param}"不匹配！',
-    'min' : '"{alias}"输入值必须大于"{param}"',
-    'max' : '"{alias}"输入值必须小于"{param}"',
-    'between' : 'The value must be between {param} and {param2}',
-    'length_min' : '"{alias}"的输入值长度必须大于"{param}"',
-    'length_max' : '"{alias}"的输入值长度必须小于"{param}"',
-    'length_between' : 'The length of the value must be between {param} and {param2}'
+    'equal' : '"{alias}"输入值与"{param1}"不匹配！',
+    'match' : '"{alias}"输入值与"{param1}"不匹配！',
+    'min' : '"{alias}"输入值必须大于"{param1}"',
+    'max' : '"{alias}"输入值必须小于"{param1}"',
+    'between' : 'The value must be between {param1} and {param2}',
+    'length_min' : '"{alias}"的输入值长度必须大于"{param1}"',
+    'length_max' : '"{alias}"的输入值长度必须小于"{param1}"',
+    'length_between' : 'The length of the value must be between {param1} and {param2}'
   }
 
   Validate.prototype.validate = function(el) {
