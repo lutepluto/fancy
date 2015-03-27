@@ -2036,7 +2036,7 @@ a.item-content {
 }
 
 .card-head {
-  padding-bottom: 0;
+  padding-top: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
