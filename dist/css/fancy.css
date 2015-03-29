@@ -958,6 +958,9 @@ a.tag:focus {
 .padding > .button-block:first-child {
   margin-top: 0;
 }
+.padding > .button-block:last-child {
+  margin-bottom: 0;
+}
 
 .button-block {
   display: block;
@@ -1691,6 +1694,9 @@ textarea {
   color: inherit;
   display: block;
   padding: 8px 0;
+  line-height: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 .tab-item.active, .tab-item:active {
   color: #555555;
@@ -2823,6 +2829,7 @@ a.item-content {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  z-index: 99;
 }
 .validate-tooltip.danger {
   background-color: rgba(169, 68, 66, 0.95);

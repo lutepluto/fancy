@@ -144,7 +144,6 @@
   }
   
   $.fn.validate = Plugin
-  $.fn.validate.constructor = Validate
 
   $.fn.validate.noConflict = function() {
     $.fn.validate = old

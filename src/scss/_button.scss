@@ -90,8 +90,15 @@
   }
 }
 
-.padding > .button-block:first-child {
-  margin-top: 0;
+.padding {
+
+  > .button-block:first-child {
+    margin-top: 0;  
+  }
+  
+  > .button-block:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .button-block {

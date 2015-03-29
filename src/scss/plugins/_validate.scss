@@ -18,6 +18,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  z-index: 99;
 
   &.danger {
     background-color: rgba(169, 68, 66, .95);
