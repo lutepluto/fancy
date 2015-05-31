@@ -245,9 +245,12 @@ a.item-content {
 // --------------------------------------------------
 
 .item-divider {
+  position: relative;
+  margin: $item-border-width * -1;
   padding: $item-padding / 2 $item-padding;
   min-height: $item-padding * 3;
   background-color: $item-divider-bg;
+  border: 1px solid $item-default-border;
   color: $item-divider-color;
   font-weight: bold;
 

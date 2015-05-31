@@ -1946,9 +1946,12 @@ a.item-content {
 }
 
 .item-divider {
+  position: relative;
+  margin: -1px;
   padding: 5px 10px;
   min-height: 30px;
   background-color: #f5f5f5;
+  border: 1px solid #ddd;
   color: #777;
   font-weight: bold;
 }
