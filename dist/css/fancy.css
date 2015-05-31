@@ -2043,6 +2043,20 @@ a.item-content {
 }
 
 /**
+ * Cohesive list with its' item has no border
+ * --------------------------------------------------
+ */
+.list.cohesive {
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+.list.cohesive .item {
+  padding: 5px 10px;
+  min-height: initial;
+  border: none;
+}
+
+/**
  * Card
  * ==========================================================================
  */

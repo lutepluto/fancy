@@ -30,3 +30,19 @@
   color: $list-header-color;
   font-weight: bold;
 }
+
+/**
+ * Cohesive list with its' item has no border
+ * --------------------------------------------------
+ */
+
+.list.cohesive {
+  border-top: 1px solid $item-default-border;
+  border-bottom: 1px solid $item-default-border;
+
+  .item {
+    padding: ($item-padding / 2) $item-padding;
+    min-height: initial;
+    border: none;
+  }
+}
