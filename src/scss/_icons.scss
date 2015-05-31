@@ -124,5 +124,5 @@ $icon-var-loading:        "loading.png";
 .#{$icon-prefix}chevron-down:before {
   border-right-width: 3px;
   border-bottom-width: 3px;
-  @include transform(translate(-50%, -85%) rotate(45deg));
+  @include transform(translate(-50%, -70%) rotate(45deg));
 }

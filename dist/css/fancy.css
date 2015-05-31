@@ -1107,9 +1107,9 @@ input.button.button-block {
 .icon-chevron-down:before {
   border-right-width: 3px;
   border-bottom-width: 3px;
-  -webkit-transform: translate(-50%, -85%) rotate(45deg);
-  -ms-transform: translate(-50%, -85%) rotate(45deg);
-      transform: translate(-50%, -85%) rotate(45deg);
+  -webkit-transform: translate(-50%, -70%) rotate(45deg);
+  -ms-transform: translate(-50%, -70%) rotate(45deg);
+      transform: translate(-50%, -70%) rotate(45deg);
 }
 
 /**
