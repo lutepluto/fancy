@@ -1992,6 +1992,20 @@ a.item-content {
   line-height: 28px;
 }
 
+.item-lr {
+  height: auto;
+  overflow: hidden;
+}
+.item-lr .lr-left {
+  width: auto;
+  overflow: hidden;
+}
+.item-lr .lr-right {
+  width: 80px;
+  float: right;
+  text-align: right;
+}
+
 /**
  * List
  * ==========================================================================

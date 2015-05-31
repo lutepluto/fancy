@@ -294,6 +294,27 @@ a.item-content {
   line-height: $item-button-line-height;
 }
 
+// Item left and right layout in one line
+// --------------------------------------------------
+// This layout require the right part goes before left
+// when writing html code
+
+.item-lr {
+  height: auto;
+  overflow: hidden;
+
+  .lr-left {
+    width: auto;
+    overflow: hidden;
+  }
+
+  .lr-right {
+    width: 80px;   // the right part usually is narrower
+    float: right;
+    text-align: right;  // default to align text right
+  }
+}
+
 // Item icon
 // --------------------------------------------------
 // TODO
