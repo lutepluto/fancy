@@ -92,6 +92,10 @@ a.item {
   &:focus {
     text-decoration: none;
   }
+
+  &:active {
+    @include item-active-style($item-default-active-bg, $item-default-active-border);
+  }
 }
 
 a.item-content {
