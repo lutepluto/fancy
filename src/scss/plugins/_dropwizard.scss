@@ -1,7 +1,5 @@
 /**
  * Dropwizard
- * Author        : lute
- * Last modified : 2015-03-06 14:01
  * ==========================================================================
  */
 
@@ -10,7 +8,7 @@
   margin: 0;
   padding: 0;
   margin-bottom: -1px;
-  z-index: $z-index-dropdown;
+  z-index: $z-index-dropdown + 1;
 
   .tabs {
     color: #555;
@@ -119,4 +117,8 @@
       }
     }
   }
+}
+
+.dropwizard-backdrop {
+  z-index: $z-index-dropdown-backdrop;
 }

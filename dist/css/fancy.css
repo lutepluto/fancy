@@ -398,7 +398,7 @@ th {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 9;
+  z-index: 99;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.3);
   -webkit-transform: translateZ(0);
@@ -2247,7 +2247,7 @@ a.item-content {
   left: 0;
   overflow: hidden;
   background: transparent;
-  z-index: 10;
+  z-index: 100;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   -webkit-transform: translate(0, 100%);
@@ -2297,7 +2297,7 @@ a.item-content {
   left: 0;
   overflow: hidden;
   background-color: #fff;
-  z-index: 10;
+  z-index: 100;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   -webkit-transform: translate3d(0, 100%, 0);
@@ -2405,7 +2405,7 @@ a.item-content {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  z-index: 10;
+  z-index: 100;
   background-color: #fff;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -2540,7 +2540,7 @@ a.item-content {
   bottom: 0;
   left: 0;
   overflow: hidden;
-  z-index: 10;
+  z-index: 100;
   background-color: #fff;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -2564,7 +2564,7 @@ a.item-content {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100;
   display: none;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
@@ -2630,7 +2630,7 @@ a.item-content {
   padding-top: 1px;
   padding-bottom: 1px;
   vertical-align: middle;
-  z-index: 10;
+  z-index: 100;
 }
 .combox-container .combox-current {
   display: block;
@@ -2741,8 +2741,6 @@ a.item-content {
 
 /**
  * Dropwizard
- * Author        : lute
- * Last modified : 2015-03-06 14:01
  * ==========================================================================
  */
 .dropwizard {
@@ -2750,7 +2748,7 @@ a.item-content {
   margin: 0;
   padding: 0;
   margin-bottom: -1px;
-  z-index: 10;
+  z-index: 11;
 }
 .dropwizard .tabs {
   color: #555;
@@ -2843,6 +2841,10 @@ a.item-content {
 }
 .dropwizard-menu.binary .menu:first-child > .menu-list > .active {
   border-left-color: #F8A13F;
+}
+
+.dropwizard-backdrop {
+  z-index: 9;
 }
 
 /**
