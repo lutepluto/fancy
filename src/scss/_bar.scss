@@ -127,46 +127,5 @@
   padding: 0;
 }
 
-// bar input
+// TODO bar input
 // --------------------------------------------------
-
-.bar .bar-input-wrapper {
-  position: absolute;
-  left: 60px;
-  right: 5px;
-}
-
-.bar-input-wrapper {
-  position: relative;
-  
-  input {
-    position: relative;
-    float: left;
-    margin: 0;
-    height: $bar-height - 12;
-    border: 0;
-    border-radius: 6px;
-    background: #eee;
-    font-size: 14px;
-    @include transition(width .35s ease);
-    z-index: 1;
-
-    &:focus {
-      width: 80%;
-
-      + .bar-input-link {
-        opacity: 1;
-      }
-    }
-  }
-
-  .bar-input-link {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    opacity: 0;
-    @include translate(0, -50%);
-    @include transition(opacity .35s ease);
-    z-index: 0;
-  }
-}
