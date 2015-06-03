@@ -56,41 +56,35 @@
 // Quick floats
 
 .pull-left {
-  float: left !important;
+  float: left;
 }
 .pull-right {
-  float: right !important;
+  float: right;
 }
 
 
 // Margin & Padding
 
 .margin {
-  margin: $content-margin !important;
-}
-
-// vetical margin
-.vertical-margin {
-  margin-top: $content-margin !important;
-  margin-bottom: $content-margin !important;
+  margin: $content-margin;
 }
 
 .no-margin {
-  margin: 0 !important;
+  margin: 0;
 }
 
 .padding {
-  padding: $content-padding !important;
+  padding: $content-padding;
 }
 
 .no-padding {
-  padding: 0 !important;
+  padding: 0;
 }
 
 // Border
 
 .no-border {
-  border: none !important;
+  border: none;
 }
 
 

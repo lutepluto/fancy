@@ -295,36 +295,31 @@ th {
 }
 
 .pull-left {
-  float: left !important;
+  float: left;
 }
 
 .pull-right {
-  float: right !important;
+  float: right;
 }
 
 .margin {
-  margin: 15px !important;
-}
-
-.vertical-margin {
-  margin-top: 15px !important;
-  margin-bottom: 15px !important;
+  margin: 15px;
 }
 
 .no-margin {
-  margin: 0 !important;
+  margin: 0;
 }
 
 .padding {
-  padding: 10px !important;
+  padding: 10px;
 }
 
 .no-padding {
-  padding: 0 !important;
+  padding: 0;
 }
 
 .no-border {
-  border: none !important;
+  border: none;
 }
 
 .text-default {
