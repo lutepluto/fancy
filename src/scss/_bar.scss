@@ -79,25 +79,29 @@
 }
 
 // bar with left and right
-
+// bar left and right style strategy should be redesigned!!!
 .bar .left,
 .bar .right {
   position: absolute;
   top: 50%;
   @include translate(0, -50%);
+  max-width: 56px;  // temporary fix for text too long
   z-index: 1;
 
   color: inherit;
   font-size: 14px;
   line-height: $bar-height;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
 .bar .left {
-  left: 10px;
+  left: 5px;
 }
 
 .bar .right {
-  right: 10px;
+  right: 5px;
 }
 
 // Header at top
@@ -121,4 +125,48 @@
 
 .tabs {
   padding: 0;
+}
+
+// bar input
+// --------------------------------------------------
+
+.bar .bar-input-wrapper {
+  position: absolute;
+  left: 60px;
+  right: 5px;
+}
+
+.bar-input-wrapper {
+  position: relative;
+  
+  input {
+    position: relative;
+    float: left;
+    margin: 0;
+    height: $bar-height - 12;
+    border: 0;
+    border-radius: 6px;
+    background: #eee;
+    font-size: 14px;
+    @include transition(width .35s ease);
+    z-index: 1;
+
+    &:focus {
+      width: 80%;
+
+      + .bar-input-link {
+        opacity: 1;
+      }
+    }
+  }
+
+  .bar-input-link {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    opacity: 0;
+    @include translate(0, -50%);
+    @include transition(opacity .35s ease);
+    z-index: 0;
+  }
 }

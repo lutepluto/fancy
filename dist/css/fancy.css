@@ -1622,18 +1622,22 @@ textarea {
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
       transform: translate(0, -50%);
+  max-width: 56px;
   z-index: 1;
   color: inherit;
   font-size: 14px;
   line-height: 44px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bar .left {
-  left: 10px;
+  left: 5px;
 }
 
 .bar .right {
-  right: 10px;
+  right: 5px;
 }
 
 .header {
@@ -1651,6 +1655,47 @@ textarea {
 
 .tabs {
   padding: 0;
+}
+
+.bar .bar-input-wrapper {
+  position: absolute;
+  left: 60px;
+  right: 5px;
+}
+
+.bar-input-wrapper {
+  position: relative;
+}
+.bar-input-wrapper input {
+  position: relative;
+  float: left;
+  margin: 0;
+  height: 32px;
+  border: 0;
+  border-radius: 6px;
+  background: #eee;
+  font-size: 14px;
+  -webkit-transition: width 0.35s ease;
+  transition: width 0.35s ease;
+  z-index: 1;
+}
+.bar-input-wrapper input:focus {
+  width: 80%;
+}
+.bar-input-wrapper input:focus + .bar-input-link {
+  opacity: 1;
+}
+.bar-input-wrapper .bar-input-link {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  opacity: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+  -webkit-transition: opacity 0.35s ease;
+  transition: opacity 0.35s ease;
+  z-index: 0;
 }
 
 /**
