@@ -1298,7 +1298,7 @@
     var that = this
     this.$target.hide()
     this.backdrop(function() {
-      that.$element.trigger('fancy:modal:hidden')
+      that.$element.trigger('fancy:modal:closed')
     });
   }
 
