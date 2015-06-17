@@ -4,7 +4,6 @@
  */
 
 .bar {
-  padding: 5px;
   width: 100%;
   height: $bar-height;
   position: relative;
@@ -54,8 +53,7 @@
   z-index: 0;
   overflow: hidden;
 
-  margin: 0 10px;
-  padding: 0 80px;
+  margin: 0 80px;
 
   min-width: 30px;
 
@@ -78,30 +76,23 @@
   }
 }
 
-// bar with left and right
-// bar left and right style strategy should be redesigned!!!
+// bar with left and right using float currently
 .bar .left,
 .bar .right {
-  position: absolute;
-  top: 50%;
-  @include translate(0, -50%);
-  max-width: 56px;  // temporary fix for text too long
-  z-index: 1;
+  padding: 5px;
 
   color: inherit;
   font-size: 14px;
-  line-height: $bar-height;
+  line-height: $bar-height - 10px;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis
 }
 
 .bar .left {
-  left: 5px;
+  float: left;
 }
 
 .bar .right {
-  right: 5px;
+  float: right;
 }
 
 // Header at top
@@ -123,8 +114,9 @@
 
 // Don't render padding if the bar is just for tabs
 
-.tabs {
-  padding: 0;
+.footer .tab-item {
+  height: $bar-height;
+  border: 0;
 }
 
 // TODO bar input

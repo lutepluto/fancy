@@ -32,19 +32,20 @@
     border-right: 0;
   }
 
-  a {
-    color: inherit;
-    display: block;
-    padding: 8px 0;
-    line-height: inherit;
-    font-size: inherit;
-    color: inherit;
-  }
-
   &.active,
   &:active {
     color: $gray;
   }
+}
+
+a.tab-item,
+.tab-item a {
+  color: inherit;
+  display: block;
+  padding: 0 8px;
+  line-height: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
 .tabs.justified .tab-item,
@@ -54,13 +55,8 @@
   width: 1%;
 }
 
-.tabs.no-divider .tab-item,
-.footer .tab-item {
+.tabs.no-divider .tab-item {
   border: 0;
-}
-
-.footer .tab-item {
-  height: $tabs-height;
 }
 
 // handle tab plugin
