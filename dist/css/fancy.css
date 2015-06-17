@@ -662,7 +662,7 @@ a:active {
  * ==========================================================================
  */
 .tag {
-  display: inline;
+  display: inline-block;
   padding: 2px 5px 3px;
   border-radius: 4px;
   background-color: #a8a8a8;
