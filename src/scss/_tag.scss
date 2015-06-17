@@ -43,3 +43,30 @@ a.tag:focus {
 .tag.danger {
   background-color: $brand-danger;
 }
+
+// Outline style
+.tag.outline {
+  background-color: #fff;
+  color: $brand-default;
+  border: 1px solid;
+
+  &.success {
+    border-color: $brand-success;
+    color: $brand-success;
+  }
+
+  &.primary {
+    border-color: $brand-primary;
+    color: $brand-primary;
+  }
+
+  &.warning {
+    border-color: $brand-warning;
+    color: $brand-warning;
+  }
+
+  &.danger {
+    border-color: $brand-danger;
+    color: $brand-danger;
+  }
+}

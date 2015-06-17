@@ -700,6 +700,28 @@ a.tag:focus {
   background-color: #E84A5F;
 }
 
+.tag.outline {
+  background-color: #fff;
+  color: #a8a8a8;
+  border: 1px solid;
+}
+.tag.outline.success {
+  border-color: #61C155;
+  color: #61C155;
+}
+.tag.outline.primary {
+  border-color: #3A89C9;
+  color: #3A89C9;
+}
+.tag.outline.warning {
+  border-color: #F8A13F;
+  color: #F8A13F;
+}
+.tag.outline.danger {
+  border-color: #E84A5F;
+  color: #E84A5F;
+}
+
 /**
  * Buttons
  * ==========================================================================
