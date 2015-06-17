@@ -648,24 +648,6 @@ body {
   padding-bottom: 44px;
 }
 
-.coverage {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #fff;
-}
-.coverage .content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
 a {
   color: #3A89C9;
   text-decoration: none;

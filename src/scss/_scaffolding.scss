@@ -56,26 +56,6 @@ body {
   padding-bottom: $bar-height;
 }
 
-// Single full page
-.coverage {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #fff;
-
-  .content {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
 // Universal link reset
 a {
   color: $brand-primary;
