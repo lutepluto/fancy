@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Action Sheet</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="../dist/css/fancy.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header class="bar header fixed-top transparent">
+      <a class="left" href="http://baidu.com"><i class="icon icon-small icon-chevron-left"></i>返回</a>
+      <h1 class="title">Action Sheet</h1>
+      <a class="right" href="http://baidu.com">向右<i class="icon icon-small icon-chevron-right"></i></a>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content has-header">
+
+    </div>
+
+    <footer class="bar footer fixed-bottom">
+      <div class="tabs">
+        <a class="tab-item active" href="#">
+          <i class="icon icon-small icon-chevron-left"></i>One
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon icon-small icon-chevron-left"></i>Two
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon icon-small icon-chevron-left"></i>Three
+        </a>
+      </div>
+    </footer>
+
+    <script src="../dist/js/vendor/zepto.js"></script>
+    <script src="../dist/js/fancy.js"></script>
+
+  </body>
+</html>
