@@ -1665,15 +1665,20 @@ textarea {
   table-layout: fixed;
   background-color: #fff;
   border-color: #ddd;
-  color: #a8a8a8;
+  color: #777;
 }
 
-.tab-item {
-  float: left;
+.tabs > li {
   position: relative;
   display: block;
+  float: left;
+}
+
+.tabs > li > .tab-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
   overflow: hidden;
-  border-right: 1px solid #ddd;
   color: inherit;
   font-size: 14px;
   font-weight: 400;
@@ -1681,33 +1686,30 @@ textarea {
   text-decoration: none;
   white-space: nowrap;
   vertical-align: middle;
-}
-.tab-item:last-child {
-  border-right: 0;
-}
-.tab-item.active, .tab-item:active {
-  color: #555555;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAkCAMAAACUnRs9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjA2MEM2OTgxOEQ2RDExRTM4OEJERTUwNjU4NDZDRjEwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjA2MEM2OTgyOEQ2RDExRTM4OEJERTUwNjU4NDZDRjEwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDYwQzY5N0Y4RDZEMTFFMzg4QkRFNTA2NTg0NkNGMTAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDYwQzY5ODA4RDZEMTFFMzg4QkRFNTA2NTg0NkNGMTAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7q//aNAAAABlBMVEXj4+P///+et6UoAAAAAnRSTlP/AOW3MEoAAAAQSURBVHjaYmBkYKAXAggwAAgWACWbx3eKAAAAAElFTkSuQmCC) right center no-repeat;
+  -webkit-background-size: 1px auto;
+          background-size: 1px auto;
 }
 
-a.tab-item,
-.tab-item a {
-  color: inherit;
-  display: block;
-  padding: 0 8px;
-  line-height: inherit;
-  font-size: inherit;
-  color: inherit;
+.tabs > li:last-child > .tab-item {
+  background: 0 0;
 }
 
-.tabs.justified .tab-item,
-.footer .tab-item {
-  float: none;
-  display: table-cell;
-  width: 1%;
+.tabs > .active > .tab-item {
+  color: #3A89C9;
 }
 
 .tabs.no-divider .tab-item {
-  border: 0;
+  background: 0 0;
+}
+
+.tabs.justified {
+  width: 100%;
+}
+.tabs.justified > li {
+  float: none;
+  display: table-cell;
+  width: 1%;
 }
 
 .tab-content > .tab-pane {

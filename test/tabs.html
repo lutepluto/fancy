@@ -26,10 +26,10 @@
     <div class="content has-header has-footer">
       
       <div class="padding">
-        <ul class="tabs justified no-divider">
-          <li class="tab-item"><a href="#tab1" data-toggle="tab">Item one</a></li>
-          <li class="tab-item active"><a href="#tab2" data-toggle="tab">Item two</a></li>
-          <li class="tab-item"><a href="#tab3" data-toggle="tab">Item three</a></li>
+        <ul class="tabs">
+          <li><a class="tab-item" href="#tab1" data-toggle="tab">Item one</a></li>
+          <li class="active"><a class="tab-item" href="#tab2" data-toggle="tab">Item two</a></li>
+          <li><a class="tab-item" href="#tab3" data-toggle="tab">Item three</a></li>
         </ul>
 
         <div class="tab-content">
@@ -39,14 +39,30 @@
         </div>
       </div>
 
+      <div class="padding">
+        <ul class="tabs justified">
+          <li><a class="tab-item" href="#tab1">Item one</a></li>
+          <li class="active"><a class="tab-item" href="#tab2">Item two</a></li>
+          <li><a class="tab-item" href="#tab3">Item three</a></li>
+        </ul>
+      </div>
+
+      <div class="padding">
+        <ul class="tabs justified no-divider">
+          <li><a class="tab-item" href="#tab1">Item one</a></li>
+          <li class="active"><a class="tab-item" href="#tab2">Item two</a></li>
+          <li><a class="tab-item" href="#tab3">Item three</a></li>
+        </ul>
+      </div>
+
     </div>
 
     <div class="bar footer fixed-bottom">
-      <div class="tabs">
-        <a class="tab-item active" href="#">One</a>
-        <a class="tab-item" href="#">Two</a>
-        <a class="tab-item" href="#">Three</a>
-      </div>
+      <ul class="tabs no-divider justified">
+        <li class="active"><a class="tab-item" href="#">One</a></li>
+        <li><a class="tab-item" href="#">Two</a></li>
+        <li><a class="tab-item" href="#">Three</a></li>
+      </ul>
     </div>
 
     <script src="../dist/js/vendor/zepto.js"></script>
