@@ -45,19 +45,19 @@
   }
 
   Validate.MESSAGES = {
-    'required' : '"{alias}"不能为空！',
+    'required' : '{alias}不能为空！',
     'email' : '请输入正确的email格式！',
     'www' : 'The value is not valid http string',
     'date' : 'The value is not valid date',
     'time' : 'The value is not valid time',
     'datetime' : 'The value is not valid datetime',
-    'integer' : '"{alias}"的输入值必须为整数！',
-    'float' : '"{alias}"的输入值必须为小数！',
-    'number' : '"{alias}"的输入值必须是数字格式！',
-    'equal' : '"{alias}"输入值与"{param1}"不匹配！',
-    'match' : '"{alias}"输入值与"{param1}"不匹配！',
-    'min' : '"{alias}"输入值必须大于"{param1}"',
-    'max' : '"{alias}"输入值必须小于"{param1}"',
+    'integer' : '{alias}的输入值必须为整数！',
+    'float' : '{alias}的输入值必须为小数！',
+    'number' : '{alias}的输入值必须是数字格式！',
+    'equal' : '{alias}输入值与{param1}不匹配！',
+    'match' : '{alias}输入值与{param1}不匹配！',
+    'min' : '{alias}输入值必须大于{param1}',
+    'max' : '{alias}输入值必须小于{param1}',
     'between' : 'The value must be between {param1} and {param2}',
     'length_min' : '"{alias}"的输入值长度必须大于"{param1}"',
     'length_max' : '"{alias}"的输入值长度必须小于"{param1}"',
@@ -90,7 +90,7 @@
             templateData['param' + j] = validateParam[j]
           }
 
-          messages.push(message.format(templateData))
+          messages.push(compileTemplate(message, templateData))
         }
         break
       }
@@ -148,6 +148,13 @@
   $.fn.validate.noConflict = function() {
     $.fn.validate = old
     return this
+  }
+
+  function compileTemplate(template, data) {
+    if((typeof data).toLowerCase() !== 'object') return template
+    return template.replace(/\{(.*?)\}/g, function(match, index) {
+      return data[index] ? data[index] : ''
+    })
   }
 
   $(document).ready(function() {
