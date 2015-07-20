@@ -1685,7 +1685,8 @@
           templateData.alias = $el.data('alias') ?
             $el.data('alias') : $el.attr('name')
           for(var j = 1; j < validateParam.length; j++) {
-            templateData['param' + j] = validateParam[j]
+            var paramAlias = $(validateParam[j]).data('alias')
+            templateData['param' + j] = paramAlias ? paramAlias : $(validateParam[j]).attr('name')
           }
 
           messages.push(compileTemplate(message, templateData))
