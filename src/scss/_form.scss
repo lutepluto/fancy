@@ -209,12 +209,12 @@ textarea {
   padding: 8px 0;
   border-top: 1px solid $input-border-color;
   border-bottom: 1px solid $input-border-color;
+  background-color: #fff;
 
   .form-control {
     margin: 0;
     border: 0;
     height: $line-height-computed + $input-font-size - 2;
-    background-color: transparent;
   }
 
   label:first-child,

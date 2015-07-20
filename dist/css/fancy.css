@@ -1294,12 +1294,12 @@ textarea {
   padding: 8px 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+  background-color: #fff;
 }
 .field-row .form-control {
   margin: 0;
   border: 0;
   height: 34px;
-  background-color: transparent;
 }
 .field-row label:first-child,
 .field-row .icon:first-child,
