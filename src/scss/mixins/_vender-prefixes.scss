@@ -87,12 +87,15 @@
   &::-moz-placeholder {
     color: $color; // Firefox
     opacity: 1; // See https://github.com/twbs/bootstrap/pull/11526
+    font-weight: 400;
   }
   &:-ms-input-placeholder {
     color: $color; // Internet Explorer 10+
+    font-weight: 400;
   }
   &::-webkit-input-placeholder {
     color: $color; // Safari and Chrome
+    font-weight: 400;
   }
 }
 
