@@ -60,8 +60,9 @@
     'min' : '{alias}输入值必须大于{param1}',
     'max' : '{alias}输入值必须小于{param1}',
     'between' : 'The value must be between {param1} and {param2}',
-    'length_min' : '"{alias}"的输入值长度必须大于"{param1}"',
-    'length_max' : '"{alias}"的输入值长度必须小于"{param1}"',
+    'length' : '{alias}的长度为{param1}',
+    'length_min' : '{alias}的输入值长度必须大于{param1}',
+    'length_max' : '{alias}的输入值长度必须小于{param1}',
     'length_between' : 'The length of the value must be between {param1} and {param2}'
   }
 
@@ -88,8 +89,12 @@
           templateData.alias = $el.data('alias') ?
             $el.data('alias') : $el.attr('name')
           for(var j = 1; j < validateParam.length; j++) {
-            var paramAlias = $(validateParam[j]).data('alias')
-            templateData['param' + j] = paramAlias ? paramAlias : $(validateParam[j]).attr('name')
+            if(/^[#\.\[]/.test(validateParam[j])) {
+              var paramAlias = $(validateParam[j]).data('alias')
+              templateData['param' + j] = paramAlias ? paramAlias : $(validateParam[j]).attr('name')
+            } else {
+              templateData['param' + j] = validateParam[j]
+            }
           }
 
           messages.push(compileTemplate(message, templateData))
