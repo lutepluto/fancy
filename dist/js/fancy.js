@@ -186,10 +186,15 @@
       }
     }())
 
-    me.extend = function(target, obj) {
-      for(var key in obj) {
-        if(obj.hasOwnProperty(key)) {
-          target[key] = obj[key]
+    me.extend = function() {
+      var objects = Array.prototype.slice.call(arguments).slice(1)
+      var target = arguments[0]
+      for(var index in objects) {
+        var obj = objects[index]
+        for(var key in obj) {
+          if(obj.hasOwnProperty(key)) {
+            target[key] = obj[key]
+          }
         }
       }
 
@@ -226,7 +231,7 @@
   }
 
   var Alert = function(options) {
-    this.options = utils.extend(defaults, options)
+    this.options = utils.extend({}, defaults, options)
 
     if(this._requestTransition()) {
       this.el = this._build()
