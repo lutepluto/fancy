@@ -39,7 +39,7 @@
     'min' : function(value, min) { return Number(value) >= min },
     'max' : function(value, max) { return Number(value) <= max },
     'between' : function(value, min, max) { return (Number(value) >= min) && (Number(value) <= max) },
-    'length': function(value, length) { return value.length === length },
+    'length': function(value, length) { return value.length == length },
     'length_min' : function(value, min) { return value.length >= min },
     'length_max' : function(value, max) { return value.length <= max },
     'length_between' : function(value, min, max) { return (value.length >= min) && (value.length <= max) }
