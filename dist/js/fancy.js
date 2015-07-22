@@ -170,6 +170,22 @@
   var utils = (function() {
     var me = {}
 
+    me.animation = (function animationEnd() {
+      var _elementStyle = document.createElement('div').style
+      var animations = {
+        'animation': 'animationend',
+        'OAnimation': 'oAnimationEnd',
+        'MozAnimation': 'animationend',
+        'WebkitAnimation': 'webkitAnimationEnd'
+      }
+
+      for(var key in animations) {
+        if(_elementStyle[key] !== undefined) {
+          return { end: animations[key] }
+        }
+      }
+    }())
+
     me.extend = function(target, obj) {
       for(var key in obj) {
         if(obj.hasOwnProperty(key)) {
@@ -238,13 +254,13 @@
         return
       }
       utils.removeClass(this.el, 'alert-in')
-      this.el.removeEventListener('animationend', endListener)
+      this.el.removeEventListener(utils.animation.end, endListener)
 
       setTimeout(this.transitionOut.bind(this), this.options.wait)
     }
 
     utils.addClass(this.el, 'alert-in')
-    this.el.addEventListener('animationend', endListener.bind(this), false)
+    this.el.addEventListener(utils.animation.end, endListener.bind(this), false)
   }
 
   Alert.prototype.transitionOut = function() {
@@ -254,14 +270,14 @@
         return
       }
 
-      this.el.removeEventListener('animationend', endListener)
+      this.el.removeEventListener(utils.animation.end, endListener)
       if(this.el && this.el.parentNode) {
         this.el.parentNode.removeChild(this.el)
       }
     }
 
     utils.addClass(this.el, 'alert-out')
-    this.el.addEventListener('animationend', endListener.bind(this), false)
+    this.el.addEventListener(utils.animation.end, endListener.bind(this), false)
   }
 
   Alert.utils = utils
