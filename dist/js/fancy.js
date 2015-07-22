@@ -1637,6 +1637,7 @@
     'min' : function(value, min) { return Number(value) >= min },
     'max' : function(value, max) { return Number(value) <= max },
     'between' : function(value, min, max) { return (Number(value) >= min) && (Number(value) <= max) },
+    'length': function(value, length) { return value.length === length },
     'length_min' : function(value, min) { return value.length >= min },
     'length_max' : function(value, max) { return value.length <= max },
     'length_between' : function(value, min, max) { return (value.length >= min) && (value.length <= max) }
@@ -1696,8 +1697,6 @@
     }
 
     if(messages.length !== 0) {
-      // TODO display error message
-      // console.log(messages.pop())
       this.tooltip(messages.pop())
       return false
     }
@@ -1718,7 +1717,7 @@
     if(this.tooltipVisible) return
 
     this.tooltipVisible = true
-    var tooltip = '<div class="validate-tooltip ' + this.options.tooltipClass + '">' + message + '</div>'
+    var tooltip = '<div class="alert ' + this.options.tooltipClass + '">' + message + '</div>'
     this.$tooltip = $(tooltip).appendTo($(document.body))
 
     var that = this

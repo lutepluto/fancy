@@ -658,71 +658,6 @@ a:active {
 }
 
 /**
- * Tag
- * ==========================================================================
- */
-.tag {
-  display: inline-block;
-  padding: 2px 5px 3px;
-  border-radius: 4px;
-  background-color: #a8a8a8;
-  color: #fff;
-  font-weight: bold;
-  font-size: 85%;
-  white-space: nowrap;
-  vertical-align: baseline;
-  line-height: 1;
-}
-.tag:empty {
-  display: none;
-}
-
-a.tag,
-a.tag:hover,
-a.tag:focus {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.tag.success {
-  background-color: #61C155;
-}
-
-.tag.primary {
-  background-color: #3A89C9;
-}
-
-.tag.warning {
-  background-color: #F8A13F;
-}
-
-.tag.danger {
-  background-color: #E84A5F;
-}
-
-.tag.outline {
-  background-color: #fff;
-  color: #a8a8a8;
-  border: 1px solid;
-}
-.tag.outline.success {
-  border-color: #61C155;
-  color: #61C155;
-}
-.tag.outline.primary {
-  border-color: #3A89C9;
-  color: #3A89C9;
-}
-.tag.outline.warning {
-  border-color: #F8A13F;
-  color: #F8A13F;
-}
-.tag.outline.danger {
-  border-color: #E84A5F;
-  color: #E84A5F;
-}
-
-/**
  * Buttons
  * ==========================================================================
  */
@@ -2109,6 +2044,119 @@ a.item-content {
 }
 
 /**
+ * Tag
+ * ==========================================================================
+ */
+.tag {
+  display: inline-block;
+  padding: 2px 5px 3px;
+  border-radius: 4px;
+  background-color: #a8a8a8;
+  color: #fff;
+  font-weight: bold;
+  font-size: 85%;
+  white-space: nowrap;
+  vertical-align: baseline;
+  line-height: 1;
+}
+.tag:empty {
+  display: none;
+}
+
+a.tag,
+a.tag:hover,
+a.tag:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tag.success {
+  background-color: #61C155;
+}
+
+.tag.primary {
+  background-color: #3A89C9;
+}
+
+.tag.warning {
+  background-color: #F8A13F;
+}
+
+.tag.danger {
+  background-color: #E84A5F;
+}
+
+.tag.outline {
+  background-color: #fff;
+  color: #a8a8a8;
+  border: 1px solid;
+}
+.tag.outline.success {
+  border-color: #61C155;
+  color: #61C155;
+}
+.tag.outline.primary {
+  border-color: #3A89C9;
+  color: #3A89C9;
+}
+.tag.outline.warning {
+  border-color: #F8A13F;
+  color: #F8A13F;
+}
+.tag.outline.danger {
+  border-color: #E84A5F;
+  color: #E84A5F;
+}
+
+/**
+ * Alert
+ * ==========================================================================
+ * alert always appears at the page top
+ */
+.alert {
+  position: fixed;
+  height: 44px;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 10px 15px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 10;
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.36, 0.66, 0.04, 1);
+  transition: transform 300ms cubic-bezier(0.36, 0.66, 0.04, 1);
+}
+.alert.primary {
+  background-color: #2d8ad6;
+}
+.alert.success {
+  background-color: #58cd49;
+}
+.alert.warning {
+  background-color: #ffa138;
+}
+.alert.danger {
+  background-color: #f24058;
+}
+
+.alert.fade {
+  -webkit-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+      transform: translate(0, -100%);
+}
+
+.alert.in {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
+}
+
+/**
  * Fancy progress
  * ==========================================================================
  */
@@ -2843,29 +2891,4 @@ a.item-content {
 
 .dropwizard-backdrop {
   z-index: 9;
-}
-
-/**
- * Validate
- * Author        : lute
- * Last modified : 2015-03-25 17:15
- * ==========================================================================
- */
-.validate-tooltip {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  padding: 10px 15px;
-  font-size: 16px;
-  line-height: 18px;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  z-index: 99;
-}
-.validate-tooltip.danger {
-  background-color: rgba(169, 68, 66, 0.95);
 }
