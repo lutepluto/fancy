@@ -1813,7 +1813,9 @@
     }
 
     if(messages.length !== 0) {
-      this.tooltip(messages.pop())
+      new window.fancyalert({
+        content: messages.pop()
+      })
       return false
     }
     return true
