@@ -2935,3 +2935,112 @@ a.tag:focus {
 .dropwizard-backdrop {
   z-index: 9;
 }
+
+/**
+ * Calendar
+ * --------------------------------------------------
+ */
+.calendar {
+  position: fixed;
+  display: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 100;
+  -webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-out;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+.calendar.in {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.calendar-head {
+  position: relative;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #fff;
+}
+.calendar-head .button {
+  display: block;
+  height: 22px;
+  min-height: initial;
+  padding: 2px 5px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  line-height: 16px;
+}
+.calendar-head [data-confirm] {
+  background-color: #3A89C9;
+  color: #fff;
+}
+.calendar-head [data-dismiss] {
+  background-color: #fff;
+  color: #3A89C9;
+  border-color: #3A89C9;
+}
+
+.calendar-body {
+  position: relative;
+}
+.calendar-body table {
+  width: 100%;
+  height: 266px;
+  border-collapse: collapse;
+}
+.calendar-body table thead tr {
+  border-top: 1px solid #c8c8c8;
+  border-bottom: 1px solid #efefef;
+}
+.calendar-body table thead th {
+  background-color: #f8f8f8;
+  line-height: 32px;
+}
+.calendar-body table thead tr:first-child th {
+  background-color: #fff;
+}
+.calendar-body table th, .calendar-body table td {
+  text-align: center;
+  color: #333;
+  font-weight: 400;
+}
+.calendar-body table td {
+  border-top: 1px solid #efefef;
+  width: 14.3%;
+  padding: 3px 0;
+  vertical-align: middle;
+  text-align: center;
+}
+.calendar-body table td a {
+  display: inline-block;
+  padding: 3px;
+  width: 28px;
+  height: 28px;
+  border-radius: 15px;
+}
+.calendar-body table .current-month {
+  padding: 5px;
+  font-size: 18px;
+}
+.calendar-body table .prev, .calendar-body table .next, .calendar-body table .disabled {
+  background-color: #ddd;
+}
+.calendar-body table .prev a, .calendar-body table .next a, .calendar-body table .disabled a {
+  color: #aaa;
+}
+.calendar-body table .disabled a {
+  pointer-events: none;
+}
+.calendar-body table .current a {
+  color: #E84A5F;
+}
+.calendar-body table .active a {
+  background-color: #3A89C9;
+  color: #fff;
+  font-weight: 700;
+}
