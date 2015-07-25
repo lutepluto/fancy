@@ -123,7 +123,7 @@
       if(transition) that.$optionContainer[0].offsetWidth  // force reflow
       that.$optionContainer.addClass('in')
 
-      var e = $.Event("fancy:combox:opend")
+      var e = $.Event('fancy:combox:opend')
       transition ?
         that.$optionContainer.one($.support.transition.end, function() {
           that.$element.trigger(e)
