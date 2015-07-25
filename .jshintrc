@@ -10,5 +10,11 @@
   "immed": false,
   "expr": true,
   "newcap": true,
-  "browser": true
+  "browser": true,
+  "jquery": true,
+  "globals": {
+    "define": false,
+    "module": false,
+    "require": false
+  }
 }
