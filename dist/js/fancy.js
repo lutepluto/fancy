@@ -651,10 +651,10 @@
     // refresh calendar body
     this.$picker.find('.calendar-body tbody').empty().append(html.join(''))
 
-    this._refrehCalenarHead()
+    this._refrehCalendarHead()
   }
 
-  Calendar.prototype._refrehCalenarHead = function() {
+  Calendar.prototype._refrehCalendarHead = function() {
     // update calendar head title
     var headString = this.viewDate.getFullYear() + dates['zh'].yearSuffix + dates['zh'].months[this.viewDate.getMonth()]
     this.$picker.find('.calendar-body .current-month').text(headString)
