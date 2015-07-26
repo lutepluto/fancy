@@ -2438,9 +2438,7 @@
   }
 
   Validate.DEFAULTS = {
-    tooltipClass: 'danger',
-    tooltipFade: true,
-    tooltipDuration: 3000
+
   }
 
   Validate.FN = {
@@ -2541,35 +2539,19 @@
     return result
   }
 
-  Validate.prototype.tooltip = function(message) {
-    if(this.tooltipVisible) return
-
-    this.tooltipVisible = true
-    var tooltip = '<div class="alert ' + this.options.tooltipClass + '">' + message + '</div>'
-    this.$tooltip = $(tooltip).appendTo($(document.body))
-
-    var that = this
-    var tooltipFade = function() {
-      that.tooltipVisible = false
-      that.$tooltip.remove()
-      that.$tooltip = null
-    }
-
-    if(this.options.tooltipFade) setTimeout(tooltipFade, this.options.tooltipDuration)
-  }
-
   var old = $.fn.validate
 
   function Plugin(option) {
     return this.each(function() {
       var $this = $(this)
       var options = $.extend({}, Validate.DEFAULTS, typeof option == 'object' && option)
-      var data = $this.data('fancy:validate')
-      if(!data) $this.data('fancy:validate', (data = new Validate(this, options)))
+      var data = $this.data('fancy.validate')
+      if(!data) $this.data('fancy.validate', (data = new Validate(this, options)))
     })
   }
   
   $.fn.validate = Plugin
+  $.fn.validate.Constructor = Validate
 
   $.fn.validate.noConflict = function() {
     $.fn.validate = old
