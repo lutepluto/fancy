@@ -1937,11 +1937,17 @@ a.item-content {
 .item-lr .lr-left {
   width: auto;
   overflow: hidden;
+  font-size: inherit;
 }
 .item-lr .lr-right {
-  width: 80px;
+  width: 100px;
   float: right;
   text-align: right;
+}
+
+.lr-left p,
+.lr-right p {
+  margin: 0;
 }
 
 /**

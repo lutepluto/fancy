@@ -311,13 +311,19 @@ a.item-content {
   .lr-left {
     width: auto;
     overflow: hidden;
+    font-size: inherit;
   }
 
   .lr-right {
-    width: 80px;   // the right part usually is narrower
+    width: 100px;   // the right part usually is narrower
     float: right;
     text-align: right;  // default to align text right
   }
+}
+
+.lr-left p,
+.lr-right p {
+  margin: 0;
 }
 
 // Item icon
