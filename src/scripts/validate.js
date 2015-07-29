@@ -102,7 +102,7 @@
     }
 
     if(messages.length !== 0) {
-      new window.fancyalert({
+      new window.FancyAlert({
         content: messages.pop()
       })
       return false

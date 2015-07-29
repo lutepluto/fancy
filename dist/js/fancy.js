@@ -287,7 +287,7 @@
 
   Alert.utils = utils
 
-  window.falt = window.fancyalert = Alert
+  window.FancyAlert = Alert
 
 }(window, document)
 // backdrop.js
@@ -2521,7 +2521,7 @@
     }
 
     if(messages.length !== 0) {
-      new window.fancyalert({
+      new window.FancyAlert({
         content: messages.pop()
       })
       return false

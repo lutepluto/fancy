@@ -127,6 +127,6 @@
 
   Alert.utils = utils
 
-  window.falt = window.fancyalert = Alert
+  window.FancyAlert = Alert
 
 }(window, document)
