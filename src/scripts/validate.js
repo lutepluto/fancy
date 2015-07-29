@@ -158,7 +158,7 @@
     var $form = $this.parents('form[data-validate="true"]')
     if($this.is('input') || $this.is('select') || $this.is('textarea')) {
       var params = $this.data('validate')
-      if(params.trim()) $form.data('fancy:validate').validate(this)
+      if(params.trim()) $form.data('fancy.validate').validate(this)
     }
   })
 
