@@ -71,3 +71,15 @@
     visibility: visible;
   }
 }
+
+// Tabs with icons
+// --------------------------------------------------
+.tab-item .icon {
+  display: block;
+  margin: 0 auto;
+}
+
+.tabs-icon-top > .tabs .tab-item,
+.tabs-icon-top.tabs .tab-item  {
+  font-size: $tabs-text-font-size-side-icon;
+}

@@ -1587,9 +1587,12 @@ textarea {
   background-position: top;
 }
 
-.footer .tab-item {
-  height: 44px;
-  border: 0;
+.footer .tabs {
+  height: 100%;
+}
+
+.footer .tabs-icon-top.tabs .tab-item {
+  padding: 2px 0 0;
 }
 
 /**
@@ -1658,6 +1661,16 @@ textarea {
 .tab-content > .active {
   display: block;
   visibility: visible;
+}
+
+.tab-item .icon {
+  display: block;
+  margin: 0 auto;
+}
+
+.tabs-icon-top > .tabs .tab-item,
+.tabs-icon-top.tabs .tab-item {
+  font-size: 10px;
 }
 
 /**

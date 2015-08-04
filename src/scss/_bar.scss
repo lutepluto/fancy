@@ -112,11 +112,14 @@
   background-position: top;
 }
 
-// Don't render padding if the bar is just for tabs
+// Footer tabs
+// --------------------------------------------------
+.footer .tabs {
+  height: 100%;
+}
 
-.footer .tab-item {
-  height: $bar-height;
-  border: 0;
+.footer .tabs-icon-top.tabs .tab-item {
+  padding: 2px 0 0;  // for icons not overlapping footer top border
 }
 
 // TODO bar input
