@@ -1634,7 +1634,7 @@ textarea {
 }
 
 .tabs > li:last-child > .tab-item {
-  background: 0 0;
+  background-image: none;
 }
 
 .tabs > .active > .tab-item {
@@ -1642,7 +1642,7 @@ textarea {
 }
 
 .tabs.no-divider .tab-item {
-  background: 0 0;
+  background-image: none;
 }
 
 .tabs.justified {
