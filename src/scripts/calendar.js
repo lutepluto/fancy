@@ -20,16 +20,18 @@
     this.viewDate = new Date()
     this.date = new Date()
 
-    // Construct calendar html
-    this.$picker = $(tpl.calendar).appendTo($(document.body))
-    this._buildCalendarHead()
-
     // process calendar options
     this._processOptions()
-    // build calendar events
-    this._buildEvents()
-    // build calendar body
+
+    // Construct calendar html
+    this.$picker = $(tpl.calendar).appendTo($(document.body))
+
+    // build calendar head and body
+    this._buildCalendarHead()
     this._buildCalendarBody()
+
+    // build calendar events
+    this._bindEvents()
   }
 
   Calendar.DEFAULTS = {
@@ -40,13 +42,16 @@
     datesDisabled: undefined
   }
 
-  // Build the calendar head html
+  /**
+   * Build the calendar head html
+   */
   Calendar.prototype._buildCalendarHead = function() {
     var count = this.options.weekStart
     var html = '<tr>'
 
     while(count < this.options.weekStart + 7) {
       // using ['zh'] is for future internalization
+      /*jshint -W069 */
       html += '<th>' + dates['zh'].daysShort[(count++) % 7] + '</th>'
     }
     html += '</tr>'
@@ -149,7 +154,10 @@
     // TODO process other options
   }
 
-  Calendar.prototype._buildEvents = function() {
+  /**
+   * Bind picker events
+   */
+  Calendar.prototype._bindEvents = function() {
     // Interesting things here is that in Zepto, the native
     // event like `tap`, `click` can have its event namespace
     // separated by dot(.) like following code.
@@ -173,7 +181,16 @@
     this.$picker.on('tap.fancy.calendar.pick', 'a[data-value]', $.proxy(this.pickDay, this))
   }
 
-  // Build the calendar body UI
+  /**
+   * unbind picker events
+   */
+  Calendar.prototype._unbindEvents = function() {
+    this.$picker.off()
+  }
+
+  /**
+   * Build the calendar body UI
+   */
   Calendar.prototype._buildCalendarBody = function() {
     var year = this.viewDate.getFullYear(),
       month = this.viewDate.getMonth()
@@ -291,6 +308,7 @@
 
   Calendar.prototype._refrehCalendarHead = function() {
     // update calendar head title
+    /*jshint -W069 */
     var headString = this.viewDate.getFullYear() + dates['zh'].yearSuffix + dates['zh'].months[this.viewDate.getMonth()]
     this.$picker.find('.calendar-body .current-month').text(headString)
 
@@ -444,6 +462,21 @@
         _relatedTarget: that.$picker[0]
       }))
     })
+  }
+
+  Calendar.prototype._destroyCalendar = function() {
+    // make sure to remove all event handler
+    this.$picker.find('*').off()
+    this.$picker.remove()
+    this.$picker = null
+  }
+
+  /**
+   * Destroy calendar to release memory and remove calendar body
+   */
+  Calendar.prototype.destroy = function() {
+    this._unbindEvents()
+    this._destroyCalendar()
   }
 
   // Utitly function to parse string to Date.
