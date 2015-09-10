@@ -400,7 +400,7 @@
   }
 
   Calendar.DEFAULTS = {
-    format: 'yyyy-mm-dd',
+    format: 'yyyy-MM-dd',
     weekStart: 0,
     startDate: -Infinity,
     endDate: Infinity,
@@ -865,7 +865,7 @@
     for(var key in formatParams) {
       var value = dateParams[key]
       if(formatParams[key] === 'yyyy') date.setFullYear(value)
-      else if(formatParams[key] === 'mm') date.setMonth(value - 1)
+      else if(formatParams[key] === 'MM') date.setMonth(value - 1)
       else if(formatParams[key] === 'dd') date.setDate(value)
     }
 
@@ -883,7 +883,7 @@
   function parseDateToString(date, format) {
     var templateParts = {
       dd: (date.getDate() < 10 ? '0' : '') + date.getDate(),
-      mm: (date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1),
+      MM: (date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1),
       yyyy: date.getFullYear()
     }
 
