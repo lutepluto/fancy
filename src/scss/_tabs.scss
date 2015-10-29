@@ -79,6 +79,10 @@
   margin: 0 auto;
 }
 
+.tabs-icon-aside.tabs .tab-item .icon {
+  display: inline-block;
+}
+
 .tabs-icon-top > .tabs .tab-item,
 .tabs-icon-top.tabs .tab-item  {
   font-size: $tabs-text-font-size-side-icon;
