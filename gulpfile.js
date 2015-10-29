@@ -30,7 +30,7 @@ gulp.task('sass', function() {
       sourcemap: true
     })
     .on('error', plugins.rubySass.logError)
-    .pipe(plugins.autoprefixer({ browsers: ['> 1%', 'Android > 4.0', 'iOS > 6'] }))
+    .pipe(plugins.autoprefixer({ browsers: ['> 1%', 'Android > 2.3', 'iOS > 5', 'Firefox > 30', 'Chrome > 25', 'IE > 10'] }))
     .pipe(gulp.dest('dist/css/'))
     .pipe(plugins.rename({ suffix: '.min' }))
     .pipe(plugins.minifyCss())
