@@ -633,7 +633,6 @@ body {
   position: relative;
   background-color: transparent;
   -webkit-overflow-scrolling: touch;
-  z-index: 0;
 }
 
 .content > * {
