@@ -1,13 +1,10 @@
+'use strict'
+
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
-    rename = require('gulp-rename'),
-    notify = require('gulp-notify'),
+    gulpLoadPlugins = require('gulp-load-plugins'),
     del = require('del');
+
+var plugins = gulpLoadPlugins()
 
 /**
  * ---------- sass task ----------
@@ -28,13 +25,15 @@ gulp.task('watch', function() {
  */
 
 gulp.task('sass', function() {
-  return gulp.src('src/scss/fancy.scss')
-    .pipe(sass({ style: 'expanded', sourcemapPath: '../../scss/' }))
-    .on('error', function(err) { console.log(err.message); })
-    .pipe(autoprefixer({ browsers: ['> 1%', 'Android > 2.2', 'iOS > 5', 'Firefox >= 20', 'Chrome >= 20', 'ExplorerMobile > 9'] }))
+  return plugins.rubySass('src/scss/fancy.scss', {
+      style: 'expanded',
+      sourcemap: true
+    })
+    .on('error', plugins.rubySass.logError)
+    .pipe(plugins.autoprefixer({ browsers: ['> 1%', 'Android > 4.0', 'iOS > 6'] }))
     .pipe(gulp.dest('dist/css/'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(minifycss())
+    .pipe(plugins.rename({ suffix: '.min' }))
+    .pipe(plugins.minifyCss())
     .pipe(gulp.dest('dist/css/'));
 });
 
@@ -44,12 +43,12 @@ gulp.task('sass', function() {
 
 gulp.task('scripts', function() {
   return gulp.src('src/scripts/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(concat('fancy.js'))
+    .pipe(plugins.jshint())
+    .pipe(plugins.jshint.reporter('default'))
+    .pipe(plugins.concat('fancy.js'))
     .pipe(gulp.dest('dist/js'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(uglify())
+    .pipe(plugins.rename({ suffix: '.min' }))
+    .pipe(plugins.uglify())
     .pipe(gulp.dest('dist/js'));
 });
 
@@ -65,6 +64,4 @@ gulp.task('clean', function(cb) {
  * ---------- default task ----------
  */
 
-gulp.task('default', ['clean'], function() {
-  gulp.start('sass', 'scripts');
-});
+gulp.task('default', ['clean', 'sass', 'scripts']);
