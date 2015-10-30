@@ -36,15 +36,15 @@
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content has-header has-footer">
       
-      <div class="dropwizard">
+      <div class="dropwizard" id="drop">
         <ul class="tabs tabs-icon-aside justified no-divider">
           <li>
-            <a href="#category1" class="tab-item" data-toggle="dropwizard">
+            <a href="#category1" class="tab-item" data-toggle="dropwizard" data-drop="#drop">
               <span>菜品1</span>&nbsp;<i class="icon icon-small icon-chevron-down"></i>
             </a>
           </li>
           <li>
-            <a href="#category2" class="tab-item" data-toggle="dropwizard">
+            <a href="#category2" class="tab-item" data-toggle="dropwizard" data-drop="#drop">
               <span>菜品2</span>&nbsp;<i class="icon icon-small icon-chevron-down"></i>
             </a>
           </li>
@@ -204,13 +204,13 @@
 
     $(function() {
 
-      $(document).on('fancy:dropwizard:directed', '[data-direct]', function(e) {
-        var $target = $(e.relatedTarget)
-        var iscroll = $target.data('iscroll')
-        if(!iscroll) $target.data('iscroll', new IScroll(e.relatedTarget, { tap: true }))
-      })
+      // $(document).on('fancy:dropwizard:directed', '[data-direct]', function(e) {
+      //   var $target = $(e.relatedTarget)
+      //   var iscroll = $target.data('iscroll')
+      //   if(!iscroll) $target.data('iscroll', new IScroll(e.relatedTarget, { tap: true }))
+      // })
 
-      new IScroll('#wrapper')
+      // new IScroll('#wrapper')
 
     })
 

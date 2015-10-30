@@ -11,176 +11,153 @@
 
   var Dropwizard = function(element, options) {
     this.$element = $(element)
-    this.$target = $($(element).data('target') || $(element).attr('href'))
-    this.$ul = $(element).closest('ul')
-    this.$backdrop = null
+    this.$target = $(this.$element.data('target') || this.$element.attr('href'))
+    this.$drop = $(this.$element.data('drop'))
+    this.$body = $(document.body)
     this.options = options
-    this.isOpen = null
+    this.backdrop = new window.Backdrop()
+    this.isShown = null
 
-    this.$target.on('tap', '[data-direct]', $.proxy(this.direct, this))
-    this.$target.on('tap', '[data-confirm="dropwizard"]', $.proxy(this.confirm, this))
+    this.$target.on('tap.direct.fancy.dropwizard', '[data-direct]', $.proxy(this.direct, this))
+    this.$target.on('tap.confirm.fancy.dropwizard', '[data-confirm]', $.proxy(this.confirm, this))
   }
 
-  Dropwizard.DEFAULTS = {
-    maxTextLength: 6
-  }
+  Dropwizard.DEFAULTS = {}
 
   Dropwizard.prototype.toggle = function() {
-    this.isOpen ? this.close() : this.open()
+    this.isShown ? this.hide() : this.show()
   }
 
-  Dropwizard.prototype.open = function() {
-    var $this = this.$element
-    var that = this
-
-    var e = $.Event('fancy:dropwizard:open')
-    $this.trigger(e)
-    if(e.isDefaultPrevented()) return
-
-    // Checking sibling menu open
-    var previous = this.$ul.find('.open > a')[0]
-    if(previous) this.switchOpen(previous)
-
-    this.isOpen = true
-    this.backdrop(function() {
-      var transition = $.support.transition && that.$target.hasClass('fade')
-      that.$element.parent().addClass('open')
-      that.$target.addClass('active')
-
-      if(transition) that.$target[0].offsetWidth  // force reflow
-      that.$target.addClass('in')
-
-      var e = $.Event('fancy:dropwizard:opend', { relatedTarget: that.$target[0] })
-      transition ?
-        that.$target
-          .one($.support.transition.end, function() { that.$element.trigger(e) })
-          .emulateTransitionEnd(150) :
-        that.$element.trigger(e)
-    })
-  }
-
-  Dropwizard.prototype.close = function() {
-    var e = $.Event('fancy:dropwizard:close')
+  Dropwizard.prototype.show = function() {
+    var e = $.Event('show:fancy:dropwizard')
     this.$element.trigger(e)
 
-    if(e.isDefaultPrevented()) return
-    this.isOpen = false
-    this.$element.parent().removeClass('open')
-    this.$target.removeClass('in')
-    $('.dropwizard-backdrop').remove()
+    if (this.isShown || e.isDefaultPrevented()) return
 
-    $.support.transition && this.$target.hasClass('fade') ?
-      this.$target
-        .one($.support.transition.end, $.proxy(this.hideDropwizardMenu, this))
-        .emulateTransitionEnd(300) :
-      this.hideDropwizardMenu()
-  }
+    // If there exists active wizard, then hide the active wizard 
+    var $activeWizard = this.$drop.find('.active > [data-toggle="dropwizard"]')
+    if (!!$activeWizard.length) $activeWizard.dropwizard('hide')
 
-  Dropwizard.prototype.hideDropwizardMenu = function() {
     var that = this
-    this.$target.removeClass('active')
-    this.backdrop(function() {
-      that.$element.trigger('fancy:dropwizard:closed')
+    this.isShown = true
+
+    // Open backdrop and wizard
+    this.backdrop.open(this.$element[0], function() {
+      
+      that.$element.parent().addClass('active')
+      that.$target.addClass('active')
+
+      that.$element.trigger($.Event('shown:fancy:dropwizard'))
+
     })
   }
 
-  Dropwizard.prototype.switchOpen = function(el) {
-    var $prev = $(el)
-    var $prevTarget = $($prev.data('target') || $prev.attr('href'))
+  Dropwizard.prototype.hide = function() {
+    var e = $.Event('hide:fancy:dropwizard')
+    this.$element.trigger(e)
 
-    $prev.parent().removeClass('open')
-    $prev.data('fancy.dropwizard').isOpen = false
-    $prevTarget.removeClass('in')
+    if (!this.isShown || e.isDefaultPrevented()) return
 
-    $.support.transition && $prevTarget.hasClass('fade') ?
-      $prevTarget
-        .one($.support.transition.end, function() { $(this).removeClass('active') })
-        .emulateTransitionEnd(300) :
-      $prevTarget.removeClass('active')
+    // Go to hide
+    this.isShown = false
+    this.$element.parent().removeClass('active')
+    this.$target.removeClass('active')
+
+    var that = this
+    this.backdrop.close(function() {
+      that.$element.trigger('hidden:fancy:dropwizard')
+    })
   }
 
   Dropwizard.prototype.direct = function(e) {
     e.preventDefault()
 
-    var $this = $(e.target)
-    var $direct = $($this.data('direct'))
-    e = $.Event('fancy:dropwizard:direct', { relatedTarget: $direct[0] })
-    $this.trigger(e)
+    var $direct = $(e.target),
+      $directTarget = $($direct.data('direct'))
 
-    if($direct.hasClass('active')) return
-    var $menu = $this.closest('ul')
-    var $active = $menu.find('.active')
+    // Trigger direct event
+    e = $.Event('direct:fancy:dropwizard', { relatedTarget: $direct[0] })
+    this.$element.trigger(e)
 
-    if($active.length) $($active.removeClass('active').children().data('direct')).removeClass('active')
-    $this.parent().addClass('active')
-    $direct.addClass('active')
+    if (e.isDefaultPrevented() || $directTarget.hasClass('active')) return
 
-    e = $.Event('fancy:dropwizard:directed', { relatedTarget: $direct[0] })
-    $this.trigger(e)
+    var $menu = $direct.closest('ul'),
+      $activeDirect = $menu.find('.active')
+
+    if (!!$activeDirect.length) {
+      $($activeDirect
+          .removeClass('active')
+          .children()
+          .data('direct'))
+        .removeClass('active')
+    }
+
+    $direct.parent().addClass('active')
+    $directTarget.addClass('active')
+
+    this.$element.trigger($.Event('directed:fancy:dropwizard', {
+      relatedTarget: $direct[0]
+    }))
   }
 
   Dropwizard.prototype.confirm = function(e) {
-    var $this = $(e.target)
-    var text = $this.text().trim()
+    e.preventDefault()
 
-    // deactive all uls' active li in current dropwizar-menu
-    $this.closest('.dropwizard-menu').find('.menu li.active').each(function() {
-      if($(this).children().data('confirm')) $(this).removeClass('active')
+    var $item = $(e.target),
+      text = $item.text().trim()
+
+    // Trigger confirm event
+    e = $.Event('confirm:fancy:dropwizard', { relatedTarget: e.target })
+    this.$element.trigger(e)
+
+    if (e.isDefaultPrevented() || $item.parent().hasClass('active')) return
+
+    // Deactive all active item of current active wizard
+    this.$target.find('.menu .active').each(function() {
+      if ($(this).children().data('confirm')) {
+        $(this).removeClass('active')
+      }
     })
-    $this.parent().addClass('active')
 
-    this.$ul
-      .find('.open > a > span')
+    $item.parent().addClass('active')
+
+    // Change confirmed label text of current wizard
+    this.$drop
+      .find('.active > [data-toggle="dropwizard"] > span')
       .text(text.length > this.options.maxTextLength ?
         text.substring(0, this.options.maxTextLength - 1) + '...' :
         text
       )
 
-    this.$ul.find('.open > a').trigger('tap').trigger('fancy:dropwizard:confirm')
+    this.hide()
+    this.$element.trigger($.Event('confirmed:fancy:dropwizard', {
+      relatedTarget: $item[0]
+    }))
   }
 
-  Dropwizard.prototype.backdrop = function(callback) {
-    var that = this
+  // DROPWIZARD PLUGIN DEFINITION
+  // ============================
+  
+  function Plugin(option) {
+    return this.each(function() {
+      var $this = $(this)
+      var data = $this.data('fancy:dropwizard')
+      var options = $.extend({}, Dropwizard.DEFAULTS, $this.data(), typeof option === 'object' && option)
 
-    if(this.isOpen) {
-
-      // Check backdrop existence for dorpdown menu switch
-      if(!$('.backdrop.dropwizard-backdrop').length) {
-        this.$backdrop = $('<div class="backdrop fade in dropwizard-backdrop" />')
-          .appendTo($(document.body))
-
-        this.$backdrop.one('tap', function(e) {
-          if(e.target !== e.currentTarget) return
-          that.$ul.find('.open > a').trigger('tap')
-        })
-      }
-
-      if(!callback) return
-      callback()
-    } else if(callback) {
-      callback()
-    }
-  }
-
-  Dropwizard.prototype.removeBackdrop = function() {
-    this.$backdrop && this.$backdrop.remove()
-    this.$backdrop = null
+      if (!data) $this.data('fancy:dropwizard', (data = new Dropwizard(this, options)))
+      if (typeof option === 'string') data[option]()
+      else data.toggle()
+    })
   }
 
   var old = $.fn.dropwizard
 
-  function Plugin(option) {
-    return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('fancy.dropwizard')
-      var options = $.extend({}, Dropwizard.DEFAULTS, $this.data(), typeof option == 'object' && option)
-
-      if(!data) $this.data('fancy.dropwizard', (data = new Dropwizard(this, options)))
-      if(typeof option == 'string') data[option]()
-    })
-  }
-
   $.fn.dropwizard = Plugin
+  $.fn.dropwizard.Constructor = Dropwizard
+
+  // DROPWIZARD NO CONFLICT
+  // ======================
+  
   $.fn.dropwizard.noConflict = function() {
     $.fn.dropwizard = old
     return this
