@@ -42,3 +42,7 @@
   background-color: rgba(0, 0, 0, .3);
   @include translateZ(0);
 }
+
+.backdrop-open {
+  overflow: hidden;
+}
