@@ -42,7 +42,7 @@ gulp.task('sass', function() {
  */
 
 gulp.task('scripts', function() {
-  return gulp.src('src/scripts/*.js')
+  return gulp.src('src/scripts/plugins/*.js')
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('default'))
     .pipe(plugins.concat('fancy.js'))
