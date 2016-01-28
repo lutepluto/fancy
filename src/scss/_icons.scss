@@ -3,11 +3,7 @@
  * ==========================================================================
  */
  
-$icon-image-path:    "../images/" !default;
 $icon-prefix:        "icon-";
-
-$icon-var-gray-loading:   "gray-loading.png";
-$icon-var-loading:        "loading.png";
 
 .icon {
   position: relative;
@@ -76,10 +72,6 @@ $icon-var-loading:        "loading.png";
 .#{$icon-prefix}gray-loading {
   @extend.#{$icon-prefix}spin;
 }
-
-
-.#{$icon-prefix}load:before { background-image: url(#{$icon-image-path}#{$icon-var-loading}); }
-.#{$icon-prefix}loading:before { @extend .#{$icon-prefix}load:before; }
 
 // Pseudo icons
 // --------------------------------------------------
