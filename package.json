@@ -1,10 +1,8 @@
 {
   "name": "fancy",
   "version": "0.0.1",
-  "description": "simple mobile web framework for rapid development",
+  "description": "simple mobile web library for rapid development",
   "scripts": {
-    "prestart": "npm install",
-    "start": "http-server -p 8000"
   },
   "repository": {
     "type": "git",
@@ -14,21 +12,8 @@
     "css",
     "mobile",
     "web",
-    "framework"
+    "plugin"
   ],
-  "license": "MIT",
-  "devDependencies": {
-    "del": "^2.0.2",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-concat": "*",
-    "gulp-jshint": "*",
-    "gulp-load-plugins": "^1.0.0",
-    "gulp-minify-css": "^1.2.1",
-    "gulp-notify": "*",
-    "gulp-rename": "*",
-    "gulp-ruby-sass": "^2.0.5",
-    "gulp-uglify": "*",
-    "http-server": "^0.8.5"
+  "license": "MIT"
   }
 }
