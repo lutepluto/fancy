@@ -1,0 +1,27 @@
+//
+// Base
+// --------------------------------------------------
+
+// best practice for box-sizing
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+
+html {
+  @include box-sizing(border-box);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  @include touch-callout(none);
+  @include text-size-adjust(none);
+  @include tap-highlight-transparent();
+  @include user-select(none);
+  
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}

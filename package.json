@@ -2,8 +2,7 @@
   "name": "fancy",
   "version": "0.0.1",
   "description": "simple mobile web library for rapid development",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github/lutepluto/fancy.git"
@@ -14,5 +13,15 @@
     "web",
     "plugin"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.1.0"
+  }
 }

@@ -1,0 +1,73 @@
+//
+// Mixins
+// --------------------------------------------------
+
+// Box sizing
+
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+// Box shadow
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+@mixin clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Appearance
+
+@mixin appearance($val) {
+  -webkit-appearance: $val;
+     -moz-appearance: $val;
+          appearance: $val;
+}
+
+// Text Mixins
+
+@mixin text-size-adjust($val: none) {
+  -webkit-text-size-adjust: $val;
+          text-size-adjust: $val;
+}
+@mixin tap-highlight-transparent() {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent; // For some Android
+}
+@mixin touch-callout($val: none) {
+  -webkit-touch-callout: $val;
+}
+
+// User select
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+          user-select: $select;
+}
